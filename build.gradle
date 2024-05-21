@@ -14,8 +14,15 @@ java {
 repositories {
 	mavenCentral()
 }
+configurations {
+	providedRuntime
+}
 
 dependencies {
+	//web
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	//tomcat
+	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 	// JPA
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	// Thymeleaf
@@ -30,6 +37,7 @@ dependencies {
 	runtimeOnly 'mysql:mysql-connector-java:8.0.33' //버전명까지 써줘야함
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 }
 
 tasks.named('test') {
