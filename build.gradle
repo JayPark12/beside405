@@ -29,6 +29,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	// web
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation group: 'com.google.code.gson', name: 'gson', version: '2.9.0'
 	// lombok
 	compileOnly 'org.projectlombok:lombok'
 	// devTools

@@ -7,13 +7,19 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Entity
 @Getter
 @Setter
-public class userEntity {
+public class UserEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String testData1 ;
+    private String id;
+    private String nickName;
+    private String callNo;
+    private String userSts;
+    private LocalDate creatDt;
+    private String password;
 
 }

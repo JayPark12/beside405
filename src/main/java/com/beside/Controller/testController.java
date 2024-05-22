@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 @Controller
-@RequestMapping("/kakao-login")
+@RequestMapping("/login")
 public class testController {
     @Autowired
     private testJava testJava;
@@ -18,8 +18,6 @@ public class testController {
     @GetMapping("/")
     public  String testRErere(@RequestBody testEntity testEntity) {
 
-        testEntity.setTestData1("123123");
-        System.out.println(testEntity.getTestData1() + "완료");
 
         return "index";
     }
