@@ -5,10 +5,7 @@ import com.beside.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @Slf4j
@@ -24,9 +21,9 @@ public class UserController {
         UserEntity existingUser = userService.login(user.getId(), user.getPassword());
         if (existingUser != null) {
             session.setAttribute("id", user.getId());
-            return user.getId();
+            return "/main/mntiList";
         } else {
-            return "Invalid username or password";
+            return "/loginPg";
         }
     }
 }

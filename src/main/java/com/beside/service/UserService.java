@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private final UserDao userDao;
-
     public UserEntity login(String id, String password) {
         return userDao.findUser(id, password);
     }
