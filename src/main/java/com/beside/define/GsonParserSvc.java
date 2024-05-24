@@ -1,6 +1,5 @@
 package com.beside.define;
 
-import com.beside.model.MntiDetailInput;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +20,7 @@ public class GsonParserSvc {
     private final ObjectMapper objectMapper;
     private final RestTemplate restTemplate;
 
-    public String GsonParser (String response){
+    public String PotoGsonParser(String response){
         String imgFilename = null;
         List<String> imgFilenameList = new ArrayList<>();
         try {
@@ -45,8 +44,8 @@ public class GsonParserSvc {
         return imgFilename;
     }
 
-    public List<String> GsonParserDetailList (String  mntilistNo) throws URISyntaxException {
-        String url = Define.apiUrl + "mntiListNo="+mntilistNo; // 외부 API URL
+    public List<String> GsonParserPotolList(String  mntilistNo) throws URISyntaxException {
+        String url = Define.potoUrl + "mntiListNo="+mntilistNo; // 외부 API URL
         URI uri = new URI(url);
         String imgFilename = null;
         ResponseEntity<String> response = restTemplate.getForEntity(uri, String.class);
@@ -67,5 +66,22 @@ public class GsonParserSvc {
             e.printStackTrace();
         }
         return imgFilenameList;
+    }
+    //산 높이
+    public String Mntihigh(String mntiName) throws URISyntaxException {
+        String url = Define.mntiApiUrl + "searchWrd=" + mntiName; // 외부 API URL
+        String mntiHight = null;
+        ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+        try {
+            JsonNode rootNode = objectMapper.readTree(response.getBody());
+
+            JsonNode itemsNode = rootNode.path("response").path("body").path("items").path("item");
+
+            mntiHight = itemsNode.path("mntihigh").asText();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mntiHight;
     }
 }

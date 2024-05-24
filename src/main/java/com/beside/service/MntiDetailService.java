@@ -1,8 +1,5 @@
 package com.beside.service;
 
-import com.beside.DAO.MntiDao;
-import com.beside.Entity.MntiEntity;
-import com.beside.define.Define;
 import com.beside.define.GsonParserSvc;
 import com.beside.model.*;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -10,17 +7,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -42,7 +34,7 @@ public class MntiDetailService {
         //고정된 정보
         mntiDetailOutput.setMntiName(mntiDetailInput.getMntiName());
         mntiDetailOutput.setMntiAdd(mntiDetailInput.getMntiAdd());
-        mntiDetailOutput.setPotoUrl(gsonParserSvc.GsonParserDetailList(mntiDetailInput.getMntilistNo()));
+        mntiDetailOutput.setPotoUrl(gsonParserSvc.GsonParserPotolList(mntiDetailInput.getMntilistNo()));
 
 
         if (itemsNode.isArray()) {
@@ -67,8 +59,10 @@ public class MntiDetailService {
                 courses.add(course);
             }
             mntiDetailOutput.setCourse(courses);
-
+            mntiDetailOutput.setMntiHigh(gsonParserSvc.Mntihigh(mntiDetailInput.getMntiName()));
         }
+
+
         return mntiDetailOutput;
     }
 }

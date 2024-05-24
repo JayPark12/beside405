@@ -2,7 +2,6 @@ package com.beside.model;
 
 import lombok.*;
 
-import java.io.InputStream;
 import java.util.List;
 
 @Getter
@@ -10,7 +9,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-public class MntiDetailOutput {
+public class MntiReserOutput {
 
     private String mntiName;    //산이름
     private String mntiReb;     //산난이도

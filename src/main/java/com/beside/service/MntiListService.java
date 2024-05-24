@@ -5,7 +5,6 @@ import com.beside.Entity.MntiEntity;
 import com.beside.define.Define;
 import com.beside.define.GsonParserSvc;
 import com.beside.model.MntiListOutput;
-import com.beside.model.MntiSearchInput;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -51,12 +50,12 @@ public class MntiListService {
     }
 
     public String callExternalApi(String mntilistNo) throws URISyntaxException {
-        String url = Define.apiUrl + "mntiListNo="+mntilistNo; // 외부 API URL
+        String url = Define.potoUrl + "mntiListNo="+mntilistNo; // 외부 API URL
         String potoInfo = null;
         URI uri = new URI(url);
         ResponseEntity<String> response = restTemplate.getForEntity(uri, String.class);
 
-        String jpgFileName =  gsonParserSvc.GsonParser(response.getBody());//api에서 데이터 가져온 처리
+        String jpgFileName =  gsonParserSvc.PotoGsonParser(response.getBody());//api에서 데이터 가져온 처리
 
         if (jpgFileName != null) {
             potoInfo = Define.potoCallUrl + jpgFileName;
