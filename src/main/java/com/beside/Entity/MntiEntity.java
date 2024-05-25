@@ -20,6 +20,7 @@ public class MntiEntity {
     private String mntiJson;    //코스 정보 Json파일명
     private String mntiCaution;  //주의사항
     private String mntiReb;
+    private String mntiAdd;
 
 
 }

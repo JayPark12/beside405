@@ -13,9 +13,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Course {
-    private String courseNo;
-    private String courseName;
-    private long mntiTime;
-    private String mntiReb;
-    private List<List<Coordinate>> paths; // 추가된 필드
+    private String course_no;
+    private String course_name;
+    private Long   mnti_time;
+    private Long   mnti_dist;    //등산로거리
+    private String mnti_reb;
+    private List<List<Coordinate>> paths;
 }

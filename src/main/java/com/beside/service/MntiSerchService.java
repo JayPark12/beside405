@@ -2,17 +2,12 @@ package com.beside.service;
 
 import com.beside.DAO.MntiDao;
 import com.beside.Entity.MntiEntity;
-import com.beside.define.Define;
-import com.beside.define.GsonParserSvc;
 import com.beside.model.MntiListOutput;
 import com.beside.model.MntiSearchInput;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,18 +23,19 @@ public class MntiSerchService {
 
     public List<MntiListOutput> mntiList(MntiSearchInput mntiSearchInput) throws URISyntaxException {
         List<MntiListOutput> mntiListOutput = new ArrayList<>();
-        List<MntiEntity> mntiShufList = mntiDao.findByMntiSerch(mntiSearchInput.getMntiName());
+        List<MntiEntity> mntiShufList = mntiDao.findByMntiSerch(mntiSearchInput.getMnti_name());
         List<MntiEntity> mntiShufList7 =mntiShufList.stream().limit(7).collect(Collectors.toList());
         for (int i = 0; i < mntiShufList7.size(); i++)
         {
             String potoUrl = null;
             MntiListOutput mntiOutput = new MntiListOutput();
-            mntiOutput.setMntiName(mntiShufList7.get(i).getMntiName());
-            mntiOutput.setMntilistNo(mntiShufList7.get(i).getMntilistNo());
-            mntiOutput.setMntiReb(mntiShufList7.get(i).getMntiReb());
-            potoUrl = mntiListService.callExternalApi(mntiOutput.getMntilistNo());
+            mntiOutput.setMnti_name(mntiShufList7.get(i).getMntiName());
+            mntiOutput.setMnti_list_no(mntiShufList7.get(i).getMntilistNo());
+            mntiOutput.setMnti_reb(mntiShufList7.get(i).getMntiReb());
+            potoUrl = mntiListService.callExternalApi(mntiOutput.getMnti_list_no());
+            mntiOutput.setMnti_add(mntiShufList7.get(i).getMntiAdd());
 
-            mntiOutput.setPotoUrl(potoUrl);
+            mntiOutput.setPoto_url(potoUrl);
             mntiListOutput.add(mntiOutput);
         }
 

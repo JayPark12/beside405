@@ -9,13 +9,11 @@ import lombok.*;
 @EqualsAndHashCode(callSuper = false)
 public class MntiListOutput {
 
-    private String mntilistNo ;
-    private String mntiName;    //산이름
-    private String mntiReb;     //산난이도
-    private String potoUrl;     //사진 api url
-    private String mntiAdd;
-
-
+    private String mnti_list_no ;
+    private String mnti_name;    //산이름
+    private String mnti_reb;     //산난이도
+    private String poto_url;     //사진 api url
+    private String mnti_add;
 
 }
 

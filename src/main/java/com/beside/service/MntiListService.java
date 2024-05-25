@@ -37,12 +37,13 @@ public class MntiListService {
         {
             String potoUrl = null;
             MntiListOutput mntiOutput = new MntiListOutput();
-            mntiOutput.setMntiName(mntiShufList7.get(i).getMntiName());
-            mntiOutput.setMntilistNo(mntiShufList7.get(i).getMntilistNo());
-            mntiOutput.setMntiReb(mntiShufList7.get(i).getMntiReb());
-            potoUrl = callExternalApi(mntiOutput.getMntilistNo());
+            mntiOutput.setMnti_name(mntiShufList7.get(i).getMntiName());
+            mntiOutput.setMnti_list_no(mntiShufList7.get(i).getMntilistNo());
+            mntiOutput.setMnti_reb(mntiShufList7.get(i).getMntiReb());
+            mntiOutput.setMnti_add(mntiShufList7.get(i).getMntiAdd());
+            potoUrl = callExternalApi(mntiOutput.getMnti_list_no());   //사진정보
 
-            mntiOutput.setPotoUrl(potoUrl);
+            mntiOutput.setPoto_url(potoUrl);
             mntiListOutput.add(mntiOutput);
         }
 
