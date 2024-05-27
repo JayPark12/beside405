@@ -16,7 +16,7 @@ public class Course {
     private String course_no;
     private String course_name;
     private Long   mnti_time;
-    private Long   mnti_dist;    //등산로거리
+    private String   mnti_dist;    //등산로거리
     private String mnti_reb;
     private List<List<Coordinate>> paths;
 }

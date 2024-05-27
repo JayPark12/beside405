@@ -1,5 +1,6 @@
 package com.beside.Controller;
 
+import com.beside.Entity.UserEntity;
 import com.beside.model.MntiDetailInput;
 import com.beside.model.MntiDetailOutput;
 import com.beside.model.MntiReserInput;
@@ -33,9 +34,12 @@ public class MtReserPgController {
 
     @PostMapping("/registration")
     public MntiReserOutput registration(@RequestBody MntiReserInput mntiReserInput) throws Exception {
-        jwtProvider.validToken(mntiReserInput.getJwtToken()); // 토큰값 확인
+        UserEntity Tokenid = jwtProvider.validToken(mntiReserInput.getJwtToken()); // 토큰값 확인
 
         MntiReserOutput mntiList = mntiResrService.reserJsonFile(mntiReserInput);
+        //등산 예약 정보 insert
+
+        mntiResrService.reserInsert(mntiList, Tokenid, mntiReserInput);
 
         return mntiList;
 

@@ -12,6 +12,7 @@ import java.util.List;
 public class MntiReserOutput {
 
     private String mnti_name;    //산이름
+    private String mntilist_no;  //산 넘버
     private String mnti_reb;     //산난이도
     private String mnti_high;    //고도
     private String mnti_add;     //산 소제지

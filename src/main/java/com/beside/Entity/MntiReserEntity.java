@@ -17,7 +17,7 @@ import java.time.LocalDate;
 public class MntiReserEntity {
 
     @Id
-    private String mnticnt;        //등산 횟수 (같은산)
+    private int mnticnt;        //등산 횟수 (같은산)
     private String id     ;
     private String mntilistno;      //산넘버
     private String mntiCs;          //산코스 넘버

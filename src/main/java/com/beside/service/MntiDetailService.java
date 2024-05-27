@@ -44,7 +44,7 @@ public class MntiDetailService {
                 course.setCourse_name(item.path("attributes").path("PMNTN_NM").asText());
                 course.setMnti_time(item.path("attributes").path("PMNTN_UPPL").asLong() + item.path("attributes").path("PMNTN_GODN").asLong());
                 course.setMnti_reb(item.path("attributes").path("PMNTN_DFFL").asText());
-                course.setMnti_dist(item.path("attributes").path("PMNTN_LT").asLong());
+                course.setMnti_dist(item.path("attributes").path("PMNTN_LT").asText());
                 JsonNode pathsNode = item.path("geometry").path("paths");
                 if (pathsNode.isArray()) {
                     List<List<Coordinate>> paths = new ArrayList<>();

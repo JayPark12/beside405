@@ -1,5 +1,9 @@
 package com.beside.service;
 
+import com.beside.DAO.MntiDao;
+import com.beside.DAO.ReserDao;
+import com.beside.Entity.MntiReserEntity;
+import com.beside.Entity.UserEntity;
 import com.beside.define.GsonParserSvc;
 import com.beside.model.*;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -20,29 +24,32 @@ public class MntiResrService {
     private final ObjectMapper objectMapper;
     private final GsonParserSvc gsonParserSvc;
     private final WatherApi watherApi;
+    private final MntiDao mntiDao;
+    private final ReserDao reserDao;
 
     public MntiReserOutput reserJsonFile(MntiReserInput mntiReserInput) throws Exception {
         MntiReserOutput mntiReserOutput = new MntiReserOutput();
         Course course = new Course();
         List<Course> courses = new ArrayList<>();
-        ClassPathResource resource = new ClassPathResource("/mntiCourseData/"+mntiReserInput.getMnti_list_no()+".json");
+        ClassPathResource resource = new ClassPathResource("/mntiCourseData/"+mntiReserInput.getMntilistno()+".json");
 
         JsonNode rootNode = objectMapper.readTree(resource.getContentAsByteArray());
 
         JsonNode itemsNode = rootNode.path("features");
         //고정된 정보
-        mntiReserOutput.setMnti_name(mntiReserInput.getMnti_name());
-        mntiReserOutput.setMnti_add(mntiReserInput.getMnti_add());
-        mntiReserOutput.setPoto_url(gsonParserSvc.GsonParserPotolList(mntiReserInput.getMnti_list_no()));
+        mntiReserOutput.setMnti_name(mntiReserInput.getMntiname());
+        mntiReserOutput.setMnti_add(mntiReserInput.getMntiadd());
+        mntiReserOutput.setMntilist_no(mntiReserInput.getMntilistno());
+        mntiReserOutput.setPoto_url(gsonParserSvc.GsonParserPotolList(mntiReserInput.getMntilistno()));
 
         if (itemsNode.isArray()) {
             for (JsonNode item : itemsNode) {
-                if (item.path("attributes").path("PMNTN_SN").asText().equals(mntiReserInput.getCourse_no())) {
+                if (item.path("attributes").path("PMNTN_SN").asText().equals(mntiReserInput.getCourseno())) {
                     course.setCourse_no(item.path("attributes").path("PMNTN_SN").asText());
                     course.setCourse_name(item.path("attributes").path("PMNTN_NM").asText());
                     course.setMnti_time(item.path("attributes").path("PMNTN_UPPL").asLong() + item.path("attributes").path("PMNTN_GODN").asLong());
                     course.setMnti_reb(item.path("attributes").path("PMNTN_DFFL").asText());
-                    course.setMnti_dist(item.path("attributes").path("PMNTN_LT").asLong());
+                    course.setMnti_dist(item.path("attributes").path("PMNTN_LT").asText());
                     JsonNode pathsNode = item.path("geometry").path("paths");
                     if (pathsNode.isArray()) {
                         List<List<Coordinate>> paths = new ArrayList<>();
@@ -59,7 +66,7 @@ public class MntiResrService {
                     courses.add(course);
                 }
                 mntiReserOutput.setCourse(courses);
-                mntiReserOutput.setMnti_high(gsonParserSvc.MntiInfo(mntiReserInput.getMnti_name()).get(0));
+                mntiReserOutput.setMnti_high(gsonParserSvc.MntiInfo(mntiReserInput.getMntiname()).get(0));
             }
         }
 
@@ -69,9 +76,32 @@ public class MntiResrService {
 
         watherApi.watherListOrtherDay(watherList);
 
-        mntiReserOutput.setWather_list(watherList);;
+        mntiReserOutput.setWather_list(watherList);
 
 
         return mntiReserOutput;
+    }
+
+    public void reserInsert (MntiReserOutput mntiReserOutput, UserEntity userEntity, MntiReserInput mntiReserInput){
+        MntiReserEntity mntiReserEntity = new MntiReserEntity(); //새로운 정보 입력
+        int mntiCnt = mntiDao.findByMntiReserSerch(userEntity.getId() , mntiReserOutput.getMntilist_no()); //등산횟수 확인수 insert
+        if(mntiCnt == 0) {
+            mntiReserEntity.setMnticnt(1);
+        }else {
+            mntiReserEntity.setMnticnt(mntiCnt + 1);
+        }
+        mntiReserEntity.setId(userEntity.getId());
+        mntiReserEntity.setMntilistno(mntiReserOutput.getMntilist_no());
+        mntiReserEntity.setMntiCs(mntiReserOutput.getCourse().get(0).getCourse_no());
+        mntiReserEntity.setMntiCsName(mntiReserOutput.getCourse().get(0).getCourse_name());
+        //mntiReserEntity.setMntimt() 일단 어떤식으로 들어올지 몰라
+        //mntiReserEntity.setmntiCaution
+        mntiReserEntity.setMntiSts("4"); //등산예약 4 등산 중 0 등산 완료 1 등산 실패 2
+        mntiReserEntity.setMntiStrDt(mntiReserInput.getMntiStrDt());
+        mntiReserEntity.setMntiReb(mntiReserOutput.getCourse().get(0).getMnti_reb());
+        mntiReserEntity.setMntiClimTm(mntiReserOutput.getCourse().get(0).getMnti_dist());
+
+        reserDao.save(mntiReserEntity);
+
     }
 }

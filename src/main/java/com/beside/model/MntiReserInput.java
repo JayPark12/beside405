@@ -3,6 +3,8 @@ package com.beside.model;
 
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -10,9 +12,11 @@ import lombok.*;
 @EqualsAndHashCode(callSuper = false)
 public class MntiReserInput {
     private String jwtToken ;    //토큰값
-    private String mnti_name;    //산이름
-    private String mnti_list_no ; //산코드
-    private String mnti_add;     //산주소
-    private String course_no;  //산코스번호
+    private String mntiname;    //산이름
+    private String mntilistno ; //산코드
+    private String mntiadd;     //산주소
+    private String courseno;  //산코스번호
+    private LocalDate mntiStrDt ;// 등산 시작 날짜
+
 
 }
