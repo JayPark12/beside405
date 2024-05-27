@@ -1,3 +1,0 @@
-git add .
-git commit -m "CI 추가"
-git push origin main
