@@ -25,7 +25,9 @@ public class MtReserPgController {
 
     @PostMapping("/registrationSet")
     public MntiDetailOutput registrationSet(@RequestBody MntiDetailInput mntiDetailInput) throws Exception {
-       jwtProvider.validToken(mntiDetailInput.getJwtToken()); // 토큰값 확인
+        jwtProvider.validToken(mntiDetailInput.getJwtToken())
+
+       ; // 토큰값 확인
 
        MntiDetailOutput mntiList = mntiDetailService.readJsonFile(mntiDetailInput);
 

@@ -12,7 +12,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
+import org.thymeleaf.util.StringUtils;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,7 +46,7 @@ public class MntiResrService {
 
         if (itemsNode.isArray()) {
             for (JsonNode item : itemsNode) {
-                if (item.path("attributes").path("PMNTN_SN").asText().equals(mntiReserInput.getCourseno())) {
+                if (StringUtils.equals(item.path("attributes").path("PMNTN_SN").asText(), mntiReserInput.getCoursno())) {
                     course.setCourse_no(item.path("attributes").path("PMNTN_SN").asText());
                     course.setCourse_name(item.path("attributes").path("PMNTN_NM").asText());
                     course.setMnti_time(item.path("attributes").path("PMNTN_UPPL").asLong() + item.path("attributes").path("PMNTN_GODN").asLong());
@@ -66,8 +68,8 @@ public class MntiResrService {
                     courses.add(course);
                 }
                 mntiReserOutput.setCourse(courses);
-                mntiReserOutput.setMnti_high(gsonParserSvc.MntiInfo(mntiReserInput.getMntiname()).get(0));
             }
+            mntiReserOutput.setMnti_high(gsonParserSvc.MntiInfo(mntiReserInput.getMntiname()).get(0));
         }
 
         //watherInfo   여기 등록된날짜들어가게 날씨처리하는것은 다시해봐야함
@@ -84,14 +86,14 @@ public class MntiResrService {
 
     public void reserInsert (MntiReserOutput mntiReserOutput, UserEntity userEntity, MntiReserInput mntiReserInput){
         MntiReserEntity mntiReserEntity = new MntiReserEntity(); //새로운 정보 입력
-        int mntiCnt = mntiDao.findByMntiReserSerch(userEntity.getId() , mntiReserOutput.getMntilist_no()); //등산횟수 확인수 insert
-        if(mntiCnt == 0) {
-            mntiReserEntity.setMnticnt(1);
+        Integer mntiCnt = reserDao.findByMntiReserSerch(userEntity.getId() , mntiReserOutput.getMntilist_no()); //등산 횟수 체크 (같은 산)
+        if(mntiCnt == null) {
+            mntiReserEntity.setMntiCnt(1);
         }else {
-            mntiReserEntity.setMnticnt(mntiCnt + 1);
+            mntiReserEntity.setMntiCnt(mntiCnt + 1);
         }
         mntiReserEntity.setId(userEntity.getId());
-        mntiReserEntity.setMntilistno(mntiReserOutput.getMntilist_no());
+        mntiReserEntity.setMntilistNo(mntiReserOutput.getMntilist_no());
         mntiReserEntity.setMntiCs(mntiReserOutput.getCourse().get(0).getCourse_no());
         mntiReserEntity.setMntiCsName(mntiReserOutput.getCourse().get(0).getCourse_name());
         //mntiReserEntity.setMntimt() 일단 어떤식으로 들어올지 몰라
@@ -100,6 +102,7 @@ public class MntiResrService {
         mntiReserEntity.setMntiStrDt(mntiReserInput.getMntiStrDt());
         mntiReserEntity.setMntiReb(mntiReserOutput.getCourse().get(0).getMnti_reb());
         mntiReserEntity.setMntiClimTm(mntiReserOutput.getCourse().get(0).getMnti_dist());
+        mntiReserEntity.setMntiReser(LocalDate.now());
 
         reserDao.save(mntiReserEntity);
 

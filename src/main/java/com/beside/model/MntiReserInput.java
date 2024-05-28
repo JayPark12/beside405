@@ -15,7 +15,7 @@ public class MntiReserInput {
     private String mntiname;    //산이름
     private String mntilistno ; //산코드
     private String mntiadd;     //산주소
-    private String courseno;  //산코스번호
+    private String coursno;  //산코스번호
     private LocalDate mntiStrDt ;// 등산 시작 날짜
 
 

@@ -70,13 +70,13 @@ public class GsonParserSvc {
     //산 높이
     public List<String> MntiInfo(String mntiName) throws Exception {
         String url = Define.mntiApiUrl + "searchWrd=" + mntiName; // 외부 API URL
+
         String mntiHight = null;
         String mntiAdd = null;
         List<String> mntiInfoList = new ArrayList<>();
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
         try {
             JsonNode rootNode = objectMapper.readTree(response.getBody());
-
             JsonNode itemsNode = rootNode.path("response").path("body").path("items").path("item");
 
             mntiHight = itemsNode.path("mntihigh").asText();
