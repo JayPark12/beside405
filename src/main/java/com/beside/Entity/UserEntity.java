@@ -1,29 +1,30 @@
 package com.beside.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDate;
 
-@Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Entity @Table(name="USER_INFO") //JPA
+@Getter @Setter @ToString @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode(callSuper=false) //lombokk
 public class UserEntity {
 
     @Id
+    @Column(name = "id", nullable = false)
     private String id;
-    private String nickName;
-    private String callNo;
-    private String userSts;
-    private LocalDate creatDt;
-    private String password;
 
+    @Column(name = "NICK_NAME", nullable = false)
+    private String nickName;
+
+    @Column(name = "CALL_NO", nullable = false)
+    private String callNo;
+
+    @Column(name = "USER_STS") // 0 : 정상 유저, 1 : 휴면 유저, 2 : 정지 ,3 : 신고유저, 9 : 어드민 유저
+    private String userSts;
+
+    @Column(name = "CREAT_DT")
+    private LocalDate creatDt;
+
+    @Column(name = "password", nullable = false)
+    private String password;
 }

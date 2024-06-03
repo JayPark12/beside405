@@ -1,32 +1,38 @@
 package com.beside.service;
 
-import com.beside.DAO.UserDao;
 import com.beside.Entity.UserEntity;
-import jakarta.servlet.http.HttpSession;
+import com.beside.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.thymeleaf.util.StringUtils;
+import org.springframework.transaction.support.TransactionTemplate;
+
+import java.time.LocalDate;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class UserService {
 
-    private final UserDao userDao;
+    private final UserRepository userRepository;
     private final BCryptPasswordEncoder passwordEncoder;
     private final JwtProvider jwtProvider;
+
+    @Autowired
+    private TransactionTemplate transactionTemplate;
 
     public String login(UserEntity userInput) {
         String id = userInput.getId();
         String password = userInput.getPassword();
 
 
-        UserEntity Byid = userDao.findUser(id);
+        UserEntity Byid = userRepository.findUser(id);
 
         // 비밀번호 일치 여부 확인
-        if(StringUtils.equals(password, Byid.getPassword())){
+        if(passwordEncoder.matches(password, Byid.getPassword())){
 
             // JWT 토큰 반환
             String jwtToken = jwtProvider.generateJwtToken(Byid.getId());
@@ -35,5 +41,19 @@ public class UserService {
         }
 
         return "로그인 실패";
+    }
+    @Transactional
+    public UserEntity joinUser(UserEntity userEntity) {
+        userEntity.setPassword(passwordEncoder.encode(userEntity.getPassword()));
+        userEntity.setUserSts("0");
+        if(userEntity.getCreatDt() ==null){
+            userEntity.setCreatDt(LocalDate.now());
+        }
+
+        if (userRepository.existsById(userEntity.getId())) {
+            throw new IllegalArgumentException("이미 사용 중인 ID입니다.");
+        }
+
+        return       userRepository.save(userEntity);
     }
 }

@@ -1,11 +1,11 @@
 package com.beside.service;
 
-import com.beside.DAO.MntiDao;
-import com.beside.DAO.ReserDao;
 import com.beside.Entity.MntiReserEntity;
 import com.beside.Entity.UserEntity;
 import com.beside.define.GsonParserSvc;
 import com.beside.model.*;
+import com.beside.repository.MntiRepository;
+import com.beside.repository.ReserRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -26,8 +26,8 @@ public class MntiResrService {
     private final ObjectMapper objectMapper;
     private final GsonParserSvc gsonParserSvc;
     private final WatherApi watherApi;
-    private final MntiDao mntiDao;
-    private final ReserDao reserDao;
+    private final MntiRepository mntiRepository;
+    private final ReserRepository reserRepository;
 
     public MntiReserOutput reserJsonFile(MntiReserInput mntiReserInput) throws Exception {
         MntiReserOutput mntiReserOutput = new MntiReserOutput();
@@ -86,7 +86,7 @@ public class MntiResrService {
 
     public void reserInsert (MntiReserOutput mntiReserOutput, UserEntity userEntity, MntiReserInput mntiReserInput){
         MntiReserEntity mntiReserEntity = new MntiReserEntity(); //새로운 정보 입력
-        Integer mntiCnt = reserDao.findByMntiReserSerch(userEntity.getId() , mntiReserOutput.getMntilist_no()); //등산 횟수 체크 (같은 산)
+        Integer mntiCnt = reserRepository.findByMntiReserSerch(userEntity.getId() , mntiReserOutput.getMntilist_no()); //등산 횟수 체크 (같은 산)
         if(mntiCnt == null) {
             mntiReserEntity.setMntiCnt(1);
         }else {
@@ -104,7 +104,7 @@ public class MntiResrService {
         mntiReserEntity.setMntiClimTm(mntiReserOutput.getCourse().get(0).getMnti_dist());
         mntiReserEntity.setMntiReser(LocalDate.now());
 
-        reserDao.save(mntiReserEntity);
+        reserRepository.save(mntiReserEntity);
 
     }
 }

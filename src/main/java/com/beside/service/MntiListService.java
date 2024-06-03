@@ -1,10 +1,10 @@
 package com.beside.service;
 
-import com.beside.DAO.MntiDao;
 import com.beside.Entity.MntiEntity;
 import com.beside.define.Define;
 import com.beside.define.GsonParserSvc;
 import com.beside.model.MntiListOutput;
+import com.beside.repository.MntiRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -23,14 +23,14 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class MntiListService {
 
-    private final MntiDao mntiDao;
+    private final MntiRepository mntiRepository;
     //private final RestTemplateConfig restTemplateConfig;
     private final RestTemplate restTemplate;
     private final GsonParserSvc gsonParserSvc;
 
     public List<MntiListOutput> mntiList() throws URISyntaxException {
         List<MntiListOutput> mntiListOutput = new ArrayList<>();
-        List<MntiEntity> mntiShufList = mntiDao.findByMnti();
+        List<MntiEntity> mntiShufList = mntiRepository.findByMnti();
         Collections.shuffle(mntiShufList);
         List<MntiEntity> mntiShufList7 =mntiShufList.stream().limit(7).collect(Collectors.toList());
         for (int i = 0; i < mntiShufList7.size(); i++)
@@ -39,7 +39,7 @@ public class MntiListService {
             MntiListOutput mntiOutput = new MntiListOutput();
             mntiOutput.setMnti_name(mntiShufList7.get(i).getMntiName());
             mntiOutput.setMnti_list_no(mntiShufList7.get(i).getMntilistNo());
-            mntiOutput.setMnti_reb(mntiShufList7.get(i).getMntiReb());
+            mntiOutput.setMnti_reb(mntiShufList7.get(i).getMntiLeb());
             mntiOutput.setMnti_add(mntiShufList7.get(i).getMntiAdd());
             potoUrl = callExternalApi(mntiOutput.getMnti_list_no());   //사진정보
 

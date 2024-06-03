@@ -1,7 +1,9 @@
 package com.beside.Entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,15 +14,26 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "MOUNTAIN_INFO")
 public class MntiEntity {
 
     @Id
+    @Column(name = "MNTILIST_NO", nullable = false)
     private String mntilistNo;  //산번호
-    private String mntiName;    //산이름
-    private String mntiJson;    //코스 정보 Json파일명
-    private String mntiCaution;  //주의사항
-    private String mntiReb;
-    private String mntiAdd;
 
+    @Column(name = "MNTI_NAME", nullable = false)
+    private String mntiName;    //산이름
+
+    @Column(name = "MNTI_JSON", nullable = false)
+    private String mntiJson;    //코스 정보 Json파일명
+
+    @Column(name = "MNTI_CAUTION", nullable = false)
+    private String mntiCaution;  //주의사항
+
+    @Column(name = "MNTI_LEB", nullable = false)
+    private String mntiLeb;
+
+    @Column(name = "MNTI_ADD", nullable = false)
+    private String mntiAdd;
 
 }

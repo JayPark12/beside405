@@ -46,6 +46,11 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+	implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.15')
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
+
 	implementation 'com.auth0:java-jwt:4.2.1'
 }
 

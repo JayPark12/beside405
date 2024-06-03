@@ -1,77 +1,72 @@
 package com.beside.Entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
 @Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter @Setter @ToString
+@NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode(callSuper=false) //lombok
+@Table(name = "MOUNTAIN_RESER")
 public class MntiReserEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "mnticnt", nullable = false)
-    private int mnticnt = 0;
+    @Column(name = "MNTI_CNT", nullable = false)
+    private int mntiCnt = 0;
 
-    @Column(name = "mnticnt")
+    @Column(name = "id")
     private String id;
 
-    @Column(name = "mntilist_no")
+    @Column(name = "MNTILIST_NO")
     private String mntilistNo;
 
-    @Column(name = "mnti_caution")
+    @Column(name = "MNTI_CAUTION")
     private String mntiCaution;
 
-    @Column(name = "mnti_clim_tm")
+    @Column(name = "MNTI_CLIM_TM")
     private String mntiClimTm;
 
-    @Column(name = "mnti_cs")
+    @Column(name = "MNTI_CS")
     private String mntiCs;
 
-    @Column(name = "mnti_cs_name")
+    @Column(name = "MNTI_CS_NAME")
     private String mntiCsName;
 
-    @Column(name = "mnti_desc_tm")
+    @Column(name = "MNTI_DESC_TM")
     private String mntiDescTm;
 
-    @Column(name = "mnti_dist")
+    @Column(name = "MNTI_DIST")
     private String mntiDist;
 
-    @Column(name = "mnti_end_tm")
+    @Column(name = "MNTI_END_TM")
     private String mntiEndTm;
 
-    @Column(name = "mnti_fe")
+    @Column(name = "MNTI_FE")
     private String mntiFe;
 
-    @Column(name = "mnti_json")
+    @Column(name = "MNTI_JSON")
     private String mntiJson;
 
-    @Column(name = "mnti_mt")
+    @Column(name = "MNTI_MT")
     private String mntiMt;
 
-    @Column(name = "mnti_name")
+    @Column(name = "MNTI_NAME")
     private String mntiName;
 
-    @Column(name = "mnti_reb")
+    @Column(name = "MNTI_LAB")
     private String mntiReb;
 
-    @Column(name = "mnti_reser")
-    private String mntiReser;
+    @Column(name = "MNTI_RESER")
+    private LocalDate mntiReser;
 
-    @Column(name = "mnti_str_dt")
-    private String mntiStrDt;
+    @Column(name = "MNTI_STR_DT")
+    private LocalDate mntiStrDt;
 
-    @Column(name = "mnti_str_tm")
+    @Column(name = "MNTI_STR_TM")
     private String mntiStrTm;
 
-    @Column(name = "mnti_sts")
+    @Column(name = "MNTI_STS")
     private String mntiSts;
 
 

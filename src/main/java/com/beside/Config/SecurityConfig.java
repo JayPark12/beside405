@@ -1,6 +1,6 @@
 package com.beside.Config;
 
-import com.beside.DAO.UserDao;
+import com.beside.repository.UserRepository;
 import com.beside.service.JwtProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -17,7 +17,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @EnableSpringDataWebSupport
 public class SecurityConfig {
-    private final UserDao userDao;
+    private final UserRepository userRepository;
 
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder(){
@@ -29,10 +29,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
-        http
-                .cors().disable()
-                .csrf().disable()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+        http.cors().disable().csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .formLogin().disable()
                 .httpBasic().disable() // http의 기본 인증. ID, PW 인증방식
@@ -45,6 +42,6 @@ public class SecurityConfig {
 
     @Bean
     public JwtProvider jwtTokenProvider() {
-        return new JwtProvider(userDao);
+        return new JwtProvider(userRepository);
     }
 }

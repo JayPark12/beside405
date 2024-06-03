@@ -2,8 +2,8 @@ package com.beside.service;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.beside.DAO.UserDao;
 import com.beside.Entity.UserEntity;
+import com.beside.repository.UserRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,7 +15,7 @@ import java.util.Date;
 
 @RequiredArgsConstructor
 public class JwtProvider {
-    private final UserDao userDao;
+    private final UserRepository userRepository;
     static Long EXPIRE_TIME = 60L * 60L * 1000L; // 만료 시간 1시간
 
     @Value("${jwt.secret}")
@@ -72,7 +72,7 @@ public class JwtProvider {
                 return null;
             }
 
-            UserEntity tokenUser = userDao.findUser(id);
+            UserEntity tokenUser = userRepository.findUser(id);
 
             return tokenUser;
 

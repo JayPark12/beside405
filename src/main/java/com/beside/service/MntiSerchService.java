@@ -1,9 +1,9 @@
 package com.beside.service;
 
-import com.beside.DAO.MntiDao;
 import com.beside.Entity.MntiEntity;
 import com.beside.model.MntiListOutput;
 import com.beside.model.MntiSearchInput;
+import com.beside.repository.MntiRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -18,12 +18,12 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class MntiSerchService {
 
-    private final MntiDao mntiDao;
+    private final MntiRepository mntiRepository;
     private final MntiListService mntiListService;
 
     public List<MntiListOutput> mntiList(MntiSearchInput mntiSearchInput) throws URISyntaxException {
         List<MntiListOutput> mntiListOutput = new ArrayList<>();
-        List<MntiEntity> mntiShufList = mntiDao.findByMntiSerch(mntiSearchInput.getMnti_name());
+        List<MntiEntity> mntiShufList = mntiRepository.findByMntiSerch(mntiSearchInput.getMnti_name());
         List<MntiEntity> mntiShufList7 =mntiShufList.stream().limit(7).collect(Collectors.toList());
         for (int i = 0; i < mntiShufList7.size(); i++)
         {
@@ -31,7 +31,7 @@ public class MntiSerchService {
             MntiListOutput mntiOutput = new MntiListOutput();
             mntiOutput.setMnti_name(mntiShufList7.get(i).getMntiName());
             mntiOutput.setMnti_list_no(mntiShufList7.get(i).getMntilistNo());
-            mntiOutput.setMnti_reb(mntiShufList7.get(i).getMntiReb());
+            mntiOutput.setMnti_reb(mntiShufList7.get(i).getMntiLeb());
             potoUrl = mntiListService.callExternalApi(mntiOutput.getMnti_list_no());
             mntiOutput.setMnti_add(mntiShufList7.get(i).getMntiAdd());
 
