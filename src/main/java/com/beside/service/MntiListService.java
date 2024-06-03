@@ -39,7 +39,7 @@ public class MntiListService {
             MntiListOutput mntiOutput = new MntiListOutput();
             mntiOutput.setMnti_name(mntiShufList7.get(i).getMntiName());
             mntiOutput.setMnti_list_no(mntiShufList7.get(i).getMntilistNo());
-            mntiOutput.setMnti_reb(mntiShufList7.get(i).getMntiLeb());
+            mntiOutput.setMnti_leb(mntiShufList7.get(i).getMntiLeb());
             mntiOutput.setMnti_add(mntiShufList7.get(i).getMntiAdd());
             potoUrl = callExternalApi(mntiOutput.getMnti_list_no());   //사진정보
 

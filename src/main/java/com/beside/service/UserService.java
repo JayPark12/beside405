@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionTemplate;
+import org.thymeleaf.util.StringUtils;
 
 import java.time.LocalDate;
 
@@ -31,6 +32,8 @@ public class UserService {
 
         UserEntity Byid = userRepository.findUser(id);
 
+        if(StringUtils.equals(Byid.getUserSts(), "0") || StringUtils.equals(Byid.getUserSts(), "9"))
+
         // 비밀번호 일치 여부 확인
         if(passwordEncoder.matches(password, Byid.getPassword())){
 
@@ -40,7 +43,7 @@ public class UserService {
             return jwtToken;
         }
 
-        return "로그인 실패";
+        return "loginFalse"; //프론트에 넘기고 창뜨게 하기
     }
     @Transactional
     public UserEntity joinUser(UserEntity userEntity) {
@@ -54,6 +57,6 @@ public class UserService {
             throw new IllegalArgumentException("이미 사용 중인 ID입니다.");
         }
 
-        return       userRepository.save(userEntity);
+        return userRepository.save(userEntity);
     }
 }

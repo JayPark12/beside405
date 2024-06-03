@@ -31,7 +31,7 @@ public class MntiSerchService {
             MntiListOutput mntiOutput = new MntiListOutput();
             mntiOutput.setMnti_name(mntiShufList7.get(i).getMntiName());
             mntiOutput.setMnti_list_no(mntiShufList7.get(i).getMntilistNo());
-            mntiOutput.setMnti_reb(mntiShufList7.get(i).getMntiLeb());
+            mntiOutput.setMnti_leb(mntiShufList7.get(i).getMntiLeb());
             potoUrl = mntiListService.callExternalApi(mntiOutput.getMnti_list_no());
             mntiOutput.setMnti_add(mntiShufList7.get(i).getMntiAdd());
 

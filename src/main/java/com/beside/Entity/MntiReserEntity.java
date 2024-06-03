@@ -15,10 +15,10 @@ public class MntiReserEntity {
     @Column(name = "MNTI_CNT", nullable = false)
     private int mntiCnt = 0;
 
-    @Column(name = "id")
+    @Column(name = "id", nullable = false)
     private String id;
 
-    @Column(name = "MNTILIST_NO")
+    @Column(name = "MNTILIST_NO", nullable = false)
     private String mntilistNo;
 
     @Column(name = "MNTI_CAUTION")
