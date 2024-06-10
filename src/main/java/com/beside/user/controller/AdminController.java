@@ -2,6 +2,8 @@ package com.beside.user.controller;
 
 import com.beside.user.service.AdminService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +21,10 @@ public class AdminController {
     private final AdminService adminService;
 
     @Operation(summary = "회원 정보 리스트", description = "회원 정보 리스트를 가져옵니다.")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "유저 리스트 반환 성공"),
+            @ApiResponse(responseCode = "500", description = "유저 리스트 반환 실패")
+    })
     @GetMapping("/userList")
     public ResponseEntity<?> userList(HttpServletRequest request) {
         String userId = (String) request.getAttribute("userId");

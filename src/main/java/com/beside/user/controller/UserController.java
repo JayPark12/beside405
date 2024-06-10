@@ -9,6 +9,8 @@ import com.beside.user.dto.UserInput;
 import com.beside.user.exception.UserException;
 import com.beside.user.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -34,6 +36,10 @@ public class UserController {
     private final JwtProvider jwtProvider;
 
     @Operation(summary = "로그인", description = "로그인")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "로그인 성공"),
+            @ApiResponse(responseCode = "500", description = "로그인 실패")
+    })
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UserInput userInput, HttpServletResponse servletResponse) {
         try {
@@ -45,6 +51,10 @@ public class UserController {
     }
 
     @PostMapping("/join")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "회원 가입 성공"),
+            @ApiResponse(responseCode = "500", description = "회원 가입 실패")
+    })
     @Operation(summary = "회원 가입", description = "회원가입을 할 수 있습니다.")
     public ResponseEntity<?> join(@RequestBody SignUpRequest request) {
         SignUpResponse response = userService.joinUser(request);
@@ -53,6 +63,10 @@ public class UserController {
 
 
     @GetMapping("/usernameTest")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "아이디 반환 성공"),
+            @ApiResponse(responseCode = "500", description = "아이디 반환 실패")
+    })
     @Operation(summary = "user id 반환 테스트", description = "테스트용 api")
     public String getUsername(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
         String header = request.getHeader("Authorization");
