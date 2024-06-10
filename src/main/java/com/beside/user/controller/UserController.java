@@ -25,9 +25,9 @@ public class UserController {
     @PostMapping("/join")
     public ResponseEntity<?> join(@RequestBody UserEntity userEntity) {
         UserEntity savedUser = userService.joinUser(userEntity);
-
         return ResponseEntity.ok(savedUser);
     }
 
-    //commit test
+
+
 }
