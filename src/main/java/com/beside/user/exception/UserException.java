@@ -4,7 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-@AllArgsConstructor
 public class UserException extends RuntimeException {
-    private UserErrorInfo userErrorInfo;
+    private final UserErrorInfo userErrorInfo;
+
+    public UserException(UserErrorInfo userErrorInfo) {
+        super(userErrorInfo.getMessage());
+        this.userErrorInfo = userErrorInfo;
+    }
+
 }

@@ -79,7 +79,7 @@ public class UserService {
     public List<UserListResponse> getUserList(String userId) {
         UserEntity userEntity = userRepository.findById(userId).orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
         if(!userEntity.getUserSts().equals("9")) {
-            throw new RuntimeException();
+            throw new UserException(UserErrorInfo.NOT_HAVE_PERMISSION);
         }
         return userRepository.findAll().stream()
                 .map(user -> new UserListResponse(user.getId(), user.getNickName(), user.getCallNo()))

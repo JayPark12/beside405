@@ -1,9 +1,11 @@
 package com.beside.config;
 
+import com.beside.jwt.JwtFilter;
 import com.beside.user.repository.UserRepository;
 import com.beside.jwt.JwtProvider;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +18,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 
@@ -36,6 +39,9 @@ public class SecurityConfig {
             "/v2/api-docs",
             "/webjars/**"
     };
+
+    @Autowired
+    private JwtProvider jwtProvider;
 
 //    @Bean
 //    public JwtProvider jwtTokenProvider() {
@@ -63,7 +69,7 @@ public class SecurityConfig {
                 })
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                )
+                ).addFilterBefore(new JwtFilter(jwtProvider), UsernamePasswordAuthenticationFilter.class)
                 //에러 핸들링 설정
                 .exceptionHandling(handling ->
                 handling

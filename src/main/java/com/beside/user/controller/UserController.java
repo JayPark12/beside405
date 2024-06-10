@@ -1,5 +1,6 @@
 package com.beside.user.controller;
 
+import com.beside.jwt.JwtProvider;
 import com.beside.user.domain.UserEntity;
 import com.beside.user.dto.LoginResponse;
 import com.beside.user.dto.SignUpRequest;
@@ -8,6 +9,8 @@ import com.beside.user.dto.UserInput;
 import com.beside.user.exception.UserException;
 import com.beside.user.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +18,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
 
 
 @Slf4j
@@ -24,12 +29,13 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     private final UserService userService;
+    private final JwtProvider jwtProvider;
 
     @Operation(summary = "로그인", description = "로그인을 합니다.", tags = { "User Controller" })
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody UserInput userInput, HttpServletResponse servletRequest) {
+    public ResponseEntity<?> login(@RequestBody UserInput userInput, HttpServletResponse servletResponse) {
         try {
-            return ResponseEntity.ok(userService.login(userInput, servletRequest));
+            return ResponseEntity.ok(userService.login(userInput, servletResponse));
         } catch (UserException e) {
             log.error("로그인 실패", e);
             return ResponseEntity.internalServerError().body("로그인 실패");
@@ -43,12 +49,25 @@ public class UserController {
         return ResponseEntity.ok(response);
     }
 
-    @Operation(summary = "유저 리스트", description = "전체 유저 리스트를 가져옵니다.", tags = { "User Controller" })
+    @Operation(summary = "유저 리스트", description = "전체 유저 리스트를 가져옵니다. 어드민 계정만 조회 가능합니다.", tags = { "User Controller" })
     @GetMapping("/list")
-    public ResponseEntity<?> userList(HttpServletRequest servletRequest) {
-        String userId = (String) servletRequest.getAttribute("userId");
+    public ResponseEntity<?> userList(HttpServletRequest request) {
+        String userId = (String) request.getAttribute("userId");
         return ResponseEntity.ok(userService.getUserList(userId));
     }
 
+    @GetMapping("/usernameTest")
+    public String getUsername(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
+        String header = request.getHeader("Authorization");
+
+        if (header == null || !header.startsWith("Bearer ")) {
+            chain.doFilter(request, response); // If not valid, go to the next filter.
+            //return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("인증 되지 않은 요청");
+            return "";
+        }
+        log.info("header : {}", header);
+        String token = header.replace("Bearer ", "");
+        return jwtProvider.parseToken(token).getSubject();
+    }
 
 }
