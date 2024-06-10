@@ -5,8 +5,8 @@ import lombok.*;
 
 import java.time.LocalDate;
 
-@Entity @Table(name="USER_INFO") //JPA
-@Getter @Setter @ToString @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode(callSuper=false) //lombokk
+@Entity @Table(name="USER_INFO") @Builder//JPA
+@Getter @Setter @ToString @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode(callSuper=false) //lombok
 public class UserEntity {
 
     @Id
