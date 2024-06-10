@@ -53,6 +53,11 @@ public class UserController {
     @GetMapping("/list")
     public ResponseEntity<?> userList(HttpServletRequest request) {
         String userId = (String) request.getAttribute("userId");
+
+        if (userId == null || userId.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Token is missing or invalid.");
+        }
+
         return ResponseEntity.ok(userService.getUserList(userId));
     }
 
