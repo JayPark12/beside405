@@ -26,7 +26,6 @@ import java.util.List;
 @EnableWebSecurity
 @EnableSpringDataWebSupport
 public class SecurityConfig {
-    private final UserRepository userRepository;
 
     @Value("${spring.security.cors.allow.methods:1,2,3,4,5,6}")
     private String[] allowedMethods;
@@ -38,10 +37,10 @@ public class SecurityConfig {
             "/webjars/**"
     };
 
-    @Bean
-    public JwtProvider jwtTokenProvider() {
-        return new JwtProvider(userRepository);
-    }
+//    @Bean
+//    public JwtProvider jwtTokenProvider() {
+//        return new JwtProvider(userRepository);
+//    }
 
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder(){

@@ -11,6 +11,6 @@ import lombok.*;
 public class UserInput {
 
     private String id;
-    private String password ;
+    private String password;
 
 }
