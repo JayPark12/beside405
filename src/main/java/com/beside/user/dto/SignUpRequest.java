@@ -6,6 +6,6 @@ import lombok.Data;
 public class SignUpRequest {
     private String userId;
     private String password;
-    private String nickName;
+    private String nickname;
     private String callNo;
 }

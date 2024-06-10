@@ -13,8 +13,8 @@ public class UserEntity {
     @Column(name = "id", nullable = false)
     private String id;
 
-    @Column(name = "NICK_NAME", nullable = false)
-    private String nickName;
+    @Column(name = "NICKNAME", nullable = false)
+    private String nickname;
 
     @Column(name = "CALL_NO", nullable = false)
     private String callNo;

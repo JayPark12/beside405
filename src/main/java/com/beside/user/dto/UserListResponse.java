@@ -7,6 +7,6 @@ import lombok.*;
 @AllArgsConstructor
 public class UserListResponse {
     private String userId;
-    private String nickName;
+    private String nickname;
     private String callNo;
 }

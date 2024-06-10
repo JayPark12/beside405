@@ -56,7 +56,7 @@ public class UserService {
 
         return LoginResponse.builder()
                 .userId(user.getId())
-                .nickName(user.getNickName())
+                .nickname(user.getNickname())
                 .callNo(user.getCallNo())
                 .token(jwt).build();
     }
@@ -67,7 +67,7 @@ public class UserService {
         String hashedPassword = passwordEncoder.encode(request.getPassword());
 
         UserEntity user = UserEntity.builder().id(request.getUserId())
-                .nickName(request.getNickName())
+                .nickname(request.getNickname())
                 .callNo(request.getCallNo())
                 .userSts("0").creatDt(localDate)
                 .password(hashedPassword).build();
@@ -82,7 +82,7 @@ public class UserService {
             throw new UserException(UserErrorInfo.NOT_HAVE_PERMISSION);
         }
         return userRepository.findAll().stream()
-                .map(user -> new UserListResponse(user.getId(), user.getNickName(), user.getCallNo()))
+                .map(user -> new UserListResponse(user.getId(), user.getNickname(), user.getCallNo()))
                 .collect(Collectors.toList());
     }
 }
