@@ -9,6 +9,9 @@ import com.beside.user.dto.UserInput;
 import com.beside.user.exception.UserException;
 import com.beside.user.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,13 +28,18 @@ import java.io.IOException;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
+@Tag(name = "유저", description = "유저 관련 API")
 @RequestMapping("/user")
 public class UserController {
 
     private final UserService userService;
     private final JwtProvider jwtProvider;
 
-    @Operation(summary = "로그인", description = "로그인을 합니다.", tags = { "User Controller" })
+    @Operation(summary = "로그인", description = "로그인")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "로그인 성공"),
+            @ApiResponse(responseCode = "500", description = "로그인 실패")
+    })
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UserInput userInput, HttpServletResponse servletResponse) {
         try {
@@ -42,26 +50,24 @@ public class UserController {
         }
     }
 
-    @Operation(summary = "회원가입", description = "회원가입을 합니다.", tags = { "User Controller" })
     @PostMapping("/join")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "회원 가입 성공"),
+            @ApiResponse(responseCode = "500", description = "회원 가입 실패")
+    })
+    @Operation(summary = "회원 가입", description = "회원가입을 할 수 있습니다.")
     public ResponseEntity<?> join(@RequestBody SignUpRequest request) {
         SignUpResponse response = userService.joinUser(request);
         return ResponseEntity.ok(response);
     }
 
-    @Operation(summary = "유저 리스트", description = "전체 유저 리스트를 가져옵니다. 어드민 계정만 조회 가능합니다.", tags = { "User Controller" })
-    @GetMapping("/list")
-    public ResponseEntity<?> userList(HttpServletRequest request) {
-        String userId = (String) request.getAttribute("userId");
-
-        if (userId == null || userId.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Token is missing or invalid.");
-        }
-
-        return ResponseEntity.ok(userService.getUserList(userId));
-    }
 
     @GetMapping("/usernameTest")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "아이디 반환 성공"),
+            @ApiResponse(responseCode = "500", description = "아이디 반환 실패")
+    })
+    @Operation(summary = "user id 반환 테스트", description = "테스트용 api")
     public String getUsername(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
         String header = request.getHeader("Authorization");
 

@@ -32,9 +32,6 @@ public class UserService {
     private final BCryptPasswordEncoder passwordEncoder;
     private final JwtProvider jwtProvider;
 
-    @Autowired
-    private TransactionTemplate transactionTemplate;
-
     public LoginResponse login(UserInput userInput, HttpServletResponse response) {
         String id = userInput.getId();
         String password = userInput.getPassword();
@@ -76,13 +73,5 @@ public class UserService {
         return SignUpResponse.builder().userId(request.getUserId()).desc("계정이 생성 되었습니다.").build();
     }
 
-    public List<UserListResponse> getUserList(String userId) {
-        UserEntity userEntity = userRepository.findById(userId).orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
-        if(!userEntity.getUserSts().equals("9")) {
-            throw new UserException(UserErrorInfo.NOT_HAVE_PERMISSION);
-        }
-        return userRepository.findAll().stream()
-                .map(user -> new UserListResponse(user.getId(), user.getNickname(), user.getCallNo()))
-                .collect(Collectors.toList());
-    }
+
 }
