@@ -20,4 +20,7 @@ public class LoginResponse {
     @Schema(description = "jwt token")
     private String token;
 
+    @Schema(description = "bearer token")
+    private String bearerToken;
+
 }

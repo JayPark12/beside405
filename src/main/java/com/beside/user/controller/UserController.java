@@ -62,6 +62,17 @@ public class UserController {
     }
 
 
+
+
+    /**
+     * 테스트용
+     * @param request
+     * @param response
+     * @param chain
+     * @return
+     * @throws ServletException
+     * @throws IOException
+     */
     @GetMapping("/usernameTest")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "아이디 반환 성공"),

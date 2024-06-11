@@ -55,7 +55,9 @@ public class UserService {
                 .userId(user.getId())
                 .nickname(user.getNickname())
                 .callNo(user.getCallNo())
-                .token(jwt).build();
+                .token(jwt)
+                .bearerToken("Bearer " + jwt)
+                .build();
     }
 
     @Transactional
