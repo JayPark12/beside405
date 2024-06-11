@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -33,13 +34,6 @@ public class SecurityConfig {
     @Value("${spring.security.cors.allow.methods:1,2,3,4,5,6}")
     private String[] allowedMethods;
 
-    private static final String[] SwaggerPatterns = {
-            "/swagger-resources/**",
-            "/swagger-ui.html",
-            "/v2/api-docs",
-            "/webjars/**"
-    };
-
     private final String[] excludedEndPoints = {
             "/user/join",
             "/user/login"
@@ -48,14 +42,19 @@ public class SecurityConfig {
     @Autowired
     private JwtProvider jwtProvider;
 
-//    @Bean
-//    public JwtProvider jwtTokenProvider() {
-//        return new JwtProvider(userRepository);
-//    }
-
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder(){
         return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public WebSecurityCustomizer webSecurityCustomizer() {
+        return web -> web.ignoring().requestMatchers("/h2-console/**",
+                "/favicon.ico",
+                "/error",
+                "/swagger-ui/**",
+                "/swagger-resources/**",
+                "/v3/api-docs/**");
     }
 
     // 시큐리티 필터 설정
@@ -70,7 +69,7 @@ public class SecurityConfig {
                     authorizeRequest //HttpServletRequest를 사용하는 요청들에 대한 접근제한을 설정함
                             .requestMatchers(excludedEndPoints).permitAll() //허용할 api 지정
                             .anyRequest().authenticated(); //나머지 요청들에 대해서는 모두 인증을 받음
-                            //.anyRequest().permitAll(); // 모든 요청에 대해 접근 허용
+//                            .anyRequest().permitAll(); // 모든 요청에 대해 접근 허용
                 })
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -89,7 +88,7 @@ public class SecurityConfig {
     private CorsConfigurationSource corsConfigurationSource(){
         return request -> {
             CorsConfiguration config = new CorsConfiguration();
-            config.setAllowedMethods(List.of(SwaggerPatterns));
+            //config.setAllowedMethods(List.of(SwaggerPatterns));
             config.setAllowedMethods(List.of(allowedMethods));
             config.setAllowCredentials(true);
             config.setMaxAge(3600L);
