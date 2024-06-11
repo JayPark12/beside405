@@ -1,5 +1,6 @@
 package com.beside.jwt;
 
+import com.beside.exception.TokenMissingOrInvalidException;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -10,17 +11,21 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.GenericFilterBean;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.util.Collections;
+import java.util.List;
 
 @Slf4j
 public class JwtFilter extends OncePerRequestFilter {
-    private static final Logger logger = LoggerFactory.getLogger(JwtFilter.class);
     public static final String AUTHORIZATION_HEADER = "Authorization";
     private final JwtProvider tokenProvider;
 
@@ -30,21 +35,27 @@ public class JwtFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        String header = request.getHeader(AUTHORIZATION_HEADER);
+        String header = request.getHeader("Authorization");
 
         if (header == null || !header.startsWith("Bearer ")) {
-            filterChain.doFilter(request, response); // If not valid, go to the next filter.
+            filterChain.doFilter(request, response);
             return;
         }
+        log.info("header : {}", header);
         String token = header.replace("Bearer ", "");
 
-        if (StringUtils.hasText(token) && tokenProvider.validateToken(token)) {
-            Claims claims = tokenProvider.parseToken(token);
-            request.setAttribute("userId", claims.getSubject());
-        } else {
-            logger.debug("유효한 JWT 토큰이 없습니다.");
-            throw new RuntimeException("유효한 JWT 토큰이 없습니다.");
+        try {
+            String userId = tokenProvider.getUserIdFromToken(token);
+            if (tokenProvider.validateToken(token)) {
+                UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userId, null, List.of(new SimpleGrantedAuthority("ROLE_USER")));
+                Authentication authentication = tokenProvider.getAuthentication(token);
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+            }
+        } catch (Exception e) {
+            log.error("Token is not valid.");
+            SecurityContextHolder.clearContext();
         }
+
         filterChain.doFilter(request, response);
     }
 

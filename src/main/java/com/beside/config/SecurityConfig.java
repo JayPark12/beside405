@@ -40,6 +40,11 @@ public class SecurityConfig {
             "/webjars/**"
     };
 
+    private final String[] excludedEndPoints = {
+            "/user/join",
+            "/user/login"
+    };
+
     @Autowired
     private JwtProvider jwtProvider;
 
@@ -63,16 +68,15 @@ public class SecurityConfig {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests((authorizeRequest) -> {
                     authorizeRequest //HttpServletRequest를 사용하는 요청들에 대한 접근제한을 설정함
-                            //.requestMatchers("/test").permitAll() //허용할 api 지정
-                            //.anyRequest().authenticated(); //나머지 요청들에 대해서는 모두 인증을 받음
-                            .anyRequest().permitAll(); // 모든 요청에 대해 접근 허용
+                            .requestMatchers(excludedEndPoints).permitAll() //허용할 api 지정
+                            .anyRequest().authenticated(); //나머지 요청들에 대해서는 모두 인증을 받음
+                            //.anyRequest().permitAll(); // 모든 요청에 대해 접근 허용
                 })
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 ).addFilterBefore(new JwtFilter(jwtProvider), UsernamePasswordAuthenticationFilter.class)
-                //에러 핸들링 설정
-                .exceptionHandling(handling ->
-                handling
+//                에러 핸들링 설정
+                .exceptionHandling(handling -> handling
                         //인증 실패 혹은 인증 헤더에 없는 경우 401 응답
                         .authenticationEntryPoint(authenticationEntryPoint)
                         //권한에 대한 처리 에러 403 응답
