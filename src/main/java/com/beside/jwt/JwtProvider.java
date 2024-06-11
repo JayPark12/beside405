@@ -40,8 +40,6 @@ public class JwtProvider  {
     private UserRepository userRepository;
 
     private final Key SECRET_KEY;
-    private final Logger logger = LoggerFactory.getLogger(JwtProvider.class);
-    private static final String AUTHORITIES_KEY = "auth";
 
     @Value("${jwt.secret}")
     private String secretKey;
@@ -114,6 +112,9 @@ public class JwtProvider  {
         return LocalDateTime.now().isBefore(localTimeExpired);
     }
 
+
+
+
     private Jws<Claims> getClaims (String token) {
         return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);
     }
@@ -126,7 +127,6 @@ public class JwtProvider  {
         }
     }
 
-
     public Claims parseToken(String token) {
         try {
             return Jwts.parserBuilder()
@@ -137,19 +137,6 @@ public class JwtProvider  {
         } catch (ExpiredJwtException e){
             return e.getClaims();
         }
-    }
-
-
-    public String getUserIdFromRequest(HttpServletRequest request) {
-        String header = request.getHeader("Authorization");
-
-        if (header == null || !header.startsWith("Bearer ")) {
-            return null;
-        }
-
-        String token = header.replace("Bearer ", "");
-        Claims claims = parseToken(token);
-        return claims.getSubject();
     }
 
     public String getUserIdFromToken(String token) {

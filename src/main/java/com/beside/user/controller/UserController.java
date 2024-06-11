@@ -94,8 +94,7 @@ public class UserController {
         String header = request.getHeader("Authorization");
 
         if (header == null || !header.startsWith("Bearer ")) {
-            chain.doFilter(request, response); // If not valid, go to the next filter.
-            //return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("인증 되지 않은 요청");
+            chain.doFilter(request, response);
             return "";
         }
         log.info("header : {}", header);

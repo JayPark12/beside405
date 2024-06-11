@@ -42,14 +42,12 @@ public class JwtFilter extends OncePerRequestFilter {
             return;
         }
         log.info("header : {}", header);
-
         String token = header.replace("Bearer ", "");
 
         try {
             String userId = tokenProvider.getUserIdFromToken(token);
             if (tokenProvider.validateToken(token)) {
-                List<GrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"));
-                UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userId, null, authorities);
+                UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userId, null, List.of(new SimpleGrantedAuthority("ROLE_USER")));
                 Authentication authentication = tokenProvider.getAuthentication(token);
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
@@ -58,12 +56,6 @@ public class JwtFilter extends OncePerRequestFilter {
             SecurityContextHolder.clearContext();
         }
 
-//        String userId = tokenProvider.getUserIdFromRequest(request);
-//        if (userId == null) {
-//            filterChain.doFilter(request, response);
-//            return;
-//        }
-//        request.setAttribute("userId", userId);
         filterChain.doFilter(request, response);
     }
 

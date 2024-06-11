@@ -28,12 +28,9 @@ public class AdminController {
     })
     @GetMapping("/userList")
     public ResponseEntity<?> userList(@CurrentUserId String userId) {
-        //String userId = (String) request.getAttribute("userId");
-
         if (userId == null || userId.isEmpty()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Token is missing or invalid.");
         }
-
         return ResponseEntity.ok(adminService.getUserList(userId));
     }
 }
