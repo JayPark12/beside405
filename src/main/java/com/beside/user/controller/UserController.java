@@ -35,6 +35,19 @@ public class UserController {
     private final UserService userService;
     private final JwtProvider jwtProvider;
 
+
+    @PostMapping("/join")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "회원 가입 성공"),
+            @ApiResponse(responseCode = "500", description = "회원 가입 실패")
+    })
+    @Operation(summary = "회원 가입", description = "회원가입을 할 수 있습니다.")
+    public ResponseEntity<?> join(@RequestBody SignUpRequest request) {
+        SignUpResponse response = userService.joinUser(request);
+        return ResponseEntity.ok(response);
+    }
+
+
     @Operation(summary = "로그인", description = "로그인")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "로그인 성공"),
@@ -50,16 +63,14 @@ public class UserController {
         }
     }
 
-    @PostMapping("/join")
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "회원 가입 성공"),
-            @ApiResponse(responseCode = "500", description = "회원 가입 실패")
-    })
-    @Operation(summary = "회원 가입", description = "회원가입을 할 수 있습니다.")
-    public ResponseEntity<?> join(@RequestBody SignUpRequest request) {
-        SignUpResponse response = userService.joinUser(request);
-        return ResponseEntity.ok(response);
+
+    @Operation(summary = "내 정보 조회", description = "내 정보 조회")
+    public ResponseEntity<?> myPage() {
+        return null;
     }
+
+
+
 
 
 

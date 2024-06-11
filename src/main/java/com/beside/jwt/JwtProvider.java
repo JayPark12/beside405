@@ -2,29 +2,37 @@ package com.beside.jwt;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.beside.exception.InvalidToken;
 import com.beside.user.domain.UserEntity;
 import com.beside.user.repository.UserRepository;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import jakarta.annotation.PostConstruct;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.security.Key;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.Base64;
-import java.util.Date;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Component
+@Slf4j
 public class JwtProvider  {
 
     @Autowired
@@ -48,28 +56,17 @@ public class JwtProvider  {
         SECRET_KEY = Keys.hmacShaKeyFor(Decoders.BASE64.decode(key));
     }
 
-//    //객체 초기화, secretKey를 Base64로 인코딩한다.
-//    @PostConstruct
-//    protected void init() {
-//        this.secretKey = Base64.getEncoder().encodeToString(this.secretKey.getBytes());
-//    }
 
     // Jwt 토큰 생성
     public String generateJwtToken(String id){
         Date tokenExpiration = new Date(System.currentTimeMillis() + (EXPIRE_TIME));
-
-//        return JWT.create()
-//                .withSubject(id) //토큰 이름
-//                .withExpiresAt(tokenExpiration)
-//                .withClaim("id", id)
-//                .sign(this.getSign());
-
         return Jwts.builder()
                 .setSubject(id)
                 .signWith(SECRET_KEY, SignatureAlgorithm.HS256)
                 .setExpiration(tokenExpiration)
                 .compact();
     }
+
 
     /**
      * 토큰 검증
@@ -130,19 +127,17 @@ public class JwtProvider  {
         }
     }
 
-    public boolean validateToken(String token) {
-        try {
-            Jwts.parserBuilder().setSigningKey(SECRET_KEY).build().parseClaimsJws(token);
-            return true;
-        } catch (io.jsonwebtoken.security.SecurityException | MalformedJwtException e) {
-            logger.info("잘못된 JWT 서명입니다.");
-        } catch (ExpiredJwtException e) {
-            logger.info("만료된 JWT 토큰입니다.");
-        } catch (UnsupportedJwtException e) {
-            logger.info("지원되지 않는 JWT 토큰입니다.");
-        } catch (IllegalArgumentException e) {
-            logger.info("JWT 토큰이 잘못되었습니다.");
+
+    public String getUserIdFromToken(HttpServletRequest request) {
+        String header = request.getHeader("Authorization");
+
+        if (header == null || !header.startsWith("Bearer ")) {
+            return null;
         }
-        return false;
+
+        String token = header.replace("Bearer ", "");
+        Claims claims = parseToken(token);
+        return claims.getSubject();
     }
+
 }

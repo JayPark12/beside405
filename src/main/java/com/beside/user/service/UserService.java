@@ -32,6 +32,27 @@ public class UserService {
     private final BCryptPasswordEncoder passwordEncoder;
     private final JwtProvider jwtProvider;
 
+    @Transactional
+    public SignUpResponse joinUser(SignUpRequest request) {
+        LocalDate localDate = LocalDate.now();
+
+        if (userRepository.existsById(request.getUserId())) {
+            throw new UserException(UserErrorInfo.ID_ALREADY_EXISTS);
+        }
+
+        String hashedPassword = passwordEncoder.encode(request.getPassword());
+
+        UserEntity user = UserEntity.builder().id(request.getUserId())
+                .nickname(request.getNickname())
+                .callNo(request.getCallNo())
+                .userSts("0").creatDt(localDate)
+                .password(hashedPassword).build();
+
+        userRepository.save(user);
+        return SignUpResponse.builder().userId(request.getUserId()).desc("계정이 생성 되었습니다.").build();
+    }
+
+
     public LoginResponse login(UserInput userInput, HttpServletResponse response) {
         String id = userInput.getId();
         String password = userInput.getPassword();
@@ -60,20 +81,7 @@ public class UserService {
                 .build();
     }
 
-    @Transactional
-    public SignUpResponse joinUser(SignUpRequest request) {
-        LocalDate localDate = LocalDate.now();
-        String hashedPassword = passwordEncoder.encode(request.getPassword());
 
-        UserEntity user = UserEntity.builder().id(request.getUserId())
-                .nickname(request.getNickname())
-                .callNo(request.getCallNo())
-                .userSts("0").creatDt(localDate)
-                .password(hashedPassword).build();
-
-        userRepository.save(user);
-        return SignUpResponse.builder().userId(request.getUserId()).desc("계정이 생성 되었습니다.").build();
-    }
 
 
 }

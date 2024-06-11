@@ -1,5 +1,6 @@
 package com.beside.jwt;
 
+import com.beside.exception.TokenMissingOrInvalidException;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -20,7 +21,6 @@ import java.io.IOException;
 
 @Slf4j
 public class JwtFilter extends OncePerRequestFilter {
-    private static final Logger logger = LoggerFactory.getLogger(JwtFilter.class);
     public static final String AUTHORIZATION_HEADER = "Authorization";
     private final JwtProvider tokenProvider;
 
@@ -30,21 +30,12 @@ public class JwtFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        String header = request.getHeader(AUTHORIZATION_HEADER);
-
-        if (header == null || !header.startsWith("Bearer ")) {
-            filterChain.doFilter(request, response); // If not valid, go to the next filter.
+        String userId = tokenProvider.getUserIdFromToken(request);
+        if (userId == null) {
+            filterChain.doFilter(request, response);
             return;
         }
-        String token = header.replace("Bearer ", "");
-
-        if (StringUtils.hasText(token) && tokenProvider.validateToken(token)) {
-            Claims claims = tokenProvider.parseToken(token);
-            request.setAttribute("userId", claims.getSubject());
-        } else {
-            logger.debug("유효한 JWT 토큰이 없습니다.");
-            throw new RuntimeException("유효한 JWT 토큰이 없습니다.");
-        }
+        request.setAttribute("userId", userId);
         filterChain.doFilter(request, response);
     }
 
