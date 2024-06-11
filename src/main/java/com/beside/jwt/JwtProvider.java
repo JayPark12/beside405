@@ -24,6 +24,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import java.security.Key;
 import java.time.LocalDateTime;
@@ -111,7 +112,18 @@ public class JwtProvider  {
 
         // 현재 시간이 만료시간의 이전이다
         return LocalDateTime.now().isBefore(localTimeExpired);
+    }
 
+    private Jws<Claims> getClaims (String token) {
+        return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);
+    }
+
+    public boolean validateToken(String token) {
+        try {
+            return getClaims(token).getBody().getExpiration().after(new Date());
+        } catch (Exception e) {
+            return false;
+        }
     }
 
 
@@ -128,7 +140,7 @@ public class JwtProvider  {
     }
 
 
-    public String getUserIdFromToken(HttpServletRequest request) {
+    public String getUserIdFromRequest(HttpServletRequest request) {
         String header = request.getHeader("Authorization");
 
         if (header == null || !header.startsWith("Bearer ")) {
@@ -139,5 +151,17 @@ public class JwtProvider  {
         Claims claims = parseToken(token);
         return claims.getSubject();
     }
+
+    public String getUserIdFromToken(String token) {
+        Claims claims = parseToken(token);
+        return claims.getSubject();
+    }
+
+    public Authentication getAuthentication(String token) {
+        String userId = getUserIdFromToken(token);
+        UserDetails userDetails = new User(userId, "", List.of(new SimpleGrantedAuthority("ROLE_USER")));
+        return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
+    }
+
 
 }

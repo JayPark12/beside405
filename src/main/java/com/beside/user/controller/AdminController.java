@@ -1,5 +1,6 @@
 package com.beside.user.controller;
 
+import com.beside.annotations.CurrentUserId;
 import com.beside.user.service.AdminService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -26,8 +27,8 @@ public class AdminController {
             @ApiResponse(responseCode = "500", description = "유저 리스트 반환 실패")
     })
     @GetMapping("/userList")
-    public ResponseEntity<?> userList(HttpServletRequest request) {
-        String userId = (String) request.getAttribute("userId");
+    public ResponseEntity<?> userList(@CurrentUserId String userId) {
+        //String userId = (String) request.getAttribute("userId");
 
         if (userId == null || userId.isEmpty()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Token is missing or invalid.");
