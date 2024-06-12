@@ -1,16 +1,23 @@
 package com.beside.mountain.domain;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity
 @Getter @Setter @ToString
 @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode(callSuper=false) //lombok
-@Table(name = "MOUNTAIN_RESER")
-public class MntiReserEntity {
+@Table(name = "MOUNTAIN_COMPLETE")
+public class MntiCompleteEntity {
+
+//    /** VARCHAR2(1)         */     @Column(name="MJ_GB"              , length=1                               ) private String      mjGb                                ;
+//    /** NUMBER(16,2)        */     @Column(name="LIFT_CHG"           , precision=16, scale=2                  ) private BigDecimal liftChg           = BigDecimal.ZERO ;
 
     @Id
     @Column(name = "MNTI_CNT", nullable = false)
@@ -24,11 +31,8 @@ public class MntiReserEntity {
     @Column(name = "MNTI_LIST_NO", nullable = false)
     private String mntilistNo;
 
-    @Column(name = "MNTI_CAUTION")
-    private String mntiCaution;
-
     @Column(name = "MNTI_CLIM_TM")
-    private String mntiClimTm;
+    private LocalTime mntiClimTm;
 
     @Column(name = "MNTI_NAME")
     private String mntiName;
@@ -39,17 +43,11 @@ public class MntiReserEntity {
     @Column(name = "MNTI_COURSE_NAME")
     private String mntiCourseName;
 
-    @Column(name = "MNTI_DISTANCE")
-    private String mntiDistance;
-
     @Column(name = "MNTI_STR_TM")
     private LocalTime mntiStrTm;
 
     @Column(name = "MNTI_END_TM")
     private LocalTime mntiEndTm;
-
-    @Column(name = "MNTI_LAB")
-    private String mntiLab;
 
     @Column(name = "MNTI_RESER_DATE")
     private LocalDate mntiReserDate;
@@ -57,9 +55,12 @@ public class MntiReserEntity {
     @Column(name = "MNTI_STR_DATE")
     private LocalDate mntiStrDate;
 
-    @Column(name = "MNTI_STS")
-    private String mntiSts;
-
     @Column(name = "MNTI_HIGH", nullable = false)
     private String mntihigh;
+
+    @Column(name = "MNTI_USER_FILL")
+    private String mntiUserFill;
+
+    @Column(name = "MNTI_USER_Review")
+    private String mntiUserReview;
 }

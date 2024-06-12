@@ -99,15 +99,15 @@ public class MntiResrService {
         }
         mntiReserEntity.setId(userEntity.getId());
         mntiReserEntity.setMntilistNo(mntiReserOutput.getMntilist_no());
-        mntiReserEntity.setMntiCs(mntiReserOutput.getCourse().get(0).getCourse_no());
-        mntiReserEntity.setMntiCsName(mntiReserOutput.getCourse().get(0).getCourse_name());
+        mntiReserEntity.setMntiCourse(mntiReserOutput.getCourse().get(0).getCourse_no());
+        mntiReserEntity.setMntiCourseName(mntiReserOutput.getCourse().get(0).getCourse_name());
         //mntiReserEntity.setMntimt() 일단 어떤식으로 들어올지 몰라
         //mntiReserEntity.setmntiCaution
-        mntiReserEntity.setMntiSts("4"); //등산예약 4 등산 중 0 등산 완료 1 등산 실패 2
-        mntiReserEntity.setMntiStrDt(mntiReserInput.getMntiStrDt());
-        mntiReserEntity.setMntiReb(mntiReserOutput.getCourse().get(0).getMnti_reb());
+        mntiReserEntity.setMntiSts("4"); //0 : 등산 계획,  1 :등산 중 , 2 : 등산완료 ,3 : 등산실패
+        mntiReserEntity.setMntiStrDate(mntiReserInput.getMntiStrDt());
+        mntiReserEntity.setMntiLab(mntiReserOutput.getCourse().get(0).getMnti_reb());
         mntiReserEntity.setMntiClimTm(mntiReserOutput.getCourse().get(0).getMnti_dist());
-        mntiReserEntity.setMntiReser(LocalDate.now());
+        mntiReserEntity.setMntiReserDate(LocalDate.now());
 
         reserRepository.save(mntiReserEntity);
 

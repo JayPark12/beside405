@@ -18,14 +18,11 @@ import lombok.Setter;
 public class MntiEntity {
 
     @Id
-    @Column(name = "MNTILIST_NO", nullable = false)
+    @Column(name = "MNTI_LIST_NO", nullable = false)
     private String mntilistNo;  //산번호
 
     @Column(name = "MNTI_NAME", nullable = false)
     private String mntiName;    //산이름
-
-    @Column(name = "MNTI_JSON", nullable = false)
-    private String mntiJson;    //코스 정보 Json파일명
 
     @Column(name = "MNTI_CAUTION", nullable = false)
     private String mntiCaution;  //주의사항
@@ -35,5 +32,8 @@ public class MntiEntity {
 
     @Column(name = "MNTI_ADD", nullable = false)
     private String mntiAdd;
+
+    @Column(name = "MNTI_HIGH", nullable = false)
+    private String mntihigh;
 
 }
