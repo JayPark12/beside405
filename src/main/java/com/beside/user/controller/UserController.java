@@ -2,10 +2,7 @@ package com.beside.user.controller;
 
 import com.beside.jwt.JwtProvider;
 import com.beside.user.domain.UserEntity;
-import com.beside.user.dto.LoginResponse;
-import com.beside.user.dto.SignUpRequest;
-import com.beside.user.dto.SignUpResponse;
-import com.beside.user.dto.UserInput;
+import com.beside.user.dto.*;
 import com.beside.user.exception.UserException;
 import com.beside.user.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -20,9 +17,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.Map;
 
 
 @Slf4j
@@ -55,23 +54,35 @@ public class UserController {
     })
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UserInput userInput, HttpServletResponse servletResponse) {
-        try {
-            return ResponseEntity.ok(userService.login(userInput, servletResponse));
-        } catch (UserException e) {
-            log.error("로그인 실패", e);
-            return ResponseEntity.internalServerError().body("로그인 실패");
-        }
+        return ResponseEntity.ok(userService.login(userInput, servletResponse));
     }
 
 
     @Operation(summary = "내 정보 조회", description = "내 정보 조회")
+    @GetMapping("/myPage")
     public ResponseEntity<?> myPage() {
-        return null;
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        return ResponseEntity.ok(userService.userInfo(userId));
     }
 
+    @Operation(summary = "닉네임 변경")
+    @PatchMapping("/updateNickname")
+    public ResponseEntity<?> updateNickname(@RequestBody UpdateNicknameRequest request) {
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        String newNickname = request.getNickname();
+        if (newNickname == null || newNickname.isEmpty()) {
+            return ResponseEntity.badRequest().body("Nickname is missing or invalid.");
+        }
+        return ResponseEntity.ok(userService.updateNickname(userId, newNickname) + " : 변경 완료");
+    }
 
-
-
+    @Operation(summary = "비밀번호 변경")
+    @PatchMapping("/updatePassword")
+    public ResponseEntity<?> updatePassword(@RequestBody UpdatePasswordRequest request) {
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        userService.updatePassword(userId, request);
+        return ResponseEntity.ok("변경 완료");
+    }
 
 
 

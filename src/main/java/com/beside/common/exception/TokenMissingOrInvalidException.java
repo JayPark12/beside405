@@ -1,4 +1,4 @@
-package com.beside.exception;
+package com.beside.common.exception;
 
 public class TokenMissingOrInvalidException extends RuntimeException {
     public TokenMissingOrInvalidException(String message) {

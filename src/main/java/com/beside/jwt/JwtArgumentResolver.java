@@ -1,6 +1,6 @@
 package com.beside.jwt;
 
-import com.beside.annotations.CurrentUserId;
+import com.beside.common.annotations.CurrentUserId;
 import com.beside.user.exception.UserErrorInfo;
 import com.beside.user.exception.UserException;
 import org.springframework.core.MethodParameter;

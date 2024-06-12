@@ -27,4 +27,12 @@ public class UserEntity {
 
     @Column(name = "password", nullable = false)
     private String password;
+
+    public void updateNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public void updatePassword(String password) {
+        this.password = password;
+    }
 }
