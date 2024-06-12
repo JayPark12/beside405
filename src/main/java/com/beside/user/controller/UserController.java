@@ -84,6 +84,11 @@ public class UserController {
         return ResponseEntity.ok("변경 완료");
     }
 
+    public String testBti(@RequestBody MbtiDto mbtiDto) {
+        String result = userService.calResult(mbtiDto);
+        return null;
+    }
+
 
 
     /**

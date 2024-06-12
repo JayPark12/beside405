@@ -113,4 +113,8 @@ public class UserService {
         user.updatePassword(passwordEncoder.encode(request.getNewPassword()));
         userRepository.save(user);
     }
+
+    public String calResult(MbtiDto mbtiDto) {
+        return null;
+    }
 }
