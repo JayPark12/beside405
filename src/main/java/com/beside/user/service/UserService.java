@@ -20,6 +20,7 @@ import org.thymeleaf.util.StringUtils;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -69,8 +70,7 @@ public class UserService {
 
         String jwt = jwtProvider.generateJwtToken(id);
 
-        // JWT를 응답 헤더에 추가
-        response.setHeader("Authorization", "Bearer " + jwt);
+        response.setHeader("Authorization", "Bearer " + jwt); //jwt 응답 header에 추가
 
         return LoginResponse.builder()
                 .userId(user.getId())
@@ -82,6 +82,35 @@ public class UserService {
     }
 
 
+    public UserInfoResponse userInfo(String userId) {
+        UserEntity user = userRepository.findById(userId).orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
+        return UserInfoResponse.builder()
+                .userId(userId)
+                .nickname(user.getNickname())
+                .callNo(user.getCallNo())
+                .creatDt(user.getCreatDt())
+                .build();
+    }
 
+    @Transactional
+    public String updateNickname(String userId, String newNickname) {
+        UserEntity user = userRepository.findById(userId).orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
+        user.updateNickname(newNickname);
+        userRepository.save(user);
+        return user.getNickname();
+    }
 
+    @Transactional
+    public void updatePassword(String userId, UpdatePasswordRequest request) {
+        UserEntity user = userRepository.findById(userId).orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
+
+        if (!passwordEncoder.matches(request.getOldPassword(), user.getPassword())) {
+            throw new UserException(UserErrorInfo.INCORRECT_OLD_PASSWORD);
+        }
+        if (!Objects.equals(request.getNewPassword(), request.getConfirmPassword())) {
+            throw new UserException(UserErrorInfo.PASSWORD_CONFIRMATION_MISMATCH);
+        }
+        user.updatePassword(passwordEncoder.encode(request.getNewPassword()));
+        userRepository.save(user);
+    }
 }

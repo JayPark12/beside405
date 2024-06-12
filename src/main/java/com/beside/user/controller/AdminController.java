@@ -1,6 +1,5 @@
 package com.beside.user.controller;
 
-import com.beside.annotations.CurrentUserId;
 import com.beside.user.service.AdminService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -31,13 +30,7 @@ public class AdminController {
     })
     @GetMapping("/userList")
     public ResponseEntity<?> userList() {
-        SecurityContext context = SecurityContextHolder.getContext();
-        Authentication authentication = context.getAuthentication();
-        String userId = authentication.getName();
-
-        if (userId == null || userId.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Token is missing or invalid.");
-        }
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
         return ResponseEntity.ok(adminService.getUserList(userId));
     }
 }
