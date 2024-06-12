@@ -1,9 +1,7 @@
 package com.beside.mountain.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.beside.mountain.pk.MountainResrPk;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -12,6 +10,7 @@ import java.time.LocalTime;
 
 @Entity
 @Getter @Setter @ToString
+@IdClass(MountainResrPk.class)
 @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode(callSuper=false) //lombok
 @Table(name = "MOUNTAIN_COMPLETE")
 public class MntiCompleteEntity {

@@ -1,5 +1,6 @@
 package com.beside.mountain.domain;
 
+import com.beside.mountain.pk.MountainResrPk;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -8,6 +9,7 @@ import java.time.LocalTime;
 
 @Entity
 @Getter @Setter @ToString
+@IdClass(MountainResrPk.class)
 @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode(callSuper=false) //lombok
 @Table(name = "MOUNTAIN_RESER")
 public class MntiReserEntity {

@@ -10,7 +10,7 @@ public interface ReserRepository extends CrudRepository<MntiReserEntity, String>
     @Query(value = """
     SELECT MAX(MNTI_CNT) FROM MOUNTAIN_RESER
     WHERE  id =:id
-    AND   MNTILIST_NO =:mntilist_no
+    AND   MNTI_LIST_NO =:mntilist_no
             """
             , nativeQuery = true)
     Integer findByMntiReserSerch(@Param("id")String id, @Param("mntilist_no")String mntilist_no
