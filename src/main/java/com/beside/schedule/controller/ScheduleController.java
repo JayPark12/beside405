@@ -23,7 +23,7 @@ public class ScheduleController {
     @Operation(summary = "일정 등록", description = "등산 일정을 등록할 수 있습니다.")
     public ResponseEntity<?> createSchedule(@RequestBody CreateScheduleRequest request) {
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();
-        int response = scheduleService.createSchedule(userId, request);
-        return ResponseEntity.ok("일정이 등록되었습니다. id : " + response);
+        scheduleService.createSchedule(userId, request);
+        return ResponseEntity.ok("일정이 등록되었습니다. id : " );
     }
 }

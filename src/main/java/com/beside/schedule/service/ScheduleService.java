@@ -18,7 +18,7 @@ public class ScheduleService {
     private final UserRepository userRepository;
     private final HikeScheduleRepository hikeScheduleRepository;
 
-    public int createSchedule(String userId, CreateScheduleRequest request) {
+    public void createSchedule(String userId, CreateScheduleRequest request) {
         UserEntity user = userRepository.findById(userId).orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
 
         HikeSchedule hikeSchedule = HikeSchedule.builder().userId(user.getId())
@@ -29,7 +29,7 @@ public class ScheduleService {
                 .createDate(LocalDateTime.now())
                 .delYn("N").build();
         hikeScheduleRepository.save(hikeSchedule);
-        return hikeSchedule.getScheduleId();
+        //return hikeSchedule.getScheduleId();
     }
 
     public LocalDateTime getDateTime(String inputDate) {

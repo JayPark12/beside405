@@ -1,8 +1,6 @@
 package com.beside.schedule.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,6 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor @AllArgsConstructor
 public class HikeSchedule {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int scheduleId;
     private String userId;
     private String scheduleName;
