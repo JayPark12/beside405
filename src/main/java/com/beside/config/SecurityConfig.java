@@ -36,7 +36,8 @@ public class SecurityConfig {
 
     private final String[] excludedEndPoints = {
             "/user/join",
-            "/user/login"
+            "/user/login",
+            "/main/**"
     };
 
     @Autowired
