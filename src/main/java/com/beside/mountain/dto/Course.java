@@ -14,10 +14,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Course {
-    private String course_no;
-    private String course_name;
-    private Long   mnti_time;
-    private String   mnti_dist;    //등산로거리
-    private String mnti_reb;
+    private String courseNo;
+    private String courseName;
+    private Long mntiTime;
+    private String mntiDist;    //등산로거리
+    private String mntiLevel;
     private List<List<Coordinate>> paths;
 }

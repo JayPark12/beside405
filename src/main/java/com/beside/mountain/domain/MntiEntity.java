@@ -9,6 +9,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Entity
 @Getter
 @Setter
@@ -19,7 +21,7 @@ public class MntiEntity {
 
     @Id
     @Column(name = "MNTI_LIST_NO", nullable = false)
-    private String mntilistNo;  //산번호
+    private String mntiListNo;  //산번호
 
     @Column(name = "MNTI_NAME", nullable = false)
     private String mntiName;    //산이름
@@ -27,13 +29,13 @@ public class MntiEntity {
     @Column(name = "MNTI_CAUTION", nullable = false)
     private String mntiCaution;  //주의사항
 
-    @Column(name = "MNTI_LEB", nullable = false)
-    private String mntiLeb;
+    @Column(name = "MNTI_LEVEL", nullable = false)
+    private String mntiLevel;
 
     @Column(name = "MNTI_ADD", nullable = false)
     private String mntiAdd;
 
-    @Column(name = "MNTI_HIGH", nullable = false)
-    private String mntihigh;
+    @Column(name = "MNTI_HIGH",  precision=5, scale=2, nullable = false)
+    private BigDecimal mntihigh = BigDecimal.ZERO;
 
 }

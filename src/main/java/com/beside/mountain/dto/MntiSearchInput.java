@@ -10,5 +10,5 @@ import lombok.*;
 @EqualsAndHashCode(callSuper = false)
 public class MntiSearchInput {
 
-    private String mnti_name;    //산이름
+    private String mntiName;    //산이름
 }

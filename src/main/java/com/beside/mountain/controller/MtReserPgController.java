@@ -25,10 +25,7 @@ public class MtReserPgController {
 
     @PostMapping("/registrationSet")
     public MntiDetailOutput registrationSet(@RequestBody MntiDetailInput mntiDetailInput) throws Exception {
-        jwtProvider.validToken(mntiDetailInput.getJwtToken())
-
        ; // 토큰값 확인
-
        MntiDetailOutput mntiList = mntiDetailService.readJsonFile(mntiDetailInput);
 
        return mntiList ;
@@ -36,16 +33,13 @@ public class MtReserPgController {
 
     @PostMapping("/registration")
     public MntiReserOutput registration(@RequestBody MntiReserInput mntiReserInput) throws Exception {
-        UserEntity Tokenid = jwtProvider.validToken(mntiReserInput.getJwtToken()); // 토큰값 확인
 
         MntiReserOutput mntiList = mntiResrService.reserJsonFile(mntiReserInput);
         //등산 예약 정보 insert
 
-        mntiResrService.reserInsert(mntiList, Tokenid, mntiReserInput);
+        mntiResrService.reserInsert(mntiList, mntiReserInput);
 
         return mntiList;
 
     }
-
-
 }

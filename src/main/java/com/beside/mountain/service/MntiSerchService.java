@@ -23,19 +23,21 @@ public class MntiSerchService {
 
     public List<MntiListOutput> mntiList(MntiSearchInput mntiSearchInput) throws URISyntaxException {
         List<MntiListOutput> mntiListOutput = new ArrayList<>();
-        List<MntiEntity> mntiShufList = mntiRepository.findByMntiSerch(mntiSearchInput.getMnti_name());
+        List<MntiEntity> mntiShufList = mntiRepository.findByMntiSerch(mntiSearchInput.getMntiName());
         List<MntiEntity> mntiShufList7 =mntiShufList.stream().limit(7).collect(Collectors.toList());
         for (int i = 0; i < mntiShufList7.size(); i++)
         {
-            String potoUrl = null;
+            List<String> potoFileSelect = mntiListService.potoFile(mntiShufList7.get(i).getMntiListNo() ,mntiShufList7.get(i).getMntiName());
             MntiListOutput mntiOutput = new MntiListOutput();
-            mntiOutput.setMnti_name(mntiShufList7.get(i).getMntiName());
-            mntiOutput.setMnti_list_no(mntiShufList7.get(i).getMntilistNo());
-            mntiOutput.setMnti_leb(mntiShufList7.get(i).getMntiLeb());
-            potoUrl = mntiListService.callExternalApi(mntiOutput.getMnti_list_no());
-            mntiOutput.setMnti_add(mntiShufList7.get(i).getMntiAdd());
+            mntiOutput.setMntiName(mntiShufList7.get(i).getMntiName());
+            mntiOutput.setMntiListNo(mntiShufList7.get(i).getMntiListNo());
+            mntiOutput.setMntiLevel(mntiShufList7.get(i).getMntiLevel());
+            mntiOutput.setMntiAdd(mntiShufList7.get(i).getMntiAdd());
 
-            mntiOutput.setPoto_url(potoUrl);
+            if(potoFileSelect.size() != 0) {
+                mntiOutput.setPotoFile(potoFileSelect.get(0));
+            }
+
             mntiListOutput.add(mntiOutput);
         }
 

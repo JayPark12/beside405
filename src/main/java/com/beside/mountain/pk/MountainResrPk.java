@@ -20,5 +20,5 @@ public class MountainResrPk {
 
     @Id
     @Column(name = "MNTI_LIST_NO", nullable = false)
-    private String mntilistNo;
+    private String mntiListNo;
 }

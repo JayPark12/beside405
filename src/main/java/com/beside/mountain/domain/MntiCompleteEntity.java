@@ -28,7 +28,7 @@ public class MntiCompleteEntity {
 
     @Id
     @Column(name = "MNTI_LIST_NO", nullable = false)
-    private String mntilistNo;
+    private String mntiListNo;
 
     @Column(name = "MNTI_CLIM_TM")
     private LocalTime mntiClimTm;
@@ -54,12 +54,12 @@ public class MntiCompleteEntity {
     @Column(name = "MNTI_STR_DATE")
     private LocalDate mntiStrDate;
 
-    @Column(name = "MNTI_HIGH", nullable = false)
-    private String mntihigh;
+    @Column(name = "MNTI_HIGH",  precision=5, scale=2, nullable = false)
+    private BigDecimal mntihigh = BigDecimal.ZERO;
 
     @Column(name = "MNTI_USER_FILL")
     private String mntiUserFill;
 
-    @Column(name = "MNTI_USER_Review")
+    @Column(name = "MNTI_USER_REVIEW", length = 1000)
     private String mntiUserReview;
 }

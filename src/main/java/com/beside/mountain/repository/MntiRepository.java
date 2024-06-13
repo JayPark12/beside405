@@ -22,4 +22,12 @@ public interface MntiRepository extends Repository<MntiEntity,String> {
             , nativeQuery = true)
     List<MntiEntity> findByMntiSerch(@Param("mntiName")String mntiName
     );
+
+    @Query(value = """
+    SELECT * FROM MOUNTAIN_INFO
+    WHERE  MNTI_LIST_NO = :mntiListNo
+            """
+            , nativeQuery = true)
+    MntiEntity findByMntiInfo(@Param("mntiListNo")String mntiListNo
+    );
 }

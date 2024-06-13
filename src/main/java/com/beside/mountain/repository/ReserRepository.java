@@ -15,6 +15,4 @@ public interface ReserRepository extends CrudRepository<MntiReserEntity, String>
             , nativeQuery = true)
     Integer findByMntiReserSerch(@Param("id")String id, @Param("mntilist_no")String mntilist_no
     );
-
-
 }

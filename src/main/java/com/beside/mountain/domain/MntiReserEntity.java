@@ -4,6 +4,7 @@ import com.beside.mountain.pk.MountainResrPk;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -24,13 +25,13 @@ public class MntiReserEntity {
 
     @Id
     @Column(name = "MNTI_LIST_NO", nullable = false)
-    private String mntilistNo;
+    private String mntiListNo;
 
     @Column(name = "MNTI_CAUTION")
     private String mntiCaution;
 
     @Column(name = "MNTI_CLIM_TM")
-    private String mntiClimTm;
+    private Long mntiClimTm;
 
     @Column(name = "MNTI_NAME")
     private String mntiName;
@@ -50,8 +51,8 @@ public class MntiReserEntity {
     @Column(name = "MNTI_END_TM")
     private LocalTime mntiEndTm;
 
-    @Column(name = "MNTI_LAB")
-    private String mntiLab;
+    @Column(name = "MNTI_LEVEL", nullable = false)
+    private String mntiLevel;
 
     @Column(name = "MNTI_RESER_DATE")
     private LocalDate mntiReserDate;
@@ -62,6 +63,6 @@ public class MntiReserEntity {
     @Column(name = "MNTI_STS")
     private String mntiSts;
 
-    @Column(name = "MNTI_HIGH", nullable = false)
-    private String mntihigh;
+    @Column(name = "MNTI_HIGH",  precision=5, scale=2, nullable = false)
+    private BigDecimal mntihigh = BigDecimal.ZERO;
 }
