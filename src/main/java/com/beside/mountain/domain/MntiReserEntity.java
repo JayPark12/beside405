@@ -65,4 +65,7 @@ public class MntiReserEntity {
 
     @Column(name = "MNTI_HIGH",  precision=5, scale=2, nullable = false)
     private BigDecimal mntihigh = BigDecimal.ZERO;
+
+    @Column(name = "MNTI_REVIEW",  length=500)
+    private String mntiReview ;
 }
