@@ -68,4 +68,7 @@ public class MntiReserEntity {
 
     @Column(name = "MNTI_REVIEW",  length=500)
     private String mntiReview ;
+
+    @Column(name = "MNTI_COMPLETE_POTO")
+    private String mntiCompletePoto ; //
 }
