@@ -20,7 +20,8 @@ import java.util.List;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class WeatherApi {
+public class
+WeatherApi {
 
     private final ObjectMapper objectMapper;
     private final RestTemplate restTemplate;
