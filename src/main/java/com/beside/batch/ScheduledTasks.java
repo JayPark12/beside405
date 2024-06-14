@@ -11,20 +11,20 @@ import java.util.Date;
 
 public class ScheduledTasks {
 
-//    private final JobLauncher jobLauncher;
-//    private final Job updateStatusJob;
-//
-//    @Autowired
-//    public ScheduledTasks(JobLauncher jobLauncher, Job updateStatusJob) {
-//        this.jobLauncher = jobLauncher;
-//        this.updateStatusJob = updateStatusJob;
-//    }
-//
-//    @Scheduled(cron = "0 0 16 * * *") // 매일 자정에 실행
-//    public void runUpdateStatusJob() throws Exception {
-//        JobParameters jobParameters = new JobParametersBuilder()
-//                .addDate("date", new Date())
-//                .toJobParameters();
-//        jobLauncher.run(updateStatusJob, jobParameters);
-//    }
+    private final JobLauncher jobLauncher;
+    private final Job updateStatusJob;
+
+    @Autowired
+    public ScheduledTasks(JobLauncher jobLauncher, Job updateStatusJob) {
+        this.jobLauncher = jobLauncher;
+        this.updateStatusJob = updateStatusJob;
+    }
+
+    @Scheduled(cron = "0 58 18 * * *") // 매일 자정에 실행
+    public void runUpdateStatusJob() throws Exception {
+        JobParameters jobParameters = new JobParametersBuilder()
+                .addDate("date", new Date())
+                .toJobParameters();
+        jobLauncher.run(updateStatusJob, jobParameters);
+    }
 }

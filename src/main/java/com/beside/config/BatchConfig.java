@@ -19,28 +19,28 @@ import java.time.LocalDate;
 @RequiredArgsConstructor
 public class BatchConfig {
 
-//    private  final ReserRepository reserRepository;
-//
-//    @Bean(name = "updateStatusJob")
-//    public Job updateStatusJob(JobRepository jobRepository, Step updateStatusStep) {
-//        return new JobBuilder("updateStatusJob", jobRepository)
-//                .start(updateStatusStep)
-//                .build();
-//    }
-//
-//    @Bean(name = "updateStatusStep")
-//    public Step updateStatusStep(JobRepository jobRepository, Tasklet updateStatusTasklet, PlatformTransactionManager platformTransactionManager) {
-//        return new StepBuilder("updateStatusStep", jobRepository)
-//                .tasklet(updateStatusTasklet, platformTransactionManager)
-//                .build();
-//    }
-//
-//    @Bean
-//    public Tasklet updateStatusTasklet() {
-//        return (contribution, chunkContext) -> {
-//            // 오늘 이전의 데이터 상태를 업데이트하는 로직을 여기에 작성
-//            reserRepository.updateStatusForOlderDates(LocalDate.now(), "3"); // 예시: 상태를 "NEW_STATUS"로 업데이트
-//            return RepeatStatus.FINISHED;
-//        };
-//    }
+    private  final ReserRepository reserRepository;
+
+    @Bean(name = "updateStatusJob")
+    public Job updateStatusJob(JobRepository jobRepository, Step updateStatusStep) {
+        return new JobBuilder("updateStatusJob", jobRepository)
+                .start(updateStatusStep)
+                .build();
+    }
+
+    @Bean(name = "updateStatusStep")
+    public Step updateStatusStep(JobRepository jobRepository, Tasklet updateStatusTasklet, PlatformTransactionManager platformTransactionManager) {
+        return new StepBuilder("updateStatusStep", jobRepository)
+                .tasklet(updateStatusTasklet, platformTransactionManager)
+                .build();
+    }
+
+    @Bean
+    public Tasklet updateStatusTasklet() {
+        return (contribution, chunkContext) -> {
+            // 오늘 이전의 데이터 상태를 업데이트하는 로직을 여기에 작성
+            reserRepository.updateStatusForOlderDates(LocalDate.now(), "3"); // 예시: 상태를 "NEW_STATUS"로 업데이트
+            return RepeatStatus.FINISHED;
+        };
+    }
 }
