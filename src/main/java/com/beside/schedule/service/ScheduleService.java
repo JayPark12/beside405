@@ -7,12 +7,15 @@ import com.beside.user.domain.UserEntity;
 import com.beside.user.exception.UserErrorInfo;
 import com.beside.user.exception.UserException;
 import com.beside.user.repository.UserRepository;
+import com.beside.util.CommonUtil;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class ScheduleService {
     private final UserRepository userRepository;
@@ -21,13 +24,16 @@ public class ScheduleService {
     public void createSchedule(String userId, CreateScheduleRequest request) {
         UserEntity user = userRepository.findById(userId).orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
 
-        HikeSchedule hikeSchedule = HikeSchedule.builder().userId(user.getId())
+        HikeSchedule hikeSchedule = HikeSchedule.builder()
+                .scheduleId(CommonUtil.getCurrentTime())
+                .userId(user.getId())
                 .scheduleName("일정 등록 테스트")
                 .scheduleDate(getDateTime(request.getScheduleDate()))
                 .mountain(request.getMountainId())
                 .memberCount(request.getMemberCount())
                 .createDate(LocalDateTime.now())
                 .delYn("N").build();
+        log.info(String.valueOf(hikeSchedule));
         hikeScheduleRepository.save(hikeSchedule);
         //return hikeSchedule.getScheduleId();
     }
