@@ -52,6 +52,8 @@ dependencies {
 	implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.15')
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
+	//스프링 배치
+	implementation 'org.springframework.boot:spring-boot-starter-batch'
 
 	implementation 'com.auth0:java-jwt:4.2.1'
 

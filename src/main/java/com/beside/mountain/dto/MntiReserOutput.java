@@ -21,6 +21,6 @@ public class MntiReserOutput {
 
     private List<Course> course; //코스정보
     private List<String> potoFiles; //사진 정보
-    private List<Weather> weatherList;
+    //private List<Weather> weatherList;
 }
 
