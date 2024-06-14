@@ -6,6 +6,7 @@ import org.springframework.data.repository.Repository;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface MntiRepository extends Repository<MntiEntity,String> {
 
@@ -30,4 +31,7 @@ public interface MntiRepository extends Repository<MntiEntity,String> {
             , nativeQuery = true)
     MntiEntity findByMntiInfo(@Param("mntiListNo")String mntiListNo
     );
+
+
+    Optional<MntiEntity> findByMntiListNo(String mountainId);
 }

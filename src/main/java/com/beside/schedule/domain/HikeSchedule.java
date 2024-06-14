@@ -24,8 +24,8 @@ public class HikeSchedule {
     @Column(name = "schedule_date")
     private LocalDateTime scheduleDate;
 
-    @Column(name = "mountain")
-    private String mountain;
+    @Column(name = "mountain_id")
+    private String mountainId;
 
     @Column(name = "member_count")
     private int memberCount;
