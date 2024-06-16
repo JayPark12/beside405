@@ -72,8 +72,7 @@ public class ScheduleService {
 
 
     public String modifySchedule(String userId, ModifyScheduleRequest request) {
-        UserEntity user = userRepository.findById(userId).orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
-        HikeSchedule schedule = hikeScheduleRepository.findById(request.getScheduleId()).orElseThrow();
+        HikeSchedule schedule = hikeScheduleRepository.findByUserIdAndScheduleId(userId, request.getScheduleId()).orElseThrow();
         schedule.updateSchedule(request);
         hikeScheduleRepository.save(schedule);
         return schedule.getScheduleId();
