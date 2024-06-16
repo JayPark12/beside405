@@ -4,6 +4,7 @@ import com.beside.mountain.domain.MntiEntity;
 import com.beside.mountain.repository.MntiRepository;
 import com.beside.schedule.domain.HikeSchedule;
 import com.beside.schedule.dto.CreateScheduleRequest;
+import com.beside.schedule.dto.ModifyScheduleRequest;
 import com.beside.schedule.dto.ScheduleResponse;
 import com.beside.schedule.repository.HikeScheduleRepository;
 import com.beside.user.domain.UserEntity;
@@ -32,7 +33,7 @@ public class ScheduleService {
 
 
     public List<ScheduleResponse> mySchedule(String userId) {
-        return hikeScheduleRepository.findByUserId(userId).stream()
+        return hikeScheduleRepository.findByUserIdAndDelYn(userId, "N").stream()
                 .map(this::convertToScheduleResponse)
                 .collect(Collectors.toList());
     }
@@ -70,10 +71,19 @@ public class ScheduleService {
     }
 
 
-    public String modifySchedule(String userId, CreateScheduleRequest request) {
+    public String modifySchedule(String userId, ModifyScheduleRequest request) {
         UserEntity user = userRepository.findById(userId).orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
-        return null;
+        HikeSchedule schedule = hikeScheduleRepository.findById(request.getScheduleId()).orElseThrow();
+        schedule.updateSchedule(request);
+        hikeScheduleRepository.save(schedule);
+        return schedule.getScheduleId();
     }
 
 
+    public String deleteSchedule(String userId, String scheduleId) {
+        HikeSchedule hikeSchedule = hikeScheduleRepository.findByUserIdAndScheduleId(userId, scheduleId).orElseThrow();
+        hikeSchedule.deleteSchedule();
+        hikeScheduleRepository.save(hikeSchedule);
+        return hikeSchedule.getScheduleId();
+    }
 }
