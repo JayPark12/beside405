@@ -6,6 +6,9 @@ import com.beside.mountain.dto.MntiListOutput;
 import com.beside.mountain.repository.MntiRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -26,27 +29,28 @@ public class MntiListService {
 
     private final MntiRepository mntiRepository;
 
-    public List<MntiListOutput> mntiList() throws URISyntaxException {
+    public Page<MntiListOutput> mntiList(Pageable pageable) throws URISyntaxException {
         List<MntiListOutput> mntiListOutput = new ArrayList<>();
         List<MntiEntity> mntiShufList = mntiRepository.findByMnti();
-        //Collections.shuffle(mntiShufList);
-        List<MntiEntity> mntiShufList7 =mntiShufList.stream().limit(7).collect(Collectors.toList());
-        for (int i = 0; i < mntiShufList7.size(); i++)
-        {
-            List<String> potoFileSelect = potoFile(mntiShufList7.get(i).getMntiListNo() ,mntiShufList7.get(i).getMntiName());
+        List<MntiEntity> mntiShufListPaged = mntiShufList.stream()
+                .skip(pageable.getOffset())
+                .limit(pageable.getPageSize())
+                .collect(Collectors.toList());
+        for (MntiEntity mntiEntity : mntiShufListPaged) {
+            List<String> potoFileSelect = potoFile(mntiEntity.getMntiListNo(), mntiEntity.getMntiName());
             MntiListOutput mntiOutput = new MntiListOutput();
-            mntiOutput.setMntiName(mntiShufList7.get(i).getMntiName());
-            mntiOutput.setMntiListNo(mntiShufList7.get(i).getMntiListNo());
-            mntiOutput.setMntiLevel(mntiShufList7.get(i).getMntiLevel());
-            mntiOutput.setMntiAdd(mntiShufList7.get(i).getMntiAdd());
+            mntiOutput.setMntiName(mntiEntity.getMntiName());
+            mntiOutput.setMntiListNo(mntiEntity.getMntiListNo());
+            mntiOutput.setMntiLevel(mntiEntity.getMntiLevel());
+            mntiOutput.setMntiAdd(mntiEntity.getMntiAdd());
 
-            if(potoFileSelect.size() != 0) {
+            if (!potoFileSelect.isEmpty()) {
                 mntiOutput.setPotoFile(potoFileSelect.get(0));
             }
 
             mntiListOutput.add(mntiOutput);
         }
-        return mntiListOutput;
+        return new PageImpl<>(mntiListOutput, pageable, mntiShufList.size());
     }
 
     public List<String> potoFile (String mntilistNo, String mntiName) throws URISyntaxException {

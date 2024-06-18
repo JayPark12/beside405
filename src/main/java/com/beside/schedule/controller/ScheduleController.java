@@ -1,6 +1,7 @@
 package com.beside.schedule.controller;
 
 import com.beside.schedule.dto.CreateScheduleRequest;
+import com.beside.schedule.dto.ModifyScheduleRequest;
 import com.beside.schedule.dto.ScheduleResponse;
 import com.beside.schedule.service.ScheduleService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -37,11 +38,20 @@ public class ScheduleController {
     }
 
     //일정 수정 -> 수정 가능 컬럼 : 산이름, 인원수, 날짜(시간)
-    public ResponseEntity<?> modifySchedule(@RequestBody CreateScheduleRequest request) {
+    @PatchMapping("/update")
+    public ResponseEntity<?> modifySchedule(@RequestBody ModifyScheduleRequest request) {
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();
         String response = scheduleService.modifySchedule(userId, request);
-        return null;
+        return ResponseEntity.ok("일정이 수정되었습니다. id : " + response);
     }
 
     //일정 삭제
+    @PatchMapping("/delete/{scheduleId}")
+    public ResponseEntity<?> deleteSchedule(@PathVariable String scheduleId) {
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        String response = scheduleService.deleteSchedule(userId, scheduleId);
+        return ResponseEntity.ok("일정이 삭제되었습니다. id : " + response);
+    }
+
+
 }

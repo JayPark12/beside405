@@ -19,27 +19,26 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/reser")
 public class MtReserPgController {
 
-    private final MntiDetailService mntiDetailService;
     private final MntiResrService mntiResrService;
-    private final JwtProvider jwtProvider;
-
-    @PostMapping("/registrationSet")
-    public MntiDetailOutput registrationSet(@RequestBody MntiDetailInput mntiDetailInput) throws Exception {
-       ; // 토큰값 확인
-       MntiDetailOutput mntiList = mntiDetailService.readJsonFile(mntiDetailInput);
-
-       return mntiList ;
-    }
 
     @PostMapping("/registration")
     public MntiReserOutput registration(@RequestBody MntiReserInput mntiReserInput) throws Exception {
 
-        MntiReserOutput mntiList = mntiResrService.reserJsonFile(mntiReserInput);
-        //등산 예약 정보 insert
+        log.debug("[START]  /registration, INPUT = [{}]", mntiReserInput.toString());
 
-        mntiResrService.reserInsert(mntiList, mntiReserInput);
+        MntiReserOutput output = mntiResrService.execute(mntiReserInput);
 
-        return mntiList;
-
+        return output;
     }
+
+    @PostMapping("/registrationList")
+    public MntiReserOutput registrationList(@RequestBody MntiReserInput mntiReserInput) throws Exception {
+
+        log.debug("[START]  /registrationList, INPUT = [{}]", mntiReserInput.toString());
+
+        MntiReserOutput output = mntiResrService.execute(mntiReserInput);
+
+        return output;
+    }
+
 }

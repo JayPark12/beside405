@@ -1,5 +1,6 @@
 package com.beside.config;
 
+import com.beside.common.handler.CustomLogoutHandler;
 import com.beside.jwt.JwtFilter;
 import com.beside.user.repository.UserRepository;
 import com.beside.jwt.JwtProvider;
@@ -44,6 +45,8 @@ public class SecurityConfig {
 
     @Autowired
     private JwtProvider jwtProvider;
+    @Autowired
+    private CustomLogoutHandler customLogoutHandler;
 
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder(){
@@ -77,6 +80,15 @@ public class SecurityConfig {
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 ).addFilterBefore(new JwtFilter(jwtProvider), UsernamePasswordAuthenticationFilter.class)
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
+                        .addLogoutHandler(customLogoutHandler)
+                        .logoutSuccessHandler((request, response, authentication) -> {
+                            response.setStatus(HttpServletResponse.SC_OK);
+                        })
+                        .invalidateHttpSession(true)
+                        .deleteCookies("JSESSIONID")
+                )
 //                에러 핸들링 설정
                 .exceptionHandling(handling -> handling
                         //인증 실패 혹은 인증 헤더에 없는 경우 401 응답

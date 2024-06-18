@@ -6,6 +6,9 @@ import com.beside.mountain.dto.MntiSearchInput;
 import com.beside.mountain.repository.MntiRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.net.URISyntaxException;
@@ -21,26 +24,27 @@ public class MntiSerchService {
     private final MntiRepository mntiRepository;
     private final MntiListService mntiListService;
 
-    public List<MntiListOutput> mntiList(MntiSearchInput mntiSearchInput) throws URISyntaxException {
+    public Page<MntiListOutput> mntiList(MntiSearchInput mntiSearchInput, Pageable pageable) throws URISyntaxException {
         List<MntiListOutput> mntiListOutput = new ArrayList<>();
         List<MntiEntity> mntiShufList = mntiRepository.findByMntiSerch(mntiSearchInput.getMntiName());
-        List<MntiEntity> mntiShufList7 =mntiShufList.stream().limit(7).collect(Collectors.toList());
-        for (int i = 0; i < mntiShufList7.size(); i++)
-        {
-            List<String> potoFileSelect = mntiListService.potoFile(mntiShufList7.get(i).getMntiListNo() ,mntiShufList7.get(i).getMntiName());
+        List<MntiEntity> mntiShufListPaged = mntiShufList.stream()
+                .skip(pageable.getOffset())
+                .limit(pageable.getPageSize())
+                .collect(Collectors.toList());
+        for (MntiEntity mntiEntity : mntiShufListPaged) {
+            List<String> potoFileSelect = mntiListService.potoFile(mntiEntity.getMntiListNo(), mntiEntity.getMntiName());
             MntiListOutput mntiOutput = new MntiListOutput();
-            mntiOutput.setMntiName(mntiShufList7.get(i).getMntiName());
-            mntiOutput.setMntiListNo(mntiShufList7.get(i).getMntiListNo());
-            mntiOutput.setMntiLevel(mntiShufList7.get(i).getMntiLevel());
-            mntiOutput.setMntiAdd(mntiShufList7.get(i).getMntiAdd());
+            mntiOutput.setMntiName(mntiEntity.getMntiName());
+            mntiOutput.setMntiListNo(mntiEntity.getMntiListNo());
+            mntiOutput.setMntiLevel(mntiEntity.getMntiLevel());
+            mntiOutput.setMntiAdd(mntiEntity.getMntiAdd());
 
-            if(potoFileSelect.size() != 0) {
+            if (!potoFileSelect.isEmpty()) {
                 mntiOutput.setPotoFile(potoFileSelect.get(0));
             }
 
             mntiListOutput.add(mntiOutput);
         }
-
-        return mntiListOutput;
+        return new PageImpl<>(mntiListOutput, pageable, mntiShufList.size());
     }
 }

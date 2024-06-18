@@ -24,7 +24,7 @@ import java.util.List;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class MntiResrService {
+public class MntiResrListService {
 
     private final ObjectMapper objectMapper;
 //    private final WeatherApi weatherApi;

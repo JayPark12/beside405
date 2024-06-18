@@ -6,6 +6,9 @@ import com.beside.mountain.service.MntiListService;
 import com.beside.mountain.service.MntiSerchService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URISyntaxException;
@@ -22,16 +25,18 @@ public class MainPgController {
     private final MntiSerchService mntiSerchService;
 
     @GetMapping("/mntiList")
-    public List<MntiListOutput> mntiList() throws URISyntaxException {
-       List<MntiListOutput> mntiList = mntiListService.mntiList();
-
-       return mntiList ;
+    public Page<MntiListOutput> getMntiList(@RequestParam(defaultValue = "0") int page,
+                                            @RequestParam(defaultValue = "10") int size) throws URISyntaxException {
+        Pageable pageable = PageRequest.of(page, size);
+        return mntiListService.mntiList(pageable);
     }
 
-    @GetMapping("/mntiSerch")
-    public List<MntiListOutput> mntiSerch(@RequestBody MntiSearchInput mntiSearchInput) throws Exception {
-        List<MntiListOutput> mntiList = mntiSerchService.mntiList(mntiSearchInput);
+    @PostMapping("/mntiSerch")
+    public Page<MntiListOutput> mntiSerch(@RequestBody MntiSearchInput mntiSearchInput,
+                                          @RequestParam(defaultValue = "0") int page,
+                                          @RequestParam(defaultValue = "10")int size) throws Exception {
+        Pageable pageable = PageRequest.of(page, size);
 
-        return mntiList;
+        return mntiSerchService.mntiList(mntiSearchInput,pageable);
     }
 }

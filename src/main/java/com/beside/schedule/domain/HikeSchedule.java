@@ -1,5 +1,7 @@
 package com.beside.schedule.domain;
 
+import com.beside.schedule.dto.ModifyScheduleRequest;
+import com.beside.util.CommonUtil;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -35,4 +37,14 @@ public class HikeSchedule {
 
     @Column(name = "del_yn")
     private String delYn;
+
+    public void updateSchedule(ModifyScheduleRequest request) {
+        this.scheduleDate = CommonUtil.getDateTime(request.getScheduleDate());
+        this.mountainId = request.getMountainId();
+        this.memberCount = request.getMemberCount();
+    }
+
+    public void deleteSchedule() {
+        this.delYn = "Y";
+    }
 }
