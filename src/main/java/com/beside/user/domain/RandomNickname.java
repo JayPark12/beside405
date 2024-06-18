@@ -4,17 +4,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 @Getter
 @Builder
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Table(name="RANDOM_NICKNAME")
-@Entity
+@Entity @ToString
 public class RandomNickname {
     @Id
     @Column(name = "part")

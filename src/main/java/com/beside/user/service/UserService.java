@@ -55,27 +55,11 @@ public class UserService {
 
     //랜덤 닉네임 생성
     public String createNickname() {
-        Random random = new Random();
-        List<RandomNickname> nicknameList = randomNicknameRepository.findAll();
+        List<String> firstNameList = randomNicknameRepository.findByPart("first");
+        List<String> secondNameList = randomNicknameRepository.findByPart("second");
 
-        List<String> firstNameList = nicknameList.stream()
-                .filter(nickname -> {
-                    String part = nickname.getPart(); // RandomNickname 객체의 부분을 가져옴
-                    return "first".equals(part); // 필터링 조건
-                })
-                .map(RandomNickname::getName) // 필터링된 객체의 이름을 가져옴
-                .collect(Collectors.toCollection(ArrayList::new));
-
-        List<String> secondNameList = nicknameList.stream()
-                .filter(nickname -> {
-                    String part = nickname.getPart();
-                    return "second".equals(part);
-                })
-                .map(RandomNickname::getName)
-                .collect(Collectors.toCollection(ArrayList::new));
-
-        Collections.shuffle(firstNameList, random);
-        Collections.shuffle(secondNameList, random);
+        Collections.shuffle(firstNameList);
+        Collections.shuffle(secondNameList);
 
         String firstName = firstNameList.get(0);
         String secondName = secondNameList.get(0);
