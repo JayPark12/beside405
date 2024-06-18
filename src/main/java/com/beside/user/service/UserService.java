@@ -1,10 +1,12 @@
 package com.beside.user.service;
 
 import com.beside.jwt.JwtProvider;
+import com.beside.user.domain.RandomNickname;
 import com.beside.user.domain.UserEntity;
 import com.beside.user.dto.*;
 import com.beside.user.exception.UserErrorInfo;
 import com.beside.user.exception.UserException;
+import com.beside.user.repository.RandomNicknameRepository;
 import com.beside.user.repository.UserRepository;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.transaction.Transactional;
@@ -18,10 +20,7 @@ import org.springframework.transaction.support.TransactionTemplate;
 import org.thymeleaf.util.StringUtils;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -32,6 +31,7 @@ public class UserService {
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder passwordEncoder;
     private final JwtProvider jwtProvider;
+    private final RandomNicknameRepository randomNicknameRepository;
 
     @Transactional
     public SignUpResponse joinUser(SignUpRequest request) {
@@ -44,14 +44,45 @@ public class UserService {
         String hashedPassword = passwordEncoder.encode(request.getPassword());
 
         UserEntity user = UserEntity.builder().id(request.getUserId())
-                .nickname(request.getNickname())
+                .nickname(createNickname())
                 .callNo(request.getCallNo())
                 .userSts("0").creatDt(localDate)
                 .password(hashedPassword).build();
 
         userRepository.save(user);
-        return SignUpResponse.builder().userId(request.getUserId()).desc("계정이 생성 되었습니다.").build();
+        return SignUpResponse.builder().userId(request.getUserId()).nickname(user.getNickname()).desc("계정이 생성 되었습니다.").build();
     }
+
+    //랜덤 닉네임 생성
+    public String createNickname() {
+        Random random = new Random();
+        List<RandomNickname> nicknameList = randomNicknameRepository.findAll();
+
+        List<String> firstNameList = nicknameList.stream()
+                .filter(nickname -> {
+                    String part = nickname.getPart(); // RandomNickname 객체의 부분을 가져옴
+                    return "first".equals(part); // 필터링 조건
+                })
+                .map(RandomNickname::getName) // 필터링된 객체의 이름을 가져옴
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        List<String> secondNameList = nicknameList.stream()
+                .filter(nickname -> {
+                    String part = nickname.getPart();
+                    return "second".equals(part);
+                })
+                .map(RandomNickname::getName)
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        Collections.shuffle(firstNameList, random);
+        Collections.shuffle(secondNameList, random);
+
+        String firstName = firstNameList.get(0);
+        String secondName = secondNameList.get(0);
+
+        return firstName + " " + secondName;
+    }
+
 
 
     public LoginResponse login(UserInput userInput, HttpServletResponse response) {

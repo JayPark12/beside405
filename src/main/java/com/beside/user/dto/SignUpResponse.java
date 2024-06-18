@@ -11,6 +11,9 @@ public class SignUpResponse {
     @Schema(description = "가입 완료 id")
     private String userId;
 
+    @Schema(description = "생성된 닉네임")
+    private String nickname;
+
     @Schema(description = "설명")
     private String desc;
 }
