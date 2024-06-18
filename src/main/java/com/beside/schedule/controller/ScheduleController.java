@@ -20,7 +20,7 @@ import java.util.List;
 public class ScheduleController {
     private final ScheduleService scheduleService;
 
-    //내 일정 보기
+    //내 일정 리스트 보기
     @GetMapping("/mySchedule")
     @Operation(summary = "내 일정 보기", description = "등록된 일정 리스트를 볼 수 있습니다.")
     public ResponseEntity<?> mySchedule() {
@@ -51,6 +51,13 @@ public class ScheduleController {
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();
         String response = scheduleService.deleteSchedule(userId, scheduleId);
         return ResponseEntity.ok("일정이 삭제되었습니다. id : " + response);
+    }
+
+    //일정 상세보기
+    @GetMapping("/mySchedule/{scheduleId}")
+    public ResponseEntity<?> detailSchedule(@PathVariable String scheduleId) {
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        return null;
     }
 
 
