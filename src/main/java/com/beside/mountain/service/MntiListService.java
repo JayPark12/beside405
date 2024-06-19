@@ -1,5 +1,6 @@
 package com.beside.mountain.service;
 
+import com.beside.common.util.CommomUtil;
 import com.beside.mountain.domain.MntiEntity;
 import com.beside.define.GsonParserSvc;
 import com.beside.mountain.dto.MntiListOutput;
@@ -28,6 +29,7 @@ import java.util.stream.Stream;
 public class MntiListService {
 
     private final MntiRepository mntiRepository;
+    private final CommomUtil commomUtil;
 
     public Page<MntiListOutput> mntiList(Pageable pageable) throws URISyntaxException {
         List<MntiListOutput> mntiListOutput = new ArrayList<>();
@@ -37,7 +39,7 @@ public class MntiListService {
                 .limit(pageable.getPageSize())
                 .collect(Collectors.toList());
         for (MntiEntity mntiEntity : mntiShufListPaged) {
-            List<String> potoFileSelect = potoFile(mntiEntity.getMntiListNo(), mntiEntity.getMntiName());
+            List<String> potoFileSelect = commomUtil.potoFile(mntiEntity.getMntiListNo(), mntiEntity.getMntiName());
             MntiListOutput mntiOutput = new MntiListOutput();
             mntiOutput.setMntiName(mntiEntity.getMntiName());
             mntiOutput.setMntiListNo(mntiEntity.getMntiListNo());
@@ -51,28 +53,5 @@ public class MntiListService {
             mntiListOutput.add(mntiOutput);
         }
         return new PageImpl<>(mntiListOutput, pageable, mntiShufList.size());
-    }
-
-    public List<String> potoFile (String mntilistNo, String mntiName) throws URISyntaxException {
-
-        String folderPath = "mntiPotoData/" +mntilistNo+"_"+mntiName;
-        ClassLoader classLoader = MntiListService.class.getClassLoader();
-        URL resource = classLoader.getResource(folderPath);
-
-        if (resource != null) {
-            Path path = Paths.get(resource.toURI());
-
-            // 스트림을 사용하여 파일 목록 가져오기
-            try (Stream<Path> paths = Files.walk(path, 1)) {
-                return List.of(paths
-                        .filter(Files::isRegularFile)
-                        .map(Path::getFileName)
-                        .map(Path::toString)
-                        .toArray(String[]::new));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        return null;
     }
 }

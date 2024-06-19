@@ -1,6 +1,6 @@
-package com.beside.mountain.domain;
+package com.beside.reservation.domain;
 
-import com.beside.mountain.pk.MountainResrPk;
+import com.beside.reservation.pk.MountainResrPk;
 import jakarta.persistence.*;
 import lombok.*;
 

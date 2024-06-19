@@ -1,15 +1,18 @@
-package com.beside.mountain.repository;
+package com.beside.reservation.repository;
 
-import com.beside.mountain.domain.MntiReserEntity;
+import com.beside.reservation.domain.MntiReserEntity;
+import com.beside.reservation.dto.MntiReserListOutput;
+import com.beside.reservation.dto.MntiReserOutput;
 import jakarta.transaction.Transactional;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
+import java.util.List;
 
-public interface ReserRepository extends CrudRepository<MntiReserEntity, String> {
+public interface ReserRepository extends JpaRepository<MntiReserEntity, String> {
 
     @Query(value = """
     SELECT MAX(MNTI_CNT) 
@@ -35,7 +38,7 @@ public interface ReserRepository extends CrudRepository<MntiReserEntity, String>
                                               @Param("mntiCouse")String mntiCouse,
                                               @Param("mntiStrDate")LocalDate mntiStrDate);
 
-    //날짜 지난것에 대한 sts 변경
+    //날짜 지난것에 대한 sts 변경 batch
     @Transactional
     @Modifying
     @Query(value = """
@@ -45,5 +48,16 @@ public interface ReserRepository extends CrudRepository<MntiReserEntity, String>
             , nativeQuery = true)
     void updateStatusForOlderDates(@Param("mntiStrDate") LocalDate mntiStrDate,
                                    @Param("mntiSts") String mntiSts);
+
+
+    @Query(value = """
+    SELECT *
+    FROM MOUNTAIN_RESER
+    WHERE id =:id
+    AND   MNTI_STS  = :mntiSts
+            """
+            , nativeQuery = true)
+    List<MntiReserEntity> findByMntiCntAndUserIdAndScheduleId(@Param("id")String id,
+                                                                  @Param("mntiSts")String mntiSts);
 
 }

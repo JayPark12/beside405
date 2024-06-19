@@ -1,5 +1,6 @@
-package com.beside.mountain.dto;
+package com.beside.reservation.dto;
 
+import com.beside.mountain.dto.Course;
 import com.beside.weather.dto.Weather;
 import lombok.*;
 

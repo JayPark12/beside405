@@ -1,4 +1,4 @@
-package com.beside.mountain.pk;
+package com.beside.reservation.pk;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;

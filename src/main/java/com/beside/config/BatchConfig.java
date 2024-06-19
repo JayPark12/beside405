@@ -1,6 +1,6 @@
 package com.beside.config;
 
-import com.beside.mountain.repository.ReserRepository;
+import com.beside.reservation.repository.ReserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;

@@ -36,7 +36,6 @@ public class MainPgController {
                                           @RequestParam(defaultValue = "0") int page,
                                           @RequestParam(defaultValue = "10")int size) throws Exception {
         Pageable pageable = PageRequest.of(page, size);
-
         return mntiSerchService.mntiList(mntiSearchInput,pageable);
     }
 }

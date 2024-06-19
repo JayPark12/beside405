@@ -1,4 +1,4 @@
-package com.beside.mountain.dto;
+package com.beside.reservation.dto;
 
 
 import lombok.*;

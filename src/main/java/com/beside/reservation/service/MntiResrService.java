@@ -1,12 +1,14 @@
-package com.beside.mountain.service;
+package com.beside.reservation.service;
 
+import com.beside.common.util.CommomUtil;
 import com.beside.mountain.domain.MntiEntity;
-import com.beside.mountain.domain.MntiReserEntity;
+import com.beside.mountain.service.MntiListService;
+import com.beside.reservation.domain.MntiReserEntity;
 import com.beside.mountain.dto.Course;
-import com.beside.mountain.dto.MntiReserInput;
-import com.beside.mountain.dto.MntiReserOutput;
+import com.beside.reservation.dto.MntiReserInput;
+import com.beside.reservation.dto.MntiReserOutput;
 import com.beside.mountain.repository.MntiRepository;
-import com.beside.mountain.repository.ReserRepository;
+import com.beside.reservation.repository.ReserRepository;
 import com.beside.util.Coordinate;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -24,13 +26,14 @@ import java.util.List;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class MntiResrListService {
+public class MntiResrService {
 
     private final ObjectMapper objectMapper;
 //    private final WeatherApi weatherApi;
     private final MntiRepository mntiRepository;
     private final ReserRepository reserRepository;
     private final MntiListService mntiListService;
+    private final CommomUtil commomUtil ;
 
     public MntiReserOutput execute(MntiReserInput mntiReserInput) throws Exception {
         String id = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -41,7 +44,7 @@ public class MntiResrListService {
         return mntiReserOutput;
     }
 
-    public MntiReserOutput reserJsonFile(MntiReserInput mntiReserInput) throws Exception {
+    private MntiReserOutput reserJsonFile(MntiReserInput mntiReserInput) throws Exception {
         MntiReserOutput mntiReserOutput = new MntiReserOutput();
         MntiEntity mntiInfo = mntiRepository.findByMntiInfo(mntiReserInput.getMntiListNo());
         Course course = new Course();
@@ -55,7 +58,7 @@ public class MntiResrListService {
         mntiReserOutput.setMntiName(mntiInfo.getMntiName());
         mntiReserOutput.setMntiAdd(mntiInfo.getMntiAdd());
         mntiReserOutput.setMntiListNo(mntiInfo.getMntiListNo());
-        mntiReserOutput.setPotoFiles(mntiListService.potoFile(mntiInfo.getMntiListNo(), mntiInfo.getMntiName()));
+        mntiReserOutput.setPotoFiles(commomUtil.potoFile(mntiInfo.getMntiListNo(), mntiInfo.getMntiName()));
         mntiReserOutput.setMntiLevel(mntiInfo.getMntiLevel());
 
         if (itemsNode.isArray()) {
@@ -98,7 +101,7 @@ public class MntiResrListService {
         return mntiReserOutput;
     }
 
-    public void reserInsert (String id , MntiReserOutput mntiReserOutput, MntiReserInput mntiReserInput) throws InterruptedException {
+    private void reserInsert (String id , MntiReserOutput mntiReserOutput, MntiReserInput mntiReserInput) throws InterruptedException {
         MntiReserEntity mntiReserEntity = new MntiReserEntity(); //새로운 정보 입력
         reserInputCheck(id , mntiReserInput);
         Integer mntiCnt = reserRepository.findByMntiReserSerch(id , mntiReserOutput.getMntiListNo()); //등산 횟수 체크 (같은 산)
