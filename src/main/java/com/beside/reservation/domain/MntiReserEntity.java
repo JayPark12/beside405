@@ -71,4 +71,7 @@ public class MntiReserEntity {
 
     @Column(name = "MNTI_COMPLETE_POTO")
     private String mntiCompletePoto ; //
+
+    @Column(name = "MNTI_PEOPLE", precision  = 3)
+    private int mntiPeople;
 }

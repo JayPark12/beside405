@@ -20,7 +20,6 @@ public class MtDetailPgController {
     private final MntiDetailService mntiDetailService;
 
     @PostMapping("/mtDetail")
-
     public MntiDetailOutput mntiList(@RequestBody MntiDetailInput mntiDetailInput) throws Exception {
        MntiDetailOutput mntiList = mntiDetailService.readJsonFile(mntiDetailInput);
 

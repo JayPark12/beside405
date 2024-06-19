@@ -19,6 +19,7 @@ public class MntiReserOutput {
     private String mntiLevel;     //산난이도
     private BigDecimal mntiHigh;    //고도
     private String mntiAdd;     //산 소제지
+    private int    mntiPeople;  //등산 인원
 
     private List<Course> course; //코스정보
     private List<String> potoFiles; //사진 정보

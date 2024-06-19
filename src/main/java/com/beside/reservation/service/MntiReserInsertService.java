@@ -2,7 +2,6 @@ package com.beside.reservation.service;
 
 import com.beside.common.util.CommomUtil;
 import com.beside.mountain.domain.MntiEntity;
-import com.beside.mountain.service.MntiListService;
 import com.beside.reservation.domain.MntiReserEntity;
 import com.beside.mountain.dto.Course;
 import com.beside.reservation.dto.MntiReserInput;
@@ -26,13 +25,11 @@ import java.util.List;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class MntiResrService {
+public class MntiReserInsertService {
 
     private final ObjectMapper objectMapper;
-//    private final WeatherApi weatherApi;
     private final MntiRepository mntiRepository;
     private final ReserRepository reserRepository;
-    private final MntiListService mntiListService;
     private final CommomUtil commomUtil ;
 
     public MntiReserOutput execute(MntiReserInput mntiReserInput) throws Exception {
@@ -62,7 +59,7 @@ public class MntiResrService {
         mntiReserOutput.setMntiLevel(mntiInfo.getMntiLevel());
 
         if (itemsNode.isArray()) {
-            for (JsonNode item : itemsNode) {
+            for (JsonNode item : itemsNode) {//코스 이름만 맞는 것으로 setting
                 if (StringUtils.equals(item.path("attributes").path("PMNTN_SN").asText(), mntiReserInput.getCourseNo())) {
                     course.setCourseNo(item.path("attributes").path("PMNTN_SN").asText());
                     course.setCourseName(item.path("attributes").path("PMNTN_NM").asText());
@@ -88,16 +85,6 @@ public class MntiResrService {
             }
             mntiReserOutput.setMntiHigh(mntiInfo.getMntihigh());
         }
-
-        //watherInfo   여기 등록된날짜들어가게 날씨처리하는것은 다시해봐야함
-//        List<Weather> weatherList = new ArrayList<>();
-//        weatherList.add(weatherApi.watherListToday());// 오늘 날씨 데이터
-//
-//        weatherApi.watherListOrtherDay(weatherList);
-
-        //mntiReserOutput.setWeatherList(weatherList);
-
-
         return mntiReserOutput;
     }
 
@@ -124,6 +111,7 @@ public class MntiResrService {
         mntiReserEntity.setMntiClimTm(mntiReserOutput.getCourse().get(0).getMntiTime());
         mntiReserEntity.setMntiDistance(mntiReserOutput.getCourse().get(0).getMntiDist());
         mntiReserEntity.setMntiReserDate(LocalDate.now());
+        mntiReserEntity.setMntiPeople(mntiReserInput.getMntiPeople());
 
         reserRepository.save(mntiReserEntity);
     }

@@ -13,7 +13,6 @@ public class MntiReserListOutput {
     private String mntiName;    //산이름
     private String mntiLevel;     //산난이도
     private String potoFile = null;     //사진 api url
-    private String mntiAdd;
 
 }
 

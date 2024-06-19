@@ -1,10 +1,11 @@
 package com.beside.reservation.controller;
 
 import com.beside.reservation.dto.MntiReserListOutput;
-import com.beside.reservation.service.MntiResrListService;
+import com.beside.reservation.service.MntiReserDetailService;
+import com.beside.reservation.service.MntiReserListService;
 import com.beside.reservation.dto.MntiReserInput;
 import com.beside.reservation.dto.MntiReserOutput;
-import com.beside.reservation.service.MntiResrService;
+import com.beside.reservation.service.MntiReserInsertService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -19,15 +20,16 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/reser")
 public class MtReserPgController {
 
-    private final MntiResrService mntiResrService;
-    private final MntiResrListService mntiResrListService;
+    private final MntiReserInsertService mntiReserInsertService;
+    private final MntiReserListService mntiReserListService;
+    private final MntiReserDetailService mntiReserDetailService;
 
     @PostMapping("/registration")
     public MntiReserOutput registration(@RequestBody MntiReserInput mntiReserInput) throws Exception {
 
         log.debug("[START]  /registration, INPUT = [{}]", mntiReserInput.toString());
 
-        MntiReserOutput output = mntiResrService.execute(mntiReserInput);
+        MntiReserOutput output = mntiReserInsertService.execute(mntiReserInput);
 
         return output;
     }
@@ -39,7 +41,15 @@ public class MtReserPgController {
         log.debug("[START]  /registrationList");
         Pageable pageable = PageRequest.of(page, size);
 
-        Page<MntiReserListOutput> output = mntiResrListService.execute(pageable);
+        Page<MntiReserListOutput> output = mntiReserListService.execute(pageable);
+
+        return output;
+    }
+
+    @PostMapping("/registrationDitail")
+    public MntiReserOutput registrationDitail (@RequestBody MntiReserInput mntiReserInput) throws Exception {
+
+        MntiReserOutput output  = mntiReserDetailService.execute(mntiReserInput);
 
         return output;
     }

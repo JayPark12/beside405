@@ -4,6 +4,7 @@ import com.beside.reservation.domain.MntiReserEntity;
 import com.beside.reservation.dto.MntiReserListOutput;
 import com.beside.reservation.dto.MntiReserOutput;
 import jakarta.transaction.Transactional;
+import org.springframework.cglib.core.Local;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -59,5 +60,19 @@ public interface ReserRepository extends JpaRepository<MntiReserEntity, String> 
             , nativeQuery = true)
     List<MntiReserEntity> findByMntiCntAndUserIdAndScheduleId(@Param("id")String id,
                                                                   @Param("mntiSts")String mntiSts);
+
+    @Query(value = """
+    SELECT *
+    FROM MOUNTAIN_RESER
+    WHERE id =:id
+    AND   MNTI_LIST_NO  = :mntiListNo
+    AND   MNTI_STR_DT   = :mntiStrDt
+            """
+            , nativeQuery = true)
+    MntiReserEntity findByIdAndMntiListNoAndMntiStrDt(@Param("id")String id,
+                                                            @Param("mntiListNo")String mntiListNo,
+                                                            @Param("mntiStrDt")LocalDate mntiStrDt);
+
+
 
 }
