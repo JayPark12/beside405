@@ -1,6 +1,7 @@
 package com.beside.util;
 
 import com.beside.mountain.service.MntiListService;
+import org.springframework.context.annotation.Configuration;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Stream;
 
+@Configuration
 public class CommonUtil {
 
     public static String getCurrentTime() {
