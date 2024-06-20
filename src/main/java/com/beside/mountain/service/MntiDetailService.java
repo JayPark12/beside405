@@ -1,7 +1,5 @@
 package com.beside.mountain.service;
 
-import com.beside.common.util.CommomUtil;
-import com.beside.define.GsonParserSvc;
 import com.beside.mountain.domain.MntiEntity;
 import com.beside.mountain.repository.MntiRepository;
 import com.beside.util.*;
@@ -26,7 +24,7 @@ import java.util.List;
 public class MntiDetailService {
 
     private final ObjectMapper objectMapper;
-    private final CommomUtil commomUtil;
+    private final CommonUtil commonUtil;
     private final WeatherApi weatherApi;
     private final MntiRepository mntiRepository;
 
@@ -44,7 +42,7 @@ public class MntiDetailService {
         //고정된 정보
         mntiDetailOutput.setMntiName(mntiInfo.getMntiName());
         mntiDetailOutput.setMnti_add(mntiInfo.getMntiAdd());
-        mntiDetailOutput.setPoto_file(commomUtil.potoFile(mntiInfo.getMntiListNo(), mntiInfo.getMntiName()));
+        mntiDetailOutput.setPoto_file(commonUtil.potoFile(mntiInfo.getMntiListNo(), mntiInfo.getMntiName()));
 
         if (itemsNode.isArray()) {
             for (JsonNode item : itemsNode) {

@@ -1,13 +1,13 @@
 package com.beside.reservation.service;
 
-import com.beside.common.util.CommomUtil;
 import com.beside.mountain.domain.MntiEntity;
-import com.beside.reservation.domain.MntiReserEntity;
 import com.beside.mountain.dto.Course;
+import com.beside.mountain.repository.MntiRepository;
+import com.beside.reservation.domain.MntiReserEntity;
 import com.beside.reservation.dto.MntiReserInput;
 import com.beside.reservation.dto.MntiReserOutput;
-import com.beside.mountain.repository.MntiRepository;
 import com.beside.reservation.repository.ReserRepository;
+import com.beside.util.CommonUtil;
 import com.beside.util.Coordinate;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -30,7 +30,7 @@ public class MntiReserInsertService {
     private final ObjectMapper objectMapper;
     private final MntiRepository mntiRepository;
     private final ReserRepository reserRepository;
-    private final CommomUtil commomUtil ;
+    private final CommonUtil commonUtil;
 
     public MntiReserOutput execute(MntiReserInput mntiReserInput) throws Exception {
         String id = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -55,7 +55,7 @@ public class MntiReserInsertService {
         mntiReserOutput.setMntiName(mntiInfo.getMntiName());
         mntiReserOutput.setMntiAdd(mntiInfo.getMntiAdd());
         mntiReserOutput.setMntiListNo(mntiInfo.getMntiListNo());
-        mntiReserOutput.setPotoFiles(commomUtil.potoFile(mntiInfo.getMntiListNo(), mntiInfo.getMntiName()));
+        mntiReserOutput.setPotoFiles(commonUtil.potoFile(mntiInfo.getMntiListNo(), mntiInfo.getMntiName()));
         mntiReserOutput.setMntiLevel(mntiInfo.getMntiLevel());
 
         if (itemsNode.isArray()) {

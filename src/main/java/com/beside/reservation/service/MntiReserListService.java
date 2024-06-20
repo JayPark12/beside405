@@ -1,9 +1,9 @@
 package com.beside.reservation.service;
 
-import com.beside.common.util.CommomUtil;
 import com.beside.reservation.domain.MntiReserEntity;
 import com.beside.reservation.dto.MntiReserListOutput;
 import com.beside.reservation.repository.ReserRepository;
+import com.beside.util.CommonUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 public class MntiReserListService {
 
     private final ReserRepository reserRepository;
-    private final CommomUtil commomUtil;
+    private final CommonUtil commonUtil;
 
     public Page<MntiReserListOutput> execute(Pageable pageable) throws Exception {
         String id = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -34,7 +34,7 @@ public class MntiReserListService {
                 .collect(Collectors.toList());
 
         for (MntiReserEntity mntiReserEntity : mntiReserListPage) {
-            List<String> potoFileSelect = commomUtil.potoFile(mntiReserEntity.getMntiListNo(), mntiReserEntity.getMntiName());
+            List<String> potoFileSelect = commonUtil.potoFile(mntiReserEntity.getMntiListNo(), mntiReserEntity.getMntiName());
             MntiReserListOutput mntiReserOutput = new MntiReserListOutput();
             mntiReserOutput.setMntiName(mntiReserEntity.getMntiName());
             mntiReserOutput.setMntiListNo(mntiReserEntity.getMntiListNo());

@@ -1,11 +1,11 @@
 package com.beside.reservation.service;
 
-import com.beside.common.util.CommomUtil;
 import com.beside.mountain.dto.Course;
 import com.beside.reservation.domain.MntiReserEntity;
 import com.beside.reservation.dto.MntiReserDetailInput;
 import com.beside.reservation.dto.MntiReserOutput;
 import com.beside.reservation.repository.ReserRepository;
+import com.beside.util.CommonUtil;
 import com.beside.util.Coordinate;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -24,7 +24,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MntiReserDetailService {
 
-    private final CommomUtil commomUtil ;
+    private final CommonUtil commonUtil;
     private final ReserRepository reserRepository;
     private final ObjectMapper objectMapper;
 
@@ -49,7 +49,7 @@ public class MntiReserDetailService {
         //고정된 정보
         mntiReserOutput.setMntiName(mntiReserInfo.getMntiName());
         mntiReserOutput.setMntiListNo(mntiReserInfo.getMntiListNo());
-        mntiReserOutput.setPotoFiles(commomUtil.potoFile(mntiReserInfo.getMntiListNo(), mntiReserInfo.getMntiName()));
+        mntiReserOutput.setPotoFiles(commonUtil.potoFile(mntiReserInfo.getMntiListNo(), mntiReserInfo.getMntiName()));
         mntiReserOutput.setMntiLevel(mntiReserInfo.getMntiLevel());
 
         if (itemsNode.isArray()) {

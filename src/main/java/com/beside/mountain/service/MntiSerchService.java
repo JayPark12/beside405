@@ -1,10 +1,10 @@
 package com.beside.mountain.service;
 
-import com.beside.common.util.CommomUtil;
 import com.beside.mountain.domain.MntiEntity;
 import com.beside.mountain.dto.MntiListOutput;
 import com.beside.mountain.dto.MntiSearchInput;
 import com.beside.mountain.repository.MntiRepository;
+import com.beside.util.CommonUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -23,8 +23,7 @@ import java.util.stream.Collectors;
 public class MntiSerchService {
 
     private final MntiRepository mntiRepository;
-    private final MntiListService mntiListService;
-    private final CommomUtil commomUtil;
+    private final CommonUtil commonUtil;
 
     public Page<MntiListOutput> mntiList(MntiSearchInput mntiSearchInput, Pageable pageable) throws URISyntaxException {
         List<MntiListOutput> mntiListOutput = new ArrayList<>();
@@ -34,7 +33,7 @@ public class MntiSerchService {
                 .limit(pageable.getPageSize())
                 .collect(Collectors.toList());
         for (MntiEntity mntiEntity : mntiShufListPaged) {
-            List<String> potoFileSelect = commomUtil.potoFile(mntiEntity.getMntiListNo(), mntiEntity.getMntiName());
+            List<String> potoFileSelect = commonUtil.potoFile(mntiEntity.getMntiListNo(), mntiEntity.getMntiName());
             MntiListOutput mntiOutput = new MntiListOutput();
             mntiOutput.setMntiName(mntiEntity.getMntiName());
             mntiOutput.setMntiListNo(mntiEntity.getMntiListNo());

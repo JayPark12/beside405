@@ -1,7 +1,10 @@
 package com.beside.mountain.controller;
 
+import com.beside.mountain.dto.MntiDetailInput;
+import com.beside.mountain.dto.MntiDetailOutput;
 import com.beside.mountain.dto.MntiListOutput;
 import com.beside.mountain.dto.MntiSearchInput;
+import com.beside.mountain.service.MntiDetailService;
 import com.beside.mountain.service.MntiListService;
 import com.beside.mountain.service.MntiSerchService;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +26,7 @@ public class MainPgController {
 
     private final MntiListService mntiListService;
     private final MntiSerchService mntiSerchService;
+    private final MntiDetailService mntiDetailService;
 
     @GetMapping("/mntiList")
     public Page<MntiListOutput> getMntiList(@RequestParam(defaultValue = "0") int page,
@@ -37,5 +41,12 @@ public class MainPgController {
                                           @RequestParam(defaultValue = "10")int size) throws Exception {
         Pageable pageable = PageRequest.of(page, size);
         return mntiSerchService.mntiList(mntiSearchInput,pageable);
+    }
+
+    @PostMapping("/mtDetail")
+    public MntiDetailOutput mntiList(@RequestBody MntiDetailInput mntiDetailInput) throws Exception {
+        MntiDetailOutput mntiList = mntiDetailService.readJsonFile(mntiDetailInput);
+
+        return mntiList ;
     }
 }
