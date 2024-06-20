@@ -1,11 +1,9 @@
 package com.beside.reservation.service;
 
 import com.beside.common.util.CommomUtil;
-import com.beside.mountain.domain.MntiEntity;
 import com.beside.mountain.dto.Course;
-import com.beside.mountain.repository.MntiRepository;
 import com.beside.reservation.domain.MntiReserEntity;
-import com.beside.reservation.dto.MntiReserInput;
+import com.beside.reservation.dto.MntiReserDetailInput;
 import com.beside.reservation.dto.MntiReserOutput;
 import com.beside.reservation.repository.ReserRepository;
 import com.beside.util.Coordinate;
@@ -18,7 +16,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.util.StringUtils;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,17 +28,17 @@ public class MntiReserDetailService {
     private final ReserRepository reserRepository;
     private final ObjectMapper objectMapper;
 
-    public MntiReserOutput execute(MntiReserInput mntiReserInput) throws Exception {
+    public MntiReserOutput execute(MntiReserDetailInput mntiReserDetailInput) throws Exception {
         String id = SecurityContextHolder.getContext().getAuthentication().getName();
-        MntiReserOutput mntiReserOutput = reserJsonFile(id, mntiReserInput); //json file read
+        MntiReserOutput mntiReserOutput = reserJsonFile(id, mntiReserDetailInput); //json file read
 
 
         return mntiReserOutput;
     }
 
-    private MntiReserOutput reserJsonFile(String id ,MntiReserInput mntiReserInput) throws Exception {
+    private MntiReserOutput reserJsonFile(String id , MntiReserDetailInput mntiReserDetailInput) throws Exception {
         MntiReserOutput mntiReserOutput = new MntiReserOutput();
-        MntiReserEntity mntiReserInfo = reserRepository.findByIdAndMntiListNoAndMntiStrDt(id, mntiReserInput.getMntiListNo(), mntiReserInput.getMntiStrDt());
+        MntiReserEntity mntiReserInfo = reserRepository.findByIdAndMntiListNoAndMntiStrDt(id, mntiReserDetailInput.getMntiListNo(), mntiReserDetailInput.getMntiStrDate(), mntiReserDetailInput.getMntiCourse(), "0");
         Course course = new Course();
         List<Course> courses = new ArrayList<>();
         ClassPathResource resource = new ClassPathResource("/mntiCourseData/PMNTN_"+mntiReserInfo.getMntiName()+"_"+mntiReserInfo.getMntiListNo()+".json");
@@ -57,7 +54,7 @@ public class MntiReserDetailService {
 
         if (itemsNode.isArray()) {
             for (JsonNode item : itemsNode) {//코스 이름만 맞는 것으로 setting
-                if (StringUtils.equals(item.path("attributes").path("PMNTN_SN").asText(), mntiReserInput.getCourseNo())) {
+                if (StringUtils.equals(item.path("attributes").path("PMNTN_SN").asText(), mntiReserDetailInput.getMntiCourse())) {
                     course.setCourseNo(item.path("attributes").path("PMNTN_SN").asText());
                     course.setCourseName(item.path("attributes").path("PMNTN_NM").asText());
                     course.setMntiTime(item.path("attributes").path("PMNTN_UPPL").asLong() + item.path("attributes").path("PMNTN_GODN").asLong());

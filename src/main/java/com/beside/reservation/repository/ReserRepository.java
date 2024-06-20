@@ -66,12 +66,16 @@ public interface ReserRepository extends JpaRepository<MntiReserEntity, String> 
     FROM MOUNTAIN_RESER
     WHERE id =:id
     AND   MNTI_LIST_NO  = :mntiListNo
-    AND   MNTI_STR_DT   = :mntiStrDt
+    AND   MNTI_STR_DATE = :mntiStrDate
+    AND   MNTI_COURSE   = :mntiCourse
+    AND   MNTI_STS      = :mntiSts
             """
             , nativeQuery = true)
     MntiReserEntity findByIdAndMntiListNoAndMntiStrDt(@Param("id")String id,
-                                                            @Param("mntiListNo")String mntiListNo,
-                                                            @Param("mntiStrDt")LocalDate mntiStrDt);
+                                                      @Param("mntiListNo")String mntiListNo,
+                                                      @Param("mntiStrDate")LocalDate mntiStrDate,
+                                                      @Param("mntiCourse")String mntiCourse,
+                                                      @Param("mntiSts")String mntiSts);
 
 
 

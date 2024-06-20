@@ -1,5 +1,6 @@
 package com.beside.reservation.controller;
 
+import com.beside.reservation.dto.MntiReserDetailInput;
 import com.beside.reservation.dto.MntiReserListOutput;
 import com.beside.reservation.service.MntiReserDetailService;
 import com.beside.reservation.service.MntiReserListService;
@@ -47,9 +48,9 @@ public class MtReserPgController {
     }
 
     @PostMapping("/registrationDitail")
-    public MntiReserOutput registrationDitail (@RequestBody MntiReserInput mntiReserInput) throws Exception {
+    public MntiReserOutput registrationDitail (@RequestBody MntiReserDetailInput mntiReserDetailInput) throws Exception {
 
-        MntiReserOutput output  = mntiReserDetailService.execute(mntiReserInput);
+        MntiReserOutput output  = mntiReserDetailService.execute(mntiReserDetailInput);
 
         return output;
     }

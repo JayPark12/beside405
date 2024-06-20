@@ -60,7 +60,7 @@ public class MntiReserInsertService {
 
         if (itemsNode.isArray()) {
             for (JsonNode item : itemsNode) {//코스 이름만 맞는 것으로 setting
-                if (StringUtils.equals(item.path("attributes").path("PMNTN_SN").asText(), mntiReserInput.getCourseNo())) {
+                if (StringUtils.equals(item.path("attributes").path("PMNTN_SN").asText(), mntiReserInput.getMntiCourse())) {
                     course.setCourseNo(item.path("attributes").path("PMNTN_SN").asText());
                     course.setCourseName(item.path("attributes").path("PMNTN_NM").asText());
                     course.setMntiTime(item.path("attributes").path("PMNTN_UPPL").asLong() + item.path("attributes").path("PMNTN_GODN").asLong());
@@ -101,12 +101,12 @@ public class MntiReserInsertService {
         mntiReserEntity.setId(id);
         mntiReserEntity.setMntiName(mntiReserOutput.getMntiName());
         mntiReserEntity.setMntiListNo(mntiReserOutput.getMntiListNo());
-        mntiReserEntity.setMntiCourse(mntiReserInput.getCourseNo());
+        mntiReserEntity.setMntiCourse(mntiReserInput.getMntiCourse());
         mntiReserEntity.setMntiCourseName(mntiReserOutput.getCourse().get(0).getCourseName());
         //mntiReserEntity.setMntimt() 일단 어떤식으로 들어올지 몰라
         //mntiReserEntity.setmntiCaution
         mntiReserEntity.setMntiSts("0"); //0 : 등산 계획,  1 :등산 중 , 2 : 등산완료 ,3 : 등산실패
-        mntiReserEntity.setMntiStrDate(mntiReserInput.getMntiStrDt());
+        mntiReserEntity.setMntiStrDate(mntiReserInput.getMntiStrDate());
         mntiReserEntity.setMntiLevel(mntiReserOutput.getCourse().get(0).getMntiLevel());
         mntiReserEntity.setMntiClimTm(mntiReserOutput.getCourse().get(0).getMntiTime());
         mntiReserEntity.setMntiDistance(mntiReserOutput.getCourse().get(0).getMntiDist());
@@ -117,10 +117,10 @@ public class MntiReserInsertService {
     }
 
     private void reserInputCheck (String id, MntiReserInput mntiReserInput) throws InterruptedException {
-        String mntiResrToday = reserRepository.findByMntiReserSerchForInputCheck(id, mntiReserInput.getMntiListNo(), mntiReserInput.getCourseNo(), mntiReserInput.getMntiStrDt());
+        String mntiResrToday = reserRepository.findByMntiReserSerchForInputCheck(id, mntiReserInput.getMntiListNo(), mntiReserInput.getMntiCourse(), mntiReserInput.getMntiStrDate());
 
         // 날짜 체크 오늘보다 이른날 설정은 못함
-        if(mntiReserInput.getMntiStrDt().isBefore(LocalDate.now())) {
+        if(mntiReserInput.getMntiStrDate().isBefore(LocalDate.now())) {
             throw new InterruptedException("날짜 확인 해주세요 ~");
         }
         // 같은날 같은산 같은 코스는 같은날짜 등록 안됨

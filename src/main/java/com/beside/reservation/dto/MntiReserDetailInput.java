@@ -10,9 +10,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-public class MntiReserInput {
+public class MntiReserDetailInput {
     private String mntiListNo; //산코드
     private String mntiCourse;  //산코스번호
     private LocalDate mntiStrDate;// 등산 시작 날짜
-    private int mntiPeople ; //등산인원
 }
