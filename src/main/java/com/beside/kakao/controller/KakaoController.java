@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+
 @RestController
 @RequiredArgsConstructor
 @CrossOrigin
@@ -23,7 +25,7 @@ public class KakaoController {
     private String redirect_uri;
 
     @Value("${kakao.callback_url}")
-    private String niceCallbackUrl;
+    private String kakaoCallbackUrl;
 
     @GetMapping("/page")
     public String loginPage(@RequestParam String clientId, @RequestParam String redirectUri) {
@@ -41,6 +43,7 @@ public class KakaoController {
         String accessToken = kakaoService.getAccessTokenFromKakao(code);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
 
 
 }
