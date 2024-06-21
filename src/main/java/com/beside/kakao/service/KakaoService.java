@@ -1,6 +1,7 @@
 package com.beside.kakao.service;
 
 import com.beside.kakao.dto.KakaoTokenResponseDto;
+import com.beside.kakao.dto.KakaoUserInfoResponseDto;
 import io.netty.handler.codec.http.HttpHeaderValues;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -45,7 +46,6 @@ public class KakaoService {
                 .bodyToMono(KakaoTokenResponseDto.class)
                 .block();
 
-
         log.info(" [Kakao Service] Access Token ------> {}", kakaoTokenResponseDto.getAccessToken());
         log.info(" [Kakao Service] Refresh Token ------> {}", kakaoTokenResponseDto.getRefreshToken());
         //제공 조건: OpenID Connect가 활성화 된 앱의 토큰 발급 요청인 경우 또는 scope에 openid를 포함한 추가 항목 동의 받기 요청을 거친 토큰 발급 요청인 경우
@@ -54,4 +54,30 @@ public class KakaoService {
 
         return kakaoTokenResponseDto.getAccessToken();
     }
+
+
+    //https://kapi.kakao.com/v2/user/me
+    public KakaoUserInfoResponseDto getUserInfo(String accessToken) {
+        KakaoUserInfoResponseDto userInfo = WebClient.create(KAUTH_USER_URL_HOST)
+                .get()
+                .uri(uriBuilder -> uriBuilder
+                        .scheme("https")
+                        .path("/v2/user/me")
+                        .build(true))
+                .header(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken) // access token 인가
+                .header(HttpHeaders.CONTENT_TYPE, HttpHeaderValues.APPLICATION_X_WWW_FORM_URLENCODED.toString())
+                .retrieve()
+                //TODO : Custom Exception
+//                .onStatus(HttpStatusCode::is4xxClientError, clientResponse -> Mono.error(new RuntimeException("Invalid Parameter")))
+//                .onStatus(HttpStatusCode::is5xxServerError, clientResponse -> Mono.error(new RuntimeException("Internal Server Error")))
+                .bodyToMono(KakaoUserInfoResponseDto.class)
+                .block();
+
+        log.info("[ Kakao Service ] Auth ID ---> {} ", userInfo.getId());
+        log.info("[ Kakao Service ] NickName ---> {} ", userInfo.getKakaoAccount().getProfile().getNickName());
+        log.info("[ Kakao Service ] ProfileImageUrl ---> {} ", userInfo.getKakaoAccount().getProfile().getProfileImageUrl());
+
+        return userInfo;
+    }
+
 }

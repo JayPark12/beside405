@@ -1,5 +1,6 @@
 package com.beside.kakao.controller;
 
+import com.beside.kakao.dto.KakaoUserInfoResponseDto;
 import com.beside.kakao.service.KakaoService;
 import com.beside.user.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -31,9 +32,9 @@ public class KakaoController {
     public String loginPage(@RequestParam String clientId, @RequestParam String redirectUri) {
         String location = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id="+client_id+"&redirect_uri="+redirect_uri;
         //String returnUrl = niceCallbackUrl +
-        //model.addAttribute("location", location);
-
         //https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}
+
+        //https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=5f6f8c9bfc5b55950abf9076fb71813e&redirect_uri=http://localhost:3010/callback
 
         return "login";
     }
@@ -41,6 +42,7 @@ public class KakaoController {
     @GetMapping("/callback")
     public ResponseEntity<?> callback(@RequestParam("code") String code) {
         String accessToken = kakaoService.getAccessTokenFromKakao(code);
+        KakaoUserInfoResponseDto userInfo = kakaoService.getUserInfo(accessToken);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
