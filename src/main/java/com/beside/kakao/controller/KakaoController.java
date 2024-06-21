@@ -34,7 +34,7 @@ public class KakaoController {
         //String returnUrl = niceCallbackUrl +
         //https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}
 
-        //https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=5f6f8c9bfc5b55950abf9076fb71813e&redirect_uri=http://localhost:3010/callback
+        //https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=5f6f8c9bfc5b55950abf9076fb71813e&redirect_uri=http://localhost:3010/kakao/callback
 
         return "login";
     }
@@ -43,8 +43,9 @@ public class KakaoController {
     public ResponseEntity<?> callback(@RequestParam("code") String code) {
         String accessToken = kakaoService.getAccessTokenFromKakao(code);
         KakaoUserInfoResponseDto userInfo = kakaoService.getUserInfo(accessToken);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return ResponseEntity.ok(userInfo);
     }
+
 
 
 
