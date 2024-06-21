@@ -40,7 +40,9 @@ public class SecurityConfig {
             "/user/login",
             "/main/**",
             "/reser/**",
-            "/detail/**"
+            "/detail/**",
+            "/kakao/**",
+            "/test/**"
     };
 
     @Autowired
