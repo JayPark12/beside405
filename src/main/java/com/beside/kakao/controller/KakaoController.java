@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
@@ -41,8 +42,17 @@ public class KakaoController {
 
     @GetMapping("/callback")
     public ResponseEntity<?> callback(@RequestParam("code") String code) {
+        // 1. 인가 코드 받기 (RequestParam String code)
+
+        // 2. 토큰 받기
         String accessToken = kakaoService.getAccessTokenFromKakao(code);
+
+        // 3. 사용자 정보 받기
+        //첫번째 방법
         KakaoUserInfoResponseDto userInfo = kakaoService.getUserInfo(accessToken);
+        //두번째 방법
+        Map<String, Object> userInfo2 = kakaoService.getUserInfo2(accessToken);
+
         return ResponseEntity.ok(userInfo);
     }
 
