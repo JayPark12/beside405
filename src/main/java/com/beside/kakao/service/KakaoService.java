@@ -2,6 +2,7 @@ package com.beside.kakao.service;
 
 import com.beside.kakao.dto.KakaoTokenResponseDto;
 import com.beside.kakao.dto.KakaoUserInfoResponseDto;
+import com.beside.user.repository.UserRepository;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -21,16 +22,18 @@ import java.net.URL;
 import java.util.HashMap;
 
 @Slf4j
-@RequiredArgsConstructor
 @Service
+@RequiredArgsConstructor
 public class KakaoService {
+    private final UserRepository userRepository;
 
     private String clientId;
     private final String KAUTH_TOKEN_URL_HOST;
     private final String KAUTH_USER_URL_HOST;
 
     @Autowired
-    public KakaoService(@Value("${kakao.client_id}") String clientId) {
+    public KakaoService(UserRepository userRepository, @Value("${kakao.client_id}") String clientId) {
+        this.userRepository = userRepository;
         this.clientId = clientId;
         KAUTH_TOKEN_URL_HOST ="https://kauth.kakao.com";
         KAUTH_USER_URL_HOST = "https://kapi.kakao.com";

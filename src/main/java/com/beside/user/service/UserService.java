@@ -14,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.MapReactiveUserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionTemplate;
@@ -33,9 +34,11 @@ public class UserService {
     private final JwtProvider jwtProvider;
     private final RandomNicknameRepository randomNicknameRepository;
 
+    LocalDate localDate = LocalDate.now();
+
     @Transactional
     public SignUpResponse joinUser(SignUpRequest request) {
-        LocalDate localDate = LocalDate.now();
+
 
         if (userRepository.existsById(request.getUserId())) {
             throw new UserException(UserErrorInfo.ID_ALREADY_EXISTS);
@@ -52,6 +55,17 @@ public class UserService {
         userRepository.save(user);
         return SignUpResponse.builder().userId(request.getUserId()).nickname(user.getNickname()).desc("계정이 생성 되었습니다.").build();
     }
+
+    public SignUpResponse joinFromKakao(String userId) {
+        if (!userRepository.existsById(userId)) {
+            UserEntity user = UserEntity.builder().id(userId).nickname(createNickname()).creatDt(localDate).userSts("1").build();
+            userRepository.save(user);
+            return SignUpResponse.builder().userId(userId).nickname(user.getNickname()).desc("계정이 생성 되었습니다.").build();
+        }
+        return null;
+    }
+
+
 
     //랜덤 닉네임 생성
     public String createNickname() {

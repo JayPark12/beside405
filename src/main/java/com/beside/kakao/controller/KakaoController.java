@@ -34,10 +34,13 @@ public class KakaoController {
         String location = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id="+client_id+"&redirect_uri="+redirect_uri;
         //String returnUrl = niceCallbackUrl +
         //https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}
-
         //https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=5f6f8c9bfc5b55950abf9076fb71813e&redirect_uri=http://localhost:3010/kakao/callback
-
         return "login";
+    }
+
+    @GetMapping("/getToken")
+    public String getToken(@RequestParam("code") String code) {
+        return kakaoService.getAccessTokenFromKakao(code);
     }
 
     @GetMapping("/callback")
@@ -55,6 +58,13 @@ public class KakaoController {
 
         return ResponseEntity.ok(userInfo);
     }
+
+
+    /* 헤더에 토큰 필수
+       //정보조회 : https://kapi.kakao.com/v2/user/me
+       //로그아웃 : https://kapi.kakao.com/v1/user/logout
+       //연결끊기 : https://kapi.kakao.com/v1/user/unlink
+     */
 
 
 
