@@ -19,7 +19,7 @@ public class UserEntity {
     @Column(name = "CALL_NO", nullable = false)
     private String callNo;
 
-    @Column(name = "USER_STS") // 0 : 정상 유저, 1 : 휴면 유저, 2 : 정지 ,3 : 신고유저, 9 : 어드민 유저
+    @Column(name = "USER_STS") // 0 : 정상 유저, 1: 카카오유저 : 휴면 유저, 2 : 정지 , 3 : 신고유저, 4 :신고유저 9 : 어드민 유저
     private String userSts;
 
     @Column(name = "CREAT_DT")
