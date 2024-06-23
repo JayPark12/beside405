@@ -24,7 +24,6 @@ import java.util.List;
 public class MntiDetailService {
 
     private final ObjectMapper objectMapper;
-    private final CommonUtil commonUtil;
     private final WeatherApi weatherApi;
     private final MntiRepository mntiRepository;
 
@@ -42,7 +41,7 @@ public class MntiDetailService {
         //고정된 정보
         mntiDetailOutput.setMntiName(mntiInfo.getMntiName());
         mntiDetailOutput.setMnti_add(mntiInfo.getMntiAdd());
-        mntiDetailOutput.setPoto_file(commonUtil.potoFile(mntiInfo.getMntiListNo(), mntiInfo.getMntiName()));
+        mntiDetailOutput.setPoto_file(CommonUtil.potoFile(mntiInfo.getMntiListNo(), mntiInfo.getMntiName()));
 
         if (itemsNode.isArray()) {
             for (JsonNode item : itemsNode) {

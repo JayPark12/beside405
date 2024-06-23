@@ -30,7 +30,6 @@ public class MntiReserInsertService {
     private final ObjectMapper objectMapper;
     private final MntiRepository mntiRepository;
     private final ReserRepository reserRepository;
-    private final CommonUtil commonUtil;
 
     public MntiReserOutput execute(MntiReserInput mntiReserInput) throws Exception {
         String id = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -55,7 +54,7 @@ public class MntiReserInsertService {
         mntiReserOutput.setMntiName(mntiInfo.getMntiName());
         mntiReserOutput.setMntiAdd(mntiInfo.getMntiAdd());
         mntiReserOutput.setMntiListNo(mntiInfo.getMntiListNo());
-        mntiReserOutput.setPotoFiles(commonUtil.potoFile(mntiInfo.getMntiListNo(), mntiInfo.getMntiName()));
+        mntiReserOutput.setPotoFiles(CommonUtil.potoFile(mntiInfo.getMntiListNo(), mntiInfo.getMntiName()));
         mntiReserOutput.setMntiLevel(mntiInfo.getMntiLevel());
 
         if (itemsNode.isArray()) {

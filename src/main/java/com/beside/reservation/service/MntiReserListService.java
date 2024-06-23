@@ -22,7 +22,6 @@ import java.util.stream.Collectors;
 public class MntiReserListService {
 
     private final ReserRepository reserRepository;
-    private final CommonUtil commonUtil;
 
     public Page<MntiReserListOutput> execute(Pageable pageable) throws Exception {
         String id = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -34,7 +33,7 @@ public class MntiReserListService {
                 .collect(Collectors.toList());
 
         for (MntiReserEntity mntiReserEntity : mntiReserListPage) {
-            List<String> potoFileSelect = commonUtil.potoFile(mntiReserEntity.getMntiListNo(), mntiReserEntity.getMntiName());
+            List<String> potoFileSelect = CommonUtil.potoFile(mntiReserEntity.getMntiListNo(), mntiReserEntity.getMntiName());
             MntiReserListOutput mntiReserOutput = new MntiReserListOutput();
             mntiReserOutput.setMntiName(mntiReserEntity.getMntiName());
             mntiReserOutput.setMntiListNo(mntiReserEntity.getMntiListNo());

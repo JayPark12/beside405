@@ -24,7 +24,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MntiReserDetailService {
 
-    private final CommonUtil commonUtil;
     private final ReserRepository reserRepository;
     private final ObjectMapper objectMapper;
 
@@ -49,7 +48,7 @@ public class MntiReserDetailService {
         //고정된 정보
         mntiReserOutput.setMntiName(mntiReserInfo.getMntiName());
         mntiReserOutput.setMntiListNo(mntiReserInfo.getMntiListNo());
-        mntiReserOutput.setPotoFiles(commonUtil.potoFile(mntiReserInfo.getMntiListNo(), mntiReserInfo.getMntiName()));
+        mntiReserOutput.setPotoFiles(CommonUtil.potoFile(mntiReserInfo.getMntiListNo(), mntiReserInfo.getMntiName()));
         mntiReserOutput.setMntiLevel(mntiReserInfo.getMntiLevel());
 
         if (itemsNode.isArray()) {
