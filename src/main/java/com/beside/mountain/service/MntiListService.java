@@ -22,7 +22,6 @@ import java.util.stream.Collectors;
 public class MntiListService {
 
     private final MntiRepository mntiRepository;
-    private final CommonUtil commonUtil;
 
     public Page<MntiListOutput> mntiList(Pageable pageable) throws URISyntaxException {
         List<MntiListOutput> mntiListOutput = new ArrayList<>();
@@ -32,7 +31,7 @@ public class MntiListService {
                 .limit(pageable.getPageSize())
                 .collect(Collectors.toList());
         for (MntiEntity mntiEntity : mntiShufListPaged) {
-            List<String> potoFileSelect = commonUtil.potoFile(mntiEntity.getMntiListNo(), mntiEntity.getMntiName());
+            List<String> potoFileSelect = CommonUtil.potoFile(mntiEntity.getMntiListNo(), mntiEntity.getMntiName());
             MntiListOutput mntiOutput = new MntiListOutput();
             mntiOutput.setMntiName(mntiEntity.getMntiName());
             mntiOutput.setMntiListNo(mntiEntity.getMntiListNo());

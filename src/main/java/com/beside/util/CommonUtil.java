@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Stream;
 
-@Configuration
 public class CommonUtil {
 
     public static String getCurrentTime() {
