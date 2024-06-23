@@ -3,11 +3,14 @@ package com.beside.kakao.controller;
 import com.beside.kakao.dto.KakaoUserInfoResponseDto;
 import com.beside.kakao.service.KakaoService;
 import com.beside.user.service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,10 +18,12 @@ import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 @CrossOrigin
+@Tag(name = "1-1.카카오 유저", description = "카카오 로그인 관련 API")
 @RequestMapping("/kakao")
 public class KakaoController {
     private final UserService userService;
     private final KakaoService kakaoService;
+    private final RestTemplate restTemplate;
 
     @Value("${kakao.client_id}")
     private String client_id;
@@ -29,7 +34,8 @@ public class KakaoController {
     @Value("${kakao.callback_url}")
     private String kakaoCallbackUrl;
 
-    @GetMapping("/page")
+    @GetMapping("/login")
+    @Operation(summary = "카카오 로그인", description = "카카오 계정을 이용해 로그인 또는 회원가입을 할 수 있습니다. 로그인이 완료되면 parameter로 code가 발급됩니다.")
     public String loginPage(@RequestParam String clientId, @RequestParam String redirectUri) {
         String location = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id="+client_id+"&redirect_uri="+redirect_uri;
         //String returnUrl = niceCallbackUrl +
@@ -39,11 +45,13 @@ public class KakaoController {
     }
 
     @GetMapping("/getToken")
+    @Operation(summary = "토큰 발급", description = "로그인 후 발급받은 code를 이용해 토큰을 발급합니다.")
     public String getToken(@RequestParam("code") String code) {
         return kakaoService.getAccessTokenFromKakao(code);
     }
 
     @GetMapping("/callback")
+    @Operation(summary = "토큰 발급", description = "로그인 후 발급받은 code를 이용해 내 정보를 조회합니다.")
     public ResponseEntity<?> callback(@RequestParam("code") String code) {
         // 1. 인가 코드 받기 (RequestParam String code)
 
@@ -57,6 +65,28 @@ public class KakaoController {
         Map<String, Object> userInfo2 = kakaoService.getUserInfo2(accessToken);
 
         return ResponseEntity.ok(userInfo);
+    }
+
+
+    @Operation(summary = "내 정보조회", description = "로그인 후 발급 받은 토큰을 헤더에 넣어 내 정보를 조회합니다.")
+    @GetMapping("/myInfo")
+    public String kakaoMyInfo() {
+        String url = "https://kapi.kakao.com/v2/user/me";
+        return restTemplate.getForObject(url, String.class);
+    }
+
+    @Operation(summary = "카카오 로그아웃", description = "로그인 후 발급 받은 토큰을 헤더에 넣어 현재 연결되어 있는 계정을 로그아웃 합니다.")
+    @GetMapping("/logout")
+    public String kakaoLogout() {
+        String url = "https://kapi.kakao.com/v1/user/logout";
+        return restTemplate.getForObject(url, String.class);
+    }
+
+    @Operation(summary = "카카오 회원 탈퇴", description = "로그인 후 발급 받은 토큰을 헤더에 넣어 현재 연결되어 있는 계정의 연결을 끊습니다.")
+    @GetMapping("/deleteUser")
+    public String kakaoDeleteUser() {
+        String url = "https://kapi.kakao.com/v1/user/unlink";
+        return restTemplate.getForObject(url, String.class);
     }
 
 
