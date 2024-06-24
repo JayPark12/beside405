@@ -7,10 +7,10 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import reactor.core.publisher.Mono;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -41,6 +41,7 @@ public class KakaoController {
         //String returnUrl = niceCallbackUrl +
         //https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}
         //https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=5f6f8c9bfc5b55950abf9076fb71813e&redirect_uri=http://localhost:3010/kakao/callback
+        //https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=5f6f8c9bfc5b55950abf9076fb71813e&redirect_uri=http://localhost:3010/kakao/getToken
         return "login";
     }
 
@@ -70,23 +71,42 @@ public class KakaoController {
 
     @Operation(summary = "내 정보조회", description = "로그인 후 발급 받은 토큰을 헤더에 넣어 내 정보를 조회합니다.")
     @GetMapping("/myInfo")
-    public String kakaoMyInfo() {
-        String url = "https://kapi.kakao.com/v2/user/me";
-        return restTemplate.getForObject(url, String.class);
+    public Mono<String> kakaoMyInfo(@RequestHeader("Authorization") String accessToken) {
+//        String url = "https://kapi.kakao.com/v2/user/me";
+//
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.set("Authorization", "Bearer " + accessToken);
+//
+//        HttpEntity<String> entity = new HttpEntity<>(headers);
+//        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+//        return response.getBody();
+        return kakaoService.kakaoMyInfo(accessToken);
     }
 
     @Operation(summary = "카카오 로그아웃", description = "로그인 후 발급 받은 토큰을 헤더에 넣어 현재 연결되어 있는 계정을 로그아웃 합니다.")
     @GetMapping("/logout")
-    public String kakaoLogout() {
+    public String kakaoLogout(@RequestHeader("Authorization") String accessToken) {
         String url = "https://kapi.kakao.com/v1/user/logout";
-        return restTemplate.getForObject(url, String.class);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + accessToken);
+
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
+        return response.getBody();
     }
 
     @Operation(summary = "카카오 회원 탈퇴", description = "로그인 후 발급 받은 토큰을 헤더에 넣어 현재 연결되어 있는 계정의 연결을 끊습니다.")
     @GetMapping("/deleteUser")
-    public String kakaoDeleteUser() {
+    public String kakaoDeleteUser(@RequestHeader("Authorization") String accessToken) {
         String url = "https://kapi.kakao.com/v1/user/unlink";
-        return restTemplate.getForObject(url, String.class);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + accessToken);
+
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
+        return response.getBody();
     }
 
 

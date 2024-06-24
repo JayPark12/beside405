@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -40,7 +41,6 @@ public class KakaoService {
     }
 
     public String getAccessTokenFromKakao(String code) {
-
         KakaoTokenResponseDto kakaoTokenResponseDto = WebClient.create(KAUTH_TOKEN_URL_HOST).post()
                 .uri(uriBuilder -> uriBuilder
                         .scheme("https")
@@ -61,6 +61,14 @@ public class KakaoService {
         log.info(" [Kakao Service] Scope ------> {}", kakaoTokenResponseDto.getScope());
 
         return kakaoTokenResponseDto.getAccessToken();
+    }
+
+    public Mono<String> kakaoMyInfo(String accessToken) {
+        return WebClient.create(KAUTH_USER_URL_HOST).get()
+                .uri("/v2/user/me")
+                .header(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken)
+                .retrieve()
+                .bodyToMono(String.class);
     }
 
 
@@ -133,5 +141,7 @@ public class KakaoService {
         }
         return userInfo;
     }
+
+
 
 }
