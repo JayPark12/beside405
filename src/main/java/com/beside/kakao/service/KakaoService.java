@@ -67,8 +67,13 @@ public class KakaoService {
         return WebClient.create(KAUTH_USER_URL_HOST).get()
                 .uri("/v2/user/me")
                 .header(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken)
+                .header(HttpHeaders.CONTENT_TYPE, "application/x-www-form-urlencoded;charset=utf-8")
                 .retrieve()
-                .bodyToMono(String.class);
+                .bodyToMono(String.class)
+                .doOnError(e -> {
+                    // Error handling
+                    e.printStackTrace();
+                });
     }
 
 
@@ -143,5 +148,12 @@ public class KakaoService {
     }
 
 
-
+    public Mono<Void> kakaoLogout(String accessToken) {
+        return WebClient.create(KAUTH_USER_URL_HOST).get()
+                .uri("/v2/user/logout")
+                .header(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken)
+                .header(HttpHeaders.CONTENT_TYPE, "application/x-www-form-urlencoded;charset=utf-8")
+                .retrieve()
+                .bodyToMono(String.class).then();
+    }
 }

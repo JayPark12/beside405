@@ -5,13 +5,16 @@ import com.beside.kakao.service.KakaoService;
 import com.beside.user.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.result.view.RedirectView;
 import reactor.core.publisher.Mono;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,23 +29,22 @@ public class KakaoController {
     private final RestTemplate restTemplate;
 
     @Value("${kakao.client_id}")
-    private String client_id;
+    private String clientId;
 
     @Value("${kakao.redirect_uri}")
-    private String redirect_uri;
+    private String redirectUrI;
 
     @Value("${kakao.callback_url}")
     private String kakaoCallbackUrl;
 
     @GetMapping("/login")
     @Operation(summary = "카카오 로그인", description = "카카오 계정을 이용해 로그인 또는 회원가입을 할 수 있습니다. 로그인이 완료되면 parameter로 code가 발급됩니다.")
-    public String loginPage(@RequestParam String clientId, @RequestParam String redirectUri) {
-        String location = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id="+client_id+"&redirect_uri="+redirect_uri;
-        //String returnUrl = niceCallbackUrl +
+    public void loginPage(HttpServletResponse response) throws IOException {
+        String location = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=" + clientId + "&redirect_uri=" + redirectUrI;
         //https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}
         //https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=5f6f8c9bfc5b55950abf9076fb71813e&redirect_uri=http://localhost:3010/kakao/callback
         //https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=5f6f8c9bfc5b55950abf9076fb71813e&redirect_uri=http://localhost:3010/kakao/getToken
-        return "login";
+        response.sendRedirect(location);
     }
 
     @GetMapping("/getToken")
@@ -72,14 +74,6 @@ public class KakaoController {
     @Operation(summary = "내 정보조회", description = "로그인 후 발급 받은 토큰을 헤더에 넣어 내 정보를 조회합니다.")
     @GetMapping("/myInfo")
     public Mono<String> kakaoMyInfo(@RequestHeader("Authorization") String accessToken) {
-//        String url = "https://kapi.kakao.com/v2/user/me";
-//
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.set("Authorization", "Bearer " + accessToken);
-//
-//        HttpEntity<String> entity = new HttpEntity<>(headers);
-//        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
-//        return response.getBody();
         return kakaoService.kakaoMyInfo(accessToken);
     }
 
