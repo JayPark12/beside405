@@ -100,9 +100,6 @@ public class KakaoService {
         log.info("[ Kakao Service ] NickName ---> {} ", userInfo.getKakaoAccount().getProfile().getNickName());
         log.info("[ Kakao Service ] ProfileImageUrl ---> {} ", userInfo.getKakaoAccount().getProfile().getProfileImageUrl());
 
-//        if((userRepository.findById(String.valueOf(userInfo.getId()))!= null)) {
-//
-//        }
         Optional<UserEntity> user = userRepository.findById(String.valueOf(userInfo.getId()));
         if(user.isEmpty()) {
             userService.joinFromKakao(String.valueOf(userInfo.getId()));
