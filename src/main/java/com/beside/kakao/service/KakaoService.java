@@ -2,7 +2,9 @@ package com.beside.kakao.service;
 
 import com.beside.kakao.dto.KakaoTokenResponseDto;
 import com.beside.kakao.dto.KakaoUserInfoResponseDto;
+import com.beside.user.domain.UserEntity;
 import com.beside.user.repository.UserRepository;
+import com.beside.user.service.UserService;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -21,11 +23,13 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.Optional;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class KakaoService {
+    private final UserService userService;
     private final UserRepository userRepository;
 
     private String clientId;
@@ -33,7 +37,8 @@ public class KakaoService {
     private final String KAUTH_USER_URL_HOST;
 
     @Autowired
-    public KakaoService(UserRepository userRepository, @Value("${kakao.client_id}") String clientId) {
+    public KakaoService(UserService userService, UserRepository userRepository, @Value("${kakao.client_id}") String clientId) {
+        this.userService = userService;
         this.userRepository = userRepository;
         this.clientId = clientId;
         KAUTH_TOKEN_URL_HOST ="https://kauth.kakao.com";
@@ -94,6 +99,14 @@ public class KakaoService {
         log.info("[ Kakao Service ] Auth ID ---> {} ", userInfo.getId());
         log.info("[ Kakao Service ] NickName ---> {} ", userInfo.getKakaoAccount().getProfile().getNickName());
         log.info("[ Kakao Service ] ProfileImageUrl ---> {} ", userInfo.getKakaoAccount().getProfile().getProfileImageUrl());
+
+//        if((userRepository.findById(String.valueOf(userInfo.getId()))!= null)) {
+//
+//        }
+        Optional<UserEntity> user = userRepository.findById(String.valueOf(userInfo.getId()));
+        if(user.isEmpty()) {
+            userService.joinFromKakao(String.valueOf(userInfo.getId()));
+        }
 
         return userInfo;
     }

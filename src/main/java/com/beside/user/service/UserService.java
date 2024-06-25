@@ -57,11 +57,6 @@ public class UserService {
     }
 
     public SignUpResponse joinFromKakao(String userId) {
-        if (!userRepository.existsById(userId)) {
-            UserEntity user = UserEntity.builder().id(userId).nickname(createNickname()).creatDt(localDate).userSts("1").build();
-            userRepository.save(user);
-            return SignUpResponse.builder().userId(userId).nickname(user.getNickname()).desc("계정이 생성 되었습니다.").build();
-        }
         return null;
     }
 

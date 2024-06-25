@@ -11,11 +11,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.reactive.result.view.RedirectView;
 import reactor.core.publisher.Mono;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
 @RestController
@@ -39,7 +37,7 @@ public class KakaoController {
 
     @GetMapping("/login")
     @Operation(summary = "카카오 로그인", description = "카카오 계정을 이용해 로그인 또는 회원가입을 할 수 있습니다. 로그인이 완료되면 parameter로 code가 발급됩니다.")
-    public void loginPage(HttpServletResponse response) throws IOException {
+    public void kakaoLogin(HttpServletResponse response) throws IOException {
         String location = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=" + clientId + "&redirect_uri=" + redirectUrI;
         //https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}
         //https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=5f6f8c9bfc5b55950abf9076fb71813e&redirect_uri=http://localhost:3010/kakao/callback
