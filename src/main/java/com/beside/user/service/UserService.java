@@ -49,6 +49,7 @@ public class UserService {
         UserEntity user = UserEntity.builder().id(request.getUserId())
                 .nickname(createNickname())
                 .callNo(request.getCallNo())
+                .email(request.getEmail())
                 .userSts("0").creatDt(localDate)
                 .password(hashedPassword).build();
 
@@ -56,11 +57,12 @@ public class UserService {
         return SignUpResponse.builder().userId(request.getUserId()).nickname(user.getNickname()).desc("계정이 생성 되었습니다.").build();
     }
 
-    public SignUpResponse joinFromKakao(String userId) {
+    public SignUpResponse joinFromKakao(String userId, String email) {
         UserEntity user = UserEntity.builder().id(userId)
                 .nickname(createNickname())
                 .callNo(null)
                 .userSts("1").creatDt(localDate)
+                .email(email)
                 .password(null).build();
         userRepository.save(user);
         return SignUpResponse.builder().userId(userId).nickname(user.getNickname()).desc("계정이 생성 되었습니다.").build();

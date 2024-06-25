@@ -68,19 +68,6 @@ public class KakaoService {
         return kakaoTokenResponseDto.getAccessToken();
     }
 
-    public Mono<String> kakaoMyInfo(String accessToken) {
-        return WebClient.create(KAUTH_USER_URL_HOST).get()
-                .uri("/v2/user/me")
-                .header(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken)
-                .header(HttpHeaders.CONTENT_TYPE, "application/x-www-form-urlencoded;charset=utf-8")
-                .retrieve()
-                .bodyToMono(String.class)
-                .doOnError(e -> {
-                    // Error handling
-                    e.printStackTrace();
-                });
-    }
-
 
     //https://kapi.kakao.com/v2/user/me
     public KakaoUserInfoResponseDto getUserInfo(String accessToken) {
@@ -98,11 +85,12 @@ public class KakaoService {
 
         log.info("[ Kakao Service ] Auth ID ---> {} ", userInfo.getId());
         log.info("[ Kakao Service ] NickName ---> {} ", userInfo.getKakaoAccount().getProfile().getNickName());
+        log.info("[ Kakao Service ] Email ---> {} ", userInfo.getKakaoAccount().getEmail());
         log.info("[ Kakao Service ] ProfileImageUrl ---> {} ", userInfo.getKakaoAccount().getProfile().getProfileImageUrl());
 
         Optional<UserEntity> user = userRepository.findById(String.valueOf(userInfo.getId()));
         if(user.isEmpty()) {
-            userService.joinFromKakao(String.valueOf(userInfo.getId()));
+            userService.joinFromKakao(String.valueOf(userInfo.getId()), userInfo.getKakaoAccount().getEmail());
         }
 
         return userInfo;
@@ -155,6 +143,19 @@ public class KakaoService {
             e.printStackTrace();
         }
         return userInfo;
+    }
+
+    public Mono<String> kakaoMyInfo(String accessToken) {
+        return WebClient.create(KAUTH_USER_URL_HOST).get()
+                .uri("/v2/user/me")
+                .header(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken)
+                .header(HttpHeaders.CONTENT_TYPE, "application/x-www-form-urlencoded;charset=utf-8")
+                .retrieve()
+                .bodyToMono(String.class)
+                .doOnError(e -> {
+                    // Error handling
+                    e.printStackTrace();
+                });
     }
 
 

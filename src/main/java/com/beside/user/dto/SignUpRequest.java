@@ -12,8 +12,8 @@ public class SignUpRequest {
     @Schema(description = "비밀번호")
     private String password;
 
-//    @Schema(description = "닉네임")
-//    private String nickname;
+    @Schema(description = "이메일")
+    private String email;
 
     @Schema(description = "휴대폰 번호")
     private String callNo;
