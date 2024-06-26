@@ -1,7 +1,6 @@
 package com.beside.util;
 
-import com.beside.mountain.service.MntiListService;
-import org.springframework.context.annotation.Configuration;
+import com.beside.mountain.service.MountainService;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -50,7 +49,7 @@ public class CommonUtil {
     public static List<String> potoFile (String mntilistNo, String mntiName) throws URISyntaxException {
 
         String folderPath = "mntiPotoData/" +mntilistNo+"_"+mntiName;
-        ClassLoader classLoader = MntiListService.class.getClassLoader();
+        ClassLoader classLoader = MountainService.class.getClassLoader();
         URL resource = classLoader.getResource(folderPath);
 
         if (resource != null) {
