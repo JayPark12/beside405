@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URISyntaxException;
@@ -28,11 +29,17 @@ public class MainPgController {
     private final MntiSerchService mntiSerchService;
     private final MntiDetailService mntiDetailService;
 
-    @GetMapping("/mntiList")
+    @GetMapping("/list")
     public Page<MntiListOutput> getMntiList(@RequestParam(defaultValue = "0") int page,
-                                            @RequestParam(defaultValue = "10") int size) throws URISyntaxException {
+                                            @RequestParam(defaultValue = "10") int size,
+                                            @RequestParam(name = "keyword", required = false) String keyword) {
         Pageable pageable = PageRequest.of(page, size);
-        return mntiListService.mntiList(pageable);
+        return mntiListService.getList(pageable, keyword);
+    }
+
+    @PostMapping("/detail")
+    public ResponseEntity<?> detail() {
+        return null;
     }
 
     @PostMapping("/mntiSerch")

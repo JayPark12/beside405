@@ -10,9 +10,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -46,4 +48,33 @@ public class MntiListService {
         }
         return new PageImpl<>(mntiListOutput, pageable, mntiShufList.size());
     }
+
+
+    public Page<MntiListOutput> getList(Pageable pageable, String keyword) {
+        List<MntiListOutput> mntiListOutput = new ArrayList<>();
+        List<MntiEntity> list;
+
+        if(StringUtils.hasText(keyword)) {
+            list = mntiRepository.findByMntiNameContaining(keyword);
+        } else {
+            list = mntiRepository.findAll();
+        }
+
+        for(MntiEntity mntiEntity : list){
+            MntiListOutput dto = new MntiListOutput();
+            dto.setMntiName(mntiEntity.getMntiName());
+            dto.setMntiListNo(mntiEntity.getMntiListNo());
+            dto.setMntiLevel(mntiEntity.getMntiLevel());
+            dto.setMntiAdd(mntiEntity.getMntiAdd());
+            mntiListOutput.add(dto);
+        }
+
+        mntiListOutput.sort(Comparator.comparing(MntiListOutput::getMntiName));
+
+        int start = (int) pageable.getOffset();
+        int end = Math.min((start + pageable.getPageSize()), list.size());
+        return new PageImpl<>(mntiListOutput.subList(start, end), pageable, mntiListOutput.size());
+    }
+
+
 }

@@ -1,14 +1,16 @@
 package com.beside.mountain.repository;
 
 import com.beside.mountain.domain.MntiEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.Repository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface MntiRepository extends Repository<MntiEntity,String> {
+@Repository
+public interface MntiRepository extends JpaRepository<MntiEntity,String> {
 
     @Query(value = """
     SELECT * FROM MOUNTAIN_INFO """
@@ -34,4 +36,6 @@ public interface MntiRepository extends Repository<MntiEntity,String> {
 
 
     Optional<MntiEntity> findByMntiListNo(String mountainId);
+
+    List<MntiEntity> findByMntiNameContaining(String keyword);
 }
