@@ -32,7 +32,7 @@ public class MountainController {
     private final MntiSerchService mntiSerchService;
     private final MntiDetailService mntiDetailService;
 
-    @Operation(summary = "산 리스트", description = "전체 산 리스트")
+    @Operation(summary = "전체 산 리스트", description = "전체 산 리스트를 표출합니다. keyword를 넣어서 조회하는 경우 keyword를 포함하는 산 리스트를 표출합니다.")
     @GetMapping("/list")
     public Page<MntiListOutput> getMntiList(@RequestParam(defaultValue = "0") int page,
                                             @RequestParam(defaultValue = "10") int size,

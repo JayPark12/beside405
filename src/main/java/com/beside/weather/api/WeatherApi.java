@@ -50,41 +50,25 @@ WeatherApi {
                 }
                 if(itemsNode.get(i).path("category").asText().equals("PTY"))  {
                     weatherCode= String.valueOf(itemsNode.get(i).path("fcstValue").asText());
-                    switch (weatherCode) {
-                        case "0":
-                            weatherName = "없음";
-                            break;
-                        case "1":
-                            weatherName = "비";
-                            break;
-                        case "2":
-                            weatherName = "비/눈";
-                            break;
-                        case "3":
-                            weatherName = "눈";
-                            break;
-                        case "4":
-                            weatherName = "소나기";
-                            break;
-                    }
+                    weatherName = switch (weatherCode) {
+                        case "0" -> "없음";
+                        case "1" -> "비";
+                        case "2" -> "비/눈";
+                        case "3" -> "눈";
+                        case "4" -> "소나기";
+                        default -> weatherName;
+                    };
                     weather.setRain_type(weatherName);
                 }
                 if (itemsNode.get(i).path("category").asText().equals("SKY")) {
                     weatherCode= String.valueOf(itemsNode.get(i).path("fcstValue").asText());
-                    switch (weatherCode) {
-                        case "0":
-                            weatherName = "없음";
-                            break;
-                        case "1":
-                            weatherName = "맑음";
-                            break;
-                        case "3":
-                            weatherName = "구름많음";
-                            break;
-                        case "4":
-                            weatherName = "흐림";
-                            break;
-                    }
+                    weatherName = switch (weatherCode) {
+                        case "0" -> "없음";
+                        case "1" -> "맑음";
+                        case "3" -> "구름많음";
+                        case "4" -> "흐림";
+                        default -> weatherName;
+                    };
                     weather.setSky_state(weatherName);
                 }
             }

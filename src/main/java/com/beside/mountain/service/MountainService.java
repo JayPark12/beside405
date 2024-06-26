@@ -8,6 +8,7 @@ import com.beside.mountain.repository.MntiRepository;
 import com.beside.util.CommonUtil;
 import com.beside.util.Coordinate;
 import com.beside.weather.api.WeatherApi;
+import com.beside.weather.dto.Weather;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityNotFoundException;
@@ -89,14 +90,14 @@ public class MountainService {
     }
 
 
-    public MntiDetailOutput getMountainDetail(String id) throws IOException, URISyntaxException {
+    public MntiDetailOutput getMountainDetail(String id) throws Exception {
         MntiDetailOutput mntiDetailOutput = new MntiDetailOutput();
         MntiEntity mntiEntity = mntiRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("산이 존재하지 않습니다."));
         mntiDetailOutput.setMntiName(mntiEntity.getMntiName());
         mntiDetailOutput.setMntiAddress(mntiEntity.getMntiAdd());
         mntiDetailOutput.setPhotoFile(CommonUtil.potoFile(mntiEntity.getMntiListNo(), mntiEntity.getMntiName()));
 
-        Course course = new Course();
+
         List<Course> courses = new ArrayList<>();
         ClassPathResource resource = new ClassPathResource("/mntiCourseData/PMNTN_"+mntiEntity.getMntiName()+"_"+mntiEntity.getMntiListNo()+".json");
 
@@ -105,6 +106,7 @@ public class MountainService {
 
         if (itemsNode.isArray()) {
             for (JsonNode item : itemsNode) {
+                Course course = new Course();
                 course.setCourseNo(item.path("attributes").path("PMNTN_SN").asText());
                 course.setCourseName(item.path("attributes").path("PMNTN_NM").asText());
                 course.setMntiTime(item.path("attributes").path("PMNTN_UPPL").asLong() + item.path("attributes").path("PMNTN_GODN").asLong());
@@ -133,6 +135,14 @@ public class MountainService {
         mntiDetailOutput.setMntiHigh(mntiEntity.getMntihigh());
 
         //날씨 정보 api 오류나서 잠시 제거
+        //watherInfo
+//        List<Weather> weatherList = new ArrayList<>();
+//        weatherList.add(weatherApi.watherListToday());// 오늘 날씨 데이터
+//
+//        weatherApi.watherListOrtherDay(weatherList);
+//
+//        mntiDetailOutput.setWeatherList(weatherList);
+
         return mntiDetailOutput;
     }
 }
