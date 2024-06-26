@@ -40,8 +40,8 @@ public class MntiDetailService {
         JsonNode itemsNode = rootNode.path("features");
         //고정된 정보
         mntiDetailOutput.setMntiName(mntiInfo.getMntiName());
-        mntiDetailOutput.setMnti_add(mntiInfo.getMntiAdd());
-        mntiDetailOutput.setPoto_file(CommonUtil.potoFile(mntiInfo.getMntiListNo(), mntiInfo.getMntiName()));
+        mntiDetailOutput.setMntiAddress(mntiInfo.getMntiAdd());
+        mntiDetailOutput.setPhotoFile(CommonUtil.potoFile(mntiInfo.getMntiListNo(), mntiInfo.getMntiName()));
 
         if (itemsNode.isArray()) {
             for (JsonNode item : itemsNode) {
@@ -68,7 +68,7 @@ public class MntiDetailService {
             mntiDetailOutput.setContent(rootNode.path("content").asText());
             mntiDetailOutput.setMntiLevel(mntiInfo.getMntiLevel());
             mntiDetailOutput.setCourse(courses);
-            mntiDetailOutput.setMnti_high(mntiInfo.getMntihigh());
+            mntiDetailOutput.setMntiHigh(mntiInfo.getMntihigh());
         }
         //watherInfo
         List<Weather> weatherList = new ArrayList<>();
@@ -76,9 +76,10 @@ public class MntiDetailService {
 
         weatherApi.watherListOrtherDay(weatherList);
 
-        mntiDetailOutput.setWeather_list(weatherList);;
+        mntiDetailOutput.setWeatherList(weatherList);;
 
 
         return mntiDetailOutput;
     }
+
 }
