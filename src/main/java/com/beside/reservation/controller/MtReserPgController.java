@@ -7,6 +7,8 @@ import com.beside.reservation.service.MntiReserListService;
 import com.beside.reservation.dto.MntiReserInput;
 import com.beside.reservation.dto.MntiReserOutput;
 import com.beside.reservation.service.MntiReserInsertService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
+@Tag(name = "4.등산 일정", description = "등산 일정 관련 API")
 @RequestMapping("/reser")
 public class MtReserPgController {
 
@@ -25,6 +28,8 @@ public class MtReserPgController {
     private final MntiReserListService mntiReserListService;
     private final MntiReserDetailService mntiReserDetailService;
 
+
+    @Operation(summary = "일정 등록", description = "일정을 등록할 수 있습니다.")
     @PostMapping("/registration")
     public MntiReserOutput registration(@RequestBody MntiReserInput mntiReserInput) throws Exception {
 
@@ -35,6 +40,7 @@ public class MtReserPgController {
         return output;
     }
 
+    @Operation(summary = "일정 리스트 조회", description = "나의 전체 일정을 조회할 수 있습니다.")
     @GetMapping("/registrationList")
     public Page<MntiReserListOutput> registrationList(@RequestParam(defaultValue = "0") int page,
                                                       @RequestParam(defaultValue = "10") int size) throws Exception {
@@ -47,6 +53,7 @@ public class MtReserPgController {
         return output;
     }
 
+    @Operation(summary = "일정 상세보기", description = "일정의 상세내역을 볼 수 있습니다.")
     @PostMapping("/registrationDitail")
     public MntiReserOutput registrationDitail (@RequestBody MntiReserDetailInput mntiReserDetailInput) throws Exception {
 
