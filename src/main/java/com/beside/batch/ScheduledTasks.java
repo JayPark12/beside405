@@ -20,7 +20,7 @@ public class ScheduledTasks {
         this.updateStatusJob = updateStatusJob;
     }
 
-    @Scheduled(cron = "0 38 15 * * *") // 매일 자정에 실행
+    @Scheduled(cron = "0 0 0 * * *") // 매일 자정에 실행
     public void runUpdateStatusJob() throws Exception {
         JobParameters jobParameters = new JobParametersBuilder()
                 .addDate("date", new Date())
