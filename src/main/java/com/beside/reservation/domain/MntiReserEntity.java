@@ -61,7 +61,7 @@ public class MntiReserEntity {
     private LocalDate mntiStrDate;
 
     @Column(name = "MNTI_STS")
-    private String mntiSts;
+    private String mntiSts; //0 : 등산 계획,  1 :등산 중 , 2 : 등산완료 ,3 : 등산실패(날짜넘으면), 4: 취소
 
     @Column(name = "MNTI_HIGH",  precision=5, scale=2, nullable = false)
     private BigDecimal mntihigh = BigDecimal.ZERO;

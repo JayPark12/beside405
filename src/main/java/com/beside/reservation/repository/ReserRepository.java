@@ -1,10 +1,7 @@
 package com.beside.reservation.repository;
 
 import com.beside.reservation.domain.MntiReserEntity;
-import com.beside.reservation.dto.MntiReserListOutput;
-import com.beside.reservation.dto.MntiReserOutput;
 import jakarta.transaction.Transactional;
-import org.springframework.cglib.core.Local;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -22,8 +19,7 @@ public interface ReserRepository extends JpaRepository<MntiReserEntity, String> 
     AND   MNTI_LIST_NO =:mntiListNo
             """
             , nativeQuery = true)
-    Integer findByMntiReserSerch(@Param("id")String id, @Param("mntiListNo")String mntiListNo
-    );
+    Integer findByMntiReserSearch(@Param("id")String id, @Param("mntiListNo")String mntiListNo);
 
     @Query(value = """
     SELECT MNTI_STS
@@ -49,6 +45,14 @@ public interface ReserRepository extends JpaRepository<MntiReserEntity, String> 
             , nativeQuery = true)
     void updateStatusForOlderDates(@Param("mntiStrDate") LocalDate mntiStrDate,
                                    @Param("mntiSts") String mntiSts);
+
+    @Query(value = """
+    Select * 
+    WHERE MNTI_STR_DATE < :mntiStrDate
+    AND MNTI_STS = '0'
+    """
+            , nativeQuery = true)
+    List<MntiReserEntity> findReserExpired(@Param("mntiStrDate") LocalDate mntiStrDate);
 
 
     @Query(value = """
@@ -76,6 +80,18 @@ public interface ReserRepository extends JpaRepository<MntiReserEntity, String> 
                                                       @Param("mntiStrDate")LocalDate mntiStrDate,
                                                       @Param("mntiCourse")String mntiCourse,
                                                       @Param("mntiSts")String mntiSts);
+
+
+    @Query(value = """
+    SELECT MAX(MNTI_CNT) 
+    FROM MOUNTAIN_RESER
+    WHERE  id =:id
+    AND   MNTI_LIST_NO =:mntiListNo
+    AND   MNTI_STR_DATE =:mntiStrDate
+            """
+            , nativeQuery = true)
+    Integer findByMntiReserDeleteSearch(@Param("id")String id, @Param("mntiListNo")String mntiListNo, @Param("mntiStrDate")LocalDate mntiStrDate
+    );
 
 
 

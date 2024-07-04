@@ -2,6 +2,7 @@ package com.beside.reservation.controller;
 
 import com.beside.reservation.dto.MntiReserDetailInput;
 import com.beside.reservation.dto.MntiReserListOutput;
+import com.beside.reservation.service.MntiReserDeleteService;
 import com.beside.reservation.service.MntiReserDetailService;
 import com.beside.reservation.service.MntiReserListService;
 import com.beside.reservation.dto.MntiReserInput;
@@ -14,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -27,6 +29,7 @@ public class MtReserPgController {
     private final MntiReserInsertService mntiReserInsertService;
     private final MntiReserListService mntiReserListService;
     private final MntiReserDetailService mntiReserDetailService;
+    private final MntiReserDeleteService mntiReserDeleteService;
 
 
     @Operation(summary = "일정 등록", description = "일정을 등록할 수 있습니다.")
@@ -57,8 +60,19 @@ public class MtReserPgController {
     @PostMapping("/registrationDitail")
     public MntiReserOutput registrationDitail (@RequestBody MntiReserDetailInput mntiReserDetailInput) throws Exception {
 
+        log.debug("[START]  /registrationDitail");
         MntiReserOutput output  = mntiReserDetailService.execute(mntiReserDetailInput);
 
         return output;
+    }
+
+    @Operation(summary = "일정 삭제", description = "일정을 삭제합니다.")
+    @PostMapping("/registrationDelete")
+    public ResponseEntity<?> registrationDelete (@RequestBody MntiReserDetailInput mntiReserDetailInput) throws  Exception {
+
+        log.debug("[START]  /registrationDelete");
+        mntiReserDeleteService.execute(mntiReserDetailInput);
+
+        return ResponseEntity.ok("취소 완료");
     }
 }

@@ -90,7 +90,7 @@ public class MntiReserInsertService {
     private void reserInsert (String id , MntiReserOutput mntiReserOutput, MntiReserInput mntiReserInput) throws InterruptedException {
         MntiReserEntity mntiReserEntity = new MntiReserEntity(); //새로운 정보 입력
         reserInputCheck(id , mntiReserInput);
-        Integer mntiCnt = reserRepository.findByMntiReserSerch(id , mntiReserOutput.getMntiListNo()); //등산 횟수 체크 (같은 산)
+        Integer mntiCnt = reserRepository.findByMntiReserSearch(id , mntiReserOutput.getMntiListNo()); //등산 횟수 체크 (같은 산)
         if(mntiCnt == null) {
             mntiReserEntity.setMntiCnt(1);
         }else {
