@@ -83,14 +83,14 @@ public interface ReserRepository extends JpaRepository<MntiReserEntity, String> 
 
 
     @Query(value = """
-    SELECT MAX(MNTI_CNT) 
+    SELECT * 
     FROM MOUNTAIN_RESER
     WHERE  id =:id
     AND   MNTI_LIST_NO =:mntiListNo
     AND   MNTI_STR_DATE =:mntiStrDate
             """
             , nativeQuery = true)
-    Integer findByMntiReserDeleteSearch(@Param("id")String id, @Param("mntiListNo")String mntiListNo, @Param("mntiStrDate")LocalDate mntiStrDate
+    MntiReserEntity findByMntiReserDeleteSearch(@Param("id")String id, @Param("mntiListNo")String mntiListNo, @Param("mntiStrDate")LocalDate mntiStrDate
     );
 
 
