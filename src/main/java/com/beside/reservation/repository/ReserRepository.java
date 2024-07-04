@@ -47,7 +47,8 @@ public interface ReserRepository extends JpaRepository<MntiReserEntity, String> 
                                    @Param("mntiSts") String mntiSts);
 
     @Query(value = """
-    Select * 
+    SELECT * 
+    FROM MOUNTAIN_RESER
     WHERE MNTI_STR_DATE < :mntiStrDate
     AND MNTI_STS = '0'
     """

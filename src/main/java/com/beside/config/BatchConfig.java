@@ -18,6 +18,7 @@ import org.thymeleaf.util.StringUtils;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Configuration
 @Slf4j
@@ -48,7 +49,7 @@ public class BatchConfig {
     public Tasklet updateStatusTasklet() {
         return (contribution, chunkContext) -> {
             // 오늘 이전의 데이터 상태를 업데이트하는 로직을 여기에 작성
-            List<MntiReserEntity> reserList =  reserRepository.findReserExpired(LocalDate.now());
+            List<MntiReserEntity> reserList = Optional.ofNullable(reserRepository.findReserExpired(LocalDate.now())).orElse(null);
 
             for(MntiReserEntity reserList2  : reserList){
                 if(StringUtils.equals(reserList2.getMntiSts(), "0")){
