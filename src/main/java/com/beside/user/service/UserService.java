@@ -65,7 +65,7 @@ public class UserService {
                 .email(email)
                 .password(null).build();
         userRepository.save(user);
-        return SignUpResponse.builder().userId(userId).nickname(user.getNickname()).desc("계정이 생성 되었습니다.").build();
+        return SignUpResponse.builder().userId(userId).nickname(user.getNickname()).desc("카카오 계정이 생성 되었습니다.").build();
     }
 
 

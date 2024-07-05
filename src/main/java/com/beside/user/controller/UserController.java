@@ -1,6 +1,8 @@
 package com.beside.user.controller;
 
 import com.beside.jwt.JwtProvider;
+import com.beside.kakao.dto.KakaoUserInfoResponseDto;
+import com.beside.kakao.service.KakaoService;
 import com.beside.user.domain.UserEntity;
 import com.beside.user.dto.*;
 import com.beside.user.exception.UserException;
@@ -33,13 +35,10 @@ public class UserController {
 
     private final UserService userService;
     private final JwtProvider jwtProvider;
+    private final KakaoService kakaoService;
 
 
     @PostMapping("/join")
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "회원 가입 성공"),
-            @ApiResponse(responseCode = "500", description = "회원 가입 실패")
-    })
     @Operation(summary = "회원 가입", description = "회원가입을 할 수 있습니다.")
     public ResponseEntity<?> join(@RequestBody SignUpRequest request) {
         SignUpResponse response = userService.joinUser(request);
@@ -47,14 +46,23 @@ public class UserController {
     }
 
 
+    @PostMapping("/kakaoJoin")
+    @Operation(summary = "카카오 회원 가입", description = "카카오 계정을 이용해 회원가입을 할 수 있습니다.")
+    public ResponseEntity<?> kakaoJoin(@RequestBody String accessToken) {
+        KakaoUserInfoResponseDto kakaoUser = kakaoService.getUserInfo(accessToken);
+        SignUpResponse response = userService.joinFromKakao(String.valueOf(kakaoUser.getId()), kakaoUser.getKakaoAccount().email);
+        return ResponseEntity.ok(response);
+    }
+
+
     @Operation(summary = "로그인", description = "로그인")
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "로그인 성공"),
-            @ApiResponse(responseCode = "500", description = "로그인 실패")
-    })
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UserInput userInput, HttpServletResponse servletResponse) {
         return ResponseEntity.ok(userService.login(userInput, servletResponse));
+    }
+
+    public ResponseEntity<?> kakaoLogin() {
+        return null;
     }
 
 
