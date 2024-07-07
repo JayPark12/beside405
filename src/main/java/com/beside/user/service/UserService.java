@@ -1,6 +1,7 @@
 package com.beside.user.service;
 
 import com.beside.jwt.JwtProvider;
+import com.beside.kakao.dto.KakaoUserInfoResponseDto;
 import com.beside.user.domain.RandomNickname;
 import com.beside.user.domain.UserEntity;
 import com.beside.user.dto.*;
@@ -57,7 +58,7 @@ public class UserService {
         return SignUpResponse.builder().userId(request.getUserId()).nickname(user.getNickname()).desc("계정이 생성 되었습니다.").build();
     }
 
-    public SignUpResponse joinFromKakao(String userId, String email) {
+    public void joinFromKakao(String userId, String email) {
         UserEntity user = UserEntity.builder().id(userId)
                 .nickname(createNickname())
                 .callNo(null)
@@ -65,7 +66,7 @@ public class UserService {
                 .email(email)
                 .password(null).build();
         userRepository.save(user);
-        return SignUpResponse.builder().userId(userId).nickname(user.getNickname()).desc("카카오 계정이 생성 되었습니다.").build();
+//        return SignUpResponse.builder().userId(userId).nickname(user.getNickname()).desc("카카오 계정이 생성 되었습니다.").build();
     }
 
 
@@ -106,6 +107,27 @@ public class UserService {
 
         return LoginResponse.builder()
                 .userId(user.getId())
+                .nickname(user.getNickname())
+                .callNo(user.getCallNo())
+                .token(jwt)
+                .bearerToken("Bearer " + jwt)
+                .build();
+    }
+
+    public LoginResponse kakaoLogin(KakaoUserInfoResponseDto kakaoUser, HttpServletResponse response) {
+        String id = String.valueOf(kakaoUser.getId());
+
+         Optional<UserEntity> userCheck = userRepository.findById(id);
+         if(userCheck.isEmpty()) {
+             joinFromKakao(id, kakaoUser.getKakaoAccount().getEmail());
+         }
+
+        UserEntity user = userRepository.findById(id).orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
+        String jwt = jwtProvider.generateJwtToken(id);
+
+        response.setHeader("Authorization", "Bearer " + jwt);
+        return LoginResponse.builder()
+                .userId(id)
                 .nickname(user.getNickname())
                 .callNo(user.getCallNo())
                 .token(jwt)

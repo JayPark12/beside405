@@ -45,14 +45,13 @@ public class UserController {
         return ResponseEntity.ok(response);
     }
 
-
-    @PostMapping("/kakaoJoin")
-    @Operation(summary = "카카오 회원 가입", description = "카카오 계정을 이용해 회원가입을 할 수 있습니다.")
-    public ResponseEntity<?> kakaoJoin(@RequestBody String accessToken) {
-        KakaoUserInfoResponseDto kakaoUser = kakaoService.getUserInfo(accessToken);
-        SignUpResponse response = userService.joinFromKakao(String.valueOf(kakaoUser.getId()), kakaoUser.getKakaoAccount().email);
-        return ResponseEntity.ok(response);
-    }
+//    @PostMapping("/kakaoJoin")
+//    @Operation(summary = "카카오 회원 가입", description = "카카오 계정을 이용해 회원가입을 할 수 있습니다.")
+//    public ResponseEntity<?> kakaoJoin(@RequestBody String accessToken) {
+//        KakaoUserInfoResponseDto kakaoUser = kakaoService.getUserInfo(accessToken);
+//        SignUpResponse response = userService.joinFromKakao(String.valueOf(kakaoUser.getId()), kakaoUser.getKakaoAccount().email);
+//        return ResponseEntity.ok(response);
+//    }
 
 
     @Operation(summary = "로그인", description = "로그인")
@@ -61,8 +60,12 @@ public class UserController {
         return ResponseEntity.ok(userService.login(userInput, servletResponse));
     }
 
-    public ResponseEntity<?> kakaoLogin() {
-        return null;
+
+    @PostMapping("/kakaoLogin")
+    @Operation(summary = "카카오 로그인", description = "카카오 계정을 이용해 로그인을 할 수 있습니다. 계정이 없는 경우에는 회원가입 로직을 거친 후 토큰을 발급합니다.")
+    public ResponseEntity<?> kakaoLogin(@RequestBody String accessToken, HttpServletResponse servletResponse) {
+        KakaoUserInfoResponseDto kakaoUser = kakaoService.getUserInfo(accessToken);
+        return ResponseEntity.ok(userService.kakaoLogin(kakaoUser, servletResponse));
     }
 
 
