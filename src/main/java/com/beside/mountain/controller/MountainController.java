@@ -1,9 +1,6 @@
 package com.beside.mountain.controller;
 
-import com.beside.mountain.dto.MntiDetailInput;
-import com.beside.mountain.dto.MntiDetailOutput;
-import com.beside.mountain.dto.MntiListOutput;
-import com.beside.mountain.dto.MntiSearchInput;
+import com.beside.mountain.dto.*;
 import com.beside.mountain.service.MntiDetailService;
 import com.beside.mountain.service.MountainService;
 import com.beside.mountain.service.MntiSerchService;
@@ -19,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.List;
 
 
 @Slf4j
@@ -46,6 +44,11 @@ public class MountainController {
     public ResponseEntity<?> detail(@PathVariable String id) throws Exception {
         MntiDetailOutput response = mountainService.getMountainDetail(id);
         return ResponseEntity.ok(response);
+    }
+
+    public ResponseEntity<?> course(@PathVariable String mountainId) {
+        List<CourseResponse> courseList = mountainService.getCourseList(mountainId);
+        return ResponseEntity.ok(courseList);
     }
 
 

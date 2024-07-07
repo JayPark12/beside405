@@ -2,6 +2,7 @@ package com.beside.mountain.service;
 
 import com.beside.mountain.domain.MntiEntity;
 import com.beside.mountain.dto.Course;
+import com.beside.mountain.dto.CourseResponse;
 import com.beside.mountain.dto.MntiDetailOutput;
 import com.beside.mountain.dto.MntiListOutput;
 import com.beside.mountain.repository.MntiRepository;
@@ -144,5 +145,11 @@ public class MountainService {
 //        mntiDetailOutput.setWeatherList(weatherList);
 
         return mntiDetailOutput;
+    }
+
+    public List<CourseResponse> getCourseList(String mountainId) {
+        MntiEntity mntiEntity = mntiRepository.findById(mountainId).orElseThrow(() -> new EntityNotFoundException("산이 존재하지 않습니다."));
+//        for(Course course : mntiEntity.get)
+        return null;
     }
 }
