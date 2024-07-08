@@ -20,8 +20,7 @@ import java.util.List;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class
-WeatherApi {
+public class WeatherApi {
 
     private final ObjectMapper objectMapper;
     private final RestTemplate restTemplate;
@@ -41,35 +40,39 @@ WeatherApi {
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
         try {
             JsonNode rootNode = objectMapper.readTree(response.getBody());
-
             JsonNode itemsNode = rootNode.path("response").path("body").path("items").path("item");
 
-            for (int i =0; i < itemsNode.size(); i++  ) {
-                if (itemsNode.get(i).path("category").asText().equals("POP")) {
-                    weather.setRain_persent(String.valueOf(itemsNode.get(i).path("fcstValue").asText()));
-                }
-                if(itemsNode.get(i).path("category").asText().equals("PTY"))  {
-                    weatherCode= String.valueOf(itemsNode.get(i).path("fcstValue").asText());
-                    weatherName = switch (weatherCode) {
-                        case "0" -> "없음";
-                        case "1" -> "비";
-                        case "2" -> "비/눈";
-                        case "3" -> "눈";
-                        case "4" -> "소나기";
-                        default -> weatherName;
-                    };
-                    weather.setRain_type(weatherName);
-                }
-                if (itemsNode.get(i).path("category").asText().equals("SKY")) {
-                    weatherCode= String.valueOf(itemsNode.get(i).path("fcstValue").asText());
-                    weatherName = switch (weatherCode) {
-                        case "0" -> "없음";
-                        case "1" -> "맑음";
-                        case "3" -> "구름많음";
-                        case "4" -> "흐림";
-                        default -> weatherName;
-                    };
-                    weather.setSky_state(weatherName);
+            for (JsonNode item : itemsNode) {
+                String category = item.path("category").asText();
+                String fcstValue = item.path("fcstValue").asText();
+
+                switch (category) {
+                    case "POP":
+                        weather.setRain_persent(fcstValue);
+                        break;
+                    case "PTY":
+                        weatherCode = fcstValue;
+                        weatherName = switch (weatherCode) {
+                            case "0" -> "없음";
+                            case "1" -> "비";
+                            case "2" -> "비/눈";
+                            case "3" -> "눈";
+                            case "4" -> "소나기";
+                            default -> weatherName;
+                        };
+                        weather.setRain_type(weatherName);
+                        break;
+                    case "SKY":
+                        weatherCode = fcstValue;
+                        weatherName = switch (weatherCode) {
+                            case "0" -> "없음";
+                            case "1" -> "맑음";
+                            case "3" -> "구름많음";
+                            case "4" -> "흐림";
+                            default -> weatherName;
+                        };
+                        weather.setSky_state(weatherName);
+                        break;
                 }
             }
         } catch (Exception e) {

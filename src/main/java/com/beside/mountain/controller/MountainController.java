@@ -46,9 +46,17 @@ public class MountainController {
         return ResponseEntity.ok(response);
     }
 
-    public ResponseEntity<?> course(@PathVariable String mountainId) {
+    @Operation(summary = "산 코스 리스트", description = "산의 고유 id를 조회하여 코스 리스트를 조회할 수 있습니다.")
+    @PostMapping("/courseList/{mountainId}")
+    public ResponseEntity<?> course(@PathVariable String mountainId) throws IOException {
         List<CourseResponse> courseList = mountainService.getCourseList(mountainId);
         return ResponseEntity.ok(courseList);
+    }
+
+    @Operation(summary = "날씨 정보", description = "날씨 정보 가져오기 테스트 api")
+    @PostMapping("/weather")
+    public ResponseEntity<?> weather() throws Exception {
+        return ResponseEntity.ok(mountainService.weatherList());
     }
 
 

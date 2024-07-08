@@ -147,9 +147,30 @@ public class MountainService {
         return mntiDetailOutput;
     }
 
-    public List<CourseResponse> getCourseList(String mountainId) {
+    public List<Weather> weatherList() throws Exception {
+        List<Weather> weatherList = new ArrayList<>();
+        weatherList.add(weatherApi.watherListToday());
+        weatherApi.watherListOrtherDay(weatherList);
+        return weatherList;
+    }
+
+
+    public List<CourseResponse> getCourseList(String mountainId) throws IOException {
+        List<CourseResponse> courseList = new ArrayList<>();
         MntiEntity mntiEntity = mntiRepository.findById(mountainId).orElseThrow(() -> new EntityNotFoundException("산이 존재하지 않습니다."));
-//        for(Course course : mntiEntity.get)
-        return null;
+
+        ClassPathResource resource = new ClassPathResource("/mntiCourseData/PMNTN_"+mntiEntity.getMntiName()+"_"+mntiEntity.getMntiListNo()+".json");
+        JsonNode rootNode = objectMapper.readTree(resource.getContentAsByteArray());
+        JsonNode itemsNode = rootNode.path("features");
+
+        if (itemsNode.isArray()) {
+            for (JsonNode item : itemsNode) {
+                CourseResponse courseResponse = new CourseResponse();
+                courseResponse.setCourseNo(item.path("attributes").path("PMNTN_SN").asText());
+                courseResponse.setCourseName(item.path("attributes").path("PMNTN_NM").asText());
+                courseList.add(courseResponse);
+            }
+        }
+        return courseList;
     }
 }
