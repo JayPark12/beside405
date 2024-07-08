@@ -4,6 +4,7 @@ import com.beside.common.handler.CustomLogoutHandler;
 import com.beside.jwt.JwtFilter;
 import com.beside.user.repository.UserRepository;
 import com.beside.jwt.JwtProvider;
+import jakarta.annotation.PostConstruct;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +12,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
+import org.springframework.http.HttpHeaders;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.AuthenticationEntryPoint;
@@ -24,6 +27,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 
+import java.util.Arrays;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -35,7 +39,9 @@ public class SecurityConfig {
     @Value("${spring.security.cors.allow.methods:1,2,3,4,5,6}")
     private String[] allowedMethods;
 
-    @Value("#{'${spring.security.origin}'.split(',')}")
+//    @Value("#{'${spring.security.origin}'.split(',')}")
+//    private List<String> allowedOriginPaths;
+
     private List<String> allowedOriginPaths;
 
     private final String[] excludedEndPoints = {
@@ -47,6 +53,11 @@ public class SecurityConfig {
             "/kakao/**",
             "/test/**"
     };
+
+    @PostConstruct
+    public void init() {
+        allowedOriginPaths = Arrays.asList("http://localhost:3000", "https://dev-mountains-after-mountains.vercel.app");
+    }
 
     @Autowired
     private JwtProvider jwtProvider;
@@ -72,9 +83,12 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(AbstractHttpConfigurer::disable)
-                .formLogin(AbstractHttpConfigurer::disable)
-                .httpBasic(AbstractHttpConfigurer::disable)
+                .csrf(AbstractHttpConfigurer::disable) // csrf 비활성화
+                .formLogin(AbstractHttpConfigurer::disable) // formLogin 비활성화
+                .httpBasic(AbstractHttpConfigurer::disable) // httpBasic 비활성화
+                // 동일 도메인에서는 iframe 접근 가능하도록 X-Frame-Options는 sameOrigin으로 설정
+                .headers(headersConfig -> headersConfig
+                        .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin))
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests((authorizeRequest) -> {
                     authorizeRequest //HttpServletRequest를 사용하는 요청들에 대한 접근제한을 설정함
@@ -117,18 +131,19 @@ public class SecurityConfig {
             //config.setAllowedMethods(List.of(SwaggerPatterns));
             config.setAllowedOrigins(allowedOriginPaths);
             config.setAllowedMethods(List.of(allowedMethods));
+            config.setAllowedHeaders(List.of(HttpHeaders.AUTHORIZATION, HttpHeaders.CONTENT_TYPE, HttpHeaders.SET_COOKIE, HttpHeaders.ACCEPT, HttpHeaders.ACCEPT_LANGUAGE, HttpHeaders.CONTENT_LANGUAGE, "Sec-WebSocket-Version", "Sec-WebSocket-Key"));
             config.setAllowCredentials(true);
             config.setMaxAge(3600L);
             return config;
         };
     }
 
-    // 권한 처리에 대한 에러 응답 핸들링
+    // 인증 실패 경우 에러 응답 핸들링
     private final AuthenticationEntryPoint authenticationEntryPoint = ((request, response, authException) -> {
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
     });
 
-    // 인증 실패 경우 에러 응답 핸들링
+    // 권한 처리에 대한 에러 응답 핸들링
     private final AccessDeniedHandler accessDeniedHandler = ((request, response, accessDeniedException) -> {
         response.sendError(HttpServletResponse.SC_BAD_REQUEST);
     });
