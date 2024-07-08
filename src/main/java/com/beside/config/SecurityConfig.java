@@ -56,7 +56,7 @@ public class SecurityConfig {
 
     @PostConstruct
     public void init() {
-        allowedOriginPaths = Arrays.asList("http://localhost:3000", "https://dev-mountains-after-mountains.vercel.app");
+        allowedOriginPaths = Arrays.asList("http://localhost:5173", "https://dev-mountains-after-mountains.vercel.app");
     }
 
     @Autowired
