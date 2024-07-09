@@ -4,7 +4,7 @@
     <configurationScan enabled="true" scanPeriod="60 seconds"/>
 
     <!-- Define a variable for log file path -->
-    <property name="LOG_PATH" value="/var/log/405beside"/>
+    <property name="LOG_PATH" value="/root/JavaProject/beside405/log/405beside"/>
 
     <!-- Console appender -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
