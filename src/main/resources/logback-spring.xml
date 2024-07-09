@@ -29,7 +29,7 @@
 
     <!-- Log level settings -->
     <logger name="org.springframework" level="INFO"/>
-    <logger name="com.example.myapp" level="DEBUG"/>
+    <logger name="com.beside" level="DEBUG"/>
 
     <!-- Root logger -->
     <root level="INFO">
