@@ -32,11 +32,15 @@ public class MountainController {
 
     @Operation(summary = "전체 산 리스트", description = "전체 산 리스트를 표출합니다. keyword를 넣어서 조회하는 경우 keyword를 포함하는 산 리스트를 표출합니다.")
     @GetMapping("/list")
-    public Page<MntiListOutput> getMntiList(@RequestParam(defaultValue = "0") int page,
-                                            @RequestParam(defaultValue = "10") int size,
+    public ResponseEntity<?> getMntiList(@RequestParam(required = false) Integer page,
+                                            @RequestParam(required = false) Integer size,
                                             @RequestParam(name = "keyword", required = false) String keyword) {
-        Pageable pageable = PageRequest.of(page, size);
-        return mountainService.getList(pageable, keyword);
+        if(size == null) {
+            return ResponseEntity.ok(mountainService.getList(keyword));
+        } else {
+            Pageable pageable = PageRequest.of(page, size);
+            return ResponseEntity.ok(mountainService.getPageList(pageable, keyword));
+        }
     }
 
     @Operation(summary = "산 상세 정보", description = "산의 고유 id를 조회하여 상세 정보를 조회할 수 있습니다.")
