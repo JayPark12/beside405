@@ -38,55 +38,40 @@ public class MountainService {
     private final Map<String, String> courseMap = new HashMap<>();
 
 
-    public Page<MntiListOutput> mntiList(Pageable pageable) throws URISyntaxException {
-        List<MntiListOutput> mntiListOutput = new ArrayList<>();
-        List<MntiEntity> mntiShufList = mntiRepository.findByMnti();
-        List<MntiEntity> mntiShufListPaged = mntiShufList.stream()
-                .skip(pageable.getOffset())
-                .limit(pageable.getPageSize())
-                .toList();
-        for (MntiEntity mntiEntity : mntiShufListPaged) {
-            List<String> potoFileSelect = CommonUtil.potoFile(mntiEntity.getMntiListNo(), mntiEntity.getMntiName());
-            MntiListOutput mntiOutput = new MntiListOutput();
-            mntiOutput.setMntiName(mntiEntity.getMntiName());
-            mntiOutput.setMntiListNo(mntiEntity.getMntiListNo());
-            mntiOutput.setMntiLevel(mntiEntity.getMntiLevel());
-            mntiOutput.setMntiAdd(mntiEntity.getMntiAdd());
-
-            if (!potoFileSelect.isEmpty()) {
-                mntiOutput.setPotoFile(potoFileSelect.get(0));
-            }
-
-            mntiListOutput.add(mntiOutput);
-        }
-        return new PageImpl<>(mntiListOutput, pageable, mntiShufList.size());
+    public List<MntiListOutput> getList(String keyword) {
+        return fetchAndConvert(keyword);
     }
 
+    public Page<MntiListOutput> getPageList(Pageable pageable, String keyword) {
+        List<MntiListOutput> mntiListOutput = fetchAndConvert(keyword);
 
-    public Page<MntiListOutput> getList(Pageable pageable, String keyword) {
-        List<MntiListOutput> mntiListOutput = new ArrayList<>();
+        int start = (int) pageable.getOffset();
+        int end = Math.min((start + pageable.getPageSize()), mntiListOutput.size());
+        return new PageImpl<>(mntiListOutput.subList(start, end), pageable, mntiListOutput.size());
+    }
+
+    private List<MntiListOutput> fetchAndConvert(String keyword) {
         List<MntiEntity> list;
 
-        if(StringUtils.hasText(keyword)) {
+        if (StringUtils.hasText(keyword)) {
             list = mntiRepository.findByMntiNameContaining(keyword);
         } else {
             list = mntiRepository.findAll();
         }
 
-        for(MntiEntity mntiEntity : list){
+        List<MntiListOutput> mntiListOutput = new ArrayList<>();
+        for (MntiEntity mntiEntity : list) {
             MntiListOutput dto = new MntiListOutput();
             dto.setMntiName(mntiEntity.getMntiName());
             dto.setMntiListNo(mntiEntity.getMntiListNo());
             dto.setMntiLevel(mntiEntity.getMntiLevel());
             dto.setMntiAdd(mntiEntity.getMntiAdd());
+            dto.setHeight(mntiEntity.getMntihigh());
             mntiListOutput.add(dto);
         }
 
         mntiListOutput.sort(Comparator.comparing(MntiListOutput::getMntiName));
-
-        int start = (int) pageable.getOffset();
-        int end = Math.min((start + pageable.getPageSize()), list.size());
-        return new PageImpl<>(mntiListOutput.subList(start, end), pageable, mntiListOutput.size());
+        return mntiListOutput;
     }
 
 
@@ -96,7 +81,6 @@ public class MountainService {
         mntiDetailOutput.setMntiName(mntiEntity.getMntiName());
         mntiDetailOutput.setMntiAddress(mntiEntity.getMntiAdd());
         mntiDetailOutput.setPhotoFile(CommonUtil.potoFile(mntiEntity.getMntiListNo(), mntiEntity.getMntiName()));
-
 
         List<Course> courses = new ArrayList<>();
         ClassPathResource resource = new ClassPathResource("/mntiCourseData/PMNTN_"+mntiEntity.getMntiName()+"_"+mntiEntity.getMntiListNo()+".json");
@@ -179,6 +163,9 @@ public class MountainService {
         }
         return courseList;
     }
+
+
+
 
     public String getCourseNameByNo(String courseNo) {
         return courseMap.get(courseNo);
