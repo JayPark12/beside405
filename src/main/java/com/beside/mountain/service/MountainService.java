@@ -12,6 +12,7 @@ import com.beside.weather.api.WeatherApi;
 import com.beside.weather.dto.Weather;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -36,6 +37,39 @@ public class MountainService {
     private final WeatherApi weatherApi;
     private final ObjectMapper objectMapper;
     private final Map<String, String> courseMap = new HashMap<>();
+
+
+    @PostConstruct
+    public void init() {
+        try {
+            initializeCourseMap();
+        } catch (IOException e) {
+            // 로깅 및 예외 처리
+            e.printStackTrace();
+        }
+    }
+
+
+    private void initializeCourseMap() throws IOException {
+        // 모든 산 목록을 가져와서 courseMap을 초기화
+        List<MntiEntity> mountains = mntiRepository.findAll();
+        for (MntiEntity mntiEntity : mountains) {
+            ClassPathResource resource = new ClassPathResource("/mntiCourseData/PMNTN_" + mntiEntity.getMntiName() + "_" + mntiEntity.getMntiListNo() + ".json");
+            JsonNode rootNode = objectMapper.readTree(resource.getContentAsByteArray());
+            JsonNode itemsNode = rootNode.path("features");
+
+            if (itemsNode.isArray()) {
+                for (JsonNode item : itemsNode) {
+                    String courseName = item.path("attributes").path("PMNTN_NM").asText();
+                    String courseNo = item.path("attributes").path("PMNTN_SN").asText();
+                    if (courseName != null && !courseName.isEmpty() && !courseName.equals(" ")) {
+                        courseMap.put(courseNo, courseName);
+                    }
+                }
+            }
+        }
+    }
+
 
 
     public List<MntiListOutput> getList(String keyword) {
@@ -163,8 +197,6 @@ public class MountainService {
         }
         return courseList;
     }
-
-
 
 
     public String getCourseNameByNo(String courseNo) {
