@@ -123,27 +123,32 @@ public class MountainService {
         JsonNode itemsNode = rootNode.path("features");
 
         if (itemsNode.isArray()) {
+            Set<String> courseNames = new HashSet<>();
             for (JsonNode item : itemsNode) {
-                Course course = new Course();
-                course.setCourseNo(item.path("attributes").path("PMNTN_SN").asText());
-                course.setCourseName(item.path("attributes").path("PMNTN_NM").asText());
-                course.setMntiTime(item.path("attributes").path("PMNTN_UPPL").asLong() + item.path("attributes").path("PMNTN_GODN").asLong());
-                course.setMntiLevel(item.path("attributes").path("PMNTN_DFFL").asText());
-                course.setMntiDist(item.path("attributes").path("PMNTN_LT").asText());
-                JsonNode pathsNode = item.path("geometry").path("paths");
-                if (pathsNode.isArray()) {
-                    List<List<Coordinate>> paths = new ArrayList<>();
-                    for (JsonNode pathNode : pathsNode) {
-                        List<Coordinate> path = new ArrayList<>();
-                        for (JsonNode coordNode : pathNode) {
-                            double[] coordinates = new double[]{coordNode.get(0).asDouble(), coordNode.get(1).asDouble()};
-                            path.add(new Coordinate(coordinates));
+                String courseName = item.path("PMNTN_NM").asText();
+                if(courseName != null && !courseName.isEmpty() && !courseNames.contains(courseName) && !courseName.equals(" ")) {
+                    Course course = new Course();
+                    course.setCourseNo(item.path("attributes").path("PMNTN_SN").asText());
+                    course.setCourseName(courseName);
+                    courseNames.add(courseName);
+                    course.setMntiTime(item.path("attributes").path("PMNTN_UPPL").asLong() + item.path("attributes").path("PMNTN_GODN").asLong());
+                    course.setMntiLevel(item.path("attributes").path("PMNTN_DFFL").asText());
+                    course.setMntiDist(item.path("attributes").path("PMNTN_LT").asText());
+                    JsonNode pathsNode = item.path("geometry").path("paths");
+                    if (pathsNode.isArray()) {
+                        List<List<Coordinate>> paths = new ArrayList<>();
+                        for (JsonNode pathNode : pathsNode) {
+                            List<Coordinate> path = new ArrayList<>();
+                            for (JsonNode coordNode : pathNode) {
+                                double[] coordinates = new double[]{coordNode.get(0).asDouble(), coordNode.get(1).asDouble()};
+                                path.add(new Coordinate(coordinates));
+                            }
+                            paths.add(path);
                         }
-                        paths.add(path);
+                        course.setPaths(paths);
                     }
-                    course.setPaths(paths);
+                    courses.add(course);
                 }
-                courses.add(course);
             }
         }
 
