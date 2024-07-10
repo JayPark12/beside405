@@ -29,6 +29,9 @@ public class HikeSchedule {
     @Column(name = "mountain_id")
     private String mountainId;
 
+    @Column(name = "course_no")
+    private String courseNo;
+
     @Column(name = "member_count")
     private int memberCount;
 

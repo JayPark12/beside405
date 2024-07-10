@@ -31,8 +31,7 @@ public class MntiReserInsertService {
     private final MntiRepository mntiRepository;
     private final ReserRepository reserRepository;
 
-    public MntiReserOutput execute(MntiReserInput mntiReserInput) throws Exception {
-        String id = SecurityContextHolder.getContext().getAuthentication().getName();
+    public MntiReserOutput execute(String id, MntiReserInput mntiReserInput) throws Exception {
         reserInputCheck(id ,mntiReserInput); // input check 나중에 더추가하거나 확인필요
         MntiReserOutput mntiReserOutput = reserJsonFile(mntiReserInput); //json file read
         reserInsert(id ,mntiReserOutput, mntiReserInput); // 데이터 적재

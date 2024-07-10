@@ -16,13 +16,14 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@Tag(name = "4.등산 일정", description = "등산 일정 관련 API")
+//@Tag(name = "4.등산 일정", description = "등산 일정 관련 API")
 @RequestMapping("/reser")
 public class MtReserPgController {
 
@@ -32,19 +33,19 @@ public class MtReserPgController {
     private final MntiReserDeleteService mntiReserDeleteService;
 
 
-    @Operation(summary = "일정 등록", description = "일정을 등록할 수 있습니다.")
-    @PostMapping("/registration")
-    public MntiReserOutput registration(@RequestBody MntiReserInput mntiReserInput) throws Exception {
-
+//    @Operation(summary = "일정 등록", description = "일정을 등록할 수 있습니다.")
+//    @PostMapping("/registration")
+    public ResponseEntity<?> registration(@RequestBody MntiReserInput mntiReserInput) throws Exception {
+        String id = SecurityContextHolder.getContext().getAuthentication().getName();
         log.debug("[START]  /registration, INPUT = [{}]", mntiReserInput.toString());
 
-        MntiReserOutput output = mntiReserInsertService.execute(mntiReserInput);
+        MntiReserOutput output = mntiReserInsertService.execute(id, mntiReserInput);
 
-        return output;
+        return ResponseEntity.ok(output);
     }
 
-    @Operation(summary = "일정 리스트 조회", description = "나의 전체 일정을 조회할 수 있습니다.")
-    @GetMapping("/registrationList")
+//    @Operation(summary = "일정 리스트 조회", description = "나의 전체 일정을 조회할 수 있습니다.")
+//    @GetMapping("/registrationList")
     public Page<MntiReserListOutput> registrationList(@RequestParam(defaultValue = "0") int page,
                                                       @RequestParam(defaultValue = "10") int size) throws Exception {
 
@@ -56,8 +57,8 @@ public class MtReserPgController {
         return output;
     }
 
-    @Operation(summary = "일정 상세보기", description = "일정의 상세내역을 볼 수 있습니다.")
-    @PostMapping("/registrationDitail")
+//    @Operation(summary = "일정 상세보기", description = "일정의 상세내역을 볼 수 있습니다.")
+//    @PostMapping("/registrationDitail")
     public MntiReserOutput registrationDitail (@RequestBody MntiReserDetailInput mntiReserDetailInput) throws Exception {
 
         log.debug("[START]  /registrationDitail");
@@ -66,8 +67,8 @@ public class MtReserPgController {
         return output;
     }
 
-    @Operation(summary = "일정 삭제", description = "일정을 삭제합니다.")
-    @PostMapping("/registrationDelete")
+//    @Operation(summary = "일정 삭제", description = "일정을 삭제합니다.")
+//    @PostMapping("/registrationDelete")
     public ResponseEntity<?> registrationDelete (@RequestBody MntiReserDetailInput mntiReserDetailInput) throws  Exception {
 
         log.debug("[START]  /registrationDelete");

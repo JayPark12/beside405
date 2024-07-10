@@ -35,6 +35,8 @@ public class MountainService {
     private final MntiRepository mntiRepository;
     private final WeatherApi weatherApi;
     private final ObjectMapper objectMapper;
+    private final Map<String, String> courseMap = new HashMap<>();
+
 
     public Page<MntiListOutput> mntiList(Pageable pageable) throws URISyntaxException {
         List<MntiListOutput> mntiListOutput = new ArrayList<>();
@@ -147,7 +149,7 @@ public class MountainService {
     public List<Weather> weatherList() throws Exception {
         List<Weather> weatherList = new ArrayList<>();
         weatherList.add(weatherApi.watherListToday());
-        weatherApi.watherListOrtherDay(weatherList);
+        //weatherApi.watherListOrtherDay(weatherList);
         return weatherList;
     }
 
@@ -171,9 +173,14 @@ public class MountainService {
                     courseResponse.setCourseName(courseName);
                     courseList.add(courseResponse);
                     courseNames.add(courseName);
+                    courseMap.put(courseNo, courseName);
                 }
             }
         }
         return courseList;
+    }
+
+    public String getCourseNameByNo(String courseNo) {
+        return courseMap.get(courseNo);
     }
 }
