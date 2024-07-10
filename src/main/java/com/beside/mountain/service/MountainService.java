@@ -24,10 +24,7 @@ import org.springframework.util.StringUtils;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -164,11 +161,17 @@ public class MountainService {
         JsonNode itemsNode = rootNode.path("features");
 
         if (itemsNode.isArray()) {
+            Set<String> courseNames = new HashSet<>();
             for (JsonNode item : itemsNode) {
-                CourseResponse courseResponse = new CourseResponse();
-                courseResponse.setCourseNo(item.path("attributes").path("PMNTN_SN").asText());
-                courseResponse.setCourseName(item.path("attributes").path("PMNTN_NM").asText());
-                courseList.add(courseResponse);
+                String courseName = item.path("attributes").path("PMNTN_NM").asText();
+                String courseNo = item.path("attributes").path("PMNTN_SN").asText();
+                if(courseName != null && !courseName.isEmpty() && !courseNames.contains(courseName) && !courseName.equals(" ")) {
+                    CourseResponse courseResponse = new CourseResponse();
+                    courseResponse.setCourseNo(courseNo);
+                    courseResponse.setCourseName(courseName);
+                    courseList.add(courseResponse);
+                    courseNames.add(courseName);
+                }
             }
         }
         return courseList;

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Set;
 
 
 @Slf4j
@@ -27,8 +28,6 @@ import java.util.List;
 public class MountainController {
 
     private final MountainService mountainService;
-    private final MntiSerchService mntiSerchService;
-    private final MntiDetailService mntiDetailService;
 
     @Operation(summary = "전체 산 리스트", description = "전체 산 리스트를 표출합니다. keyword를 넣어서 조회하는 경우 keyword를 포함하는 산 리스트를 표출합니다.")
     @GetMapping("/list")
@@ -57,20 +56,5 @@ public class MountainController {
     @PostMapping("/weather")
     public ResponseEntity<?> weather() throws Exception {
         return ResponseEntity.ok(mountainService.weatherList());
-    }
-
-
-
-    public Page<MntiListOutput> mntiSerch(@RequestBody MntiSearchInput mntiSearchInput,
-                                          @RequestParam(defaultValue = "0") int page,
-                                          @RequestParam(defaultValue = "10")int size) throws Exception {
-        Pageable pageable = PageRequest.of(page, size);
-        return mntiSerchService.mntiList(mntiSearchInput,pageable);
-    }
-
-    public MntiDetailOutput mntiList(@RequestBody MntiDetailInput mntiDetailInput) throws Exception {
-        MntiDetailOutput mntiList = mntiDetailService.readJsonFile(mntiDetailInput);
-
-        return mntiList ;
     }
 }
