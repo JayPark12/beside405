@@ -125,7 +125,7 @@ public class MountainService {
         if (itemsNode.isArray()) {
             Set<String> courseNames = new HashSet<>();
             for (JsonNode item : itemsNode) {
-                String courseName = item.path("PMNTN_NM").asText();
+                String courseName = item.path("attributes").path("PMNTN_NM").asText();
                 if(courseName != null && !courseName.isEmpty() && !courseNames.contains(courseName) && !courseName.equals(" ")) {
                     Course course = new Course();
                     course.setCourseNo(item.path("attributes").path("PMNTN_SN").asText());
