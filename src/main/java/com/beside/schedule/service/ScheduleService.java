@@ -5,6 +5,7 @@ import com.beside.mountain.repository.MntiRepository;
 import com.beside.mountain.service.MountainService;
 import com.beside.schedule.domain.HikeSchedule;
 import com.beside.schedule.dto.CreateScheduleRequest;
+import com.beside.schedule.dto.DetailScheduleResponse;
 import com.beside.schedule.dto.ModifyScheduleRequest;
 import com.beside.schedule.dto.ScheduleResponse;
 import com.beside.schedule.repository.HikeScheduleRepository;
@@ -21,6 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springdoc.core.converters.ResponseSupportConverter;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -77,6 +79,7 @@ public class ScheduleService {
     }
 
 
+    @Transactional
     public String modifySchedule(String userId, ModifyScheduleRequest request) {
         HikeSchedule schedule = hikeScheduleRepository.findByUserIdAndScheduleId(userId, request.getScheduleId()).orElseThrow();
         schedule.updateSchedule(request);
@@ -85,10 +88,26 @@ public class ScheduleService {
     }
 
 
+    @Transactional
     public String deleteSchedule(String userId, String scheduleId) {
         HikeSchedule hikeSchedule = hikeScheduleRepository.findByUserIdAndScheduleId(userId, scheduleId).orElseThrow();
         hikeSchedule.deleteSchedule();
         hikeScheduleRepository.save(hikeSchedule);
         return hikeSchedule.getScheduleId();
     }
+
+    public DetailScheduleResponse detailSchedule(String userId, String scheduleId) {
+        HikeSchedule hikeSchedule = hikeScheduleRepository.findByUserIdAndScheduleId(userId, scheduleId).orElseThrow();
+        MntiEntity mountain = mntiRepository.findByMntiInfo(hikeSchedule.getMountainId());
+        return DetailScheduleResponse.builder()
+                .scheduleId(scheduleId)
+                .mountainName(getMountainName(hikeSchedule.getMountainId()))
+                .courseName(mountainService.getCourseNameByNo(hikeSchedule.getCourseNo()))
+                .scheduleDate(hikeSchedule.getScheduleDate())
+                .mountainImg(null) // TODO
+                .mountainHigh(mountain.getMntihigh())
+                .mountainLevel(mountain.getMntiLevel()).build();
+    }
+
+
 }

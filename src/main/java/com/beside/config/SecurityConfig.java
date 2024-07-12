@@ -52,7 +52,8 @@ public class SecurityConfig {
             "/detail/**",
             "/kakao/**",
             "/test/**",
-            "/user/kakaoLogin"
+            "/user/kakaoLogin",
+            "/schedule/**"
     };
 
     @PostConstruct

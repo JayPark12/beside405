@@ -1,6 +1,7 @@
 package com.beside.schedule.controller;
 
 import com.beside.schedule.dto.CreateScheduleRequest;
+import com.beside.schedule.dto.DetailScheduleResponse;
 import com.beside.schedule.dto.ModifyScheduleRequest;
 import com.beside.schedule.dto.ScheduleResponse;
 import com.beside.schedule.service.ScheduleService;
@@ -60,8 +61,14 @@ public class ScheduleController {
     @GetMapping("/mySchedule/{scheduleId}")
     public ResponseEntity<?> detailSchedule(@PathVariable String scheduleId) {
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();
-        return null;
+        DetailScheduleResponse response = scheduleService.detailSchedule(userId, scheduleId);
+        return ResponseEntity.ok(response);
     }
+
+    //Todo : 일정id에 매핑되는 메모장 구현하기
+    // - 1. db 테이블 생성
+    // - 2. api 요청 따로
+    // - 3. 데이터 생성일시 내림차순으로 정렬
 
 
 }
