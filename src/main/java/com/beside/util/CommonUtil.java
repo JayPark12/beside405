@@ -1,8 +1,10 @@
 package com.beside.util;
 
 import com.beside.mountain.service.MountainService;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -10,6 +12,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -67,6 +70,26 @@ public class CommonUtil {
             }
         }
         return null;
+    }
+
+    public String getImageByPath(String originPath) {
+        String filePath = originPath + "test";
+
+        byte[] imageBytes = null;
+        Path imageFilePath = Paths.get(filePath);
+        if (Files.exists(imageFilePath) && Files.isReadable(imageFilePath)) {
+            try (InputStream imageInputStream = Files.newInputStream(imageFilePath)) {
+                imageBytes = imageInputStream.readAllBytes();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (imageBytes != null) {
+            return Base64.getEncoder().encodeToString(imageBytes);
+        } else {
+            return null;
+        }
     }
 
 }
