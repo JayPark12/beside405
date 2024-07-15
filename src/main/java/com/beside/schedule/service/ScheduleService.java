@@ -4,11 +4,10 @@ import com.beside.mountain.domain.MntiEntity;
 import com.beside.mountain.repository.MntiRepository;
 import com.beside.mountain.service.MountainService;
 import com.beside.schedule.domain.HikeSchedule;
-import com.beside.schedule.dto.CreateScheduleRequest;
-import com.beside.schedule.dto.DetailScheduleResponse;
-import com.beside.schedule.dto.ModifyScheduleRequest;
-import com.beside.schedule.dto.ScheduleResponse;
+import com.beside.schedule.domain.ScheduleMemo;
+import com.beside.schedule.dto.*;
 import com.beside.schedule.repository.HikeScheduleRepository;
+import com.beside.schedule.repository.ScheduleMemoRepository;
 import com.beside.user.domain.UserEntity;
 import com.beside.user.exception.UserErrorInfo;
 import com.beside.user.exception.UserException;
@@ -38,6 +37,7 @@ public class ScheduleService {
     private final HikeScheduleRepository hikeScheduleRepository;
     private final MntiRepository mntiRepository;
     private final MountainService mountainService;
+    private final ScheduleMemoRepository scheduleMemoRepository;
 
 
     public List<ScheduleResponse> mySchedule(String userId) {
@@ -107,6 +107,80 @@ public class ScheduleService {
                 .mountainImg(null) // TODO
                 .mountainHigh(mountain.getMntihigh())
                 .mountainLevel(mountain.getMntiLevel()).build();
+    }
+
+
+    public List<MemoListResponse> getMemoList(String userId, String scheduleId) {
+        List<MemoListResponse> list = new ArrayList<>();
+        List<ScheduleMemo> entityList = scheduleMemoRepository.findByScheduleId(scheduleId);
+        for(ScheduleMemo memo : entityList){
+            MemoListResponse memoListResponse = new MemoListResponse();
+            memoListResponse.setMemoId(memo.getMemoId());
+            memoListResponse.setScheduleId(scheduleId);
+            memoListResponse.setContent(memo.getContent());
+            memoListResponse.setCheckStatus(memo.isCheckStatus());
+            list.add(memoListResponse);
+        }
+        return list;
+    }
+
+    public String createMemo(CreateMemoRequest request, String userId) {
+        try {
+            ScheduleMemo memo = ScheduleMemo.builder()
+                    .scheduleId(request.getScheduleId())
+                    .memoId(CommonUtil.getMsgId())
+                    .content(request.getMemoContent())
+                    .createUser(userId)
+                    .checkStatus(false)
+                    .build();
+            scheduleMemoRepository.save(memo);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error(e.getMessage());
+        }
+        return "메모 등록 완료";
+    }
+
+
+    @Transactional
+    public String modifyMemo(UpdateMemoRequest request) {
+        //메모 수정 권한 있는 지 체크
+        try {
+            ScheduleMemo memo = scheduleMemoRepository.findById(request.getMemoId()).orElseThrow();
+            memo.updateMemo(request.getMemoContent());
+            scheduleMemoRepository.save(memo);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error(e.getMessage());
+        }
+        return request.getMemoId();
+    }
+
+    @Transactional
+    public String deleteMemo(String userId, String memoId) {
+        //메모 삭제 권한 있는 지 체크
+        try {
+            ScheduleMemo memo = scheduleMemoRepository.findById(memoId).orElseThrow();
+            scheduleMemoRepository.deleteById(memoId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error(e.getMessage());
+        }
+        return memoId;
+    }
+
+    @Transactional
+    public String checkMemo(String userId, String memoId) {
+        //메모 수정 권한 있는 지 체크
+        try {
+            ScheduleMemo memo = scheduleMemoRepository.findById(memoId).orElseThrow();
+            memo.updateCheckStatus(!memo.isCheckStatus());
+            scheduleMemoRepository.save(memo);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error(e.getMessage());
+        }
+        return memoId;
     }
 
 

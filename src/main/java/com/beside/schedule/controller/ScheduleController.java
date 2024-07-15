@@ -1,9 +1,6 @@
 package com.beside.schedule.controller;
 
-import com.beside.schedule.dto.CreateScheduleRequest;
-import com.beside.schedule.dto.DetailScheduleResponse;
-import com.beside.schedule.dto.ModifyScheduleRequest;
-import com.beside.schedule.dto.ScheduleResponse;
+import com.beside.schedule.dto.*;
 import com.beside.schedule.service.ScheduleService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -69,6 +66,53 @@ public class ScheduleController {
     // - 1. db 테이블 생성
     // - 2. api 요청 따로
     // - 3. 데이터 생성일시 내림차순으로 정렬
+
+
+    //메모 리스트
+    @Operation(summary = "메모 리스트", description = "등산 일정의 Id를 조회하여 해당 일정의 메모 리스트를 볼 수 있습니다.")
+    @GetMapping("/memo/list/{scheduleId}")
+    public ResponseEntity<?> scheduleMemoList(@PathVariable String scheduleId) {
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        List<MemoListResponse> response = scheduleService.getMemoList(userId, scheduleId);
+        return ResponseEntity.ok(response);
+    }
+
+    //메모 개별 수정
+    @Operation(summary = "메모 등록", description = "일정 id에 매핑되는 메모를 생성합니다.")
+    @PostMapping("/memo/create")
+    public ResponseEntity<?> createMemo(@RequestBody CreateMemoRequest request) {
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        String response = scheduleService.createMemo(request, userId);
+        return ResponseEntity.ok(response);
+    }
+
+
+    //메모 개별 수정
+    @Operation(summary = "메모 개별 수정", description = "메모 Id를 조회하여 해당 메모를 수정할 수 있습니다.")
+    @PatchMapping("/memo/update")
+    public ResponseEntity<?> modifyMemo(@RequestBody UpdateMemoRequest request) {
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        String response = scheduleService.modifyMemo(request);
+        return ResponseEntity.ok(response);
+    }
+
+    //메모 삭제
+    @Operation(summary = "메모 개별 삭제", description = "메모 Id를 조회하여 해당 메모를 삭제할 수 있습니다.")
+    @DeleteMapping("/memo/delete/{memoId}")
+    public ResponseEntity<?> deleteMemo(@PathVariable String memoId) {
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        String response = scheduleService.deleteMemo(userId, memoId);
+        return ResponseEntity.ok(response);
+    }
+
+    //메모 체크
+    @Operation(summary = "메모 체크 수정", description = "메모 Id를 조회하여 해당 메모의 체크를 수정할 수 있습니다.")
+    @PatchMapping("/memo/update/{memoId}")
+    public ResponseEntity<?> checkMemo(@PathVariable String memoId) {
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        String response = scheduleService.checkMemo(userId, memoId);
+        return ResponseEntity.ok(response);
+    }
 
 
 }
