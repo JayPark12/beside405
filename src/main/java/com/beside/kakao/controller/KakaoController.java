@@ -55,20 +55,20 @@ public class KakaoController {
 
 //    @GetMapping("/callback")
 //    @Operation(summary = "토큰 발급", description = "로그인 후 발급받은 code를 이용해 내 정보를 조회합니다.")
-    public ResponseEntity<?> callback(@RequestParam("code") String code) {
-        // 1. 인가 코드 받기 (RequestParam String code)
-
-        // 2. 토큰 받기
-        String accessToken = kakaoService.getAccessTokenFromKakao(code);
-
-        // 3. 사용자 정보 받기
-        //첫번째 방법
-        KakaoUserInfoResponseDto userInfo = kakaoService.getUserInfo(accessToken);
-        //두번째 방법
-        Map<String, Object> userInfo2 = kakaoService.getUserInfo2(accessToken);
-
-        return ResponseEntity.ok(userInfo);
-    }
+//    public ResponseEntity<?> callback(@RequestParam("code") String code) {
+//        // 1. 인가 코드 받기 (RequestParam String code)
+//
+//        // 2. 토큰 받기
+//        String accessToken = kakaoService.getAccessTokenFromKakao(code);
+//
+//        // 3. 사용자 정보 받기
+//        //첫번째 방법
+//        //KakaoUserInfoResponseDto userInfo = kakaoService.getUserInfo(accessToken);
+//        //두번째 방법
+//        Map<String, Object> userInfo2 = kakaoService.getUserInfo2(accessToken);
+//
+//        return ResponseEntity.ok(userInfo);
+//    }
 
 
 //    @Operation(summary = "내 정보조회", description = "로그인 후 발급 받은 토큰을 헤더에 넣어 내 정보를 조회합니다.")

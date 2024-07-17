@@ -70,33 +70,33 @@ public class KakaoService {
 
 
     //https://kapi.kakao.com/v2/user/me
-    public KakaoUserInfoResponseDto getUserInfo(String accessToken) {
-        log.info("카카오 회원 정보 가져오기 서비스 진입");
-        KakaoUserInfoResponseDto userInfo = WebClient.create(KAUTH_USER_URL_HOST)
-                .get()
-                .uri(uriBuilder -> uriBuilder
-                        .scheme("https")
-                        .path("/v2/user/me")
-                        .build(true))
-                .header(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken) // access token 인가
-                .header(HttpHeaders.CONTENT_TYPE, HttpHeaderValues.APPLICATION_X_WWW_FORM_URLENCODED.toString())
-                .retrieve()
-                .bodyToMono(KakaoUserInfoResponseDto.class)
-                .block();
-
-        log.info("[ Kakao Service ] Auth ID ---> {} ", userInfo.getId());
-        log.info("[ Kakao Service ] NickName ---> {} ", userInfo.getKakaoAccount().getProfile().getNickName());
-        log.info("[ Kakao Service ] Email ---> {} ", userInfo.getKakaoAccount().getEmail());
-        log.info("[ Kakao Service ] ProfileImageUrl ---> {} ", userInfo.getKakaoAccount().getProfile().getProfileImageUrl());
-
-        Optional<UserEntity> user = userRepository.findById(String.valueOf(userInfo.getId()));
-        if(user.isEmpty()) {
-            userService.joinFromKakao(String.valueOf(userInfo.getId()), userInfo.getKakaoAccount().getEmail());
-        }
-        log.info("카카오 회원가입 완료 : {}", userInfo.getId());
-
-        return userInfo;
-    }
+//    public KakaoUserInfoResponseDto getUserInfo(String accessToken) {
+//        log.info("카카오 회원 정보 가져오기 서비스 진입");
+//        KakaoUserInfoResponseDto userInfo = WebClient.create(KAUTH_USER_URL_HOST)
+//                .get()
+//                .uri(uriBuilder -> uriBuilder
+//                        .scheme("https")
+//                        .path("/v2/user/me")
+//                        .build(true))
+//                .header(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken) // access token 인가
+//                .header(HttpHeaders.CONTENT_TYPE, HttpHeaderValues.APPLICATION_X_WWW_FORM_URLENCODED.toString())
+//                .retrieve()
+//                .bodyToMono(KakaoUserInfoResponseDto.class)
+//                .block();
+//
+//        log.info("[ Kakao Service ] Auth ID ---> {} ", userInfo.getId());
+//        log.info("[ Kakao Service ] NickName ---> {} ", userInfo.getKakaoAccount().getProfile().getNickName());
+//        log.info("[ Kakao Service ] Email ---> {} ", userInfo.getKakaoAccount().getEmail());
+//        log.info("[ Kakao Service ] ProfileImageUrl ---> {} ", userInfo.getKakaoAccount().getProfile().getProfileImageUrl());
+//
+//        Optional<UserEntity> user = userRepository.findById(String.valueOf(userInfo.getId()));
+//        if(user.isEmpty()) {
+//            userService.joinFromKakao(String.valueOf(userInfo.getId()), userInfo.getKakaoAccount().getEmail());
+//        }
+//        log.info("카카오 회원가입 완료 : {}", userInfo.getId());
+//
+//        return userInfo;
+//    }
 
 
     public HashMap<String, Object> getUserInfo2(String accessToken) {

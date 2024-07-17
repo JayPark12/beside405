@@ -58,15 +58,18 @@ public class UserService {
         return SignUpResponse.builder().userId(request.getUserId()).nickname(user.getNickname()).desc("계정이 생성 되었습니다.").build();
     }
 
-    public void joinFromKakao(String userId, String email) {
-        UserEntity user = UserEntity.builder().id(userId)
-                .nickname(createNickname())
-                .callNo(null)
-                .userSts("1").creatDt(localDate)
-                .email(email)
-                .password(null).build();
+    public void joinFromKakao(String kakaoCode) {
+//        UserEntity user = UserEntity.builder().id(userId)
+//                .nickname(createNickname())
+//                .callNo(null)
+//                .userSts("1").creatDt(localDate)
+//                .email(email)
+//                .password(null).build();
+//        userRepository.save(user);
+////        return SignUpResponse.builder().userId(userId).nickname(user.getNickname()).desc("카카오 계정이 생성 되었습니다.").build();
+
+        UserEntity user = UserEntity.builder().id(kakaoCode).nickname(createNickname()).build();
         userRepository.save(user);
-//        return SignUpResponse.builder().userId(userId).nickname(user.getNickname()).desc("카카오 계정이 생성 되었습니다.").build();
     }
 
 
@@ -114,20 +117,26 @@ public class UserService {
                 .build();
     }
 
-    public LoginResponse kakaoLogin(KakaoUserInfoResponseDto kakaoUser, HttpServletResponse response) {
-        String id = String.valueOf(kakaoUser.getId());
+    public LoginResponse kakaoLogin(String kakaoCode, HttpServletResponse response) {
 
-         Optional<UserEntity> userCheck = userRepository.findById(id);
-         if(userCheck.isEmpty()) {
-             joinFromKakao(id, kakaoUser.getKakaoAccount().getEmail());
-         }
+//        String id = String.valueOf(kakaoUser.getId());
+//
+//         Optional<UserEntity> userCheck = userRepository.findById(id);
+//         if(userCheck.isEmpty()) {
+//             joinFromKakao(id, kakaoUser.getKakaoAccount().getEmail());
+//         }
 
-        UserEntity user = userRepository.findById(id).orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
-        String jwt = jwtProvider.generateJwtToken(id);
+        Optional<UserEntity> userCheck = userRepository.findById(kakaoCode);
+        if(userCheck.isEmpty()) {
+            joinFromKakao(kakaoCode);
+        }
+
+        UserEntity user = userRepository.findById(kakaoCode).orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
+        String jwt = jwtProvider.generateJwtToken(kakaoCode);
 
         response.setHeader("Authorization", "Bearer " + jwt);
         return LoginResponse.builder()
-                .userId(id)
+                .userId(kakaoCode)
                 .nickname(user.getNickname())
                 .callNo(user.getCallNo())
                 .token(jwt)

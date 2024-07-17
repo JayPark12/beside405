@@ -64,10 +64,10 @@ public class UserController {
     @PostMapping("/kakaoLogin")
     @Operation(summary = "카카오 로그인", description = "카카오 계정을 이용해 로그인을 할 수 있습니다. 계정이 없는 경우에는 회원가입 로직을 거친 후 토큰을 발급합니다." +
             "카카오 로그인 후 발급받은 인가코드를 body에 넣어서 요청합니다.")
-    public ResponseEntity<?> kakaoLogin(@RequestBody String accessToken, HttpServletResponse servletResponse) {
-        log.info("카카오 로그인 시작 : {}", accessToken);
-        KakaoUserInfoResponseDto kakaoUser = kakaoService.getUserInfo(accessToken);
-        return ResponseEntity.ok(userService.kakaoLogin(kakaoUser, servletResponse));
+    public ResponseEntity<?> kakaoLogin(@RequestBody String kakaoCode, HttpServletResponse servletResponse) {
+        log.info("카카오 로그인 시작 : {}", kakaoCode);
+//        KakaoUserInfoResponseDto kakaoUser = kakaoService.getUserInfo(code);
+        return ResponseEntity.ok(userService.kakaoLogin(kakaoCode, servletResponse));
     }
 
 
