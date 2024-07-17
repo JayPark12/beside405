@@ -71,6 +71,7 @@ public class KakaoService {
 
     //https://kapi.kakao.com/v2/user/me
     public KakaoUserInfoResponseDto getUserInfo(String accessToken) {
+        log.info("카카오 회원 정보 가져오기 서비스 진입");
         KakaoUserInfoResponseDto userInfo = WebClient.create(KAUTH_USER_URL_HOST)
                 .get()
                 .uri(uriBuilder -> uriBuilder
@@ -92,6 +93,7 @@ public class KakaoService {
         if(user.isEmpty()) {
             userService.joinFromKakao(String.valueOf(userInfo.getId()), userInfo.getKakaoAccount().getEmail());
         }
+        log.info("카카오 회원가입 완료 : {}", userInfo.getId());
 
         return userInfo;
     }
