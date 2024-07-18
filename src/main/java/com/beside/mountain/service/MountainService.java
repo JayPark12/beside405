@@ -20,6 +20,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -72,11 +73,11 @@ public class MountainService {
 
 
 
-    public List<MntiListOutput> getList(String keyword) {
+    public List<MntiListOutput> getList(String keyword) throws IOException {
         return fetchAndConvert(keyword);
     }
 
-    public Page<MntiListOutput> getPageList(Pageable pageable, String keyword) {
+    public Page<MntiListOutput> getPageList(Pageable pageable, String keyword) throws IOException {
         List<MntiListOutput> mntiListOutput = fetchAndConvert(keyword);
 
         int start = (int) pageable.getOffset();
@@ -84,7 +85,7 @@ public class MountainService {
         return new PageImpl<>(mntiListOutput.subList(start, end), pageable, mntiListOutput.size());
     }
 
-    private List<MntiListOutput> fetchAndConvert(String keyword) {
+    private List<MntiListOutput> fetchAndConvert(String keyword) throws IOException {
         List<MntiEntity> list;
 
         if (StringUtils.hasText(keyword)) {
@@ -101,6 +102,7 @@ public class MountainService {
             dto.setMntiLevel(mntiEntity.getMntiLevel());
             dto.setMntiAdd(mntiEntity.getMntiAdd());
             dto.setHeight(mntiEntity.getMntihigh());
+            dto.setPotoFile(CommonUtil.getImageByMountain(mntiEntity.getMntiListNo()));
             mntiListOutput.add(dto);
         }
 

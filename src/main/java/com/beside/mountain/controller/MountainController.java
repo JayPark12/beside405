@@ -4,6 +4,7 @@ import com.beside.mountain.dto.*;
 import com.beside.mountain.service.MntiDetailService;
 import com.beside.mountain.service.MountainService;
 import com.beside.mountain.service.MntiSerchService;
+import com.beside.util.CommonUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -33,7 +34,7 @@ public class MountainController {
     @GetMapping("/list")
     public ResponseEntity<?> getMntiList(@RequestParam(required = false) Integer page,
                                             @RequestParam(required = false) Integer size,
-                                            @RequestParam(name = "keyword", required = false) String keyword) {
+                                            @RequestParam(name = "keyword", required = false) String keyword) throws IOException {
         if(size == null) {
             return ResponseEntity.ok(mountainService.getList(keyword));
         } else {
@@ -61,4 +62,11 @@ public class MountainController {
     public ResponseEntity<?> weather() throws Exception {
         return ResponseEntity.ok(mountainService.weatherList());
     }
+
+
+    @GetMapping("/imgTest")
+    public String imgTest() throws Exception {
+        return CommonUtil.getImageByMountain("112300301");
+    }
+
 }
