@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity @Table(name="USER_INFO") @Builder//JPA
 @Getter @Setter @ToString @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode(callSuper=false) //lombok
@@ -23,7 +24,7 @@ public class UserEntity {
     private String userSts;
 
     @Column(name = "CREAT_DT")
-    private LocalDate creatDt;
+    private LocalDateTime creatDt;
 
     @Column(name = "password")
     private String password;

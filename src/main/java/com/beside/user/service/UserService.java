@@ -22,6 +22,7 @@ import org.springframework.transaction.support.TransactionTemplate;
 import org.thymeleaf.util.StringUtils;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -35,7 +36,7 @@ public class UserService {
     private final JwtProvider jwtProvider;
     private final RandomNicknameRepository randomNicknameRepository;
 
-    LocalDate localDate = LocalDate.now();
+    LocalDateTime localDate = LocalDateTime.now();
 
     @Transactional
     public SignUpResponse joinUser(SignUpRequest request) {
