@@ -89,13 +89,12 @@ public class KakaoService {
         log.info("[ Kakao Service ] NickName ---> {} ", userInfo.getKakaoAccount().getProfile().getNickName());
         log.info("[ Kakao Service ] Email ---> {} ", userInfo.getKakaoAccount().getEmail());
         log.info("[ Kakao Service ] ProfileImageUrl ---> {} ", userInfo.getKakaoAccount().getProfile().getProfileImageUrl());
-
-        Optional<UserEntity> user = userRepository.findById(String.valueOf(userInfo.getId()));
-        if(user.isEmpty()) {
-            userService.joinFromKakao2(String.valueOf(userInfo.getId()), userInfo.getKakaoAccount().getEmail());
-        }
-        log.info("카카오 회원가입 완료 : {}", userInfo.getId());
-
+//
+//        Optional<UserEntity> user = userRepository.findById(String.valueOf(userInfo.getId()));
+//        if(user.isEmpty()) {
+//            userService.joinFromKakao2(String.valueOf(userInfo.getId()), userInfo.getKakaoAccount().getEmail());
+//            log.info("카카오 회원가입 완료 : {}", userInfo.getId());
+//        }
         return userInfo;
     }
 

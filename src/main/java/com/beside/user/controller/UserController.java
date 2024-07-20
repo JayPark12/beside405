@@ -45,14 +45,6 @@ public class UserController {
         return ResponseEntity.ok(response);
     }
 
-//    @PostMapping("/kakaoJoin")
-//    @Operation(summary = "카카오 회원 가입", description = "카카오 계정을 이용해 회원가입을 할 수 있습니다.")
-//    public ResponseEntity<?> kakaoJoin(@RequestBody String accessToken) {
-//        KakaoUserInfoResponseDto kakaoUser = kakaoService.getUserInfo(accessToken);
-//        SignUpResponse response = userService.joinFromKakao(String.valueOf(kakaoUser.getId()), kakaoUser.getKakaoAccount().email);
-//        return ResponseEntity.ok(response);
-//    }
-
 
     @Operation(summary = "로그인", description = "로그인")
     @PostMapping("/login")
@@ -61,14 +53,19 @@ public class UserController {
     }
 
 
-
     @Operation(summary = "카카오 로그인", description = "카카오 계정을 이용해 로그인을 할 수 있습니다. 계정이 없는 경우에는 회원가입 로직을 거친 후 토큰을 발급합니다." +
             "카카오 로그인 후 발급받은 인가코드를 body에 넣어서 요청합니다.")
     @GetMapping("/kakaoLogin")
     public ResponseEntity<?> kakaoLogin(@RequestParam String code, HttpServletResponse servletResponse) {
         log.info("카카오 로그인 시작 : {}", code);
+
+        //1. 인가코드로 토큰 발급
         String accessToken = kakaoService.getAccessTokenFromKakao(code);
+
+        //2. 토큰으로 카카오 회원정보
         KakaoUserInfoResponseDto kakaoUser = kakaoService.getUserInfo(accessToken);
+
+        //3. 로그인 처리
         return ResponseEntity.ok(userService.kakaoLogin2(kakaoUser, servletResponse));
     }
 
@@ -79,7 +76,6 @@ public class UserController {
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();
         return ResponseEntity.ok(userService.userInfo(userId));
     }
-    //커밋용
 
     @Operation(summary = "닉네임 변경")
     @PatchMapping("/updateNickname")
@@ -99,12 +95,6 @@ public class UserController {
         userService.updatePassword(userId, request);
         return ResponseEntity.ok("변경 완료");
     }
-
-    public String testBti(@RequestBody MbtiDto mbtiDto) {
-        String result = userService.calResult(mbtiDto);
-        return null;
-    }
-
 
 
     /**

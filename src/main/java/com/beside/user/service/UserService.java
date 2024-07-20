@@ -60,15 +60,6 @@ public class UserService {
     }
 
     public void joinFromKakao(String kakaoCode) {
-//        UserEntity user = UserEntity.builder().id(userId)
-//                .nickname(createNickname())
-//                .callNo(null)
-//                .userSts("1").creatDt(localDate)
-//                .email(email)
-//                .password(null).build();
-//        userRepository.save(user);
-////        return SignUpResponse.builder().userId(userId).nickname(user.getNickname()).desc("카카오 계정이 생성 되었습니다.").build();
-
         UserEntity user = UserEntity.builder()
                 .id(kakaoCode)
                 .nickname(createNickname())
@@ -87,15 +78,6 @@ public class UserService {
                 .userSts("1").creatDt(localDate)
                 .email(email)
                 .password(null).build();
-
-//        UserEntity user = UserEntity.builder()
-//                .id(kakaoCode)
-//                .nickname(createNickname())
-//                .callNo(null)
-//                .userSts("1").creatDt(localDate)
-//                .email(null)
-//                .password(null)
-//                .build();
         userRepository.save(user);
     }
 
@@ -173,12 +155,12 @@ public class UserService {
 
 
     public LoginResponse kakaoLogin2(KakaoUserInfoResponseDto kakaoUser, HttpServletResponse response) {
-
         String id = String.valueOf(kakaoUser.getId());
 
          Optional<UserEntity> userCheck = userRepository.findById(id);
          if(userCheck.isEmpty()) {
              joinFromKakao2(id, kakaoUser.getKakaoAccount().getEmail());
+             log.info("카카오 회원가입 완료 : {}", id);
          }
 
 //        Optional<UserEntity> userCheck = userRepository.findById(kakaoCode);
@@ -190,6 +172,8 @@ public class UserService {
         String jwt = jwtProvider.generateJwtToken(id);
 
         response.setHeader("Authorization", "Bearer " + jwt);
+
+        log.info("카카오 로그인 완료 : {}", id);
         return LoginResponse.builder()
                 .userId(id)
                 .nickname(user.getNickname())
