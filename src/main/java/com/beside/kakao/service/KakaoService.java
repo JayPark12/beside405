@@ -46,6 +46,7 @@ public class KakaoService {
     }
 
     public String getAccessTokenFromKakao(String code) {
+        log.info("access 토큰 발급 시작");
         KakaoTokenResponseDto kakaoTokenResponseDto = WebClient.create(KAUTH_TOKEN_URL_HOST).post()
                 .uri(uriBuilder -> uriBuilder
                         .scheme("https")
