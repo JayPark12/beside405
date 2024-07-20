@@ -80,6 +80,25 @@ public class UserService {
         userRepository.save(user);
     }
 
+    public void joinFromKakao2(String userId, String email) {
+        UserEntity user = UserEntity.builder().id(userId)
+                .nickname(createNickname())
+                .callNo(null)
+                .userSts("1").creatDt(localDate)
+                .email(email)
+                .password(null).build();
+
+//        UserEntity user = UserEntity.builder()
+//                .id(kakaoCode)
+//                .nickname(createNickname())
+//                .callNo(null)
+//                .userSts("1").creatDt(localDate)
+//                .email(null)
+//                .password(null)
+//                .build();
+        userRepository.save(user);
+    }
+
 
 
     //랜덤 닉네임 생성
@@ -145,6 +164,34 @@ public class UserService {
         response.setHeader("Authorization", "Bearer " + jwt);
         return LoginResponse.builder()
                 .userId(kakaoCode)
+                .nickname(user.getNickname())
+                .callNo(user.getCallNo())
+                .token(jwt)
+                .bearerToken("Bearer " + jwt)
+                .build();
+    }
+
+
+    public LoginResponse kakaoLogin2(KakaoUserInfoResponseDto kakaoUser, HttpServletResponse response) {
+
+        String id = String.valueOf(kakaoUser.getId());
+
+         Optional<UserEntity> userCheck = userRepository.findById(id);
+         if(userCheck.isEmpty()) {
+             joinFromKakao2(id, kakaoUser.getKakaoAccount().getEmail());
+         }
+
+//        Optional<UserEntity> userCheck = userRepository.findById(kakaoCode);
+//        if(userCheck.isEmpty()) {
+//            joinFromKakao(kakaoCode);
+//        }
+
+        UserEntity user = userRepository.findById(id).orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
+        String jwt = jwtProvider.generateJwtToken(id);
+
+        response.setHeader("Authorization", "Bearer " + jwt);
+        return LoginResponse.builder()
+                .userId(id)
                 .nickname(user.getNickname())
                 .callNo(user.getCallNo())
                 .token(jwt)

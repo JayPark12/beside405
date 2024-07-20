@@ -67,8 +67,8 @@ public class UserController {
     @GetMapping("/kakaoLogin")
     public ResponseEntity<?> kakaoLogin(@RequestParam String code, HttpServletResponse servletResponse) {
         log.info("카카오 로그인 시작 : {}", code);
-//        KakaoUserInfoResponseDto kakaoUser = kakaoService.getUserInfo(code);
-        return ResponseEntity.ok(userService.kakaoLogin(code, servletResponse));
+        KakaoUserInfoResponseDto kakaoUser = kakaoService.getUserInfo(code);
+        return ResponseEntity.ok(userService.kakaoLogin2(kakaoUser, servletResponse));
     }
 
 
