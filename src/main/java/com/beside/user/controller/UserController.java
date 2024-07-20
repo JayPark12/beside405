@@ -78,6 +78,7 @@ public class UserController {
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();
         return ResponseEntity.ok(userService.userInfo(userId));
     }
+    //커밋용
 
     @Operation(summary = "닉네임 변경")
     @PatchMapping("/updateNickname")
