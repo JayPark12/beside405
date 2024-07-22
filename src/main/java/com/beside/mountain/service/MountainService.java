@@ -10,6 +10,7 @@ import com.beside.util.CommonUtil;
 import com.beside.util.Coordinate;
 import com.beside.weather.api.WeatherApi;
 import com.beside.weather.dto.Weather;
+import com.beside.weather.dto.WeatherResponse;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.PostConstruct;
@@ -25,6 +26,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -176,6 +178,10 @@ public class MountainService {
         weatherList.add(weatherApi.watherListToday());
         //weatherApi.watherListOrtherDay(weatherList);
         return weatherList;
+    }
+
+    public WeatherResponse getWeather() throws MalformedURLException, URISyntaxException {
+        return weatherApi.getTodayWeather();
     }
 
 

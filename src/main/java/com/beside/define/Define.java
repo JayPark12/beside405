@@ -15,4 +15,7 @@ public interface Define {
 
 
     String mntiApiUrl = "https://apis.data.go.kr/1400000/service/cultureInfoService2/mntInfoOpenAPI2?serviceKey=QwBnXKXGpEVCOs%2FqPD4gm8IHUTeypn4Css4kxLn%2FmxFhO1PA%2Bkf69ydEVVkuItSaTVzMYkWJUy%2FPTIqMSG%2Fg9A%3D%3D&";
+
+    //날씨 api
+    String url = "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst";
 }
