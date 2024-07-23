@@ -76,7 +76,7 @@ public class MntiDetailService {
 
         weatherApi.watherListOrtherDay(weatherList);
 
-        mntiDetailOutput.setWeatherList(weatherList);
+//        mntiDetailOutput.setWeatherList(weatherList);
 
 
         return mntiDetailOutput;

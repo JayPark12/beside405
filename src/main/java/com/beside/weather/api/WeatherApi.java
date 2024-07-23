@@ -138,9 +138,9 @@ public class WeatherApi {
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public WeatherResponse getTodayWeather() throws IOException, URISyntaxException {
+    public WeatherResponse getTodayWeather(String localDate) throws IOException, URISyntaxException {
         WeatherResponse weatherResponse = new WeatherResponse();
-        String localDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+//        String localDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
 
         String url2 = "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=QwBnXKXGpEVCOs%2FqPD4gm8IHUTeypn4Css4kxLn%2FmxFhO1PA%2Bkf69ydEVVkuItSaTVzMYkWJUy%2FPTIqMSG%2Fg9A%3D%3D&base_date=" + localDate + "&base_time=0500&nx=60&ny=127&dataType=JSON";
 

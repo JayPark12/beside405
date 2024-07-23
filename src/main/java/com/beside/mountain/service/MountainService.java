@@ -28,6 +28,9 @@ import org.springframework.util.StringUtils;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -161,27 +164,43 @@ public class MountainService {
         mntiDetailOutput.setCourse(courses);
         mntiDetailOutput.setMntiHigh(mntiEntity.getMntihigh());
 
-        //날씨 정보 api 오류나서 잠시 제거
-        //watherInfo
-//        List<Weather> weatherList = new ArrayList<>();
-//        weatherList.add(weatherApi.watherListToday());// 오늘 날씨 데이터
-//
-//        weatherApi.watherListOrtherDay(weatherList);
-//
-//        mntiDetailOutput.setWeatherList(weatherList);
 
+        //날씨 리스트 가져오기
+        List<WeatherResponse> weatherList = new ArrayList<>();
+        weatherList = weatherList();
+        mntiDetailOutput.setWeatherList(weatherList);
         return mntiDetailOutput;
     }
 
-    public List<Weather> weatherList() throws Exception {
-        List<Weather> weatherList = new ArrayList<>();
-        weatherList.add(weatherApi.watherListToday());
-        //weatherApi.watherListOrtherDay(weatherList);
-        return weatherList;
+
+
+    public WeatherResponse getWeather(String localDate) throws IOException, URISyntaxException {
+        return weatherApi.getTodayWeather(localDate);
     }
 
-    public WeatherResponse getWeather() throws IOException, URISyntaxException {
-        return weatherApi.getTodayWeather();
+
+    public List<WeatherResponse> weatherList() throws IOException, URISyntaxException {
+        List<WeatherResponse> weatherList = new ArrayList<>();
+
+        // 현재 날짜 가져오기
+        LocalDate today = LocalDate.now();
+
+        // DateTimeFormatter 설정 (yyyymmdd 형식)
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+
+        for(int i = 0; i < 7; i++) {
+            LocalDate targetDate = today.plusDays(i);
+
+            // LocalDate를 yyyyMMdd 형식의 문자열로 변환
+            String dateString = targetDate.format(formatter);
+
+            // yyyyMMdd 형식의 문자열을 숫자형으로 변환
+            int dateNumber = Integer.parseInt(dateString);
+            weatherList.add(getWeather(String.valueOf(dateNumber)));
+        }
+
+        weatherList.sort(Comparator.comparing(WeatherResponse::getDate));
+        return weatherList;
     }
 
 
