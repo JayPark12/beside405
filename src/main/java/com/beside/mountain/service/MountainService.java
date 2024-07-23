@@ -166,7 +166,7 @@ public class MountainService {
 
 
         //날씨 리스트 가져오기
-        List<WeatherResponse> weatherList = new ArrayList<>();
+        List<WeatherResponse> weatherList;
         weatherList = weatherList();
         mntiDetailOutput.setWeatherList(weatherList);
         return mntiDetailOutput;
@@ -174,8 +174,8 @@ public class MountainService {
 
 
 
-    public WeatherResponse getWeather(String localDate) throws IOException, URISyntaxException {
-        return weatherApi.getTodayWeather(localDate);
+    public WeatherResponse getWeather(String localDate, int number) throws IOException, URISyntaxException {
+        return weatherApi.get3DayWeather(localDate, number);
     }
 
 
@@ -188,16 +188,16 @@ public class MountainService {
         // DateTimeFormatter 설정 (yyyymmdd 형식)
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
 
-        for(int i = 0; i < 7; i++) {
-            LocalDate targetDate = today.plusDays(i);
+        String localDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
 
-            // LocalDate를 yyyyMMdd 형식의 문자열로 변환
-            String dateString = targetDate.format(formatter);
+        //오늘 날씨 가져오기
+        weatherList.add(getWeather(localDate, 1));
 
-            // yyyyMMdd 형식의 문자열을 숫자형으로 변환
-            int dateNumber = Integer.parseInt(dateString);
-            weatherList.add(getWeather(String.valueOf(dateNumber)));
-        }
+        //내일 날씨
+        weatherList.add(getWeather(localDate, 4));
+
+        //모레 날씨
+        weatherList.add(getWeather(localDate, 7));
 
         weatherList.sort(Comparator.comparing(WeatherResponse::getDate));
         return weatherList;

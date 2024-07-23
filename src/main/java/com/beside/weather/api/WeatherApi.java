@@ -138,11 +138,10 @@ public class WeatherApi {
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public WeatherResponse getTodayWeather(String localDate) throws IOException, URISyntaxException {
+    public WeatherResponse get3DayWeather(String localDate, int number) throws IOException, URISyntaxException {
         WeatherResponse weatherResponse = new WeatherResponse();
-//        String localDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
 
-        String url2 = "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=QwBnXKXGpEVCOs%2FqPD4gm8IHUTeypn4Css4kxLn%2FmxFhO1PA%2Bkf69ydEVVkuItSaTVzMYkWJUy%2FPTIqMSG%2Fg9A%3D%3D&base_date=" + localDate + "&base_time=0500&nx=60&ny=127&dataType=JSON";
+        String url2 = "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=QwBnXKXGpEVCOs%2FqPD4gm8IHUTeypn4Css4kxLn%2FmxFhO1PA%2Bkf69ydEVVkuItSaTVzMYkWJUy%2FPTIqMSG%2Fg9A%3D%3D&base_date=" + localDate + "&base_time=0500&nx=60&ny=127&dataType=JSON&pageNo="+ number +"&numOfRows=100";
 
         // URL 객체 생성
         URL url = new URL(url2);
@@ -190,13 +189,14 @@ public class WeatherApi {
 
             for(JsonNode itemNode : itemsNode) {
                 String category = itemNode.path("category").asText();
-                if(category.equals("TMP")) {
+                String fcstTime = itemNode.path("fcstTime").asText();
+                if(category.equals("TMP") && fcstTime.equals("0900")) {
                     String tmp = itemNode.path("fcstValue").asText();
                     weatherResponse.setTemperature(tmp);
-                } else if(category.equals("SKY")) {
+                } else if(category.equals("SKY") && fcstTime.equals("0900")) {
                     String sky = itemNode.path("fcstValue").asText();
                     weatherResponse.setSkyState(sky);
-                } else if(category.equals("POP")) {
+                } else if(category.equals("POP") && fcstTime.equals("0900")) {
                     String pop = itemNode.path("fcstValue").asText();
                     weatherResponse.setRainPersent(pop);
                 }
