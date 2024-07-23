@@ -180,7 +180,7 @@ public class MountainService {
         return weatherList;
     }
 
-    public WeatherResponse getWeather() throws MalformedURLException, URISyntaxException {
+    public WeatherResponse getWeather() throws IOException, URISyntaxException {
         return weatherApi.getTodayWeather();
     }
 
