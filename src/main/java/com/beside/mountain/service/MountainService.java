@@ -174,8 +174,12 @@ public class MountainService {
 
 
 
-    public WeatherResponse getWeather(String localDate, int number) throws IOException, URISyntaxException {
+    public WeatherResponse get3DayWeather(String localDate, int number) throws IOException, URISyntaxException {
         return weatherApi.get3DayWeather(localDate, number);
+    }
+
+    public WeatherResponse getOtherDayWeather(String localDate, int number) throws IOException {
+        return weatherApi.getOtherDayWeather(localDate, number);
     }
 
 
@@ -191,13 +195,22 @@ public class MountainService {
         String localDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
 
         //오늘 날씨 가져오기
-        weatherList.add(getWeather(localDate, 1));
+        weatherList.add(get3DayWeather(localDate, 1));
 
-        //내일 날씨
-        weatherList.add(getWeather(localDate, 4));
+        //1일 뒤 날씨
+        weatherList.add(get3DayWeather(localDate, 4));
 
-        //모레 날씨
-        weatherList.add(getWeather(localDate, 7));
+        //2일 뒤 날씨
+        weatherList.add(get3DayWeather(localDate, 7));
+
+        //3일 뒤
+        weatherList.add(getOtherDayWeather(localDate, 3));
+
+        //4일 뒤
+        weatherList.add(getOtherDayWeather(localDate, 4));
+
+        //5일 뒤
+        weatherList.add(getOtherDayWeather(localDate, 5));
 
         weatherList.sort(Comparator.comparing(WeatherResponse::getDate));
         return weatherList;

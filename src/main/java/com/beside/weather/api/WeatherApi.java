@@ -139,12 +139,21 @@ public class WeatherApi {
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public WeatherResponse get3DayWeather(String localDate, int number) throws IOException, URISyntaxException {
-        WeatherResponse weatherResponse = new WeatherResponse();
+        String originDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+        if(LocalTime.now().isBefore(LocalTime.of(5, 0))){
+            localDate = LocalDateTime.now().minusDays(1).format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+        }else {
+            localDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+        }
 
-        String url2 = "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=QwBnXKXGpEVCOs%2FqPD4gm8IHUTeypn4Css4kxLn%2FmxFhO1PA%2Bkf69ydEVVkuItSaTVzMYkWJUy%2FPTIqMSG%2Fg9A%3D%3D&base_date=" + localDate + "&base_time=0500&nx=60&ny=127&dataType=JSON&pageNo="+ number +"&numOfRows=100";
+        WeatherResponse weatherResponse = new WeatherResponse();
+        String setDate = null;
+
+        String originUrl = "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=QwBnXKXGpEVCOs%2FqPD4gm8IHUTeypn4Css4kxLn%2FmxFhO1PA%2Bkf69ydEVVkuItSaTVzMYkWJUy%2FPTIqMSG%2Fg9A%3D%3D&base_date=" + localDate + "&base_time=0500&nx=60&ny=127&dataType=JSON&pageNo="+ number +"&numOfRows=100";
+        log.info(originUrl);
 
         // URL 객체 생성
-        URL url = new URL(url2);
+        URL url = new URL(originUrl);
 
         // HttpURLConnection 객체 생성 및 설정
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -169,7 +178,15 @@ public class WeatherApi {
             System.out.println("Response JSON: " + jsonResponse);
 
 //             JSON 파싱
-            weatherResponse = parseJson(jsonResponse, localDate);
+            if(number == 1) {
+                setDate = originDate;
+            } else if(number == 4) {
+                setDate = String.valueOf(Integer.parseInt(originDate) + 1);
+            } else if(number == 7) {
+                setDate = String.valueOf(Integer.parseInt(originDate) + 2);
+            }
+
+            weatherResponse = parseJsonFrom3Day(jsonResponse, setDate);
 
         } else {
             System.out.println("GET request not worked");
@@ -179,7 +196,7 @@ public class WeatherApi {
     }
 
 
-    public WeatherResponse parseJson(String jsonResponse, String localDate) {
+    public WeatherResponse parseJsonFrom3Day(String jsonResponse, String localDate) {
         WeatherResponse weatherResponse = new WeatherResponse();
         weatherResponse.setDate(localDate);
         try {
@@ -194,8 +211,16 @@ public class WeatherApi {
                     String tmp = itemNode.path("fcstValue").asText();
                     weatherResponse.setTemperature(tmp);
                 } else if(category.equals("SKY") && fcstTime.equals("0900")) {
-                    String sky = itemNode.path("fcstValue").asText();
-                    weatherResponse.setSkyState(sky);
+                    String skyState = null;
+                    int sky = Integer.parseInt(itemNode.path("fcstValue").asText());
+                    if(sky >= 0 && sky <= 5 ) {
+                        skyState = "맑음";
+                    } else if(sky >=6 && sky <= 8) {
+                        skyState = "구름많음";
+                    } else if(sky >= 9 && sky <= 10) {
+                        skyState = "흐림";
+                    }
+                    weatherResponse.setSkyState(skyState);
                 } else if(category.equals("POP") && fcstTime.equals("0900")) {
                     String pop = itemNode.path("fcstValue").asText();
                     weatherResponse.setRainPersent(pop);
@@ -204,6 +229,92 @@ public class WeatherApi {
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        return weatherResponse;
+    }
+
+
+    public WeatherResponse getOtherDayWeather(String localDate, int number) throws IOException {
+        WeatherResponse weatherResponse = new WeatherResponse();
+
+        if(LocalTime.now().isBefore(LocalTime.of(5, 0))){
+            localDate = LocalDateTime.now().minusDays(1).format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+        }else {
+            localDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+        }
+
+        String localDateTime = localDate + "0600";
+        String originUrl = "https://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=QwBnXKXGpEVCOs%2FqPD4gm8IHUTeypn4Css4kxLn%2FmxFhO1PA%2Bkf69ydEVVkuItSaTVzMYkWJUy%2FPTIqMSG%2Fg9A%3D%3D&dataType=JSON&numOfRows=10&pageNo=1&regId=11B00000&tmFc=" + localDateTime;
+        log.info(originUrl);
+
+
+        URL url = new URL(originUrl);
+
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.setRequestProperty("Accept", "application/json");
+
+        // 응답 코드 확인
+        int responseCode = connection.getResponseCode();
+        if (responseCode == HttpURLConnection.HTTP_OK) { // 정상 응답
+            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String inputLine;
+            StringBuilder response = new StringBuilder();
+
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            in.close();
+
+            // JSON 데이터 출력 (혹은 저장)
+            String jsonResponse = response.toString();
+            System.out.println("Response JSON: " + jsonResponse);
+
+//             JSON 파싱
+            weatherResponse = parseJsonFromOtherDay(jsonResponse, number);
+
+        } else {
+            System.out.println("GET request not worked");
+        }
+        connection.disconnect();
+        return weatherResponse;
+    }
+
+    public WeatherResponse parseJsonFromOtherDay(String jsonResponse, int number) {
+        String localDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+
+        WeatherResponse weatherResponse = new WeatherResponse();
+        weatherResponse.setDate(String.valueOf(Integer.parseInt(localDate) + number));
+
+        try {
+            JsonNode rootNode = objectMapper.readTree(jsonResponse);
+            JsonNode itemsNode = rootNode.path("response").path("body").path("items").path("item");
+
+            for(JsonNode itemNode : itemsNode) {
+                if(number == 3) {
+                    String rnSt3Am = itemNode.path("rnSt3Am").asText();
+                    String wf3Am = itemNode.path("wf3Am").asText();
+                    weatherResponse.setRainPersent(rnSt3Am);
+                    weatherResponse.setSkyState(wf3Am);
+                } else if (number == 4) {
+                    String rnSt4Am = itemNode.path("rnSt4Am").asText();
+                    String wf4Am = itemNode.path("wf4Am").asText();
+                    weatherResponse.setRainPersent(rnSt4Am);
+                    weatherResponse.setSkyState(wf4Am);
+                } else if(number == 5) {
+                    String rnSt5Am = itemNode.path("rnSt5Am").asText();
+                    String wf5Am = itemNode.path("wf5Am").asText();
+                    weatherResponse.setRainPersent(rnSt5Am);
+                    weatherResponse.setSkyState(wf5Am);
+                }
+
+            }
+
+        } catch (JsonMappingException e) {
+            throw new RuntimeException(e);
+        } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
 
