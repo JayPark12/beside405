@@ -44,7 +44,6 @@ public class MountainService {
     private final ObjectMapper objectMapper;
     private final Map<String, String> courseMap = new HashMap<>();
 
-
     @PostConstruct
     public void init() {
         try {
@@ -167,7 +166,7 @@ public class MountainService {
 
         //날씨 리스트 가져오기
         List<WeatherResponse> weatherList;
-        weatherList = weatherList();
+        weatherList = getWeatherList();
         mntiDetailOutput.setWeatherList(weatherList);
         return mntiDetailOutput;
     }
@@ -183,15 +182,8 @@ public class MountainService {
     }
 
 
-    public List<WeatherResponse> weatherList() throws IOException, URISyntaxException {
+    public List<WeatherResponse> getWeatherList() throws IOException, URISyntaxException {
         List<WeatherResponse> weatherList = new ArrayList<>();
-
-        // 현재 날짜 가져오기
-        LocalDate today = LocalDate.now();
-
-        // DateTimeFormatter 설정 (yyyymmdd 형식)
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
-
         String localDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
 
         //오늘 날씨 가져오기

@@ -38,9 +38,7 @@ public class WeatherApi {
     private final ObjectMapper objectMapper;
     private final RestTemplate restTemplate;
 
-    private String encodingServiceKey = "QwBnXKXGpEVCOs%2FqPD4gm8IHUTeypn4Css4kxLn%2FmxFhO1PA%2Bkf69ydEVVkuItSaTVzMYkWJUy%2FPTIqMSG%2Fg9A%3D%3D";
-    private String decodingServiceKey = "QwBnXKXGpEVCOs/qPD4gm8IHUTeypn4Css4kxLn/mxFhO1PA+kf69ydEVVkuItSaTVzMYkWJUy/PTIqMSG/g9A==";
-
+    //오류나서 밑에 메서드로 새로 만들었습니다
     public Weather watherListToday() throws URISyntaxException {
         String localDate ;
         if(LocalTime.now().isBefore(LocalTime.of(5, 0))){

@@ -70,15 +70,12 @@ public class MntiDetailService {
             mntiDetailOutput.setCourse(courses);
             mntiDetailOutput.setMntiHigh(mntiInfo.getMntihigh());
         }
+
         //watherInfo
-        List<Weather> weatherList = new ArrayList<>();
-        weatherList.add(weatherApi.watherListToday());// 오늘 날씨 데이터
-
-        weatherApi.watherListOrtherDay(weatherList);
-
+//        List<Weather> weatherList = new ArrayList<>();
+//        weatherList.add(weatherApi.watherListToday());// 오늘 날씨 데이터
+//        weatherApi.watherListOrtherDay(weatherList);
 //        mntiDetailOutput.setWeatherList(weatherList);
-
-
         return mntiDetailOutput;
     }
 

@@ -39,10 +39,10 @@ public class SecurityConfig {
     @Value("${spring.security.cors.allow.methods:1,2,3,4,5,6}")
     private String[] allowedMethods;
 
-//    @Value("#{'${spring.security.origin}'.split(',')}")
-//    private List<String> allowedOriginPaths;
-
+    @Value("#{'${spring.security.origin}'.split(',')}")
     private List<String> allowedOriginPaths;
+
+//    private List<String> allowedOriginPaths;
 
     private final String[] excludedEndPoints = {
             "/user/join",
@@ -56,10 +56,10 @@ public class SecurityConfig {
             "/schedule/**"
     };
 
-    @PostConstruct
-    public void init() {
-        allowedOriginPaths = Arrays.asList("http://localhost:5173", "https://dev-mountains-after-mountains.vercel.app");
-    }
+//    @PostConstruct
+//    public void init() {
+//        allowedOriginPaths = Arrays.asList("http://localhost:5173", "https://dev-mountains-after-mountains.vercel.app");
+//    }
 
     @Autowired
     private JwtProvider jwtProvider;
