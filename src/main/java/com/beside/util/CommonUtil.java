@@ -98,6 +98,27 @@ public class CommonUtil {
         return Base64.getEncoder().encodeToString(imageBytes);
     }
 
+    public static byte[] getImageByMountain2(String fileName) throws IOException {
+        String uploadDir = "src/main/resources/static/images/";
+
+        File folder = new File(uploadDir);
+        File[] matchingFiles = folder.listFiles((dir, name) -> name.contains(fileName) && isImageFile(name));
+
+        if (matchingFiles == null || matchingFiles.length == 0) {
+            return null;
+        }
+
+        File imgFile = matchingFiles[0];  // 첫 번째 매칭 파일 선택 (여러 개일 경우)
+
+        byte[] imageBytes;
+        try (InputStream in = new FileInputStream(imgFile)) {
+            imageBytes = StreamUtils.copyToByteArray(in);
+        }
+
+        // 바이트 배열을 String 형식으로 변환
+        return imageBytes;
+    }
+
 
     private static boolean isImageFile(String fileName) {
         String lowerCaseName = fileName.toLowerCase();

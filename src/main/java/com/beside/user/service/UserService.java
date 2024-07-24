@@ -41,7 +41,6 @@ public class UserService {
     @Transactional
     public SignUpResponse joinUser(SignUpRequest request) {
 
-
         if (userRepository.existsById(request.getUserId())) {
             throw new UserException(UserErrorInfo.ID_ALREADY_EXISTS);
         }
@@ -64,7 +63,8 @@ public class UserService {
                 .id(kakaoCode)
                 .nickname(createNickname())
                 .callNo(null)
-                .userSts("1").creatDt(localDate)
+                .userSts("1")
+                .creatDt(localDate)
                 .email(null)
                 .password(null)
                 .build();
@@ -72,10 +72,12 @@ public class UserService {
     }
 
     public void joinFromKakao2(String userId, String email) {
-        UserEntity user = UserEntity.builder().id(userId)
+        UserEntity user = UserEntity.builder()
+                .id(userId)
                 .nickname(createNickname())
                 .callNo(null)
-                .userSts("1").creatDt(localDate)
+                .userSts("1")
+                .creatDt(localDate)
                 .email(email)
                 .password(null).build();
         userRepository.save(user);
@@ -127,14 +129,6 @@ public class UserService {
     }
 
     public LoginResponse kakaoLogin(String kakaoCode, HttpServletResponse response) {
-
-//        String id = String.valueOf(kakaoUser.getId());
-//
-//         Optional<UserEntity> userCheck = userRepository.findById(id);
-//         if(userCheck.isEmpty()) {
-//             joinFromKakao(id, kakaoUser.getKakaoAccount().getEmail());
-//         }
-
         Optional<UserEntity> userCheck = userRepository.findById(kakaoCode);
         if(userCheck.isEmpty()) {
             joinFromKakao(kakaoCode);
@@ -162,11 +156,6 @@ public class UserService {
              joinFromKakao2(id, kakaoUser.getKakaoAccount().getEmail());
              log.info("카카오 회원가입 완료 : {}", id);
          }
-
-//        Optional<UserEntity> userCheck = userRepository.findById(kakaoCode);
-//        if(userCheck.isEmpty()) {
-//            joinFromKakao(kakaoCode);
-//        }
 
         UserEntity user = userRepository.findById(id).orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
         String jwt = jwtProvider.generateJwtToken(id);
@@ -216,7 +205,4 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public String calResult(MbtiDto mbtiDto) {
-        return null;
-    }
 }

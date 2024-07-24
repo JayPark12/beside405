@@ -60,14 +60,20 @@ public class MountainController {
     @Operation(summary = "날씨 정보", description = "날씨 정보 가져오기 테스트 api")
     @PostMapping("/weather")
     public ResponseEntity<?> weather() throws Exception {
-//        return ResponseEntity.ok(mountainService.getWeather());
-        return null;
+        return ResponseEntity.ok(mountainService.getWeatherList());
     }
 
 
+    @Operation(summary = "이미지 반환 테스트 (바이트 배열을 String 형식으로 변환 후 반환)", description = "바이트 배열을 String 형식으로 변환 후 반환")
     @GetMapping("/imgTest")
-    public String imgTest() throws Exception {
-        return CommonUtil.getImageByMountain("112300301");
+    public ResponseEntity<?> imgTest() throws Exception {
+        return ResponseEntity.ok(CommonUtil.getImageByMountain("112300301"));
+    }
+
+    @Operation(summary = "이미지 반환 테스트 (바이트 배열)", description = "바이트 배열로 반환")
+    @GetMapping("/imgTest2")
+    public ResponseEntity<?> imgTest2() throws Exception {
+        return ResponseEntity.ok(CommonUtil.getImageByMountain2("112300301"));
     }
 
 }
