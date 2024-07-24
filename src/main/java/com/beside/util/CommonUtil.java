@@ -78,7 +78,7 @@ public class CommonUtil {
     }
 
     public static String getImageByMountain(String fileName) throws IOException {
-        String uploadDir = "src/main/resources/static/images/";
+        String uploadDir = "/root/JavaProject/beside405/img/mountain/";
 
         File folder = new File(uploadDir);
         File[] matchingFiles = folder.listFiles((dir, name) -> name.contains(fileName) && isImageFile(name));
@@ -99,7 +99,7 @@ public class CommonUtil {
     }
 
     public static byte[] getImageByMountain2(String fileName) throws IOException {
-        String uploadDir = "src/main/resources/static/images/";
+        String uploadDir = "/root/JavaProject/beside405/img/mountain/";
 
         File folder = new File(uploadDir);
         File[] matchingFiles = folder.listFiles((dir, name) -> name.contains(fileName) && isImageFile(name));
