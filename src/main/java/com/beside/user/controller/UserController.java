@@ -29,6 +29,7 @@ import java.util.Map;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin
 @Tag(name = "1.유저", description = "유저 관련 API")
 @RequestMapping("/user")
 public class UserController {

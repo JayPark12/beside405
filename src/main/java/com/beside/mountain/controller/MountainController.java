@@ -24,6 +24,7 @@ import java.util.Set;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin
 @Tag(name = "3.산", description = "산 관련 API")
 @RequestMapping("/main")
 public class MountainController {
