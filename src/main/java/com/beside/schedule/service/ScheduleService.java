@@ -112,7 +112,13 @@ public class ScheduleService {
     }
 
     public DetailScheduleResponse detailSchedule(String userId, String scheduleId) throws IOException {
-        HikeSchedule hikeSchedule = hikeScheduleRepository.findByUserIdAndScheduleId(userId, scheduleId).orElseThrow();
+        MemberId memberId = new MemberId(scheduleId, userId);
+        Optional<ScheduleMember> memberCheck = scheduleMemberRepository.findById(memberId);
+        if(memberCheck.isEmpty()) {
+            throw new EntityNotFoundException("등산 일정의 멤버 아님");
+        }
+
+        HikeSchedule hikeSchedule = hikeScheduleRepository.findByScheduleId(scheduleId).orElseThrow();
         MntiEntity mountain = mntiRepository.findByMntiInfo(hikeSchedule.getMountainId());
         return DetailScheduleResponse.builder()
                 .scheduleId(scheduleId)

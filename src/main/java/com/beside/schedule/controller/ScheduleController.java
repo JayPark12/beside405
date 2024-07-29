@@ -63,11 +63,6 @@ public class ScheduleController {
         return ResponseEntity.ok(response);
     }
 
-    //Todo : 일정id에 매핑되는 메모장 구현하기
-    // - 1. db 테이블 생성
-    // - 2. api 요청 따로
-    // - 3. 데이터 생성일시 내림차순으로 정렬
-
 
     //메모 리스트
     @Operation(summary = "메모 리스트", description = "등산 일정의 Id를 조회하여 해당 일정의 메모 리스트를 볼 수 있습니다.")
