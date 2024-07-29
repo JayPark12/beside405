@@ -98,12 +98,6 @@ public class SecurityConfig {
                             .anyRequest().authenticated(); //나머지 요청들에 대해서는 모두 인증을 받음
 //                            .anyRequest().permitAll(); // 모든 요청에 대해 접근 허용
                 })
-/*                .oauth2Login(oauth2Login ->
-                                oauth2Login
-                                        .loginPage("/login")
-                                        .defaultSuccessUrl("/home")
-                                        .failureUrl("/login?error=true")
-                        )*/
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 ).addFilterBefore(new JwtFilter(jwtProvider), UsernamePasswordAuthenticationFilter.class)

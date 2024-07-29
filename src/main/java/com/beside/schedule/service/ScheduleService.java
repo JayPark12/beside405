@@ -4,9 +4,12 @@ import com.beside.mountain.domain.MntiEntity;
 import com.beside.mountain.repository.MntiRepository;
 import com.beside.mountain.service.MountainService;
 import com.beside.schedule.domain.HikeSchedule;
+import com.beside.schedule.domain.MemberId;
+import com.beside.schedule.domain.ScheduleMember;
 import com.beside.schedule.domain.ScheduleMemo;
 import com.beside.schedule.dto.*;
 import com.beside.schedule.repository.HikeScheduleRepository;
+import com.beside.schedule.repository.ScheduleMemberRepository;
 import com.beside.schedule.repository.ScheduleMemoRepository;
 import com.beside.user.domain.UserEntity;
 import com.beside.user.exception.UserErrorInfo;
@@ -38,12 +41,21 @@ public class ScheduleService {
     private final MntiRepository mntiRepository;
     private final MountainService mountainService;
     private final ScheduleMemoRepository scheduleMemoRepository;
+    private final ScheduleMemberRepository scheduleMemberRepository;
 
 
     public List<ScheduleResponse> mySchedule(String userId) {
-        return hikeScheduleRepository.findByUserIdAndDelYn(userId, "N").stream()
-                .map(this::convertToScheduleResponse)
-                .collect(Collectors.toList());
+        List<ScheduleResponse> scheduleResponseList = new ArrayList<>();
+        List<ScheduleMember> scheduleMemberList = scheduleMemberRepository.findByIdMemberId(userId);
+
+        for(ScheduleMember scheduleMember : scheduleMemberList) {
+            HikeSchedule hikeSchedule = hikeScheduleRepository.findByScheduleId(scheduleMember.getId().getScheduleId()).orElseThrow();
+            scheduleResponseList.add(convertToScheduleResponse(hikeSchedule));
+        }
+        return scheduleResponseList;
+//        return hikeScheduleRepository.findByUserIdAndDelYn(userId, "N").stream()
+//                .map(this::convertToScheduleResponse)
+//                .collect(Collectors.toList());
     }
 
     private ScheduleResponse convertToScheduleResponse(HikeSchedule entity) {
@@ -69,6 +81,9 @@ public class ScheduleService {
                 .delYn("N").build();
 
         hikeScheduleRepository.save(hikeSchedule);
+
+        //일정 멤버로 추가
+        joinSchedule(userId, hikeSchedule.getScheduleId());
         return hikeSchedule.getScheduleId();
     }
 
@@ -96,7 +111,7 @@ public class ScheduleService {
         return hikeSchedule.getScheduleId();
     }
 
-    public DetailScheduleResponse detailSchedule(String userId, String scheduleId) {
+    public DetailScheduleResponse detailSchedule(String userId, String scheduleId) throws IOException {
         HikeSchedule hikeSchedule = hikeScheduleRepository.findByUserIdAndScheduleId(userId, scheduleId).orElseThrow();
         MntiEntity mountain = mntiRepository.findByMntiInfo(hikeSchedule.getMountainId());
         return DetailScheduleResponse.builder()
@@ -104,7 +119,7 @@ public class ScheduleService {
                 .mountainName(getMountainName(hikeSchedule.getMountainId()))
                 .courseName(mountainService.getCourseNameByNo(hikeSchedule.getCourseNo()))
                 .scheduleDate(hikeSchedule.getScheduleDate())
-                .mountainImg(null) // TODO
+                .mountainImg(CommonUtil.getImageByMountain(hikeSchedule.getMountainId())) // TODO
                 .mountainHigh(mountain.getMntihigh())
                 .mountainLevel(mountain.getMntiLevel()).build();
     }
@@ -184,4 +199,17 @@ public class ScheduleService {
     }
 
 
+    public String joinSchedule(String userId, String scheduleId) {
+        MemberId memberId = new MemberId(scheduleId, userId);
+        ScheduleMember scheduleMember = ScheduleMember.builder()
+                .id(memberId).build();
+        scheduleMemberRepository.save(scheduleMember);
+        return scheduleId;
+    }
+
+    public String leaveSchedule(String userId, String scheduleId) {
+        MemberId id = new MemberId(scheduleId, userId);
+        scheduleMemberRepository.deleteById(id);
+        return scheduleId;
+    }
 }

@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -56,7 +57,7 @@ public class ScheduleController {
     //일정 상세보기
     @Operation(summary = "일정 상세 페이지", description = "등산 일정의 Id를 조회하여 상세페이지를 볼 수 있습니다.")
     @GetMapping("/mySchedule/{scheduleId}")
-    public ResponseEntity<?> detailSchedule(@PathVariable String scheduleId) {
+    public ResponseEntity<?> detailSchedule(@PathVariable String scheduleId) throws IOException {
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();
         DetailScheduleResponse response = scheduleService.detailSchedule(userId, scheduleId);
         return ResponseEntity.ok(response);
@@ -113,6 +114,26 @@ public class ScheduleController {
         String response = scheduleService.checkMemo(userId, memoId);
         return ResponseEntity.ok(response);
     }
+
+
+    //Todo : 초대장
+
+    @Operation(summary = "초대장 수락", description = "초대장 수락 시 등산 일정의 멤버로 가입됩니다.")
+    @PostMapping("/invite/join/{scheduleId}")
+    public ResponseEntity<?> joinSchedule(@PathVariable String scheduleId) {
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        String response = scheduleService.joinSchedule(userId, scheduleId);
+        return ResponseEntity.ok("일정에 가입되었습니다. id : " + response);
+    }
+
+    @Operation(summary = "일정 나가기", description = "초대받은 일정에서 나갑니다.")
+    @DeleteMapping("/invite/leave/{scheduleId}")
+    public ResponseEntity<?> leaveSchedule(@PathVariable String scheduleId) {
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        String response = scheduleService.leaveSchedule(userId, scheduleId);
+        return ResponseEntity.ok("일정이 삭제되었습니다. id : " + response);
+    }
+
 
 
 }

@@ -120,7 +120,7 @@ public class MountainService {
         MntiEntity mntiEntity = mntiRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("산이 존재하지 않습니다."));
         mntiDetailOutput.setMntiName(mntiEntity.getMntiName());
         mntiDetailOutput.setMntiAddress(mntiEntity.getMntiAdd());
-        mntiDetailOutput.setPhotoFile(CommonUtil.potoFile(mntiEntity.getMntiListNo(), mntiEntity.getMntiName()));
+        mntiDetailOutput.setPhotoFile(CommonUtil.getImageByMountain(mntiEntity.getMntiListNo()));
 
         List<Course> courses = new ArrayList<>();
         ClassPathResource resource = new ClassPathResource("/mntiCourseData/PMNTN_"+mntiEntity.getMntiName()+"_"+mntiEntity.getMntiListNo()+".json");

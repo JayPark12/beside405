@@ -14,4 +14,6 @@ public interface HikeScheduleRepository extends JpaRepository<HikeSchedule, Stri
     Optional<HikeSchedule> findByUserIdAndDelYn(String userId, String delYn);
 
     Optional<HikeSchedule> findByUserIdAndScheduleId(String userId, String scheduleId);
+
+    Optional<HikeSchedule> findByScheduleId(String scheduleId);
 }

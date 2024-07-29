@@ -41,7 +41,7 @@ public class MntiDetailService {
         //고정된 정보
         mntiDetailOutput.setMntiName(mntiInfo.getMntiName());
         mntiDetailOutput.setMntiAddress(mntiInfo.getMntiAdd());
-        mntiDetailOutput.setPhotoFile(CommonUtil.potoFile(mntiInfo.getMntiListNo(), mntiInfo.getMntiName()));
+        mntiDetailOutput.setPhotoFile(CommonUtil.getImageByMountain(mntiInfo.getMntiListNo()));
 
         if (itemsNode.isArray()) {
             for (JsonNode item : itemsNode) {

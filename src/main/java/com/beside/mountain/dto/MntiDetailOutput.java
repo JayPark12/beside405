@@ -20,7 +20,7 @@ public class MntiDetailOutput {
     private String mntiAddress;     //산 소제지
     private String content;      //산소개
     private List<Course> course; //코스정보
-    private List<String> photoFile; //사진 정보
+    private String photoFile; //사진 정보
     private List<WeatherResponse> weatherList;  //7일까지의 데이터
 }
 
