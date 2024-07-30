@@ -1,5 +1,7 @@
 package com.beside.schedule.dto;
 
+import com.beside.mountain.dto.Course;
+import com.beside.weather.dto.WeatherResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,6 +10,7 @@ import org.springdoc.webmvc.core.fn.SpringdocRouteBuilder;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Builder
@@ -19,5 +22,9 @@ public class DetailScheduleResponse {
     private LocalDateTime scheduleDate;
     private BigDecimal mountainHigh;
     private String mountainLevel;
+    private String mountainAddress;
     private String mountainImg;
+    private Course course; //코스정보
+    private List<WeatherResponse> weatherList;
+    private boolean famous100;
 }

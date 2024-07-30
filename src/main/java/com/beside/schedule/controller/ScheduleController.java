@@ -10,6 +10,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 
 @RestController
@@ -32,8 +33,8 @@ public class ScheduleController {
     @Operation(summary = "일정 등록", description = "등산 일정을 등록할 수 있습니다.")
     public ResponseEntity<?> createSchedule(@RequestBody CreateScheduleRequest request) {
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();
-        String response = scheduleService.createSchedule(userId, request);
-        return ResponseEntity.ok("일정이 등록되었습니다. id : " + response);
+        ScheduleIdResponse response = scheduleService.createSchedule(userId, request);
+        return ResponseEntity.ok(response);
     }
 
     //일정 수정 -> 수정 가능 컬럼 : 산이름, 인원수, 날짜(시간)
@@ -41,8 +42,8 @@ public class ScheduleController {
     @Operation(summary = "일정 수정", description = "등산 일정을 수정할 수 있습니다.")
     public ResponseEntity<?> modifySchedule(@RequestBody ModifyScheduleRequest request) {
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();
-        String response = scheduleService.modifySchedule(userId, request);
-        return ResponseEntity.ok("일정이 수정되었습니다. id : " + response);
+        ScheduleIdResponse response = scheduleService.modifySchedule(userId, request);
+        return ResponseEntity.ok(response);
     }
 
     //일정 삭제
@@ -50,14 +51,14 @@ public class ScheduleController {
     @Operation(summary = "일정 삭제", description = "등록된 등산일정을 삭제할 수 있습니다.")
     public ResponseEntity<?> deleteSchedule(@PathVariable String scheduleId) {
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();
-        String response = scheduleService.deleteSchedule(userId, scheduleId);
-        return ResponseEntity.ok("일정이 삭제되었습니다. id : " + response);
+        ScheduleIdResponse response = scheduleService.deleteSchedule(userId, scheduleId);
+        return ResponseEntity.ok(response);
     }
 
     //일정 상세보기
     @Operation(summary = "일정 상세 페이지", description = "등산 일정의 Id를 조회하여 상세페이지를 볼 수 있습니다.")
     @GetMapping("/mySchedule/{scheduleId}")
-    public ResponseEntity<?> detailSchedule(@PathVariable String scheduleId) throws IOException {
+    public ResponseEntity<?> detailSchedule(@PathVariable String scheduleId) throws IOException, URISyntaxException {
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();
         DetailScheduleResponse response = scheduleService.detailSchedule(userId, scheduleId);
         return ResponseEntity.ok(response);
@@ -73,7 +74,7 @@ public class ScheduleController {
         return ResponseEntity.ok(response);
     }
 
-    //메모 개별 수정
+    //메모 등록
     @Operation(summary = "메모 등록", description = "일정 id에 매핑되는 메모를 생성합니다.")
     @PostMapping("/memo/create")
     public ResponseEntity<?> createMemo(@RequestBody CreateMemoRequest request) {
@@ -121,7 +122,7 @@ public class ScheduleController {
         return ResponseEntity.ok("일정에 가입되었습니다. id : " + response);
     }
 
-    @Operation(summary = "일정 나가기", description = "초대받은 일정에서 나갑니다.")
+    @Operation(summary = "초대받은 일정 나가기", description = "초대받은 일정에서 나갑니다.")
     @DeleteMapping("/invite/leave/{scheduleId}")
     public ResponseEntity<?> leaveSchedule(@PathVariable String scheduleId) {
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();

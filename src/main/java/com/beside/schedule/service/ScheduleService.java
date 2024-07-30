@@ -1,6 +1,7 @@
 package com.beside.schedule.service;
 
 import com.beside.mountain.domain.MntiEntity;
+import com.beside.mountain.dto.Course;
 import com.beside.mountain.repository.MntiRepository;
 import com.beside.mountain.service.MountainService;
 import com.beside.schedule.domain.HikeSchedule;
@@ -11,27 +12,25 @@ import com.beside.schedule.dto.*;
 import com.beside.schedule.repository.HikeScheduleRepository;
 import com.beside.schedule.repository.ScheduleMemberRepository;
 import com.beside.schedule.repository.ScheduleMemoRepository;
-import com.beside.user.domain.UserEntity;
-import com.beside.user.exception.UserErrorInfo;
-import com.beside.user.exception.UserException;
-import com.beside.user.repository.UserRepository;
 import com.beside.util.CommonUtil;
+import com.beside.util.Coordinate;
+import com.beside.weather.dto.WeatherResponse;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springdoc.core.converters.ResponseSupportConverter;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -42,6 +41,7 @@ public class ScheduleService {
     private final MountainService mountainService;
     private final ScheduleMemoRepository scheduleMemoRepository;
     private final ScheduleMemberRepository scheduleMemberRepository;
+    private final ObjectMapper objectMapper;
 
 
     public List<ScheduleResponse> mySchedule(String userId) {
@@ -69,7 +69,7 @@ public class ScheduleService {
     }
 
 
-    public String createSchedule(String userId, CreateScheduleRequest request) {
+    public ScheduleIdResponse createSchedule(String userId, CreateScheduleRequest request) {
         HikeSchedule hikeSchedule = HikeSchedule.builder()
                 .scheduleId(CommonUtil.getCurrentTime())
                 .userId(userId)
@@ -84,7 +84,7 @@ public class ScheduleService {
 
         //일정 멤버로 추가
         joinSchedule(userId, hikeSchedule.getScheduleId());
-        return hikeSchedule.getScheduleId();
+        return ScheduleIdResponse.builder().id(hikeSchedule.getScheduleId()).build();
     }
 
 
@@ -95,28 +95,31 @@ public class ScheduleService {
 
 
     @Transactional
-    public String modifySchedule(String userId, ModifyScheduleRequest request) {
-        HikeSchedule schedule = hikeScheduleRepository.findByUserIdAndScheduleId(userId, request.getScheduleId()).orElseThrow();
-        schedule.updateSchedule(request);
-        hikeScheduleRepository.save(schedule);
-        return schedule.getScheduleId();
+    public ScheduleIdResponse modifySchedule(String userId, ModifyScheduleRequest request) {
+        HikeSchedule hikeSchedule = hikeScheduleRepository.findByUserIdAndScheduleId(userId, request.getScheduleId()).orElseThrow();
+        hikeSchedule.updateSchedule(request);
+        hikeScheduleRepository.save(hikeSchedule);
+        return ScheduleIdResponse.builder().id(hikeSchedule.getScheduleId()).build();
     }
 
 
     @Transactional
-    public String deleteSchedule(String userId, String scheduleId) {
+    public ScheduleIdResponse deleteSchedule(String userId, String scheduleId) {
         HikeSchedule hikeSchedule = hikeScheduleRepository.findByUserIdAndScheduleId(userId, scheduleId).orElseThrow();
         hikeSchedule.deleteSchedule();
         hikeScheduleRepository.save(hikeSchedule);
-        return hikeSchedule.getScheduleId();
+        return ScheduleIdResponse.builder().id(hikeSchedule.getScheduleId()).build();
     }
 
-    public DetailScheduleResponse detailSchedule(String userId, String scheduleId) throws IOException {
+    public DetailScheduleResponse detailSchedule(String userId, String scheduleId) throws IOException, URISyntaxException {
         MemberId memberId = new MemberId(scheduleId, userId);
         Optional<ScheduleMember> memberCheck = scheduleMemberRepository.findById(memberId);
         if(memberCheck.isEmpty()) {
             throw new EntityNotFoundException("등산 일정의 멤버 아님");
         }
+
+        List<WeatherResponse> weatherList = mountainService.getWeatherList();
+
 
         HikeSchedule hikeSchedule = hikeScheduleRepository.findByScheduleId(scheduleId).orElseThrow();
         MntiEntity mountain = mntiRepository.findByMntiInfo(hikeSchedule.getMountainId());
@@ -125,9 +128,53 @@ public class ScheduleService {
                 .mountainName(getMountainName(hikeSchedule.getMountainId()))
                 .courseName(mountainService.getCourseNameByNo(hikeSchedule.getCourseNo()))
                 .scheduleDate(hikeSchedule.getScheduleDate())
-                .mountainImg(CommonUtil.getImageByMountain(hikeSchedule.getMountainId())) // TODO
+                .mountainImg(CommonUtil.getImageByMountain(hikeSchedule.getMountainId()))
                 .mountainHigh(mountain.getMntihigh())
-                .mountainLevel(mountain.getMntiLevel()).build();
+                .mountainLevel(mountain.getMntiLevel())
+                .mountainAddress(mountain.getMntiAdd())
+                .course(getCourse(hikeSchedule.getMountainId(), hikeSchedule.getCourseNo()))
+                .weatherList(weatherList)
+                .famous100(false)
+                .build();
+    }
+
+    public Course getCourse(String mountainId, String courseId) throws IOException {
+        Course course = new Course();
+
+        MntiEntity mountain = mntiRepository.findById(mountainId).orElseThrow();
+        String mountainName = mountain.getMntiName();
+
+        ClassPathResource resource = new ClassPathResource("/mntiCourseData/PMNTN_"+mountainName+"_"+mountainId+".json");
+        JsonNode rootNode = objectMapper.readTree(resource.getContentAsByteArray());
+        JsonNode itemsNode = rootNode.path("features");
+
+        if (itemsNode.isArray()) {
+            for (JsonNode item : itemsNode) {
+                String originCourseId = item.path("attributes").path("PMNTN_SN").asText();
+                if(Objects.equals(courseId, originCourseId)) {
+                    course.setCourseNo(originCourseId);
+                    course.setCourseName(item.path("attributes").path("PMNTN_NM").asText());
+                    course.setMntiTime(item.path("attributes").path("PMNTN_UPPL").asLong() + item.path("attributes").path("PMNTN_GODN").asLong());
+                    course.setMntiDist(item.path("attributes").path("PMNTN_LT").asText());
+                    course.setMntiLevel(item.path("attributes").path("PMNTN_DFFL").asText());
+
+                    JsonNode pathsNode = item.path("geometry").path("paths");
+                    if (pathsNode.isArray()) {
+                        List<List<Coordinate>> paths = new ArrayList<>();
+                        for (JsonNode pathNode : pathsNode) {
+                            List<Coordinate> path = new ArrayList<>();
+                            for (JsonNode coordNode : pathNode) {
+                                double[] coordinates = new double[]{coordNode.get(0).asDouble(), coordNode.get(1).asDouble()};
+                                path.add(new Coordinate(coordinates));
+                            }
+                            paths.add(path);
+                        }
+                        course.setPaths(paths);
+                    }
+                }
+            }
+        }
+        return course;
     }
 
 
@@ -146,8 +193,9 @@ public class ScheduleService {
     }
 
     public String createMemo(CreateMemoRequest request, String userId) {
+        ScheduleMemo memo = null;
         try {
-            ScheduleMemo memo = ScheduleMemo.builder()
+            memo = ScheduleMemo.builder()
                     .scheduleId(request.getScheduleId())
                     .memoId(CommonUtil.getMsgId())
                     .content(request.getMemoContent())
@@ -159,7 +207,7 @@ public class ScheduleService {
             e.printStackTrace();
             log.error(e.getMessage());
         }
-        return "메모 등록 완료";
+        return Objects.requireNonNull(memo).getMemoId();
     }
 
 
