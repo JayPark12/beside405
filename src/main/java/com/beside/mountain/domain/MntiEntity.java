@@ -38,4 +38,7 @@ public class MntiEntity {
     @Column(name = "MNTI_HIGH",  precision=5, scale=2, nullable = false)
     private BigDecimal mntihigh = BigDecimal.ZERO;
 
+    @Column(name = "famous_100")
+    private boolean famous100;
+
 }

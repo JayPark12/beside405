@@ -120,7 +120,6 @@ public class ScheduleService {
 
         List<WeatherResponse> weatherList = mountainService.getWeatherList();
 
-
         HikeSchedule hikeSchedule = hikeScheduleRepository.findByScheduleId(scheduleId).orElseThrow();
         MntiEntity mountain = mntiRepository.findByMntiInfo(hikeSchedule.getMountainId());
         return DetailScheduleResponse.builder()
@@ -128,13 +127,14 @@ public class ScheduleService {
                 .mountainName(getMountainName(hikeSchedule.getMountainId()))
                 .courseName(mountainService.getCourseNameByNo(hikeSchedule.getCourseNo()))
                 .scheduleDate(hikeSchedule.getScheduleDate())
+                .memberCount(hikeSchedule.getMemberCount()< 5 ? String.valueOf(hikeSchedule.getMemberCount()) : "5명 이상")
                 .mountainImg(CommonUtil.getImageByMountain(hikeSchedule.getMountainId()))
                 .mountainHigh(mountain.getMntihigh())
                 .mountainLevel(mountain.getMntiLevel())
                 .mountainAddress(mountain.getMntiAdd())
                 .course(getCourse(hikeSchedule.getMountainId(), hikeSchedule.getCourseNo()))
                 .weatherList(weatherList)
-                .famous100(false)
+                .famous100(mountain.isFamous100())
                 .build();
     }
 

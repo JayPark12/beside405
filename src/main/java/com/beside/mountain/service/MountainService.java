@@ -162,6 +162,7 @@ public class MountainService {
         mntiDetailOutput.setMntiLevel(mntiEntity.getMntiLevel());
         mntiDetailOutput.setCourse(courses);
         mntiDetailOutput.setMntiHigh(mntiEntity.getMntihigh());
+        mntiDetailOutput.setFamous100(mntiDetailOutput.isFamous100());
 
 
         //날씨 리스트 가져오기
