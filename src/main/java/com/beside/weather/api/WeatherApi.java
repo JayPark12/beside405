@@ -13,6 +13,7 @@ import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
 import net.minidev.json.parser.JSONParser;
 import net.minidev.json.parser.ParseException;
+import org.springframework.cglib.core.Local;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -28,7 +29,9 @@ import java.net.http.HttpResponse;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Service
@@ -136,7 +139,7 @@ public class WeatherApi {
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public WeatherResponse get3DayWeather(String localDate, int number) throws IOException, URISyntaxException {
+    public WeatherResponse get3DayWeather(String localDate, int number) throws IOException {
         String originDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
         if(LocalTime.now().isBefore(LocalTime.of(5, 0))){
             localDate = LocalDateTime.now().minusDays(1).format(DateTimeFormatter.ofPattern("yyyyMMdd"));
@@ -247,7 +250,6 @@ public class WeatherApi {
         String originUrl = "https://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=QwBnXKXGpEVCOs%2FqPD4gm8IHUTeypn4Css4kxLn%2FmxFhO1PA%2Bkf69ydEVVkuItSaTVzMYkWJUy%2FPTIqMSG%2Fg9A%3D%3D&dataType=JSON&numOfRows=10&pageNo=1&regId=11B00000&tmFc=" + localDateTime;
         log.info(originUrl);
 
-
         URL url = new URL(originUrl);
 
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -280,11 +282,85 @@ public class WeatherApi {
         return weatherResponse;
     }
 
-    public WeatherResponse parseJsonFromOtherDay(String jsonResponse, int number) {
+    public Map<String, String> getOtherDayTemperature() throws IOException {
+        String localDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+        Map<String, String> temperatureResponse = new HashMap<>();
+
+        if(LocalTime.now().isBefore(LocalTime.of(5, 0))){
+            localDate = LocalDateTime.now().minusDays(1).format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+        }else {
+            localDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+        }
+
+        String localDateTime = localDate + "0600";
+        String originUrl = "https://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa?serviceKey=QwBnXKXGpEVCOs%2FqPD4gm8IHUTeypn4Css4kxLn%2FmxFhO1PA%2Bkf69ydEVVkuItSaTVzMYkWJUy%2FPTIqMSG%2Fg9A%3D%3D&dataType=JSON&numOfRows=10&pageNo=1&regId=11B10101&tmFc=" + localDateTime;
+        log.info(originUrl);
+
+        URL url = new URL(originUrl);
+
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.setRequestProperty("Accept", "application/json");
+
+        int responseCode = connection.getResponseCode();
+        if (responseCode == HttpURLConnection.HTTP_OK) { // 정상 응답
+            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String inputLine;
+            StringBuilder response = new StringBuilder();
+
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            in.close();
+
+            // JSON 데이터 출력 (혹은 저장)
+            String jsonResponse = response.toString();
+            System.out.println("Response JSON: " + jsonResponse);
+
+//             JSON 파싱
+            temperatureResponse = getTemperatureData(jsonResponse);
+
+        } else {
+            System.out.println("GET request not worked");
+        }
+        connection.disconnect();
+        return temperatureResponse;
+    }
+
+    private Map<String, String> getTemperatureData(String jsonResponse) {
+        Map<String, String> response = new HashMap<>();
+        LocalDateTime localDate = LocalDateTime.now();
+
+        try {
+            JsonNode rootNode = objectMapper.readTree(jsonResponse);
+            JsonNode itemsNode = rootNode.path("response").path("body").path("items").path("item");
+
+            for(JsonNode itemNode : itemsNode) {
+                String taMin3 = itemNode.path("taMin3").asText();
+                String taMin4 = itemNode.path("taMin4").asText();
+                String taMin5 = itemNode.path("taMin5").asText();
+
+                response.put("first", taMin3);
+                response.put("second", taMin4);
+                response.put("third", taMin5);
+            }
+
+        } catch (JsonMappingException e) {
+            throw new RuntimeException(e);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+        return response;
+    }
+
+
+    public WeatherResponse parseJsonFromOtherDay(String jsonResponse, int number) throws IOException {
         String localDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
 
         WeatherResponse weatherResponse = new WeatherResponse();
         weatherResponse.setDate(String.valueOf(Integer.parseInt(localDate) + number));
+
+        Map<String, String> otherDayTemperature = getOtherDayTemperature();
 
         try {
             JsonNode rootNode = objectMapper.readTree(jsonResponse);
@@ -296,16 +372,19 @@ public class WeatherApi {
                     String wf3Am = itemNode.path("wf3Am").asText();
                     weatherResponse.setRainPersent(rnSt3Am);
                     weatherResponse.setSkyState(wf3Am);
+                    weatherResponse.setTemperature(otherDayTemperature.get("first"));
                 } else if (number == 4) {
                     String rnSt4Am = itemNode.path("rnSt4Am").asText();
                     String wf4Am = itemNode.path("wf4Am").asText();
                     weatherResponse.setRainPersent(rnSt4Am);
                     weatherResponse.setSkyState(wf4Am);
+                    weatherResponse.setTemperature(otherDayTemperature.get("second"));
                 } else if(number == 5) {
                     String rnSt5Am = itemNode.path("rnSt5Am").asText();
                     String wf5Am = itemNode.path("wf5Am").asText();
                     weatherResponse.setRainPersent(rnSt5Am);
                     weatherResponse.setSkyState(wf5Am);
+                    weatherResponse.setTemperature(otherDayTemperature.get("third"));
                 }
 
             }
