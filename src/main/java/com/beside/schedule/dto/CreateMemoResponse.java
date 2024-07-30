@@ -6,8 +6,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-public class CreateMemoRequest {
-    private String scheduleId;
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class CreateMemoResponse {
+    private String memoId;
     private String text;
     private boolean checked;
 }

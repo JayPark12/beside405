@@ -192,22 +192,24 @@ public class ScheduleService {
         return list;
     }
 
-    public String createMemo(CreateMemoRequest request, String userId) {
-        ScheduleMemo memo = null;
-        try {
-            memo = ScheduleMemo.builder()
-                    .scheduleId(request.getScheduleId())
+    public List<CreateMemoResponse> createMemo(List<CreateMemoRequest> request, String userId) {
+        List<CreateMemoResponse> responses = new ArrayList<>();
+
+        for(CreateMemoRequest memoRequest : request) {
+            ScheduleMemo memo = ScheduleMemo.builder()
+                    .scheduleId(memoRequest.getScheduleId())
                     .memoId(CommonUtil.getMsgId())
-                    .content(request.getMemoContent())
+                    .content(memoRequest.getText())
                     .createUser(userId)
-                    .checkStatus(false)
+                    .checkStatus(memoRequest.isChecked())
+                    .createDate(LocalDateTime.now())
                     .build();
             scheduleMemoRepository.save(memo);
-        } catch (Exception e) {
-            e.printStackTrace();
-            log.error(e.getMessage());
+
+            CreateMemoResponse response = CreateMemoResponse.builder().memoId(memo.getMemoId()).text(memo.getContent()).checked(memo.isCheckStatus()).build();
+            responses.add(response);
         }
-        return Objects.requireNonNull(memo).getMemoId();
+        return responses;
     }
 
 
