@@ -27,10 +27,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @Slf4j
@@ -124,6 +121,7 @@ public class ScheduleService {
         MntiEntity mountain = mntiRepository.findByMntiInfo(hikeSchedule.getMountainId());
         return DetailScheduleResponse.builder()
                 .scheduleId(scheduleId)
+                .mountainId(hikeSchedule.getMountainId())
                 .mountainName(getMountainName(hikeSchedule.getMountainId()))
                 .courseName(mountainService.getCourseNameByNo(hikeSchedule.getCourseNo()))
                 .scheduleDate(hikeSchedule.getScheduleDate())
@@ -189,6 +187,7 @@ public class ScheduleService {
             memoListResponse.setCheckStatus(memo.isCheckStatus());
             list.add(memoListResponse);
         }
+        list.sort(Comparator.comparing(MemoListResponse::getMemoId));
         return list;
     }
 

@@ -17,6 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 public class DetailScheduleResponse {
     private String scheduleId;
+    private String mountainId;
     private String mountainName;
     private String courseName;
     private LocalDateTime scheduleDate;
