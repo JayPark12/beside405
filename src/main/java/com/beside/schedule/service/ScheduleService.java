@@ -41,12 +41,12 @@ public class ScheduleService {
     private final ObjectMapper objectMapper;
 
 
-    public List<ScheduleResponse> mySchedule(String userId) {
+    public List<ScheduleResponse> mySchedule(String userId) throws IOException, URISyntaxException {
         List<ScheduleResponse> scheduleResponseList = new ArrayList<>();
         List<ScheduleMember> scheduleMemberList = scheduleMemberRepository.findByIdMemberId(userId);
 
         for(ScheduleMember scheduleMember : scheduleMemberList) {
-            HikeSchedule hikeSchedule = hikeScheduleRepository.findByScheduleId(scheduleMember.getId().getScheduleId()).orElseThrow();
+            HikeSchedule hikeSchedule = hikeScheduleRepository.findByScheduleIdAndDelYn(scheduleMember.getId().getScheduleId(), "N").orElseThrow();
             scheduleResponseList.add(convertToScheduleResponse(hikeSchedule));
         }
         return scheduleResponseList;
@@ -55,13 +55,16 @@ public class ScheduleService {
 //                .collect(Collectors.toList());
     }
 
-    private ScheduleResponse convertToScheduleResponse(HikeSchedule entity) {
+    private ScheduleResponse convertToScheduleResponse(HikeSchedule entity) throws IOException, URISyntaxException {
+        List<WeatherResponse> weatherList = mountainService.getWeatherList();
+
         ScheduleResponse response = new ScheduleResponse();
         response.setScheduleId(entity.getScheduleId());
         response.setMountain(getMountainName(entity.getMountainId()));
         response.setMemberCount(entity.getMemberCount());
         response.setScheduleDate(entity.getScheduleDate());
         response.setCourse(mountainService.getCourseNameByNo(entity.getCourseNo()));
+        response.setWeatherList(weatherList);
         return response;
     }
 
@@ -125,7 +128,7 @@ public class ScheduleService {
                 .mountainName(getMountainName(hikeSchedule.getMountainId()))
                 .courseName(mountainService.getCourseNameByNo(hikeSchedule.getCourseNo()))
                 .scheduleDate(hikeSchedule.getScheduleDate())
-                .memberCount(hikeSchedule.getMemberCount()< 5 ? String.valueOf(hikeSchedule.getMemberCount()) : "5명 이상")
+                .memberCount(hikeSchedule.getMemberCount())
                 .mountainImg(CommonUtil.getImageByMountain(hikeSchedule.getMountainId()))
                 .mountainHigh(mountain.getMntihigh())
                 .mountainLevel(mountain.getMntiLevel())
@@ -191,8 +194,9 @@ public class ScheduleService {
         return list;
     }
 
-    public List<CreateMemoResponse> createMemo(List<CreateMemoRequest> request, String userId) {
-        List<CreateMemoResponse> responses = new ArrayList<>();
+    public CreateMemoResponse createMemo(List<CreateMemoRequest> request, String userId) {
+        List<MemoResponse> memoResponses = new ArrayList<>();
+        String scheduleId = request.get(0).getScheduleId();
 
         for(CreateMemoRequest memoRequest : request) {
             ScheduleMemo memo = ScheduleMemo.builder()
@@ -204,11 +208,10 @@ public class ScheduleService {
                     .createDate(LocalDateTime.now())
                     .build();
             scheduleMemoRepository.save(memo);
-
-            CreateMemoResponse response = CreateMemoResponse.builder().memoId(memo.getMemoId()).text(memo.getContent()).checked(memo.isCheckStatus()).build();
-            responses.add(response);
+            MemoResponse memoResponse = MemoResponse.builder().memoId(memo.getMemoId()).text(memo.getContent()).checked(memo.isCheckStatus()).build();
+            memoResponses.add(memoResponse);
         }
-        return responses;
+        return CreateMemoResponse.builder().scheduleId(scheduleId).memoResponse(memoResponses).build();
     }
 
 

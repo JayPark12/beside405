@@ -23,7 +23,7 @@ public class ScheduleController {
     //내 일정 리스트 보기
     @GetMapping("/mySchedule")
     @Operation(summary = "내 일정 보기", description = "등록된 일정 리스트를 볼 수 있습니다.")
-    public ResponseEntity<?> mySchedule() {
+    public ResponseEntity<?> mySchedule() throws IOException, URISyntaxException {
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();
         List<ScheduleResponse> response = scheduleService.mySchedule(userId);
         return ResponseEntity.ok(response);
@@ -79,7 +79,7 @@ public class ScheduleController {
     @PostMapping("/memo/create")
     public ResponseEntity<?> createMemo(@RequestBody List<CreateMemoRequest> request) {
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();
-        List<CreateMemoResponse> response = scheduleService.createMemo(request, userId);
+        CreateMemoResponse response = scheduleService.createMemo(request, userId);
         return ResponseEntity.ok(response);
     }
 

@@ -5,13 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class CreateMemoResponse {
-    private String scheduleId;
-    private List<MemoResponse> memoResponse;
+@NoArgsConstructor
+public class MemoResponse {
+    private String memoId;
+    private String text;
+    private boolean checked;
 }

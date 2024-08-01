@@ -21,7 +21,7 @@ public class DetailScheduleResponse {
     private String mountainName;
     private String courseName;
     private LocalDateTime scheduleDate;
-    private String memberCount;
+    private int memberCount;
     private BigDecimal mountainHigh;
     private String mountainLevel;
     private String mountainAddress;
