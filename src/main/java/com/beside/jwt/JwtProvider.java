@@ -34,7 +34,7 @@ public class JwtProvider  {
     @Value("${jwt.secret}")
     private String secretKey;
 
-    static Long EXPIRE_TIME = 60L * 60L * 1000L; // 만료 시간 1시간
+    static Long EXPIRE_TIME = 3L * 24L * 60L * 60L * 1000L; // 만료 시간 3일
 
 
     private Algorithm getSign(){
