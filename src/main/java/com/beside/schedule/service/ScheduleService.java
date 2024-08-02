@@ -42,17 +42,15 @@ public class ScheduleService {
 
 
     public List<ScheduleResponse> mySchedule(String userId) throws IOException, URISyntaxException {
+        log.info("user id : {}", userId);
         List<ScheduleResponse> scheduleResponseList = new ArrayList<>();
         List<ScheduleMember> scheduleMemberList = scheduleMemberRepository.findByIdMemberId(userId);
 
         for(ScheduleMember scheduleMember : scheduleMemberList) {
-            HikeSchedule hikeSchedule = hikeScheduleRepository.findByScheduleIdAndDelYn(scheduleMember.getId().getScheduleId(), "N").orElseThrow();
+            HikeSchedule hikeSchedule = hikeScheduleRepository.findByScheduleIdAndDelYn(scheduleMember.getId().getScheduleId(), "N").orElseThrow(() -> new RuntimeException("해당 일정이 존재하지 않습니다. schedule id : " + scheduleMember.getId().getScheduleId()));
             scheduleResponseList.add(convertToScheduleResponse(hikeSchedule));
         }
         return scheduleResponseList;
-//        return hikeScheduleRepository.findByUserIdAndDelYn(userId, "N").stream()
-//                .map(this::convertToScheduleResponse)
-//                .collect(Collectors.toList());
     }
 
     private ScheduleResponse convertToScheduleResponse(HikeSchedule entity) throws IOException, URISyntaxException {

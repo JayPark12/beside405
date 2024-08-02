@@ -151,7 +151,6 @@ public class WeatherApi {
         String setDate = null;
 
         String originUrl = "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=QwBnXKXGpEVCOs%2FqPD4gm8IHUTeypn4Css4kxLn%2FmxFhO1PA%2Bkf69ydEVVkuItSaTVzMYkWJUy%2FPTIqMSG%2Fg9A%3D%3D&base_date=" + localDate + "&base_time=0500&nx=60&ny=127&dataType=JSON&pageNo="+ number +"&numOfRows=100";
-        log.info(originUrl);
 
         // URL 객체 생성
         URL url = new URL(originUrl);
@@ -248,7 +247,6 @@ public class WeatherApi {
 
         String localDateTime = localDate + "0600";
         String originUrl = "https://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=QwBnXKXGpEVCOs%2FqPD4gm8IHUTeypn4Css4kxLn%2FmxFhO1PA%2Bkf69ydEVVkuItSaTVzMYkWJUy%2FPTIqMSG%2Fg9A%3D%3D&dataType=JSON&numOfRows=10&pageNo=1&regId=11B00000&tmFc=" + localDateTime;
-        log.info(originUrl);
 
         URL url = new URL(originUrl);
 
@@ -294,7 +292,6 @@ public class WeatherApi {
 
         String localDateTime = localDate + "0600";
         String originUrl = "https://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa?serviceKey=QwBnXKXGpEVCOs%2FqPD4gm8IHUTeypn4Css4kxLn%2FmxFhO1PA%2Bkf69ydEVVkuItSaTVzMYkWJUy%2FPTIqMSG%2Fg9A%3D%3D&dataType=JSON&numOfRows=10&pageNo=1&regId=11B10101&tmFc=" + localDateTime;
-        log.info(originUrl);
 
         URL url = new URL(originUrl);
 
