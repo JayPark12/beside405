@@ -194,13 +194,15 @@ public class ScheduleService {
         return list;
     }
 
-    public CreateMemoResponse createMemo(List<CreateMemoRequest> request, String userId) {
+    public CreateMemoResponse createMemo(CreateMemoRequest request, String userId) {
         List<MemoResponse> memoResponses = new ArrayList<>();
-        String scheduleId = request.get(0).getScheduleId();
+        String scheduleId = request.getScheduleId();
 
-        for(CreateMemoRequest memoRequest : request) {
+        List<MemoRequest> memoRequestList = request.getMemoRequest();
+
+        for(MemoRequest memoRequest : memoRequestList) {
             ScheduleMemo memo = ScheduleMemo.builder()
-                    .scheduleId(memoRequest.getScheduleId())
+                    .scheduleId(scheduleId)
                     .memoId(CommonUtil.getMsgId())
                     .content(memoRequest.getText())
                     .createUser(userId)

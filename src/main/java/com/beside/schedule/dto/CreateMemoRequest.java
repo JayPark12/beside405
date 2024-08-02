@@ -5,9 +5,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 public class CreateMemoRequest {
     private String scheduleId;
-    private String text;
-    private boolean checked;
+    private List<MemoRequest> memoRequest;
 }

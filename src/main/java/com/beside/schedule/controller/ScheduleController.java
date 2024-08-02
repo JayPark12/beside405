@@ -77,7 +77,7 @@ public class ScheduleController {
     //메모 등록
     @Operation(summary = "메모 등록", description = "일정 id에 매핑되는 메모를 생성합니다.")
     @PostMapping("/memo/create")
-    public ResponseEntity<?> createMemo(@RequestBody List<CreateMemoRequest> request) {
+    public ResponseEntity<?> createMemo(@RequestBody CreateMemoRequest request) {
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();
         CreateMemoResponse response = scheduleService.createMemo(request, userId);
         return ResponseEntity.ok(response);
