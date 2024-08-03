@@ -4,12 +4,10 @@ import com.beside.mountain.domain.MntiEntity;
 import com.beside.mountain.dto.Course;
 import com.beside.mountain.repository.MntiRepository;
 import com.beside.mountain.service.MountainService;
-import com.beside.schedule.domain.HikeSchedule;
-import com.beside.schedule.domain.MemberId;
-import com.beside.schedule.domain.ScheduleMember;
-import com.beside.schedule.domain.ScheduleMemo;
+import com.beside.schedule.domain.*;
 import com.beside.schedule.dto.*;
 import com.beside.schedule.repository.HikeScheduleRepository;
+import com.beside.schedule.repository.ScheduleInvitationRepository;
 import com.beside.schedule.repository.ScheduleMemberRepository;
 import com.beside.schedule.repository.ScheduleMemoRepository;
 import com.beside.util.CommonUtil;
@@ -28,6 +26,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.function.IntBinaryOperator;
 
 @Service
 @Slf4j
@@ -39,6 +38,7 @@ public class ScheduleService {
     private final ScheduleMemoRepository scheduleMemoRepository;
     private final ScheduleMemberRepository scheduleMemberRepository;
     private final ObjectMapper objectMapper;
+    private final ScheduleInvitationRepository scheduleInvitationRepository;
 
 
     public List<ScheduleResponse> mySchedule(String userId) throws IOException, URISyntaxException {
@@ -270,4 +270,69 @@ public class ScheduleService {
         scheduleMemberRepository.deleteById(id);
         return scheduleId;
     }
+
+    public InvitationResponse viewInvitation(String invitationId) {
+        ScheduleInvitation scheduleInvitation = scheduleInvitationRepository.findByInvitationId(invitationId).orElseThrow(() -> new RuntimeException("해당 초대장이 존재하지 않습니다. schedule id : " + invitationId));
+        HikeSchedule hikeSchedule = hikeScheduleRepository.findByScheduleId(scheduleInvitation.getScheduleId()).orElseThrow(() -> new RuntimeException("해당 일정이 존재하지 않습니다. schedule id : " + scheduleInvitation.getScheduleId()));
+
+        return InvitationResponse.builder()
+                .invitationId(scheduleInvitation.getInvitationId())
+                .scheduleId(scheduleInvitation.getScheduleId())
+                .createUser(scheduleInvitation.getCreateUser())
+                .scheduleDate(hikeSchedule.getScheduleDate())
+                .mountainName(getMountainName(hikeSchedule.getMountainId()))
+                .courseName(mountainService.getCourseNameByNo(hikeSchedule.getCourseNo()))
+                .text(scheduleInvitation.getContent())
+                .build();
+    }
+
+
+
+
+    public InvitationResponse createInvitation(String userId, InvitationRequest request) {
+        ScheduleInvitation scheduleInvitation = ScheduleInvitation.builder()
+                .invitationId(CommonUtil.getMsgId())
+                .scheduleId(request.getScheduleId())
+                .createUser(userId)
+                .content(request.getText()).build();
+        scheduleInvitationRepository.save(scheduleInvitation);
+        HikeSchedule hikeSchedule = hikeScheduleRepository.findByScheduleId(request.getScheduleId()).orElseThrow(() -> new RuntimeException("해당 일정이 존재하지 않습니다. schedule id : " + request.getScheduleId()));
+
+        return InvitationResponse.builder()
+                .invitationId(scheduleInvitation.getInvitationId())
+                .scheduleId(scheduleInvitation.getScheduleId())
+                .createUser(scheduleInvitation.getCreateUser())
+                .scheduleDate(hikeSchedule.getScheduleDate())
+                .mountainName(getMountainName(hikeSchedule.getMountainId()))
+                .courseName(mountainService.getCourseNameByNo(hikeSchedule.getCourseNo()))
+                .text(scheduleInvitation.getContent())
+                .build();
+    }
+
+    public DetailScheduleResponse viewScheduleFromInvitation(String invitationId) throws IOException, URISyntaxException {
+        ScheduleInvitation scheduleInvitation = scheduleInvitationRepository.findByInvitationId(invitationId).orElseThrow(() -> new RuntimeException("해당 초대장이 존재하지 않습니다. schedule id : " + invitationId));
+
+        HikeSchedule hikeSchedule = hikeScheduleRepository.findByScheduleId(scheduleInvitation.getScheduleId()).orElseThrow(() -> new RuntimeException("해당 일정이 존재하지 않습니다. schedule id : " + scheduleInvitation.getScheduleId()));
+
+        List<WeatherResponse> weatherList = mountainService.getWeatherList();
+
+        MntiEntity mountain = mntiRepository.findByMntiInfo(hikeSchedule.getMountainId());
+        return DetailScheduleResponse.builder()
+                .scheduleId(scheduleInvitation.getScheduleId())
+                .mountainId(hikeSchedule.getMountainId())
+                .mountainName(getMountainName(hikeSchedule.getMountainId()))
+                .courseName(mountainService.getCourseNameByNo(hikeSchedule.getCourseNo()))
+                .scheduleDate(hikeSchedule.getScheduleDate())
+                .memberCount(hikeSchedule.getMemberCount())
+                .mountainImg(CommonUtil.getImageByMountain(hikeSchedule.getMountainId()))
+                .mountainHigh(mountain.getMntihigh())
+                .mountainLevel(mountain.getMntiLevel())
+                .mountainAddress(mountain.getMntiAdd())
+                .course(getCourse(hikeSchedule.getMountainId(), hikeSchedule.getCourseNo()))
+                .weatherList(weatherList)
+                .famous100(mountain.isFamous100())
+                .build();
+    }
+
+
 }

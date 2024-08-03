@@ -130,6 +130,32 @@ public class ScheduleController {
         return ResponseEntity.ok("일정이 삭제되었습니다. id : " + response);
     }
 
+    @Operation(summary = "초대장 보기", description = "만들어진 초대장을 볼 수 있습니다.")
+    @GetMapping("/invite/view/{invitationId}")
+    public ResponseEntity<?> viewInvitation(@PathVariable String invitationId) {
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        return ResponseEntity.ok(scheduleService.viewInvitation(invitationId));
+    }
+
+
+
+    @Operation(summary = "초대장 만들기", description = "초대장을 생성합니다.")
+    @PostMapping("/invite/create")
+    public ResponseEntity<?> createInvitation(@RequestBody InvitationRequest request) {
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        return ResponseEntity.ok(scheduleService.createInvitation(userId, request));
+    }
+
+
+    @Operation(summary = "초대장 일정 정보", description = "초대장 일정 정보를 가져옵니다.")
+    @GetMapping("/invite/create/{invitationId}")
+    public ResponseEntity<?> createInvitation(@PathVariable String invitationId) throws IOException, URISyntaxException {
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        return ResponseEntity.ok(scheduleService.viewScheduleFromInvitation(invitationId));
+    }
+
+
+
 
 
 }
