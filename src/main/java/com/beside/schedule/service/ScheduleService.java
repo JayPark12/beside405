@@ -278,6 +278,7 @@ public class ScheduleService {
         return InvitationResponse.builder()
                 .invitationId(scheduleInvitation.getInvitationId())
                 .scheduleId(scheduleInvitation.getScheduleId())
+                .imgNumber(scheduleInvitation.getImgNumber())
                 .createUser(scheduleInvitation.getCreateUser())
                 .scheduleDate(hikeSchedule.getScheduleDate())
                 .mountainName(getMountainName(hikeSchedule.getMountainId()))
@@ -293,6 +294,7 @@ public class ScheduleService {
         ScheduleInvitation scheduleInvitation = ScheduleInvitation.builder()
                 .invitationId(CommonUtil.getMsgId())
                 .scheduleId(request.getScheduleId())
+                .imgNumber(request.getImgNumber())
                 .createUser(userId)
                 .content(request.getText()).build();
         scheduleInvitationRepository.save(scheduleInvitation);

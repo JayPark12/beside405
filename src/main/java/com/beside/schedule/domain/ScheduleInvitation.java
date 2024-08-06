@@ -25,4 +25,7 @@ public class ScheduleInvitation {
 
     @Column(name = "content")
     private String content;
+
+    @Column(name = "img_number")
+    private int imgNumber;
 }

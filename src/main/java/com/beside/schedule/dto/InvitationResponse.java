@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 public class InvitationResponse {
     private String invitationId;
     private String scheduleId;
+    private int imgNumber;
     private String createUser;
     private LocalDateTime scheduleDate;
     private String mountainName;
