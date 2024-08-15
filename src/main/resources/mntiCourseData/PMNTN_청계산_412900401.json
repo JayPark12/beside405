@@ -122,577 +122,78 @@
       "length" : 10
     }
   ],
-  "content": "절(寺)로는 연주암·삼막사(三幕寺) 등이 있다. 흔히 연주암과 연주대를 혼동하는데, 연주암은 대한불교조계종 소속 사찰이고, 연주대는 정상 옆의 기암절벽과 거기에 있는 전각을 이른다. 연주대는 경기도 기념물 제20호로 지정되어 있다. 연주대 사족으로 연주암에 있는 식당은 점심 식사를 저렴하게 제공하여 점심 때쯤에는 등산객이 길게 줄을 선다. 연주암에서 제공하는 식사는 주로 비빔밥 같은 건강식이다. 육류와 오신채를 금지하기 때문에 맛도 심심하다.",
   "features" : [
     {
       "attributes" : {
         "FID" : 0,
-        "PMNTN_SN" : 4281,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
+        "PMNTN_SN" : 49617,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.82,
+        "PMNTN_LT" : 0.12,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 14,
-        "PMNTN_GODN" : 10,
+        "PMNTN_UPPL" : 2,
+        "PMNTN_GODN" : 1,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
         "PMNTN_CLS_" : " ",
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              198458.0324834222,
-              538479.73674210347
+              203879.59141126741,
+              533865.42434004322
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
         "FID" : 1,
-        "PMNTN_SN" : 4282,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
+        "PMNTN_SN" : 49618,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "상적동구간",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 1.38,
+        "PMNTN_LT" : 3.62,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 24,
-        "PMNTN_GODN" : 17,
+        "PMNTN_UPPL" : 91,
+        "PMNTN_GODN" : 63,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
         "PMNTN_CLS_" : " ",
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              197886.81611962989,
-              536186.65503211319
+              207789.71075634938,
+              538408.35488723218
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
         "FID" : 2,
-        "PMNTN_SN" : 4283,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
+        "PMNTN_SN" : 49619,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.91,
+        "PMNTN_LT" : 1.2,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 16,
-        "PMNTN_GODN" : 11,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196665.56289574411,
-              536030.28140626289
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 3,
-        "PMNTN_SN" : 4284,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.79,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 14,
-        "PMNTN_GODN" : 10,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197714.00268448889,
-              538031.51006678678
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 4,
-        "PMNTN_SN" : 4285,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 1.06,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 19,
-        "PMNTN_GODN" : 13,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197622.05170410033,
-              537130.15943328664
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 5,
-        "PMNTN_SN" : 4286,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.3,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 5,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197426.31427582446,
-              537372.71495655365
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 6,
-        "PMNTN_SN" : 4287,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.73,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 13,
-        "PMNTN_GODN" : 9,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196658.20603321027,
-              537178.76399494335
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 7,
-        "PMNTN_SN" : 4288,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.98,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 17,
-        "PMNTN_GODN" : 12,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196848.28976700176,
-              537571.28827832639
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 8,
-        "PMNTN_SN" : 4289,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.95,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 17,
-        "PMNTN_GODN" : 12,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197701.99397087935,
-              538701.81794835813
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 9,
-        "PMNTN_SN" : 4290,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.58,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 10,
-        "PMNTN_GODN" : 7,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197364.59487359226,
-              536869.64430441894
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 10,
-        "PMNTN_SN" : 4291,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.88,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 16,
-        "PMNTN_GODN" : 11,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197519.40487500746,
-              537556.93419997767
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 11,
-        "PMNTN_SN" : 4292,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.42,
-        "PMNTN_DFFL" : "중간",
-        "PMNTN_UPPL" : 8,
-        "PMNTN_GODN" : 6,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197571.99303265568,
-              537330.6495970618
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 12,
-        "PMNTN_SN" : 4293,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.22,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 4,
-        "PMNTN_GODN" : 3,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197622.05170410033,
-              537130.15943328664
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 13,
-        "PMNTN_SN" : 4294,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.98,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 17,
-        "PMNTN_GODN" : 12,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198672.20192641206,
-              537649.56073455326
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 14,
-        "PMNTN_SN" : 4295,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : "남현동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 3.59,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 63,
-        "PMNTN_GODN" : 44,
-        "PMNTN_MTRQ" : "암석",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197279.9203801332,
-              538622.74309943989
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 15,
-        "PMNTN_SN" : 4296,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.54,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 10,
-        "PMNTN_GODN" : 7,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198018.34343584441,
-              538184.08697648905
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 16,
-        "PMNTN_SN" : 4297,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.64,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 11,
-        "PMNTN_GODN" : 8,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196954.92171391193,
-              537684.27585518919
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 17,
-        "PMNTN_SN" : 4298,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.81,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 14,
-        "PMNTN_GODN" : 10,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197304.9120417824,
-              536993.24772600271
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 18,
-        "PMNTN_SN" : 4299,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 1.24,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 22,
+        "PMNTN_UPPL" : 21,
         "PMNTN_GODN" : 15,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
@@ -700,87 +201,54 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              197840.79994685948,
-              536227.9211310707
+              202764.53483249154,
+              531124.38153865002
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 19,
-        "PMNTN_SN" : 4300,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
+        "FID" : 3,
+        "PMNTN_SN" : 49620,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.5,
+        "PMNTN_LT" : 0.44,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 9,
-        "PMNTN_GODN" : 6,
+        "PMNTN_UPPL" : 8,
+        "PMNTN_GODN" : 5,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
         "PMNTN_CLS_" : " ",
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              197714.00268448889,
-              538031.51006678678
+              203891.28637164831,
+              536541.00816551782
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 20,
-        "PMNTN_SN" : 4301,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : "중앙동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 1.07,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 23,
-        "PMNTN_GODN" : 16,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198825.88110993616,
-              536912.51569784619
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 21,
-        "PMNTN_SN" : 4302,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
+        "FID" : 4,
+        "PMNTN_SN" : 49621,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
         "PMNTN_LT" : 0.16,
@@ -793,710 +261,27 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              198250.60356559604,
-              537293.61569471285
+              203699.5461302232,
+              536390.14831746742
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 22,
-        "PMNTN_SN" : 4303,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : "중앙동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.76,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 14,
-        "PMNTN_GODN" : 10,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198250.60356559604,
-              537293.61569471285
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 23,
-        "PMNTN_SN" : 4304,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : "과천동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 1.11,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 21,
-        "PMNTN_GODN" : 15,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198939.66393513698,
-              537655.52283479087
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 24,
-        "PMNTN_SN" : 4305,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : "중앙동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.63,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 11,
-        "PMNTN_GODN" : 8,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198939.66393513698,
-              537655.52283479087
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 25,
-        "PMNTN_SN" : 4306,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
+        "FID" : 5,
+        "PMNTN_SN" : 49622,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.51,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 9,
-        "PMNTN_GODN" : 6,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198744.79054161254,
-              537179.27612699755
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 26,
-        "PMNTN_SN" : 4307,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.29,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 5,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198990.1589329727,
-              537377.5388172958
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 27,
-        "PMNTN_SN" : 4308,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.84,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 15,
-        "PMNTN_GODN" : 10,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197937.42917314172,
-              537168.01709275506
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 28,
-        "PMNTN_SN" : 4309,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.59,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 10,
-        "PMNTN_GODN" : 7,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197946.09000481386,
-              536306.2826627437
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 29,
-        "PMNTN_SN" : 4310,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : "과천동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.62,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 11,
-        "PMNTN_GODN" : 8,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198773.6776795648,
-              538378.42644061707
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 30,
-        "PMNTN_SN" : 4311,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.29,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 5,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198443.63316617906,
-              538382.04910124838
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 31,
-        "PMNTN_SN" : 4312,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : "갈현동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 1.38,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 24,
-        "PMNTN_GODN" : 17,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197349.15565903857,
-              535724.9014695771
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 32,
-        "PMNTN_SN" : 4313,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.11,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198714.70977718476,
-              538288.89211075567
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 33,
-        "PMNTN_SN" : 4314,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.34,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 6,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198773.6776795648,
-              538378.42644061707
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 34,
-        "PMNTN_SN" : 4315,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.56,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 10,
-        "PMNTN_GODN" : 7,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198333.81113152113,
-              537413.84239758365
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 35,
-        "PMNTN_SN" : 4316,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : "중앙동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.26,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 5,
-        "PMNTN_GODN" : 3,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198669.90404030774,
-              536855.49524046481
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 36,
-        "PMNTN_SN" : 4317,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : "중앙동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.27,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 5,
-        "PMNTN_GODN" : 3,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              199215.55339288432,
-              537280.65325362235
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 37,
-        "PMNTN_SN" : 4318,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : "중앙동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.29,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 5,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              199010.82800411899,
-              537141.70073280297
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 38,
-        "PMNTN_SN" : 4319,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.51,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 9,
-        "PMNTN_GODN" : 6,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198744.79054161254,
-              537179.27612699755
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 39,
-        "PMNTN_SN" : 4320,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : "중앙동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.18,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 3,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198669.90404030774,
-              536855.49524046481
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 40,
-        "PMNTN_SN" : 4321,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : "과천동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.64,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 11,
-        "PMNTN_GODN" : 8,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              199244.98929033522,
-              538428.94936607406
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 41,
-        "PMNTN_SN" : 4322,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.11,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197905.39798781462,
-              536196.82752030529
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 42,
-        "PMNTN_SN" : 4323,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : "중앙동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.13,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198842.09813754074,
-              537106.3868530225
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 43,
-        "PMNTN_SN" : 4324,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.12,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197912.44385923073,
-              536198.16409808211
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 44,
-        "PMNTN_SN" : 4325,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.06,
+        "PMNTN_LT" : 0.08,
         "PMNTN_DFFL" : "쉬움",
         "PMNTN_UPPL" : 1,
         "PMNTN_GODN" : 1,
@@ -1506,832 +291,55 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              197886.81611962989,
-              536186.65503211319
+              203753.89553196821,
+              535610.05979436077
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 45,
-        "PMNTN_SN" : 4326,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
+        "FID" : 6,
+        "PMNTN_SN" : 49623,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "금토동구간",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.01,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197912.44385923073,
-              536198.16409808211
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 46,
-        "PMNTN_SN" : 4327,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.02,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197905.39798781462,
-              536196.82752030529
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 47,
-        "PMNTN_SN" : 4328,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.25,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 4,
-        "PMNTN_GODN" : 3,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197989.67416463606,
-              537794.85579195432
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 48,
-        "PMNTN_SN" : 4329,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.1,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197378.86915990245,
-              536944.52218228392
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 49,
-        "PMNTN_SN" : 4330,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.14,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197402.64734118059,
-              536933.89298339747
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 50,
-        "PMNTN_SN" : 4331,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.33,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 6,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197418.36367050745,
-              536926.45177583583
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 51,
-        "PMNTN_SN" : 4332,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.46,
+        "PMNTN_LT" : 0.44,
         "PMNTN_DFFL" : "쉬움",
         "PMNTN_UPPL" : 8,
-        "PMNTN_GODN" : 6,
+        "PMNTN_GODN" : 5,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
         "PMNTN_CLS_" : " ",
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              197413.88939518109,
-              536939.23887275346
+              206379.762361506,
+              535913.18686634116
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 52,
-        "PMNTN_SN" : 4333,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.31,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 5,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197364.59487359226,
-              536869.64430441894
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 53,
-        "PMNTN_SN" : 4334,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.25,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 4,
-        "PMNTN_GODN" : 3,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197989.67416463606,
-              537794.85579195432
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 54,
-        "PMNTN_SN" : 4335,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.02,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198440.27658711839,
-              538368.34291690029
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 55,
-        "PMNTN_SN" : 4336,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.29,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 5,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198939.66393513698,
-              537655.52283479087
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 56,
-        "PMNTN_SN" : 4337,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.3,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 5,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197519.37339052092,
-              536662.47159564495
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 57,
-        "PMNTN_SN" : 4338,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.11,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198443.63316617906,
-              538382.04910124838
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 58,
-        "PMNTN_SN" : 4339,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.03,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197402.64734118059,
-              536933.89298339747
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 59,
-        "PMNTN_SN" : 4340,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.01,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197418.36367050745,
-              536926.45177583583
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 60,
-        "PMNTN_SN" : 4341,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.01,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197413.88939518109,
-              536939.23887275346
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 61,
-        "PMNTN_SN" : 4342,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.33,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 6,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197937.42917314172,
-              537168.01709275506
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 62,
-        "PMNTN_SN" : 4343,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.17,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 3,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197868.31275084242,
-              537972.39978989214
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 63,
-        "PMNTN_SN" : 4344,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.36,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 6,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196677.13804250862,
-              536859.20092487708
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 64,
-        "PMNTN_SN" : 4345,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.24,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 4,
-        "PMNTN_GODN" : 3,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197575.82643139362,
-              538713.45024704374
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 65,
-        "PMNTN_SN" : 4346,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.21,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 4,
-        "PMNTN_GODN" : 3,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197076.08930312656,
-              537865.60506849922
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 66,
-        "PMNTN_SN" : 4347,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.14,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196963.61229918525,
-              538244.79967668094
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 67,
-        "PMNTN_SN" : 4348,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.34,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 6,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196928.82043156121,
-              538507.68504915014
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 68,
-        "PMNTN_SN" : 4349,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.06,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196732.08988002967,
-              536853.52918860689
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 69,
-        "PMNTN_SN" : 4350,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.12,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197447.04877094831,
-              538553.55097266473
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 70,
-        "PMNTN_SN" : 4351,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.26,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 5,
-        "PMNTN_GODN" : 3,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197251.1500516925,
-              538601.38487977535
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 71,
-        "PMNTN_SN" : 4352,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
+        "FID" : 7,
+        "PMNTN_SN" : 49624,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "상적동구간",
         "PMNTN_MAIN" : " ",
         "PMNTN_LT" : 0.22,
         "PMNTN_DFFL" : "쉬움",
@@ -2343,1110 +351,84 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              197251.1500516925,
-              538601.38487977535
+              206403.04608683381,
+              536120.09412601218
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 72,
-        "PMNTN_SN" : 4353,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
+        "FID" : 8,
+        "PMNTN_SN" : 49625,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "상적동구간",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.52,
+        "PMNTN_LT" : 1.08,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 9,
-        "PMNTN_GODN" : 6,
+        "PMNTN_UPPL" : 19,
+        "PMNTN_GODN" : 13,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
         "PMNTN_CLS_" : " ",
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              197469.41524909344,
-              537624.87376557663
+              205615.44033894688,
+              535875.02460612543
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 73,
-        "PMNTN_SN" : 4354,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
+        "FID" : 9,
+        "PMNTN_SN" : 49626,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "상적동구간",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.17,
+        "PMNTN_LT" : 1.12,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 3,
-        "PMNTN_GODN" : 2,
+        "PMNTN_UPPL" : 21,
+        "PMNTN_GODN" : 15,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
         "PMNTN_CLS_" : " ",
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              197114.74541900493,
-              537965.97847139649
+              206034.70618914627,
+              536497.02420660295
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 74,
-        "PMNTN_SN" : 4355,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.3,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 5,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196881.71980548743,
-              536670.0312463101
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 75,
-        "PMNTN_SN" : 4356,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.13,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196881.71980548743,
-              536670.0312463101
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 76,
-        "PMNTN_SN" : 4357,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.23,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 4,
-        "PMNTN_GODN" : 3,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197248.01644712035,
-              538239.01421547681
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 77,
-        "PMNTN_SN" : 4358,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.33,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 6,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196970.13780799042,
-              538254.34206450172
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 78,
-        "PMNTN_SN" : 4359,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.72,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 13,
-        "PMNTN_GODN" : 9,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              198018.34343584441,
-              538184.08697648905
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 79,
-        "PMNTN_SN" : 4360,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.31,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 5,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197294.84934108704,
-              538194.55911287479
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 80,
-        "PMNTN_SN" : 4361,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.24,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 4,
-        "PMNTN_GODN" : 3,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197571.99303265568,
-              537330.6495970618
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 81,
-        "PMNTN_SN" : 4362,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.09,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197519.40487500746,
-              537556.93419997767
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 82,
-        "PMNTN_SN" : 4363,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.07,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197294.84934108704,
-              538194.55911287479
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 83,
-        "PMNTN_SN" : 4364,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.02,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196895.60393561609,
-              536662.35669774748
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 84,
-        "PMNTN_SN" : 4365,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.14,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197701.99397087935,
-              538701.81794835813
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 85,
-        "PMNTN_SN" : 4366,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.04,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197732.31846286077,
-              538685.76328373328
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 86,
-        "PMNTN_SN" : 4367,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.15,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 3,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196839.31286107656,
-              536776.92780473083
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 87,
-        "PMNTN_SN" : 4368,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.31,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 5,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197130.69614758715,
-              538415.02395716496
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 88,
-        "PMNTN_SN" : 4369,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.01,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196970.13780799042,
-              538254.34206450172
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 89,
-        "PMNTN_SN" : 4370,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.14,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196840.37919628806,
-              538422.16192281805
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 90,
-        "PMNTN_SN" : 4371,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.14,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196854.08345885202,
-              538304.66165659018
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 91,
-        "PMNTN_SN" : 4372,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.12,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196875.3546998892,
-              538198.18214412034
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 92,
-        "PMNTN_SN" : 4373,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.07,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196837.98681185395,
-              538083.82871134952
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 93,
-        "PMNTN_SN" : 4374,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.09,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196822.15642977227,
-              537997.55390921421
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 94,
-        "PMNTN_SN" : 4375,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.33,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 6,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196641.91158965789,
-              537341.81323398277
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 95,
-        "PMNTN_SN" : 4376,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.1,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196848.28976700176,
-              537571.28827832639
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 96,
-        "PMNTN_SN" : 4377,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.39,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 7,
-        "PMNTN_GODN" : 5,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196928.82043156121,
-              538507.68504915014
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 97,
-        "PMNTN_SN" : 4378,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.08,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196881.42138519417,
-              538042.42477018572
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 98,
-        "PMNTN_SN" : 4379,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.14,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196875.3546998892,
-              538198.18214412034
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 99,
-        "PMNTN_SN" : 4380,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.24,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 4,
-        "PMNTN_GODN" : 3,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197076.08930312656,
-              537865.60506849922
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 100,
-        "PMNTN_SN" : 4381,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.11,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197373.40524033923,
-              538637.95303709246
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 101,
-        "PMNTN_SN" : 4382,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.19,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 3,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196658.20603321027,
-              537178.76399494335
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 102,
-        "PMNTN_SN" : 4383,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.08,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196914.93523017131,
-              538065.38092505187
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 103,
-        "PMNTN_SN" : 4384,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.09,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196929.72939469665,
-              538131.6061364729
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 104,
-        "PMNTN_SN" : 4385,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.07,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196956.80043071508,
-              538017.79822282121
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 105,
-        "PMNTN_SN" : 4386,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.04,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196914.93523017131,
-              538065.38092505187
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 106,
-        "PMNTN_SN" : 4387,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.01,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              197254.02674695663,
-              538612.08342616446
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 107,
-        "PMNTN_SN" : 4388,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
+        "FID" : 10,
+        "PMNTN_SN" : 49627,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
         "PMNTN_LT" : 0.03,
@@ -3459,25 +441,354 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              197254.02674695663,
-              538612.08342616446
+              203777.56412781496,
+              535593.91051674262
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 108,
-        "PMNTN_SN" : 4389,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
+        "FID" : 11,
+        "PMNTN_SN" : 49628,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.11,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 2,
+        "PMNTN_GODN" : 1,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              204142.51898132265,
+              534928.00543528236
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 12,
+        "PMNTN_SN" : 49629,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.54,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 10,
+        "PMNTN_GODN" : 7,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              204142.51898132265,
+              534928.00543528236
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 13,
+        "PMNTN_SN" : 49630,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.47,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 8,
+        "PMNTN_GODN" : 6,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203343.66784712113,
+              534937.08189458027
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 14,
+        "PMNTN_SN" : 49631,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.57,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 10,
+        "PMNTN_GODN" : 7,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              202826.82400411367,
+              534860.90637172945
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 15,
+        "PMNTN_SN" : 49632,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "석운동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.26,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 27,
+        "PMNTN_GODN" : 19,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              202618.51512949355,
+              530416.36092398316
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 16,
+        "PMNTN_SN" : 49633,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.01,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 18,
+        "PMNTN_GODN" : 12,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203697.56134248246,
+              537387.0393456351
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 17,
+        "PMNTN_SN" : 49634,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.12,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 2,
+        "PMNTN_GODN" : 1,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203791.98943212163,
+              536508.37788711861
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 18,
+        "PMNTN_SN" : 49635,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.78,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 14,
+        "PMNTN_GODN" : 10,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203705.76560339238,
+              535963.86338389106
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 19,
+        "PMNTN_SN" : 49636,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.07,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 1,
+        "PMNTN_GODN" : 1,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203705.76560339238,
+              535963.86338389106
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 20,
+        "PMNTN_SN" : 49637,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.79,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 14,
+        "PMNTN_GODN" : 10,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203753.89553196821,
+              535610.05979436077
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 21,
+        "PMNTN_SN" : 49638,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.37,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 7,
+        "PMNTN_GODN" : 5,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203692.04302482493,
+              536031.79225302115
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 22,
+        "PMNTN_SN" : 49639,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
         "PMNTN_LT" : 0.35,
@@ -3490,25 +801,204 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              196889.94665909559,
-              537662.50076297112
+              203696.26678195689,
+              535283.5355550535
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 109,
-        "PMNTN_SN" : 4390,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
+        "FID" : 23,
+        "PMNTN_SN" : 49640,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.15,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 3,
+        "PMNTN_GODN" : 2,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203693.4299919121,
+              535148.00906795263
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 24,
+        "PMNTN_SN" : 49641,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.75,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 13,
+        "PMNTN_GODN" : 9,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              204192.99217475578,
+              536827.30583838187
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 25,
+        "PMNTN_SN" : 49642,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.98,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 17,
+        "PMNTN_GODN" : 12,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              202907.75151883531,
+              537354.43718378246
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 26,
+        "PMNTN_SN" : 49643,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.83,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 15,
+        "PMNTN_GODN" : 10,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203827.77831915487,
+              537416.75175838545
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 27,
+        "PMNTN_SN" : 49644,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.2,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 4,
+        "PMNTN_GODN" : 2,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203697.56134248246,
+              537387.0393456351
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 28,
+        "PMNTN_SN" : 49645,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.66,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 12,
+        "PMNTN_GODN" : 8,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              202907.75151883531,
+              537354.43718378246
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 29,
+        "PMNTN_SN" : 49646,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
         "PMNTN_LT" : 0.24,
@@ -3521,30 +1011,479 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              196832.91675395984,
-              538085.50660991482
+              203172.37260876689,
+              537756.66050195321
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 110,
-        "PMNTN_SN" : 4391,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
+        "FID" : 30,
+        "PMNTN_SN" : 49647,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.06,
+        "PMNTN_LT" : 1.31,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
+        "PMNTN_UPPL" : 23,
+        "PMNTN_GODN" : 16,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203144.63413822558,
+              537985.68248839676
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 31,
+        "PMNTN_SN" : 49648,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "양재동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.85,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 15,
+        "PMNTN_GODN" : 11,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203242.19769359939,
+              539122.92976952717
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 32,
+        "PMNTN_SN" : 49649,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "주암동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.77,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 14,
+        "PMNTN_GODN" : 10,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203162.74085011426,
+              539776.1038743034
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 33,
+        "PMNTN_SN" : 49650,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 2.8,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 49,
+        "PMNTN_GODN" : 35,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              206379.762361506,
+              535913.18686634116
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 34,
+        "PMNTN_SN" : 49651,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 2.02,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 36,
+        "PMNTN_GODN" : 25,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              204249.60194287915,
+              534928.37952094153
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 35,
+        "PMNTN_SN" : 49652,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 2.7,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 48,
+        "PMNTN_GODN" : 33,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203696.26678195689,
+              535283.5355550535
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 36,
+        "PMNTN_SN" : 49653,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 2.07,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 37,
+        "PMNTN_GODN" : 26,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203692.04302482493,
+              536031.79225302115
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 37,
+        "PMNTN_SN" : 49654,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.29,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 23,
+        "PMNTN_GODN" : 16,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              205255.74337700289,
+              536675.19653590582
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 38,
+        "PMNTN_SN" : 49655,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "운중동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.41,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 7,
+        "PMNTN_GODN" : 5,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              204946.75077025872,
+              532963.91303744167
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 39,
+        "PMNTN_SN" : 49656,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "운중동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.34,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 6,
+        "PMNTN_GODN" : 4,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              204946.75077025872,
+              532963.91303744167
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 40,
+        "PMNTN_SN" : 49657,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.84,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 15,
+        "PMNTN_GODN" : 10,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              204746.75838528387,
+              533692.56574611738
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 41,
+        "PMNTN_SN" : 49658,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "금토동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.99,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 35,
+        "PMNTN_GODN" : 25,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              204746.75838528387,
+              533692.56574611738
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 42,
+        "PMNTN_SN" : 49659,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.13,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 20,
+        "PMNTN_GODN" : 14,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              202999.22206468415,
+              532166.13698207028
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 43,
+        "PMNTN_SN" : 49660,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.86,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 18,
+        "PMNTN_GODN" : 13,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203310.60753803141,
+              533532.40758600272
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 44,
+        "PMNTN_SN" : 49661,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "운중동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.23,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 22,
+        "PMNTN_GODN" : 15,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203396.81897027791,
+              533606.36865082383
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 45,
+        "PMNTN_SN" : 49662,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.12,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 2,
         "PMNTN_GODN" : 1,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
@@ -3552,59 +1491,747 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              196769.0156890247,
-              537955.05612068623
+              203310.60753803141,
+              533532.40758600272
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 111,
-        "PMNTN_SN" : 4392,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
+        "FID" : 46,
+        "PMNTN_SN" : 49663,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.06,
+        "PMNTN_LT" : 0.65,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 1,
+        "PMNTN_UPPL" : 11,
+        "PMNTN_GODN" : 8,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
         "PMNTN_CLS_" : " ",
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              196815.32958351169,
-              537987.80088539794
+              203396.81897027791,
+              533606.36865082383
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 112,
-        "PMNTN_SN" : 4393,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
+        "FID" : 47,
+        "PMNTN_SN" : 49664,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.17,
+        "PMNTN_LT" : 0.24,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 4,
+        "PMNTN_GODN" : 3,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203396.81897027791,
+              533606.36865082383
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 48,
+        "PMNTN_SN" : 49665,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.78,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 14,
+        "PMNTN_GODN" : 10,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203241.75475397054,
+              533751.60104670376
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 49,
+        "PMNTN_SN" : 49666,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.38,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 7,
+        "PMNTN_GODN" : 5,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203241.75475397054,
+              533751.60104670376
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 50,
+        "PMNTN_SN" : 49667,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.97,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 17,
+        "PMNTN_GODN" : 12,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              202998.07010411192,
+              533918.61413092166
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 51,
+        "PMNTN_SN" : 49668,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.4,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 7,
+        "PMNTN_GODN" : 5,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              202998.07010411192,
+              533918.61413092166
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 52,
+        "PMNTN_SN" : 49669,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.69,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 12,
+        "PMNTN_GODN" : 9,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203111.13849581592,
+              534647.67679646797
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 53,
+        "PMNTN_SN" : 49670,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.96,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 17,
+        "PMNTN_GODN" : 12,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203879.59141126741,
+              533865.42434004322
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 54,
+        "PMNTN_SN" : 49671,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.22,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 22,
+        "PMNTN_GODN" : 15,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203811.81954800244,
+              533954.95984442532
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 55,
+        "PMNTN_SN" : 49672,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.48,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 8,
+        "PMNTN_GODN" : 6,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203343.66784712113,
+              534937.08189458027
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 56,
+        "PMNTN_SN" : 49673,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.45,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 8,
+        "PMNTN_GODN" : 6,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203111.13849581592,
+              534647.67679646797
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 57,
+        "PMNTN_SN" : 49674,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.41,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 7,
+        "PMNTN_GODN" : 5,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203730.87411047611,
+              535681.79082456231
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 58,
+        "PMNTN_SN" : 49675,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.32,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 6,
+        "PMNTN_GODN" : 4,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              201190.7188028777,
+              534951.56792177819
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 59,
+        "PMNTN_SN" : 49676,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.53,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 9,
+        "PMNTN_GODN" : 7,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              201191.46136237588,
+              535236.98006154224
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 60,
+        "PMNTN_SN" : 49677,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.3,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 5,
+        "PMNTN_GODN" : 4,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              201191.46136237588,
+              535236.98006154224
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 61,
+        "PMNTN_SN" : 49678,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.43,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 8,
+        "PMNTN_GODN" : 5,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200890.83738301136,
+              535086.67175313644
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 62,
+        "PMNTN_SN" : 49679,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.47,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 8,
+        "PMNTN_GODN" : 6,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200890.83738301136,
+              535086.67175313644
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 63,
+        "PMNTN_SN" : 49680,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.13,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 2,
+        "PMNTN_GODN" : 2,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              201163.2046207143,
+              534839.27388784103
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 64,
+        "PMNTN_SN" : 49681,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.01,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 1,
+        "PMNTN_GODN" : 0,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              201193.83598403819,
+              534943.64390946366
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 65,
+        "PMNTN_SN" : 49682,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.46,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 8,
+        "PMNTN_GODN" : 6,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200757.68461486511,
+              534750.8826474417
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 66,
+        "PMNTN_SN" : 49683,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.25,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 4,
+        "PMNTN_GODN" : 3,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200757.68461486511,
+              534750.8826474417
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 67,
+        "PMNTN_SN" : 49684,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.52,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 9,
+        "PMNTN_GODN" : 6,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              201270.65625835024,
+              535616.84093526192
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 68,
+        "PMNTN_SN" : 49685,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.23,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 4,
+        "PMNTN_GODN" : 3,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              201270.65625835024,
+              535616.84093526192
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 69,
+        "PMNTN_SN" : 49686,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.32,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 6,
+        "PMNTN_GODN" : 4,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              201148.97541146725,
+              535694.7929652296
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 70,
+        "PMNTN_SN" : 49687,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.15,
         "PMNTN_DFFL" : "쉬움",
         "PMNTN_UPPL" : 3,
         "PMNTN_GODN" : 2,
@@ -3614,25 +2241,84 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              196769.0156890247,
-              537955.05612068623
+              201148.97541146725,
+              535694.7929652296
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 113,
-        "PMNTN_SN" : 4394,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
+        "FID" : 71,
+        "PMNTN_SN" : 49688,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "문원동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.22,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 4,
+        "PMNTN_GODN" : 3,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              201022.90599468723,
+              535857.883891223
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 72,
+        "PMNTN_SN" : 49689,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.54,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 10,
+        "PMNTN_GODN" : 7,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              201080.21024458017,
+              536186.19892217778
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 73,
+        "PMNTN_SN" : 49690,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
         "PMNTN_LT" : 0.07,
@@ -3645,28 +2331,27 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              196954.92171391193,
-              537684.27585518919
+              201200.11489240453,
+              535406.63469670154
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 114,
-        "PMNTN_SN" : 4395,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
+        "FID" : 74,
+        "PMNTN_SN" : 49691,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.01,
+        "PMNTN_LT" : 0.03,
         "PMNTN_DFFL" : "쉬움",
         "PMNTN_UPPL" : 1,
         "PMNTN_GODN" : 0,
@@ -3676,59 +2361,27 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              196837.98681185395,
-              538083.82871134952
+              201207.26753246039,
+              535338.30140516907
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 115,
-        "PMNTN_SN" : 4396,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
+        "FID" : 75,
+        "PMNTN_SN" : 49692,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.01,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              196822.15642977227,
-              537997.55390921421
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 116,
-        "PMNTN_SN" : 4397,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.05,
+        "PMNTN_LT" : 0.07,
         "PMNTN_DFFL" : "쉬움",
         "PMNTN_UPPL" : 1,
         "PMNTN_GODN" : 1,
@@ -3738,30 +2391,149 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              196808.71249060705,
-              537927.50100515783
+              201192.2757117385,
+              535306.76829078421
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 117,
-        "PMNTN_SN" : 4398,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : "중앙동구간",
+        "FID" : 76,
+        "PMNTN_SN" : 49693,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.2,
+        "PMNTN_LT" : 0.7,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 4,
+        "PMNTN_UPPL" : 12,
+        "PMNTN_GODN" : 9,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200609.11672706902,
+              535618.56317856163
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 77,
+        "PMNTN_SN" : 49694,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "문원동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.3,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 5,
+        "PMNTN_GODN" : 4,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200728.5226360485,
+              535852.36356773041
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 78,
+        "PMNTN_SN" : 49695,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "문원동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.1,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 2,
+        "PMNTN_GODN" : 1,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              201080.21024458017,
+              536186.19892217778
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 79,
+        "PMNTN_SN" : 49696,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.33,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 6,
+        "PMNTN_GODN" : 4,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200869.5956582129,
+              536385.77291717939
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 80,
+        "PMNTN_SN" : 49697,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "문원동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.14,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 2,
         "PMNTN_GODN" : 2,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
@@ -3769,26 +2541,775 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              197985.50560397655,
-              536023.78565712459
+              200861.52957664058,
+              536253.70084325783
             ]
-          ]
-        ]
+]        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 118,
-        "PMNTN_SN" : 4399,
-        "MNTN_CODE" : "116200201",
-        "MNTN_NM" : "관악산",
-        "PMNTN_NM" : "갈현동구간",
+        "FID" : 81,
+        "PMNTN_SN" : 49698,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "막계동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.17,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 3,
+        "PMNTN_GODN" : 2,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200869.5956582129,
+              536385.77291717939
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 82,
+        "PMNTN_SN" : 49699,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "막계동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.19,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 21,
+        "PMNTN_GODN" : 15,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              202575.30922714248,
+              537953.49828709476
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 83,
+        "PMNTN_SN" : 49700,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "주암동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.52,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 9,
+        "PMNTN_GODN" : 6,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              202230.8446615627,
+              538285.59844605997
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 84,
+        "PMNTN_SN" : 49701,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "문원동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.51,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 9,
+        "PMNTN_GODN" : 6,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              199843.2120535709,
+              535096.70775085501
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 85,
+        "PMNTN_SN" : 49702,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "문원동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.32,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 6,
+        "PMNTN_GODN" : 4,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200228.52952844929,
+              535126.84750958346
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 86,
+        "PMNTN_SN" : 49703,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "문원동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.1,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 2,
+        "PMNTN_GODN" : 1,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200444.60239174962,
+              535367.64865502343
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 87,
+        "PMNTN_SN" : 49704,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.37,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 7,
+        "PMNTN_GODN" : 5,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200217.04025873076,
+              535802.75353902578
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 88,
+        "PMNTN_SN" : 49705,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.33,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 6,
+        "PMNTN_GODN" : 4,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200386.32739087939,
+              535941.0238718465
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 89,
+        "PMNTN_SN" : 49706,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.24,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 4,
+        "PMNTN_GODN" : 3,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200217.04025873076,
+              535802.75353902578
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 90,
+        "PMNTN_SN" : 49707,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "문원동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.37,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 7,
+        "PMNTN_GODN" : 5,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              199934.12241416983,
+              536009.70026451908
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 91,
+        "PMNTN_SN" : 49708,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "문원동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.55,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 10,
+        "PMNTN_GODN" : 7,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200045.61023707036,
+              536183.62516264431
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 92,
+        "PMNTN_SN" : 49709,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.47,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 8,
+        "PMNTN_GODN" : 6,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200604.96895277873,
+              534936.93007514067
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 93,
+        "PMNTN_SN" : 49710,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.47,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 8,
+        "PMNTN_GODN" : 6,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200528.69249825366,
+              535324.72283668257
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 94,
+        "PMNTN_SN" : 49711,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.41,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 7,
+        "PMNTN_GODN" : 5,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200528.69249825366,
+              535324.72283668257
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 95,
+        "PMNTN_SN" : 49712,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.1,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 2,
+        "PMNTN_GODN" : 1,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200537.6863495009,
+              535685.01791202463
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 96,
+        "PMNTN_SN" : 49713,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "막계동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.58,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 10,
+        "PMNTN_GODN" : 7,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200523.80872388929,
+              536760.37131793797
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 97,
+        "PMNTN_SN" : 49714,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.02,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 18,
+        "PMNTN_GODN" : 13,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              202137.21020042896,
+              532783.39842264727
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 98,
+        "PMNTN_SN" : 49715,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "포일동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.08,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 20,
+        "PMNTN_GODN" : 14,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              199305.87728412356,
+              533649.35186808929
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 99,
+        "PMNTN_SN" : 49716,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "문원동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.49,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 9,
+        "PMNTN_GODN" : 6,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              199832.35910661984,
+              534346.89707618766
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 100,
+        "PMNTN_SN" : 49717,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "청계동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 2.66,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 57,
+        "PMNTN_GODN" : 40,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200339.94293647259,
+              532914.78788984753
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 101,
+        "PMNTN_SN" : 49718,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.09,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 19,
+        "PMNTN_GODN" : 13,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200098.12798743136,
+              534061.80221970938
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 102,
+        "PMNTN_SN" : 49719,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "문원동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.62,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 12,
+        "PMNTN_GODN" : 8,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              200158.07398197614,
+              534639.00737039186
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 103,
+        "PMNTN_SN" : 49720,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "신촌동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 2.61,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 46,
+        "PMNTN_GODN" : 32,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              209024.93307663314,
+              539813.73417362198
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 104,
+        "PMNTN_SN" : 49721,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.37,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 24,
+        "PMNTN_GODN" : 17,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              202137.21020042896,
+              532783.39842264727
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 105,
+        "PMNTN_SN" : 49722,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "청계동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.29,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 23,
+        "PMNTN_GODN" : 16,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              203329.78858603444,
+              532656.7128371764
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 106,
+        "PMNTN_SN" : 49723,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
         "PMNTN_LT" : 0.99,
         "PMNTN_DFFL" : "쉬움",
@@ -3800,17 +3321,136 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1105040200"
+        "MNTN_ID" : "2105990400"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              196665.56289574411,
-              536030.28140626289
+              202472.67138853576,
+              533551.1196594052
             ]
-          ]
-        ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 107,
+        "PMNTN_SN" : 49724,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : "청계동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.45,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 8,
+        "PMNTN_GODN" : 6,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              202695.7622786751,
+              534151.63040182367
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 108,
+        "PMNTN_SN" : 49725,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.44,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 25,
+        "PMNTN_GODN" : 18,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              201492.14365542773,
+              534911.27949722297
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 109,
+        "PMNTN_SN" : 49726,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.74,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 13,
+        "PMNTN_GODN" : 9,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              202575.30922714248,
+              537953.49828709476
+            ]
+]        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 110,
+        "PMNTN_SN" : 49727,
+        "MNTN_CODE" : "412900401",
+        "MNTN_NM" : "청계산",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.66,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 12,
+        "PMNTN_GODN" : 8,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "2105990400"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              202575.30922714248,
+              537953.49828709476
+            ]
+]        ]
       }
     }
   ]

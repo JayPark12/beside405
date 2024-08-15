@@ -122,1334 +122,137 @@
       "length" : 10
     }
   ],
-  "content": "봉제산입니다 ~!",
   "features" : [
     {
       "attributes" : {
         "FID" : 0,
-        "PMNTN_SN" : 25597,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
+        "PMNTN_SN" : 9904,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.16,
+        "PMNTN_LT" : 0.67,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 3,
-        "PMNTN_GODN" : 2,
+        "PMNTN_UPPL" : 12,
+        "PMNTN_GODN" : 8,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
         "PMNTN_CLS_" : " ",
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
+        "MNTN_ID" : "414500401"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              187247.93046391197,
-              549744.24058638327
+              214767.20850000065,
+              542924.08130000345
             ]
-]        ]
+          ]
+        ]
       }
     },
     {
       "attributes" : {
         "FID" : 1,
-        "PMNTN_SN" : 25598,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
+        "PMNTN_SN" : 9905,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.24,
+        "PMNTN_LT" : 1.24,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 4,
-        "PMNTN_GODN" : 3,
+        "PMNTN_UPPL" : 22,
+        "PMNTN_GODN" : 15,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
         "PMNTN_CLS_" : " ",
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
+        "MNTN_ID" : "414500401"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              187339.29571372829,
-              549956.05530069955
+              214213.08239999972,
+              543242.81960000098
             ]
-]        ]
+          ]
+        ]
       }
     },
     {
       "attributes" : {
         "FID" : 2,
-        "PMNTN_SN" : 25599,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "등촌동구간",
+        "PMNTN_SN" : 9906,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.15,
+        "PMNTN_LT" : 0.67,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 3,
-        "PMNTN_GODN" : 2,
+        "PMNTN_UPPL" : 12,
+        "PMNTN_GODN" : 8,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
         "PMNTN_CLS_" : " ",
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
+        "MNTN_ID" : "414500401"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              187399.87213459425,
-              549805.8829877954
+              214213.08239999972,
+              543242.81960000098
             ]
-]        ]
+          ]
+        ]
       }
     },
     {
       "attributes" : {
         "FID" : 3,
-        "PMNTN_SN" : 25600,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
+        "PMNTN_SN" : 9907,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.09,
+        "PMNTN_LT" : 0.91,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
+        "PMNTN_UPPL" : 16,
+        "PMNTN_GODN" : 11,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
         "PMNTN_CLS_" : " ",
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
+        "MNTN_ID" : "414500401"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              187427.68557194714,
-              549938.25393059291
+              215597.25129999872,
+              543282.12970000133
             ]
-]        ]
+          ]
+        ]
       }
     },
     {
       "attributes" : {
         "FID" : 4,
-        "PMNTN_SN" : 25601,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "등촌동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.11,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187434.12123173382,
-              550018.00835746154
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 5,
-        "PMNTN_SN" : 25602,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "화곡동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.11,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187333.49448106252,
-              550033.67886714265
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 6,
-        "PMNTN_SN" : 25603,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "화곡동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.19,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 3,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187123.5350760147,
-              549972.80524949916
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 7,
-        "PMNTN_SN" : 25604,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "화곡동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.19,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 3,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187123.5350760147,
-              549972.80524949916
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 8,
-        "PMNTN_SN" : 25605,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.16,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 3,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187169.48889112473,
-              550192.16535115056
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 9,
-        "PMNTN_SN" : 25606,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "화곡동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.31,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 5,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187491.66064255685,
-              548856.92085072771
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 10,
-        "PMNTN_SN" : 25607,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "등촌동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.1,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187499.11346030328,
-              549935.07826803438
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 11,
-        "PMNTN_SN" : 25608,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "등촌동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.19,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 3,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187685.11540720612,
-              549051.60331498645
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 12,
-        "PMNTN_SN" : 25609,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "등촌동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.19,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 3,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187862.82544193137,
-              549045.30155673064
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 13,
-        "PMNTN_SN" : 25610,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "등촌동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.24,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 4,
-        "PMNTN_GODN" : 3,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187676.77427002881,
-              548978.96078854054
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 14,
-        "PMNTN_SN" : 25611,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.11,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187674.070819919,
-              548841.40182001889
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 15,
-        "PMNTN_SN" : 25612,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "등촌동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.16,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 3,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187703.20829751343,
-              548774.81448392011
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 16,
-        "PMNTN_SN" : 25613,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.18,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 3,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187703.20829751343,
-              548774.81448392011
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 17,
-        "PMNTN_SN" : 25614,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "화곡동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.27,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 5,
-        "PMNTN_GODN" : 3,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              186910.15607997309,
-              548837.37885029614
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 18,
-        "PMNTN_SN" : 25615,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.09,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              186910.15607997309,
-              548837.37885029614
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 19,
-        "PMNTN_SN" : 25616,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.35,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 6,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187393.47804418858,
-              549179.40449639969
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 20,
-        "PMNTN_SN" : 25617,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.06,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187628.69372434542,
-              549115.5176200401
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 21,
-        "PMNTN_SN" : 25618,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.03,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187662.9625132177,
-              549077.50799267367
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 22,
-        "PMNTN_SN" : 25619,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.32,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 6,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187275.01200360246,
-              548895.33309451677
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 23,
-        "PMNTN_SN" : 25620,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "등촌동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.27,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 5,
-        "PMNTN_GODN" : 3,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187171.56709730346,
-              549408.15138847381
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 24,
-        "PMNTN_SN" : 25621,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "화곡동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.11,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              186887.40500799939,
-              549455.90248388425
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 25,
-        "PMNTN_SN" : 25622,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "화곡동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.09,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              186887.40500799939,
-              549455.90248388425
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 26,
-        "PMNTN_SN" : 25623,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "등촌동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.17,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 3,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187247.93046391197,
-              549744.24058638327
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 27,
-        "PMNTN_SN" : 25624,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "화곡동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.29,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 5,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187169.48889112473,
-              550192.16535115056
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 28,
-        "PMNTN_SN" : 25625,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "화곡동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.06,
-        "PMNTN_DFFL" : "중간",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187214.8569067847,
-              550224.48602128029
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 29,
-        "PMNTN_SN" : 25626,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "등촌동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.15,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 3,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187351.27962416876,
-              550415.16077868454
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 30,
-        "PMNTN_SN" : 25627,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.08,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187280.70726507157,
-              550481.02609105594
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 31,
-        "PMNTN_SN" : 25628,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "화곡동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.26,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 5,
-        "PMNTN_GODN" : 3,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              186986.71885419078,
-              548834.71752324887
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 32,
-        "PMNTN_SN" : 25629,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "화곡동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.08,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187290.67837335169,
-              548864.53168836795
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 33,
-        "PMNTN_SN" : 25630,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.32,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 6,
-        "PMNTN_GODN" : 4,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              186986.71885419078,
-              548834.71752324887
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 34,
-        "PMNTN_SN" : 25631,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "화곡동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.1,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187220.40612025373,
-              550552.88955522329
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 35,
-        "PMNTN_SN" : 25632,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.03,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187280.70726507157,
-              550481.02609105594
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 36,
-        "PMNTN_SN" : 25633,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.04,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187275.01200360246,
-              548895.33309451677
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 37,
-        "PMNTN_SN" : 25634,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "화곡동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.07,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187220.79871532321,
-              549805.60409002937
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 38,
-        "PMNTN_SN" : 25635,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "화곡동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.07,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187398.2961581815,
-              550258.20556803048
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 39,
-        "PMNTN_SN" : 25636,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.17,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 3,
-        "PMNTN_GODN" : 2,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187351.27962416876,
-              550415.16077868454
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 40,
-        "PMNTN_SN" : 25637,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "화곡동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.08,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187579.4618027173,
-              548802.78450698219
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 41,
-        "PMNTN_SN" : 25638,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.02,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187333.7844665451,
-              550432.92374238931
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 42,
-        "PMNTN_SN" : 25639,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.22,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 4,
-        "PMNTN_GODN" : 3,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187155.56264919881,
-              549617.8345154468
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 43,
-        "PMNTN_SN" : 25640,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.25,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 4,
-        "PMNTN_GODN" : 3,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187393.47804418858,
-              549179.40449639969
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 44,
-        "PMNTN_SN" : 25641,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
+        "PMNTN_SN" : 9908,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
         "PMNTN_LT" : 0.57,
@@ -1462,59 +265,340 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
+        "MNTN_ID" : "414500401"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              187250.64178486262,
-              549188.38603798114
+              214822.42230000068,
+              543316.30819999985
             ]
-]        ]
+          ]
+        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 45,
-        "PMNTN_SN" : 25642,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "등촌동구간",
+        "FID" : 5,
+        "PMNTN_SN" : 9909,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.1,
+        "PMNTN_LT" : 0.35,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
+        "PMNTN_UPPL" : 6,
+        "PMNTN_GODN" : 4,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
         "PMNTN_CLS_" : " ",
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
+        "MNTN_ID" : "414500401"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              187274.18450569361,
-              549236.34987412021
+              215356.48130000103,
+              543478.55269999802
             ]
-]        ]
+          ]
+        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 46,
-        "PMNTN_SN" : 25643,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
+        "FID" : 6,
+        "PMNTN_SN" : 9910,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.24,
+        "PMNTN_LT" : 0.38,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 4,
+        "PMNTN_UPPL" : 7,
+        "PMNTN_GODN" : 5,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "414500401"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215115.64309999999,
+              543761.85759999789
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 7,
+        "PMNTN_SN" : 9911,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : "상사창동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.87,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 33,
+        "PMNTN_GODN" : 23,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "414500401"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              218038.05270000175,
+              543862.3116999995
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 8,
+        "PMNTN_SN" : 9912,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.64,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 11,
+        "PMNTN_GODN" : 8,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "414500401"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215560.51640000101,
+              544149.78309999965
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 9,
+        "PMNTN_SN" : 9913,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.39,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 7,
+        "PMNTN_GODN" : 5,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "414500401"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215493.21350000054,
+              544497.42280000262
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 10,
+        "PMNTN_SN" : 9914,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : "감이동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.16,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 29,
+        "PMNTN_GODN" : 20,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "414500401"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215493.21350000054,
+              544497.42280000262
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 11,
+        "PMNTN_SN" : 9915,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : "광암동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 2.96,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 74,
+        "PMNTN_GODN" : 52,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "414500401"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215526.10290000029,
+              546710.44360000081
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 12,
+        "PMNTN_SN" : 9916,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : "천현동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 5.13,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 91,
+        "PMNTN_GODN" : 63,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "414500401"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              218978.21280000079,
+              547920.60239999928
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 13,
+        "PMNTN_SN" : 9917,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : "검복리구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.43,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 8,
+        "PMNTN_GODN" : 5,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              217717.11450000014,
+              541322.47720000334
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 14,
+        "PMNTN_SN" : 9918,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.33,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 6,
+        "PMNTN_GODN" : 4,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              216371.79530000035,
+              541341.45530000143
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 15,
+        "PMNTN_SN" : 9919,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.28,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 5,
         "PMNTN_GODN" : 3,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
@@ -1522,327 +606,121 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
+        "MNTN_ID" : "416100701"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              187138.80131270736,
-              549348.98881927319
+              216619.3208999997,
+              541382.88990000263
             ]
-]        ]
+          ]
+        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 47,
-        "PMNTN_SN" : 25644,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
+        "FID" : 16,
+        "PMNTN_SN" : 9920,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.1,
+        "PMNTN_LT" : 0.32,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
+        "PMNTN_UPPL" : 6,
+        "PMNTN_GODN" : 4,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
         "PMNTN_CLS_" : " ",
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
+        "MNTN_ID" : "416100701"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              187077.08739310782,
-              549651.04313388281
+              216619.3208999997,
+              541382.88990000263
             ]
-]        ]
+          ]
+        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 48,
-        "PMNTN_SN" : 25645,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
+        "FID" : 17,
+        "PMNTN_SN" : 9921,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.1,
+        "PMNTN_LT" : 1.48,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
+        "PMNTN_UPPL" : 26,
+        "PMNTN_GODN" : 18,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
         "PMNTN_CLS_" : " ",
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
+        "MNTN_ID" : "416100701"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              187662.9625132177,
-              549077.50799267367
+              218010.00179999974,
+              541531.60100000165
             ]
-]        ]
+          ]
+        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 49,
-        "PMNTN_SN" : 25646,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
+        "FID" : 18,
+        "PMNTN_SN" : 9922,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.08,
+        "PMNTN_LT" : 0.48,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 1,
+        "PMNTN_UPPL" : 8,
+        "PMNTN_GODN" : 6,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
         "PMNTN_CLS_" : " ",
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
+        "MNTN_ID" : "416100701"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              187674.070819919,
-              548841.40182001889
+              217507.6062000012,
+              541565.8574000001
             ]
-]        ]
+          ]
+        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 50,
-        "PMNTN_SN" : 25647,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
+        "FID" : 19,
+        "PMNTN_SN" : 9923,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.09,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              186918.30843565706,
-              549372.94627772458
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 51,
-        "PMNTN_SN" : 25648,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.1,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              186918.30843565706,
-              549372.94627772458
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 52,
-        "PMNTN_SN" : 25649,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.06,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187319.81751102675,
-              550017.98387522995
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 53,
-        "PMNTN_SN" : 25650,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.04,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187255.587676608,
-              550066.69276905246
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 54,
-        "PMNTN_SN" : 25651,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.04,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187285.06762650609,
-              550034.49982524104
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 55,
-        "PMNTN_SN" : 25652,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.02,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187319.81751102675,
-              550017.98387522995
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 56,
-        "PMNTN_SN" : 25653,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "등촌동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.03,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187343.62881448492,
-              549297.01824118756
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 57,
-        "PMNTN_SN" : 25654,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.15,
+        "PMNTN_LT" : 0.19,
         "PMNTN_DFFL" : "쉬움",
         "PMNTN_UPPL" : 3,
         "PMNTN_GODN" : 2,
@@ -1852,204 +730,56 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
+        "MNTN_ID" : "416100701"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              187676.77427002881,
-              548978.96078854054
+              216545.19859999977,
+              541567.10390000045
             ]
-]        ]
+          ]
+        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 58,
-        "PMNTN_SN" : 25655,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
+        "FID" : 20,
+        "PMNTN_SN" : 9924,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.18,
+        "PMNTN_LT" : 0.64,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 3,
-        "PMNTN_GODN" : 2,
+        "PMNTN_UPPL" : 11,
+        "PMNTN_GODN" : 8,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
         "PMNTN_CLS_" : " ",
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
+        "MNTN_ID" : "416100701"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              187138.80131270736,
-              549348.98881927319
+              216023.66079999972,
+              541569.05020000041
             ]
-]        ]
+          ]
+        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 59,
-        "PMNTN_SN" : 25656,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.07,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187171.56709730346,
-              549408.15138847381
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 60,
-        "PMNTN_SN" : 25657,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.1,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187282.69693816453,
-              549230.28570058569
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 61,
-        "PMNTN_SN" : 25658,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.03,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187367.82538945507,
-              549187.17974263243
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 62,
-        "PMNTN_SN" : 25659,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.05,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187282.69693816453,
-              549230.28570058569
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 63,
-        "PMNTN_SN" : 25660,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : " ",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.04,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 1,
-        "PMNTN_GODN" : 0,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187250.64178486262,
-              549188.38603798114
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 64,
-        "PMNTN_SN" : 25661,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
+        "FID" : 21,
+        "PMNTN_SN" : 9925,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
         "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
         "PMNTN_LT" : 0.01,
@@ -2062,29 +792,30 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
+        "MNTN_ID" : "416100701"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              187274.18450569361,
-              549236.34987412021
+              216023.66079999972,
+              541569.05020000041
             ]
-]        ]
+          ]
+        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 65,
-        "PMNTN_SN" : 25662,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "화곡동구간",
+        "FID" : 22,
+        "PMNTN_SN" : 9926,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.12,
+        "PMNTN_LT" : 0.05,
         "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
+        "PMNTN_UPPL" : 1,
         "PMNTN_GODN" : 1,
         "PMNTN_MTRQ" : " ",
         "PMNTN_CNRL" : " ",
@@ -2092,85 +823,26 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
+        "MNTN_ID" : "416100701"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              187229.96555167995,
-              550396.61071919464
+              216037.90630000085,
+              541572.46910000034
             ]
-]        ]
+          ]
+        ]
       }
     },
     {
       "attributes" : {
-        "FID" : 66,
-        "PMNTN_SN" : 25663,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "등촌동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.21,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 4,
-        "PMNTN_GODN" : 3,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              187398.2961581815,
-              550258.20556803048
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 67,
-        "PMNTN_SN" : 25664,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "화곡동구간",
-        "PMNTN_MAIN" : " ",
-        "PMNTN_LT" : 0.11,
-        "PMNTN_DFFL" : "쉬움",
-        "PMNTN_UPPL" : 2,
-        "PMNTN_GODN" : 1,
-        "PMNTN_MTRQ" : " ",
-        "PMNTN_CNRL" : " ",
-        "PMNTN_CLS_" : " ",
-        "PMNTN_RISK" : " ",
-        "PMNTN_RECO" : " ",
-        "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
-      },
-      "geometry" : {
-        "paths" : [
-          [
-            [
-              186830.17514929362,
-              549334.93813101389
-            ]
-]        ]
-      }
-    },
-    {
-      "attributes" : {
-        "FID" : 68,
-        "PMNTN_SN" : 25665,
-        "MNTN_CODE" : "115000401",
-        "MNTN_NM" : "봉제산",
-        "PMNTN_NM" : "화곡동구간",
+        "FID" : 24,
+        "PMNTN_SN" : 9928,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
         "PMNTN_MAIN" : " ",
         "PMNTN_LT" : 0.14,
         "PMNTN_DFFL" : "쉬움",
@@ -2182,16 +854,1536 @@
         "PMNTN_RISK" : " ",
         "PMNTN_RECO" : " ",
         "DATA_STDR_" : "2016-12-31",
-        "MNTN_ID" : "1104990400"
+        "MNTN_ID" : "416100701"
       },
       "geometry" : {
         "paths" : [
           [
             [
-              186830.17514929362,
-              549334.93813101389
+              217509.88550000079,
+              541579.53299999982
             ]
-]        ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 25,
+        "PMNTN_SN" : 9929,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : "검복리구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.38,
+        "PMNTN_DFFL" : "중간",
+        "PMNTN_UPPL" : 7,
+        "PMNTN_GODN" : 5,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              217752.44340000115,
+              541612.51539999992
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 26,
+        "PMNTN_SN" : 9930,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.18,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 3,
+        "PMNTN_GODN" : 2,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              216025.4486000007,
+              541618.75010000169
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 27,
+        "PMNTN_SN" : 9931,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.23,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 4,
+        "PMNTN_GODN" : 3,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              216025.4486000007,
+              541618.75010000169
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 28,
+        "PMNTN_SN" : 9932,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.78,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 14,
+        "PMNTN_GODN" : 10,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              217136.24400000181,
+              541651.40160000138
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 29,
+        "PMNTN_SN" : 9933,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.63,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 11,
+        "PMNTN_GODN" : 8,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              217136.24400000181,
+              541651.40160000138
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 30,
+        "PMNTN_SN" : 9934,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.24,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 4,
+        "PMNTN_GODN" : 3,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              217533.90689999983,
+              541692.32169999927
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 31,
+        "PMNTN_SN" : 9935,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : "산성리구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.11,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 2,
+        "PMNTN_GODN" : 1,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              216420.83550000098,
+              541701.72370000184
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 32,
+        "PMNTN_SN" : 9936,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.57,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 10,
+        "PMNTN_GODN" : 7,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              216519.63829999883,
+              541729.34720000066
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 33,
+        "PMNTN_SN" : 9937,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.21,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 4,
+        "PMNTN_GODN" : 3,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215964.96940000076,
+              541781.02310000174
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 34,
+        "PMNTN_SN" : 9938,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.36,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 6,
+        "PMNTN_GODN" : 4,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215964.96940000076,
+              541781.02310000174
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 35,
+        "PMNTN_SN" : 9939,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.39,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 7,
+        "PMNTN_GODN" : 5,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              216057.98589999974,
+              541827.5746000018
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 36,
+        "PMNTN_SN" : 9940,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.28,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 5,
+        "PMNTN_GODN" : 3,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              217286.56960000005,
+              541866.79340000078
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 37,
+        "PMNTN_SN" : 9941,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.85,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 15,
+        "PMNTN_GODN" : 11,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215679.48979999963,
+              541922.90819999948
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 38,
+        "PMNTN_SN" : 9942,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : "산성리구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.64,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 11,
+        "PMNTN_GODN" : 8,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              216270.59890000056,
+              542018.15169999935
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 39,
+        "PMNTN_SN" : 9943,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.37,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 7,
+        "PMNTN_GODN" : 5,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              216908.22710000072,
+              542081.97149999999
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 40,
+        "PMNTN_SN" : 9944,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : "산성리구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.23,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 4,
+        "PMNTN_GODN" : 3,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              217328.03980000131,
+              542083.76510000043
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 41,
+        "PMNTN_SN" : 9945,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.03,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 1,
+        "PMNTN_GODN" : 0,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215535.32540000044,
+              542200.98020000011
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 42,
+        "PMNTN_SN" : 9946,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.66,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 12,
+        "PMNTN_GODN" : 8,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              217593.22159999982,
+              542213.59990000352
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 43,
+        "PMNTN_SN" : 9947,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.26,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 5,
+        "PMNTN_GODN" : 3,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215518.23080000095,
+              542225.48240000196
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 44,
+        "PMNTN_SN" : 9948,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.52,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 9,
+        "PMNTN_GODN" : 6,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              217315.57500000112,
+              542262.97340000235
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 45,
+        "PMNTN_SN" : 9949,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.33,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 6,
+        "PMNTN_GODN" : 4,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              217315.57500000112,
+              542262.97340000235
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 46,
+        "PMNTN_SN" : 9950,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.78,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 14,
+        "PMNTN_GODN" : 10,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215990.60879999958,
+              542316.71869999915
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 47,
+        "PMNTN_SN" : 9951,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.14,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 2,
+        "PMNTN_GODN" : 2,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              216298.13830000069,
+              542335.27270000055
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 48,
+        "PMNTN_SN" : 9952,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.12,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 2,
+        "PMNTN_GODN" : 1,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              217088.86000000034,
+              542381.69669999927
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 49,
+        "PMNTN_SN" : 9953,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.45,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 8,
+        "PMNTN_GODN" : 6,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215588.79900000058,
+              542403.65780000016
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 50,
+        "PMNTN_SN" : 9954,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.19,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 3,
+        "PMNTN_GODN" : 2,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              216139.38999999966,
+              542426.54780000448
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 51,
+        "PMNTN_SN" : 9955,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.34,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 6,
+        "PMNTN_GODN" : 4,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              216139.38999999966,
+              542426.54780000448
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 52,
+        "PMNTN_SN" : 9956,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.72,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 13,
+        "PMNTN_GODN" : 9,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              216337.16210000124,
+              542464.43850000203
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 53,
+        "PMNTN_SN" : 9957,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 1,
+        "PMNTN_GODN" : 0,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              216339.88660000078,
+              542465.50060000457
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 54,
+        "PMNTN_SN" : 9958,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.74,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 13,
+        "PMNTN_GODN" : 9,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              216339.88660000078,
+              542465.50060000457
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 55,
+        "PMNTN_SN" : 9959,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.42,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 7,
+        "PMNTN_GODN" : 5,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215580.42800000031,
+              542800.64070000127
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 56,
+        "PMNTN_SN" : 9960,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.01,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 1,
+        "PMNTN_GODN" : 0,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215591.45440000109,
+              542805.76649999991
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 57,
+        "PMNTN_SN" : 9961,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.75,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 13,
+        "PMNTN_GODN" : 9,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215591.45440000109,
+              542805.76649999991
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 58,
+        "PMNTN_SN" : 9962,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.24,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 4,
+        "PMNTN_GODN" : 3,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215816.74589999951,
+              542822.25610000081
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 59,
+        "PMNTN_SN" : 9963,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.13,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 2,
+        "PMNTN_GODN" : 2,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215816.74589999951,
+              542822.25610000081
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 60,
+        "PMNTN_SN" : 9964,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.24,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 4,
+        "PMNTN_GODN" : 3,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215731.15890000015,
+              542918.58480000123
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 61,
+        "PMNTN_SN" : 9965,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : "마천동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.65,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 35,
+        "PMNTN_GODN" : 25,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "414500401"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              213918.9506000001,
+              543524.67019999959
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 62,
+        "PMNTN_SN" : 9966,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.95,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 17,
+        "PMNTN_GODN" : 12,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215535.32540000044,
+              542200.98020000011
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 63,
+        "PMNTN_SN" : 9967,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.3,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 5,
+        "PMNTN_GODN" : 4,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              217593.22159999982,
+              542213.59990000352
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 64,
+        "PMNTN_SN" : 9968,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.12,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 2,
+        "PMNTN_GODN" : 1,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              217542.90050000045,
+              542316.28540000133
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 65,
+        "PMNTN_SN" : 9969,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.39,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 7,
+        "PMNTN_GODN" : 5,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              217542.90050000045,
+              542316.28540000133
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 66,
+        "PMNTN_SN" : 9970,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.62,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 11,
+        "PMNTN_GODN" : 8,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              216974.96049999911,
+              542376.46419999935
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 67,
+        "PMNTN_SN" : 9971,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.32,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 6,
+        "PMNTN_GODN" : 4,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "416100701"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              217895.6492000008,
+              542466.53390000202
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 68,
+        "PMNTN_SN" : 9972,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.25,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 22,
+        "PMNTN_GODN" : 15,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "414500401"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              217858.28610000014,
+              542745.56730000116
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 69,
+        "PMNTN_SN" : 9973,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.91,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 16,
+        "PMNTN_GODN" : 11,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "414500401"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215580.42800000031,
+              542800.64070000127
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 70,
+        "PMNTN_SN" : 9974,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 1.83,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 32,
+        "PMNTN_GODN" : 23,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "414500401"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              214767.20850000065,
+              542924.08130000345
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 71,
+        "PMNTN_SN" : 9975,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : " ",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 0.42,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 7,
+        "PMNTN_GODN" : 5,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "414500401"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              215597.25129999872,
+              543282.12970000133
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 72,
+        "PMNTN_SN" : 9976,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : "상산곡동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 3.35,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 126,
+        "PMNTN_GODN" : 88,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "414500401"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              220785.68000000063,
+              543495.02770000324
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 73,
+        "PMNTN_SN" : 9977,
+        "MNTN_CODE" : "416102804",
+        "MNTN_NM" : "남한산성",
+        "PMNTN_NM" : "상사창동구간",
+        "PMNTN_MAIN" : " ",
+        "PMNTN_LT" : 2.04,
+        "PMNTN_DFFL" : "쉬움",
+        "PMNTN_UPPL" : 36,
+        "PMNTN_GODN" : 25,
+        "PMNTN_MTRQ" : " ",
+        "PMNTN_CNRL" : " ",
+        "PMNTN_CLS_" : " ",
+        "PMNTN_RISK" : " ",
+        "PMNTN_RECO" : " ",
+        "DATA_STDR_" : "2016-12-31",
+        "MNTN_ID" : "414500401"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              216816.79960000049,
+              544150.45160000212
+            ]
+          ]
+        ]
       }
     }
   ]
