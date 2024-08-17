@@ -87,7 +87,7 @@ public class ScheduleService {
 
 
     public String getMountainName(String mountainId) {
-        MntiEntity mountain = mntiRepository.findByMntiListNo(mountainId).orElseThrow();
+        MntiEntity mountain = mntiRepository.findByMntiListNo(mountainId).orElseThrow(() -> new RuntimeException("해당 산이 존재하지 않습니다. mountain id : " + mountainId));
         return mountain.getMntiName();
     }
 
