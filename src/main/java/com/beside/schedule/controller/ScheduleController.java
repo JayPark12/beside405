@@ -155,6 +155,14 @@ public class ScheduleController {
     }
 
 
+    @Operation(summary = "초대장 이미지 리스트", description = "초대장 이미지 리스트를 가져옵니다.")
+    @GetMapping("/invite/create/imgList")
+    public ResponseEntity<?> getInvitationImg() throws IOException {
+        List<InvitationImgResponse> imgList = scheduleService.getInvitationImg();
+        return ResponseEntity.ok(imgList);
+    }
+
+
 
 
 

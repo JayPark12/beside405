@@ -337,4 +337,18 @@ public class ScheduleService {
     }
 
 
+    public List<InvitationImgResponse> getInvitationImg() throws IOException {
+        List<InvitationImgResponse> imgList = new ArrayList<>();
+        for(int i = 1; i<= 6; i++) {
+            InvitationImgResponse response = new InvitationImgResponse();
+            response.setImgNumber(i);
+            response.setImg(CommonUtil.getInvitationImg(i));
+            imgList.add(response);
+        }
+        return imgList;
+    }
+
+
+
+
 }

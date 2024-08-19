@@ -6,10 +6,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.util.StreamUtils;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -123,6 +120,28 @@ public class CommonUtil {
     private static boolean isImageFile(String fileName) {
         String lowerCaseName = fileName.toLowerCase();
         return lowerCaseName.endsWith(".jpg") || lowerCaseName.endsWith(".jpeg") || lowerCaseName.endsWith(".png") || lowerCaseName.endsWith(".gif");
+    }
+
+
+    public static String getInvitationImg(int imgNumber) throws IOException {
+        String uploadDir = "/root/JavaProject/beside405/img/invitation/";
+
+        File folder = new File(uploadDir);
+        File[] matchingFiles = folder.listFiles((dir, name) -> name.contains(String.valueOf(imgNumber)) && isImageFile(name));
+
+        if (matchingFiles == null || matchingFiles.length == 0) {
+            return null;
+        }
+
+        File imgFile = matchingFiles[0];  // 첫 번째 매칭 파일 선택 (여러 개일 경우)
+
+        byte[] imageBytes;
+        try (InputStream in = new FileInputStream(imgFile)) {
+            imageBytes = StreamUtils.copyToByteArray(in);
+        }
+
+        // 바이트 배열을 String 형식으로 변환
+        return Base64.getEncoder().encodeToString(imageBytes);
     }
 
 
