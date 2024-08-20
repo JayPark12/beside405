@@ -112,8 +112,6 @@ public class ScheduleController {
     }
 
 
-    //Todo : 초대장
-
     @Operation(summary = "초대장 수락", description = "초대장 수락 시 등산 일정의 멤버로 가입됩니다.")
     @PostMapping("/invite/join/{scheduleId}")
     public ResponseEntity<?> joinSchedule(@PathVariable String scheduleId) {
