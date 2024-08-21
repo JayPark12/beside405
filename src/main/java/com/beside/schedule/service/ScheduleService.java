@@ -10,6 +10,8 @@ import com.beside.schedule.repository.HikeScheduleRepository;
 import com.beside.schedule.repository.ScheduleInvitationRepository;
 import com.beside.schedule.repository.ScheduleMemberRepository;
 import com.beside.schedule.repository.ScheduleMemoRepository;
+import com.beside.user.dto.UserInfoResponse;
+import com.beside.user.service.UserService;
 import com.beside.util.CommonUtil;
 import com.beside.util.Coordinate;
 import com.beside.weather.dto.WeatherResponse;
@@ -39,6 +41,7 @@ public class ScheduleService {
     private final ScheduleMemberRepository scheduleMemberRepository;
     private final ObjectMapper objectMapper;
     private final ScheduleInvitationRepository scheduleInvitationRepository;
+    private final UserService userService;
 
 
     public List<ScheduleResponse> mySchedule(String userId) throws IOException, URISyntaxException {
@@ -274,16 +277,19 @@ public class ScheduleService {
         return scheduleId;
     }
 
-    public InvitationResponse viewInvitation(String invitationId) {
+    public InvitationResponse viewInvitation(String invitationId) throws IOException {
         ScheduleInvitation scheduleInvitation = scheduleInvitationRepository.findByInvitationId(invitationId).orElseThrow(() -> new RuntimeException("해당 초대장이 존재하지 않습니다. schedule id : " + invitationId));
         HikeSchedule hikeSchedule = hikeScheduleRepository.findByScheduleId(scheduleInvitation.getScheduleId()).orElseThrow(() -> new RuntimeException("해당 일정이 존재하지 않습니다. schedule id : " + scheduleInvitation.getScheduleId()));
+
+        UserInfoResponse userInfoResponse = userService.userInfo(scheduleInvitation.getCreateUser());
 
         return InvitationResponse.builder()
                 .invitationId(scheduleInvitation.getInvitationId())
                 .scheduleId(scheduleInvitation.getScheduleId())
                 .imgNumber(scheduleInvitation.getImgNumber())
-                .img(String.valueOf(scheduleInvitation.getImgNumber()))
+                .img(CommonUtil.getInvitationImg(scheduleInvitation.getImgNumber()))
                 .createUser(scheduleInvitation.getCreateUser())
+                .nickname(userInfoResponse.getNickname())
                 .scheduleDate(hikeSchedule.getScheduleDate())
                 .mountainName(getMountainName(hikeSchedule.getMountainId()))
                 .courseName(mountainService.getCourseNameByNo(hikeSchedule.getCourseNo()))

@@ -130,7 +130,7 @@ public class ScheduleController {
 
     @Operation(summary = "초대장 보기", description = "만들어진 초대장을 볼 수 있습니다.")
     @GetMapping("/invite/view/{invitationId}")
-    public ResponseEntity<?> viewInvitation(@PathVariable String invitationId) {
+    public ResponseEntity<?> viewInvitation(@PathVariable String invitationId) throws IOException {
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();
         return ResponseEntity.ok(scheduleService.viewInvitation(invitationId));
     }
