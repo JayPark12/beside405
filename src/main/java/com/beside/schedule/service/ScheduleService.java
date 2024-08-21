@@ -47,8 +47,11 @@ public class ScheduleService {
         List<ScheduleMember> scheduleMemberList = scheduleMemberRepository.findByIdMemberId(userId);
 
         for(ScheduleMember scheduleMember : scheduleMemberList) {
-            HikeSchedule hikeSchedule = hikeScheduleRepository.findByScheduleIdAndDelYn(scheduleMember.getId().getScheduleId(), "N").orElseThrow(() -> new RuntimeException("해당 일정이 존재하지 않습니다. schedule id : " + scheduleMember.getId().getScheduleId()));
-            scheduleResponseList.add(convertToScheduleResponse(hikeSchedule));
+            Optional<HikeSchedule> scheduleCheck = hikeScheduleRepository.findByScheduleIdAndDelYn(scheduleMember.getId().getScheduleId(), "N");
+            if(scheduleCheck.isPresent()) {
+                HikeSchedule hikeSchedule = scheduleCheck.get();
+                scheduleResponseList.add(convertToScheduleResponse(hikeSchedule));
+            }
         }
         return scheduleResponseList;
     }
@@ -279,6 +282,7 @@ public class ScheduleService {
                 .invitationId(scheduleInvitation.getInvitationId())
                 .scheduleId(scheduleInvitation.getScheduleId())
                 .imgNumber(scheduleInvitation.getImgNumber())
+                .img(String.valueOf(scheduleInvitation.getImgNumber()))
                 .createUser(scheduleInvitation.getCreateUser())
                 .scheduleDate(hikeSchedule.getScheduleDate())
                 .mountainName(getMountainName(hikeSchedule.getMountainId()))

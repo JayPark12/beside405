@@ -45,6 +45,7 @@ public class HikeSchedule {
         this.scheduleDate = CommonUtil.getDateTime(request.getScheduleDate());
         this.mountainId = request.getMountainId();
         this.memberCount = request.getMemberCount();
+        this.courseNo = request.getCourse();
     }
 
     public void deleteSchedule() {
