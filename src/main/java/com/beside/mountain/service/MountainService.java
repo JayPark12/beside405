@@ -42,6 +42,7 @@ public class MountainService {
     private final MntiRepository mntiRepository;
     private final WeatherApi weatherApi;
     private final ObjectMapper objectMapper;
+
     private final Map<String, String> courseMap = new HashMap<>();
 
     @PostConstruct
@@ -233,11 +234,16 @@ public class MountainService {
                 }
             }
         }
+        CourseResponse courseResponse = CourseResponse.builder().courseNo("free").courseName("자유코스").build();
+        courseList.add(courseResponse);
         return courseList;
     }
 
 
     public String getCourseNameByNo(String courseNo) {
+        if(Objects.equals(courseNo, "free")) {
+            return "자유코스";
+        }
         return courseMap.get(courseNo);
     }
 }

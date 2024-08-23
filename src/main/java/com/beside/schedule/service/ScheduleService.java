@@ -17,6 +17,7 @@ import com.beside.util.Coordinate;
 import com.beside.weather.dto.WeatherResponse;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -42,6 +43,28 @@ public class ScheduleService {
     private final ObjectMapper objectMapper;
     private final ScheduleInvitationRepository scheduleInvitationRepository;
     private final UserService userService;
+
+    private final Map<Integer, String> imageUrl = new HashMap<>();
+
+    @PostConstruct
+    public void init() {
+        try {
+            setImageUrl();
+        } catch (IOException e) {
+            // 로깅 및 예외 처리
+            e.printStackTrace();
+        }
+    }
+
+    private void setImageUrl() throws IOException {
+        imageUrl.put(1, "https://i.ibb.co/ymzWkhX/1.png");
+        imageUrl.put(2, "https://i.ibb.co/FHNdPg2/2.png");
+        imageUrl.put(3, "https://i.ibb.co/BGk7qkn/3.png");
+        imageUrl.put(4, "https://i.ibb.co/Yf8P3v3/4.png");
+        imageUrl.put(5, "https://i.ibb.co/4WgPf1m/5.png");
+        imageUrl.put(6, "https://i.ibb.co/XSRQcLc/6.png");
+
+    }
 
 
     public List<ScheduleResponse> mySchedule(String userId) throws IOException, URISyntaxException {
@@ -287,6 +310,7 @@ public class ScheduleService {
                 .invitationId(scheduleInvitation.getInvitationId())
                 .scheduleId(scheduleInvitation.getScheduleId())
                 .imgNumber(scheduleInvitation.getImgNumber())
+                .imgUrl(imageUrl.get(scheduleInvitation.getImgNumber()))
                 .img(CommonUtil.getInvitationImg(scheduleInvitation.getImgNumber()))
                 .createUser(scheduleInvitation.getCreateUser())
                 .nickname(userInfoResponse.getNickname())

@@ -17,6 +17,7 @@ public class InvitationResponse {
     private String createUser;
     private String nickname;
     private int imgNumber;
+    private String imgUrl;
     private String img;
     private LocalDateTime scheduleDate;
     private String mountainName;
