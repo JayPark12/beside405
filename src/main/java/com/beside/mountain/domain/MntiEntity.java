@@ -41,4 +41,10 @@ public class MntiEntity {
     @Column(name = "famous_100")
     private boolean famous100;
 
+    @Column(name = "seoul_trail")
+    private boolean seoulTrail;
+
+    @Column(name = "website")
+    private String website;
+
 }

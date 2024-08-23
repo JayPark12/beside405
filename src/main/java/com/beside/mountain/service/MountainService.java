@@ -163,8 +163,9 @@ public class MountainService {
         mntiDetailOutput.setMntiLevel(mntiEntity.getMntiLevel());
         mntiDetailOutput.setCourse(courses);
         mntiDetailOutput.setMntiHigh(mntiEntity.getMntihigh());
-        mntiDetailOutput.setFamous100(mntiDetailOutput.isFamous100());
-
+        mntiDetailOutput.setFamous100(mntiEntity.isFamous100());
+        mntiDetailOutput.setSeoulTrail(mntiEntity.isSeoulTrail());
+        mntiDetailOutput.setWebsite(mntiEntity.getWebsite());
 
         //날씨 리스트 가져오기
         List<WeatherResponse> weatherList;

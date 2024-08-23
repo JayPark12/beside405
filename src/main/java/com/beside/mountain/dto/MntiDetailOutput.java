@@ -23,5 +23,7 @@ public class MntiDetailOutput {
     private String photoFile; //사진 정보
     private List<WeatherResponse> weatherList;  //7일까지의 데이터
     private boolean famous100;
+    private boolean seoulTrail;
+    private String website;
 }
 
