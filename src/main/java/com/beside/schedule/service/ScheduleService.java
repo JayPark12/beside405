@@ -167,16 +167,22 @@ public class ScheduleService {
     }
 
     public Course getCourse(String mountainId, String courseId) throws IOException {
-        Course course = new Course();
-
         MntiEntity mountain = mntiRepository.findById(mountainId).orElseThrow();
         String mountainName = mountain.getMntiName();
+
+        if(Objects.equals(courseId, "free")) {
+            Course course = new Course();
+            course.setCourseNo("free");
+            course.setCourseName("자유코스");
+            return course;
+        }
 
         ClassPathResource resource = new ClassPathResource("/mntiCourseData/PMNTN_"+mountainName+"_"+mountainId+".json");
         JsonNode rootNode = objectMapper.readTree(resource.getContentAsByteArray());
         JsonNode itemsNode = rootNode.path("features");
 
         if (itemsNode.isArray()) {
+            Course course = new Course();
             for (JsonNode item : itemsNode) {
                 String originCourseId = item.path("attributes").path("PMNTN_SN").asText();
                 if(Objects.equals(courseId, originCourseId)) {
@@ -201,8 +207,10 @@ public class ScheduleService {
                     }
                 }
             }
+            return course;
         }
-        return course;
+
+        return null;
     }
 
 

@@ -23,4 +23,7 @@ public class LoginResponse {
     @Schema(description = "bearer token")
     private String bearerToken;
 
+    @Schema(description = "카카오 refresh token")
+    private String kakaoRefreshToken;
+
 }

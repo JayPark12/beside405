@@ -1,5 +1,6 @@
 package com.beside.kakao.service;
 
+import com.beside.kakao.dto.KakaoRefreshTokenDto;
 import com.beside.kakao.dto.KakaoTokenResponseDto;
 import com.beside.kakao.dto.KakaoUserInfoResponseDto;
 import com.beside.user.domain.UserEntity;
@@ -45,7 +46,7 @@ public class KakaoService {
         KAUTH_USER_URL_HOST = "https://kapi.kakao.com";
     }
 
-    public String getAccessTokenFromKakao(String code) {
+    public KakaoTokenResponseDto getAccessTokenFromKakao(String code) {
         log.info("access 토큰 발급 시작");
         KakaoTokenResponseDto kakaoTokenResponseDto = WebClient.create(KAUTH_TOKEN_URL_HOST).post()
                 .uri(uriBuilder -> uriBuilder
@@ -66,7 +67,7 @@ public class KakaoService {
         log.info(" [Kakao Service] Id Token ------> {}", kakaoTokenResponseDto.getIdToken());
         log.info(" [Kakao Service] Scope ------> {}", kakaoTokenResponseDto.getScope());
 
-        return kakaoTokenResponseDto.getAccessToken();
+        return kakaoTokenResponseDto;
     }
 
 
@@ -89,13 +90,29 @@ public class KakaoService {
         log.info("[ Kakao Service ] NickName ---> {} ", userInfo.getKakaoAccount().getProfile().getNickName());
         log.info("[ Kakao Service ] Email ---> {} ", userInfo.getKakaoAccount().getEmail());
         log.info("[ Kakao Service ] ProfileImageUrl ---> {} ", userInfo.getKakaoAccount().getProfile().getProfileImageUrl());
-//
-//        Optional<UserEntity> user = userRepository.findById(String.valueOf(userInfo.getId()));
-//        if(user.isEmpty()) {
-//            userService.joinFromKakao2(String.valueOf(userInfo.getId()), userInfo.getKakaoAccount().getEmail());
-//            log.info("카카오 회원가입 완료 : {}", userInfo.getId());
-//        }
+
         return userInfo;
+    }
+
+
+    //TODO
+    public String renewToken(String refreshToken) {
+        log.info("카카오 access token 갱신 서비스 진입");
+        KakaoRefreshTokenDto kakaoRefreshTokenDto = WebClient.create(KAUTH_TOKEN_URL_HOST)
+                .post()
+                .uri(uriBuilder -> uriBuilder
+                        .scheme("https")
+                        .path("/oauth/token")
+                        .queryParam("grant_type", "refresh_token")
+                        .queryParam("client_id", clientId)
+                        .queryParam("refresh_token", refreshToken)
+                        .build(true))
+                .header(HttpHeaders.CONTENT_TYPE, HttpHeaderValues.APPLICATION_X_WWW_FORM_URLENCODED.toString())
+                .retrieve()
+                .bodyToMono(KakaoRefreshTokenDto.class)
+                .block();
+
+        return null;
     }
 
 
@@ -169,4 +186,6 @@ public class KakaoService {
                 .retrieve()
                 .bodyToMono(String.class).then();
     }
+
+
 }

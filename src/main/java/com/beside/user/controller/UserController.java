@@ -61,13 +61,24 @@ public class UserController {
         log.info("카카오 로그인 시작 : {}", code);
 
         //1. 인가코드로 토큰 발급
-        String accessToken = kakaoService.getAccessTokenFromKakao(code);
+        String accessToken = kakaoService.getAccessTokenFromKakao(code).getAccessToken();
+        String refreshToken = kakaoService.getAccessTokenFromKakao(code).getRefreshToken();
 
         //2. 토큰으로 카카오 회원정보
         KakaoUserInfoResponseDto kakaoUser = kakaoService.getUserInfo(accessToken);
 
         //3. 로그인 처리
-        return ResponseEntity.ok(userService.kakaoLogin2(kakaoUser, servletResponse));
+        return ResponseEntity.ok(userService.kakaoLogin2(kakaoUser, servletResponse, refreshToken));
+    }
+
+
+    @Operation(summary = "카카오 회원 탈퇴", description = "카카오 연결끊기 + db에서 회원 삭제처리")
+    @GetMapping("/kakaoDelete")
+    public ResponseEntity<?> deleteUser(@RequestParam String refreshToken) {
+        //1. refresh token으로 카카오 액세스 토큰 갱신
+        String accessToken = kakaoService.renewToken(refreshToken);
+
+        return null;
     }
 
 

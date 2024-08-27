@@ -50,7 +50,7 @@ public class KakaoController {
     @GetMapping("/getToken")
     @Operation(summary = "토큰 발급", description = "로그인 후 발급받은 code를 이용해 토큰을 발급합니다.")
     public String getToken(@RequestParam("code") String code) {
-        return kakaoService.getAccessTokenFromKakao(code);
+        return kakaoService.getAccessTokenFromKakao(code).getAccessToken();
     }
 
 //    @GetMapping("/callback")

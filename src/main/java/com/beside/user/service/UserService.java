@@ -148,7 +148,7 @@ public class UserService {
     }
 
 
-    public LoginResponse kakaoLogin2(KakaoUserInfoResponseDto kakaoUser, HttpServletResponse response) {
+    public LoginResponse kakaoLogin2(KakaoUserInfoResponseDto kakaoUser, HttpServletResponse response, String refreshToken) {
         String id = String.valueOf(kakaoUser.getId());
 
          Optional<UserEntity> userCheck = userRepository.findById(id);
@@ -169,6 +169,7 @@ public class UserService {
                 .callNo(user.getCallNo())
                 .token(jwt)
                 .bearerToken("Bearer " + jwt)
+                .kakaoRefreshToken(refreshToken)
                 .build();
     }
 
