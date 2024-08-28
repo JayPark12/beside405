@@ -78,6 +78,12 @@ public class UserController {
         //1. refresh token으로 카카오 액세스 토큰 갱신
         String accessToken = kakaoService.renewToken(refreshToken);
 
+        //2. access token으로 연결 끊기
+        String id = kakaoService.unlink(accessToken);
+
+        //3. db에서 정보 삭제
+        String result = userService.deleteUser(id);
+
         return null;
     }
 

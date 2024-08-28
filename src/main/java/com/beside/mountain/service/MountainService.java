@@ -108,6 +108,9 @@ public class MountainService {
             dto.setMntiAdd(mntiEntity.getMntiAdd());
             dto.setHeight(mntiEntity.getMntihigh());
             dto.setPotoFile(CommonUtil.getImageByMountain(mntiEntity.getMntiListNo()));
+            dto.setFamous100(mntiEntity.isFamous100());
+            dto.setSeoulTrail(mntiEntity.isSeoulTrail());
+            dto.setPhotoSource(mntiEntity.getPhotoSource());
             mntiListOutput.add(dto);
         }
 
@@ -166,6 +169,7 @@ public class MountainService {
         mntiDetailOutput.setFamous100(mntiEntity.isFamous100());
         mntiDetailOutput.setSeoulTrail(mntiEntity.isSeoulTrail());
         mntiDetailOutput.setWebsite(mntiEntity.getWebsite());
+        mntiDetailOutput.setPhotoSource(mntiEntity.getPhotoSource());
 
         //날씨 리스트 가져오기
         List<WeatherResponse> weatherList;

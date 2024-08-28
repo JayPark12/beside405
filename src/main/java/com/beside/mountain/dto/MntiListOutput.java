@@ -17,6 +17,9 @@ public class MntiListOutput {
     private String potoFile = null;     //사진 api url
     private String mntiAdd;
     private BigDecimal height;
+    private boolean famous100;
+    private boolean seoulTrail;
+    private String photoSource;
 
 }
 

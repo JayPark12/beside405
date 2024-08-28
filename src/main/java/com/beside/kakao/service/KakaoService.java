@@ -2,6 +2,7 @@ package com.beside.kakao.service;
 
 import com.beside.kakao.dto.KakaoRefreshTokenDto;
 import com.beside.kakao.dto.KakaoTokenResponseDto;
+import com.beside.kakao.dto.KakaoUnlinkDto;
 import com.beside.kakao.dto.KakaoUserInfoResponseDto;
 import com.beside.user.domain.UserEntity;
 import com.beside.user.repository.UserRepository;
@@ -24,6 +25,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.Optional;
 
 @Slf4j
@@ -95,7 +97,6 @@ public class KakaoService {
     }
 
 
-    //TODO
     public String renewToken(String refreshToken) {
         log.info("카카오 access token 갱신 서비스 진입");
         KakaoRefreshTokenDto kakaoRefreshTokenDto = WebClient.create(KAUTH_TOKEN_URL_HOST)
@@ -112,7 +113,25 @@ public class KakaoService {
                 .bodyToMono(KakaoRefreshTokenDto.class)
                 .block();
 
-        return null;
+        return Objects.requireNonNull(kakaoRefreshTokenDto).getAccessToken();
+    }
+
+
+    public String unlink(String accessToken) {
+        log.info("카카오 연결 끊기 서비스 진입");
+        KakaoUnlinkDto kakaoUnlinkDto = WebClient.create(KAUTH_USER_URL_HOST)
+                .post()
+                .uri(uriBuilder -> uriBuilder
+                        .scheme("https")
+                        .path("/v1/user/unlink")
+                        .build(true))
+                .header(HttpHeaders.CONTENT_TYPE, HttpHeaderValues.APPLICATION_X_WWW_FORM_URLENCODED.toString())
+                .header(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken)
+                .retrieve()
+                .bodyToMono(KakaoUnlinkDto.class)
+                .block();
+
+        return Objects.requireNonNull(kakaoUnlinkDto).getId();
     }
 
 
@@ -186,6 +205,7 @@ public class KakaoService {
                 .retrieve()
                 .bodyToMono(String.class).then();
     }
+
 
 
 }

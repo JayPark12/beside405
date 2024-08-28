@@ -47,4 +47,7 @@ public class MntiEntity {
     @Column(name = "website")
     private String website;
 
+    @Column(name = "photo_source")
+    private String photoSource;
+
 }

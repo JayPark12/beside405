@@ -206,4 +206,11 @@ public class UserService {
         userRepository.save(user);
     }
 
+    //TODO
+    public String deleteUser(String userId) {
+        UserEntity user = userRepository.findById(userId).orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
+
+        return null;
+    }
+
 }

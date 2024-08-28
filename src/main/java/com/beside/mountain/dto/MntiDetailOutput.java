@@ -25,5 +25,6 @@ public class MntiDetailOutput {
     private boolean famous100;
     private boolean seoulTrail;
     private String website;
+    private String photoSource;
 }
 
