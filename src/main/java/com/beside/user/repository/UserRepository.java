@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Optional;
+
 public interface UserRepository extends JpaRepository<UserEntity, String> {
 
     @Query(value = """
@@ -12,4 +14,5 @@ public interface UserRepository extends JpaRepository<UserEntity, String> {
     , nativeQuery = true)
     UserEntity findUser(@Param("id") String id);
 
+    Optional<UserEntity> findByIdAndDelYn(String id, String delYn);
 }

@@ -32,11 +32,18 @@ public class UserEntity {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "del_yn")
+    private String delYn;
+
     public void updateNickname(String nickname) {
         this.nickname = nickname;
     }
 
     public void updatePassword(String password) {
         this.password = password;
+    }
+
+    public void deleteUser() {
+        this.delYn = "N";
     }
 }

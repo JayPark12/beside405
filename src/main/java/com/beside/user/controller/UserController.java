@@ -84,7 +84,7 @@ public class UserController {
         //3. db에서 정보 삭제
         String result = userService.deleteUser(id);
 
-        return null;
+        return ResponseEntity.ok("회원 삭제 완료. user id :  " + result);
     }
 
 

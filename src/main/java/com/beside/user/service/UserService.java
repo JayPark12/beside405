@@ -157,7 +157,7 @@ public class UserService {
              log.info("카카오 회원가입 완료 : {}", id);
          }
 
-        UserEntity user = userRepository.findById(id).orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
+        UserEntity user = userRepository.findByIdAndDelYn(id, "Y").orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
         String jwt = jwtProvider.generateJwtToken(id);
 
         response.setHeader("Authorization", "Bearer " + jwt);
@@ -206,11 +206,13 @@ public class UserService {
         userRepository.save(user);
     }
 
-    //TODO
-    public String deleteUser(String userId) {
-        UserEntity user = userRepository.findById(userId).orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
 
-        return null;
+    public String deleteUser(String userId) {
+        UserEntity user = userRepository.findByIdAndDelYn(userId, "Y").orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
+        user.deleteUser();
+        userRepository.save(user);
+
+        return userId;
     }
 
 }
