@@ -79,6 +79,7 @@ public class UserService {
                 .userSts("1")
                 .creatDt(localDate)
                 .email(email)
+                .delYn("Y")
                 .password(null).build();
         userRepository.save(user);
     }
