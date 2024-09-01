@@ -15,6 +15,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityNotFoundException;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ClassPathResource;
@@ -22,6 +23,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -45,13 +47,19 @@ public class MountainService {
 
     private final Map<String, String> courseMap = new HashMap<>();
 
+    @Getter
+    private List<WeatherResponse> weatherList;
+
     @PostConstruct
     public void init() {
         try {
             initializeCourseMap();
+            updateWeatherList();
         } catch (IOException e) {
             // 로깅 및 예외 처리
             e.printStackTrace();
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -172,8 +180,8 @@ public class MountainService {
         mntiDetailOutput.setPhotoSource(mntiEntity.getPhotoSource());
 
         //날씨 리스트 가져오기
-        List<WeatherResponse> weatherList;
-        weatherList = getWeatherList();
+//        List<WeatherResponse> weatherList;
+//        weatherList = getWeatherList();
         mntiDetailOutput.setWeatherList(weatherList);
         return mntiDetailOutput;
     }
@@ -189,7 +197,13 @@ public class MountainService {
     }
 
 
-    public List<WeatherResponse> getWeatherList() throws IOException, URISyntaxException {
+    @Scheduled(cron = "0 0 7,19 * * ?")
+    public void updateWeatherList() throws IOException, URISyntaxException {
+        this.weatherList = weather6DayList();
+    }
+
+
+    public List<WeatherResponse> weather6DayList() throws IOException, URISyntaxException {
         List<WeatherResponse> weatherList = new ArrayList<>();
         String localDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
 
