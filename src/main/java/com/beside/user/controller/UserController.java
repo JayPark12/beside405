@@ -1,6 +1,7 @@
 package com.beside.user.controller;
 
 import com.beside.jwt.JwtProvider;
+import com.beside.kakao.dto.KakaoTokenResponseDto;
 import com.beside.kakao.dto.KakaoUserInfoResponseDto;
 import com.beside.kakao.service.KakaoService;
 import com.beside.user.domain.UserEntity;
@@ -61,8 +62,10 @@ public class UserController {
         log.info("카카오 로그인 시작 : {}", code);
 
         //1. 인가코드로 토큰 발급
-        String accessToken = kakaoService.getAccessTokenFromKakao(code).getAccessToken();
-        String refreshToken = kakaoService.getAccessTokenFromKakao(code).getRefreshToken();
+        KakaoTokenResponseDto getToken = kakaoService.getAccessTokenFromKakao(code);
+
+        String accessToken = getToken.getAccessToken();
+        String refreshToken = getToken.getRefreshToken();
 
         //2. 토큰으로 카카오 회원정보
         KakaoUserInfoResponseDto kakaoUser = kakaoService.getUserInfo(accessToken);
