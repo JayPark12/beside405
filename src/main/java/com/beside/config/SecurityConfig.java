@@ -52,7 +52,7 @@ public class SecurityConfig {
             "/schedule/invite/**",
             "/schedule/mySchedule/**",
             "/schedule/invite/**",
-            "/memo/list/**"
+            "/schedule/memo/list/**"
     };
 
     @PostConstruct
