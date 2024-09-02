@@ -58,7 +58,9 @@ public class UserController {
     @Operation(summary = "카카오 로그인", description = "카카오 계정을 이용해 로그인을 할 수 있습니다. 계정이 없는 경우에는 회원가입 로직을 거친 후 토큰을 발급합니다." +
             "카카오 로그인 후 발급받은 인가코드를 body에 넣어서 요청합니다.")
     @GetMapping("/kakaoLogin")
-    public ResponseEntity<?> kakaoLogin(@RequestParam String code, HttpServletResponse servletResponse) {
+    public ResponseEntity<?> kakaoLogin(@RequestParam String code,
+                                        @RequestParam(required = false) String scheduleId,
+                                        HttpServletResponse servletResponse) {
         log.info("카카오 로그인 시작 : {}", code);
 
         //1. 인가코드로 토큰 발급
@@ -71,7 +73,7 @@ public class UserController {
         KakaoUserInfoResponseDto kakaoUser = kakaoService.getUserInfo(accessToken);
 
         //3. 로그인 처리
-        return ResponseEntity.ok(userService.kakaoLogin2(kakaoUser, servletResponse, refreshToken));
+        return ResponseEntity.ok(userService.kakaoLogin2(kakaoUser, scheduleId, servletResponse, refreshToken));
     }
 
 

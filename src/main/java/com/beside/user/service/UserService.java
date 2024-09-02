@@ -2,6 +2,9 @@ package com.beside.user.service;
 
 import com.beside.jwt.JwtProvider;
 import com.beside.kakao.dto.KakaoUserInfoResponseDto;
+import com.beside.schedule.domain.MemberId;
+import com.beside.schedule.domain.ScheduleMember;
+import com.beside.schedule.repository.ScheduleMemberRepository;
 import com.beside.user.domain.RandomNickname;
 import com.beside.user.domain.UserEntity;
 import com.beside.user.dto.*;
@@ -35,6 +38,7 @@ public class UserService {
     private final BCryptPasswordEncoder passwordEncoder;
     private final JwtProvider jwtProvider;
     private final RandomNicknameRepository randomNicknameRepository;
+    private final ScheduleMemberRepository scheduleMemberRepository;
 
     LocalDateTime localDate = LocalDateTime.now();
 
@@ -149,23 +153,30 @@ public class UserService {
     }
 
 
-    public LoginResponse kakaoLogin2(KakaoUserInfoResponseDto kakaoUser, HttpServletResponse response, String refreshToken) {
-        String id = String.valueOf(kakaoUser.getId());
+    public LoginResponse kakaoLogin2(KakaoUserInfoResponseDto kakaoUser, String scheduleId, HttpServletResponse response, String refreshToken) {
+        String userId = String.valueOf(kakaoUser.getId());
 
-         Optional<UserEntity> userCheck = userRepository.findById(id);
+         Optional<UserEntity> userCheck = userRepository.findById(userId);
          if(userCheck.isEmpty()) {
-             joinFromKakao2(id, kakaoUser.getKakaoAccount().getEmail());
-             log.info("카카오 회원가입 완료 : {}", id);
+             joinFromKakao2(userId, kakaoUser.getKakaoAccount().getEmail());
+             log.info("카카오 회원가입 완료 : {}", userId);
+
+             if(scheduleId != null) {
+                 MemberId memberId = new MemberId(scheduleId, userId);
+                 ScheduleMember scheduleMember = ScheduleMember.builder()
+                         .id(memberId).build();
+                 scheduleMemberRepository.save(scheduleMember);
+             }
          }
 
-        UserEntity user = userRepository.findByIdAndDelYn(id, "Y").orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
-        String jwt = jwtProvider.generateJwtToken(id);
+        UserEntity user = userRepository.findByIdAndDelYn(userId, "Y").orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
+        String jwt = jwtProvider.generateJwtToken(userId);
 
         response.setHeader("Authorization", "Bearer " + jwt);
 
-        log.info("카카오 로그인 완료 : {}", id);
+        log.info("카카오 로그인 완료 : {}", userId);
         return LoginResponse.builder()
-                .userId(id)
+                .userId(userId)
                 .nickname(user.getNickname())
                 .callNo(user.getCallNo())
                 .token(jwt)
