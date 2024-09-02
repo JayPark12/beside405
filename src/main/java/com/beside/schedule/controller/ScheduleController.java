@@ -5,7 +5,9 @@ import com.beside.schedule.service.ScheduleService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +26,12 @@ public class ScheduleController {
     @GetMapping("/mySchedule")
     @Operation(summary = "내 일정 보기", description = "등록된 일정 리스트를 볼 수 있습니다.")
     public ResponseEntity<?> mySchedule() throws IOException, URISyntaxException {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if (authentication == null || authentication.getPrincipal().equals("anonymousUser")) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("로그인이 필요합니다.");
+        }
+
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();
         List<ScheduleResponse> response = scheduleService.mySchedule(userId);
         return ResponseEntity.ok(response);

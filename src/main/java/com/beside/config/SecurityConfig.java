@@ -45,15 +45,13 @@ public class SecurityConfig {
     private List<String> allowedOriginPaths;
 
     private final String[] excludedEndPoints = {
-            "/user/join",
-            "/user/login",
+            "/user/**",
             "/main/**",
-            "/reser/**",
-            "/detail/**",
             "/kakao/**",
             "/test/**",
-            "/user/kakaoLogin",
-            "/schedule/**"
+            "/schedule/invite/**",
+            "/schedule/mySchedule/**",
+            "/schedule/invite/**"
     };
 
     @PostConstruct
