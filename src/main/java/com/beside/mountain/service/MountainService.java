@@ -76,8 +76,11 @@ public class MountainService {
                 for (JsonNode item : itemsNode) {
                     String courseName = item.path("attributes").path("PMNTN_NM").asText();
                     String courseNo = item.path("attributes").path("PMNTN_SN").asText();
+                    long courseTime =item.path("attributes").path("PMNTN_UPPL").asLong() + item.path("attributes").path("PMNTN_GODN").asLong();
                     if (courseName != null && !courseName.isEmpty() && !courseName.equals(" ")) {
-                        courseMap.put(courseNo, courseName);
+                        if(courseTime >= 10) {
+                            courseMap.put(courseNo, courseName);
+                        }
                     }
                 }
             }
@@ -165,10 +168,21 @@ public class MountainService {
                         }
                         course.setPaths(paths);
                     }
-                    courses.add(course);
+                    if(course.getMntiTime() >= 10) {
+                        courses.add(course);
+                    }
                 }
             }
         }
+
+        //자유코스 추가하기
+        Course freeCourse = new Course();
+        freeCourse.setCourseNo("free");
+        freeCourse.setCourseName("자유코스");
+        courses.add(freeCourse);
+
+        //코스id 오름차순 정렬
+        courses.sort(Comparator.comparing(Course::getCourseNo));
 
         mntiDetailOutput.setContent(rootNode.path("content").asText());
         mntiDetailOutput.setMntiLevel(mntiEntity.getMntiLevel());
