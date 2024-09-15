@@ -257,16 +257,21 @@ public class MountainService {
             for (JsonNode item : itemsNode) {
                 String courseName = item.path("attributes").path("PMNTN_NM").asText();
                 String courseNo = item.path("attributes").path("PMNTN_SN").asText();
+                long courseTime =item.path("attributes").path("PMNTN_UPPL").asLong() + item.path("attributes").path("PMNTN_GODN").asLong();
                 if(courseName != null && !courseName.isEmpty() && !courseNames.contains(courseName) && !courseName.equals(" ")) {
                     CourseResponse courseResponse = new CourseResponse();
                     courseResponse.setCourseNo(courseNo);
                     courseResponse.setCourseName(courseName);
-                    courseList.add(courseResponse);
+                    if(courseTime >= 10) {
+                        courseList.add(courseResponse);
+                    }
                     courseNames.add(courseName);
                     courseMap.put(courseNo, courseName);
                 }
             }
         }
+
+
         CourseResponse courseResponse = CourseResponse.builder().courseNo("free").courseName("자유코스").build();
         courseList.add(courseResponse);
         return courseList;
