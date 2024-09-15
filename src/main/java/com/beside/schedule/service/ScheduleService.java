@@ -124,7 +124,13 @@ public class ScheduleService {
 
     @Transactional
     public ScheduleIdResponse modifySchedule(String userId, ModifyScheduleRequest request) {
-        HikeSchedule hikeSchedule = hikeScheduleRepository.findByUserIdAndScheduleId(userId, request.getScheduleId()).orElseThrow();
+        MemberId memberId = new MemberId(request.getScheduleId(), userId);
+        Optional<ScheduleMember> memberCheck = scheduleMemberRepository.findById(memberId);
+        if(memberCheck.isEmpty()) {
+            throw new EntityNotFoundException("등산 일정의 멤버 아님");
+        }
+
+        HikeSchedule hikeSchedule = hikeScheduleRepository.findByScheduleId(request.getScheduleId()).orElseThrow();
         hikeSchedule.updateSchedule(request);
         hikeScheduleRepository.save(hikeSchedule);
         return ScheduleIdResponse.builder().id(hikeSchedule.getScheduleId()).build();
