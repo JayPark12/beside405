@@ -162,6 +162,7 @@ public class UserService {
              log.info("카카오 회원가입 완료 : {}", userId);
 
              if(scheduleId != null) {
+                 log.info("[kakao login] schedule id : " + scheduleId);
                  MemberId memberId = new MemberId(scheduleId, userId);
                  ScheduleMember scheduleMember = ScheduleMember.builder()
                          .id(memberId).build();
