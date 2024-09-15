@@ -160,15 +160,15 @@ public class UserService {
          if(userCheck.isEmpty()) {
              joinFromKakao2(userId, kakaoUser.getKakaoAccount().getEmail());
              log.info("카카오 회원가입 완료 : {}", userId);
-
-             if(scheduleId != null) {
-                 log.info("[kakao login] schedule id : " + scheduleId);
-                 MemberId memberId = new MemberId(scheduleId, userId);
-                 ScheduleMember scheduleMember = ScheduleMember.builder()
-                         .id(memberId).build();
-                 scheduleMemberRepository.save(scheduleMember);
-             }
          }
+
+        if(scheduleId != null) {
+            log.info("[kakao login] schedule id : " + scheduleId);
+            MemberId memberId = new MemberId(scheduleId, userId);
+            ScheduleMember scheduleMember = ScheduleMember.builder()
+                    .id(memberId).build();
+            scheduleMemberRepository.save(scheduleMember);
+        }
 
         UserEntity user = userRepository.findByIdAndDelYn(userId, "Y").orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
         String jwt = jwtProvider.generateJwtToken(userId);
