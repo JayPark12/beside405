@@ -79,7 +79,7 @@ public class ScheduleService {
                 scheduleResponseList.add(convertToScheduleResponse(hikeSchedule));
             }
         }
-        scheduleResponseList.sort(Comparator.comparing(ScheduleResponse::getScheduleDate));
+        scheduleResponseList.sort(Comparator.comparing(ScheduleResponse::getScheduleDate).reversed());
         return scheduleResponseList;
     }
 
