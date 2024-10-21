@@ -88,6 +88,19 @@ public class UserService {
         userRepository.save(user);
     }
 
+    public void deleteUserJoin(String userId, String email) {
+        UserEntity user = UserEntity.builder()
+                .id(userId + "+A")
+                .nickname(createNickname())
+                .callNo(null)
+                .userSts("1")
+                .creatDt(localDate)
+                .email(email)
+                .delYn("Y")
+                .password(null).build();
+        userRepository.save(user);
+    }
+
 
 
     //랜덤 닉네임 생성
@@ -156,14 +169,24 @@ public class UserService {
     public LoginResponse kakaoLogin2(KakaoUserInfoResponseDto kakaoUser, String scheduleId, HttpServletResponse response, String refreshToken) {
         String userId = String.valueOf(kakaoUser.getId());
 
+        //DB에서 회원 정보 조회
+        //신규 가입
          Optional<UserEntity> userCheck = userRepository.findById(userId);
          if(userCheck.isEmpty()) {
              joinFromKakao2(userId, kakaoUser.getKakaoAccount().getEmail());
              log.info("카카오 회원가입 완료 : {}", userId);
          }
 
+         //TODO : delYn 반대로 변경하기 (Y: 회원 삭제 상태, N:회원 활성화 상태)
+         //탈퇴 후 재가입
+         Optional<UserEntity> deleteUserCheck = userRepository.findByIdAndDelYn(userId, "N");
+         if(deleteUserCheck.isPresent()) {
+             deleteUserJoin(userId, kakaoUser.getKakaoAccount().getEmail());
+             log.info("카카오 계정 탈퇴 후 재가입 완료");
+         }
+
         if(scheduleId != null) {
-            log.info("[kakao login] schedule id : " + scheduleId);
+            log.info("[kakao login] schedule id : {}", scheduleId);
             MemberId memberId = new MemberId(scheduleId, userId);
             ScheduleMember scheduleMember = ScheduleMember.builder()
                     .id(memberId).build();
