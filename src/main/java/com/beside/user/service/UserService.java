@@ -83,7 +83,7 @@ public class UserService {
                 .userSts("1")
                 .creatDt(localDate)
                 .email(email)
-                .delYn("Y")
+                .delYn("N")
                 .password(null).build();
         userRepository.save(user);
     }
@@ -96,7 +96,7 @@ public class UserService {
                 .userSts("1")
                 .creatDt(localDate)
                 .email(email)
-                .delYn("Y")
+                .delYn("N")
                 .password(null).build();
         userRepository.save(user);
     }
@@ -179,7 +179,7 @@ public class UserService {
 
          //TODO : delYn 반대로 변경하기 (Y: 회원 삭제 상태, N:회원 활성화 상태)
          //탈퇴 후 재가입
-         Optional<UserEntity> deleteUserCheck = userRepository.findByIdAndDelYn(userId, "N");
+         Optional<UserEntity> deleteUserCheck = userRepository.findByIdAndDelYn(userId, "Y");
          if(deleteUserCheck.isPresent()) {
              deleteUserJoin(userId, kakaoUser.getKakaoAccount().getEmail());
              log.info("카카오 계정 탈퇴 후 재가입 완료");
@@ -243,10 +243,12 @@ public class UserService {
     }
 
 
+    @Transactional
     public String deleteUser(String userId) {
         UserEntity user = userRepository.findByIdAndDelYn(userId, "Y").orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
         user.deleteUser();
         userRepository.save(user);
+        log.info("user id : {} 회원 탈퇴 처리 완료", userId);
 
         return userId;
     }

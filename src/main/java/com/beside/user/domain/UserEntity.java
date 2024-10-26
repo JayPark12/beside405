@@ -44,6 +44,6 @@ public class UserEntity {
     }
 
     public void deleteUser() {
-        this.delYn = "N";
+        this.delYn = "Y";
     }
 }
