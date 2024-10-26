@@ -169,6 +169,26 @@ public class UserService {
     public LoginResponse kakaoLogin2(KakaoUserInfoResponseDto kakaoUser, String scheduleId, HttpServletResponse response, String refreshToken) {
         String userId = String.valueOf(kakaoUser.getId());
 
+        //db에 userId가 있는 지 확인, 1개만 반환
+        Optional<UserEntity> userCheck2 = userRepository.findFirstByIdContainingOrderByCreatDtDesc(userId);
+
+        if(userCheck2.isEmpty()) {
+            //신규 가입 로직
+            joinFromKakao2(userId, kakaoUser.getKakaoAccount().getEmail());
+            log.info("카카오 회원가입 완료 : {}", userId);
+        }
+
+        if(userCheck2.isPresent()) {
+            UserEntity user = userCheck2.get();
+            if(Objects.equals(user.getDelYn(), "Y")) {
+                //재가입 로직
+                deleteUserJoin(userId, kakaoUser.getKakaoAccount().getEmail());
+                log.info("카카오 계정 탈퇴 후 재가입 완료");
+            }
+        }
+
+
+/*
         //DB에서 회원 정보 조회
         //신규 가입
          Optional<UserEntity> userCheck = userRepository.findById(userId);
@@ -177,13 +197,14 @@ public class UserService {
              log.info("카카오 회원가입 완료 : {}", userId);
          }
 
-         //TODO : delYn 반대로 변경하기 (Y: 회원 삭제 상태, N:회원 활성화 상태)
          //탈퇴 후 재가입
          Optional<UserEntity> deleteUserCheck = userRepository.findByIdAndDelYn(userId, "Y");
          if(deleteUserCheck.isPresent()) {
              deleteUserJoin(userId, kakaoUser.getKakaoAccount().getEmail());
              log.info("카카오 계정 탈퇴 후 재가입 완료");
          }
+
+ */
 
         if(scheduleId != null) {
             log.info("[kakao login] schedule id : {}", scheduleId);
@@ -193,7 +214,7 @@ public class UserService {
             scheduleMemberRepository.save(scheduleMember);
         }
 
-        UserEntity user = userRepository.findByIdAndDelYn(userId, "Y").orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
+        UserEntity user = userRepository.findByIdContainingAndDelYn(userId, "N").orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
         String jwt = jwtProvider.generateJwtToken(userId);
 
         response.setHeader("Authorization", "Bearer " + jwt);

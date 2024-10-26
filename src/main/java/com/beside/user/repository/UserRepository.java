@@ -15,4 +15,10 @@ public interface UserRepository extends JpaRepository<UserEntity, String> {
     UserEntity findUser(@Param("id") String id);
 
     Optional<UserEntity> findByIdAndDelYn(String id, String delYn);
+
+    Optional<UserEntity> findByIdContaining(String userId);
+
+    Optional<UserEntity> findByIdContainingAndDelYn(String userId, String delYn);
+
+    Optional<UserEntity> findFirstByIdContainingOrderByCreatDtDesc(String userId);
 }
