@@ -40,6 +40,8 @@ public class UserService {
     private final RandomNicknameRepository randomNicknameRepository;
     private final ScheduleMemberRepository scheduleMemberRepository;
 
+    private static int lastSuffix = 0;
+
     LocalDateTime localDate = LocalDateTime.now();
 
     @Transactional
@@ -88,9 +90,9 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public void deleteUserJoin(String userId, String email) {
+    public String deleteUserJoin(String userId, String email) {
         UserEntity user = UserEntity.builder()
-                .id(userId + "+A")
+                .id(newUserId(userId))
                 .nickname(createNickname())
                 .callNo(null)
                 .userSts("1")
@@ -99,6 +101,18 @@ public class UserService {
                 .delYn("N")
                 .password(null).build();
         userRepository.save(user);
+        return user.getId();
+    }
+
+
+    public String newUserId(String userId) {
+        if(userId.length() == 10) {
+            return userId + 1;
+        } else {
+            char lastDigit = userId.charAt(userId.length() - 1);
+            int lastNumber = Character.getNumericValue(lastDigit);
+            return userId + (lastNumber + 1);
+        }
     }
 
 
@@ -182,7 +196,7 @@ public class UserService {
             UserEntity user = userCheck2.get();
             if(Objects.equals(user.getDelYn(), "Y")) {
                 //재가입 로직
-                deleteUserJoin(userId, kakaoUser.getKakaoAccount().getEmail());
+                userId = deleteUserJoin(userId, kakaoUser.getKakaoAccount().getEmail());
                 log.info("카카오 계정 탈퇴 후 재가입 완료");
             }
         }
