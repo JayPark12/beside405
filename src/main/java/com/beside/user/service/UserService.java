@@ -280,7 +280,7 @@ public class UserService {
 
     @Transactional
     public String deleteUser(String userId) {
-        UserEntity user = userRepository.findByIdAndDelYn(userId, "Y").orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
+        UserEntity user = userRepository.findByIdAndDelYn(userId, "N").orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
         user.deleteUser();
         userRepository.save(user);
         log.info("user id : {} 회원 탈퇴 처리 완료", userId);
