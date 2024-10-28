@@ -21,4 +21,6 @@ public interface UserRepository extends JpaRepository<UserEntity, String> {
     Optional<UserEntity> findByIdContainingAndDelYn(String userId, String delYn);
 
     Optional<UserEntity> findFirstByIdContainingOrderByCreatDtDesc(String userId);
+
+    Optional<UserEntity> findFirstByIdContainingAndDelYnOrderByCreatDtDesc(String userId, String delYn);
 }

@@ -90,7 +90,7 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public String deleteUserJoin(String userId, String email) {
+    public void deleteUserJoin(String userId, String email) {
         UserEntity user = UserEntity.builder()
                 .id(newUserId(userId))
                 .nickname(createNickname())
@@ -101,7 +101,6 @@ public class UserService {
                 .delYn("N")
                 .password(null).build();
         userRepository.save(user);
-        return user.getId();
     }
 
 
@@ -182,6 +181,7 @@ public class UserService {
 
     public LoginResponse kakaoLogin2(KakaoUserInfoResponseDto kakaoUser, String scheduleId, HttpServletResponse response, String refreshToken) {
         String userId = String.valueOf(kakaoUser.getId());
+        String newUserId;
 
         //db에 userId가 있는 지 확인, 1개만 반환
         Optional<UserEntity> userCheck2 = userRepository.findFirstByIdContainingOrderByCreatDtDesc(userId);
@@ -196,7 +196,7 @@ public class UserService {
             UserEntity user = userCheck2.get();
             if(Objects.equals(user.getDelYn(), "Y")) {
                 //재가입 로직
-                userId = deleteUserJoin(userId, kakaoUser.getKakaoAccount().getEmail());
+                deleteUserJoin(userId, kakaoUser.getKakaoAccount().getEmail());
                 log.info("카카오 계정 탈퇴 후 재가입 완료");
             }
         }
@@ -220,6 +220,11 @@ public class UserService {
 
  */
 
+        //가입처리 완료 후 db에서 userId 새로 조회
+        UserEntity newUser = userRepository.findFirstByIdContainingAndDelYnOrderByCreatDtDesc(userId, "N").orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
+        userId = String.valueOf(newUser.getId());
+
+
         if(scheduleId != null) {
             log.info("[kakao login] schedule id : {}", scheduleId);
             MemberId memberId = new MemberId(scheduleId, userId);
@@ -228,7 +233,7 @@ public class UserService {
             scheduleMemberRepository.save(scheduleMember);
         }
 
-        UserEntity user = userRepository.findByIdContainingAndDelYn(userId, "N").orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
+        //UserEntity user = userRepository.findByIdContainingAndDelYn(userId, "N").orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
         String jwt = jwtProvider.generateJwtToken(userId);
 
         response.setHeader("Authorization", "Bearer " + jwt);
@@ -236,8 +241,8 @@ public class UserService {
         log.info("카카오 로그인 완료 : {}", userId);
         return LoginResponse.builder()
                 .userId(userId)
-                .nickname(user.getNickname())
-                .callNo(user.getCallNo())
+                .nickname(newUser.getNickname())
+                .callNo(newUser.getCallNo())
                 .token(jwt)
                 .bearerToken("Bearer " + jwt)
                 .kakaoRefreshToken(refreshToken)
