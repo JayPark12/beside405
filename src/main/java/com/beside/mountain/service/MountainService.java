@@ -240,6 +240,20 @@ public class MountainService {
         weatherList.add(getOtherDayWeather(localDate, 5));
 
         weatherList.sort(Comparator.comparing(WeatherResponse::getDate));
+
+        int i = 0;
+        //날짜값 변경해주기
+        for(WeatherResponse weatherResponse : weatherList) {
+
+            LocalDate currentDate = LocalDate.now();
+            currentDate = currentDate.plusDays(i); // 날짜를 1일 올림
+
+            //weatherResponse.setDate(String.valueOf(currentDate));
+            weatherResponse.setDate(currentDate.format(DateTimeFormatter.ofPattern("yyyyMMdd")));
+
+            i++;
+        }
+
         return weatherList;
     }
 
