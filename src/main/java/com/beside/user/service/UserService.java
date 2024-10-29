@@ -7,10 +7,12 @@ import com.beside.schedule.domain.ScheduleMember;
 import com.beside.schedule.repository.ScheduleMemberRepository;
 import com.beside.user.domain.RandomNickname;
 import com.beside.user.domain.UserEntity;
+import com.beside.user.domain.UserExitReasons;
 import com.beside.user.dto.*;
 import com.beside.user.exception.UserErrorInfo;
 import com.beside.user.exception.UserException;
 import com.beside.user.repository.RandomNicknameRepository;
+import com.beside.user.repository.UserExitReasonRepository;
 import com.beside.user.repository.UserRepository;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.transaction.Transactional;
@@ -39,6 +41,7 @@ public class UserService {
     private final JwtProvider jwtProvider;
     private final RandomNicknameRepository randomNicknameRepository;
     private final ScheduleMemberRepository scheduleMemberRepository;
+    private final UserExitReasonRepository userExitReasonRepository;
 
     private static int lastSuffix = 0;
 
@@ -284,12 +287,16 @@ public class UserService {
 
 
     @Transactional
-    public String deleteUser(String userId) {
+    public String deleteUser(String userId, String reason) {
         UserEntity user = userRepository.findByIdAndDelYn(userId, "N").orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
         user.deleteUser();
         userRepository.save(user);
-        log.info("user id : {} 회원 탈퇴 처리 완료", userId);
 
+        //탈퇴사유 저장
+        UserExitReasons exitReasons = UserExitReasons.builder().userId(userId).exitReason(reason).build();
+        userExitReasonRepository.save(exitReasons);
+
+        log.info("user id : {} 회원 탈퇴 처리 완료", userId);
         return userId;
     }
 

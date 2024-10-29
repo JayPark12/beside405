@@ -78,16 +78,16 @@ public class UserController {
 
 
     @Operation(summary = "카카오 회원 탈퇴", description = "카카오 연결끊기 + db에서 회원 삭제처리")
-    @GetMapping("/kakaoDelete")
-    public ResponseEntity<?> deleteUser(@RequestParam String refreshToken) {
+    @PostMapping("/kakaoDelete")
+    public ResponseEntity<?> deleteUser(@RequestBody UserExitRequest request) {
         //1. refresh token으로 카카오 액세스 토큰 갱신
-        String accessToken = kakaoService.renewToken(refreshToken);
+        String accessToken = kakaoService.renewToken(request.getRefreshToken());
 
         //2. access token으로 연결 끊기
         String id = kakaoService.unlink(accessToken);
 
         //3. db에서 정보 삭제
-        String result = userService.deleteUser(id);
+        String result = userService.deleteUser(id, request.getReason());
 
         return ResponseEntity.ok("회원 삭제 완료. user id :  " + result);
     }
