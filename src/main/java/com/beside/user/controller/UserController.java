@@ -87,7 +87,7 @@ public class UserController {
         String id = kakaoService.unlink(accessToken);
 
         //3. db에서 정보 삭제
-        String result = userService.deleteUser(id, request.getReason());
+        String result = userService.deleteUser(request.getUserId(), request.getReason());
 
         return ResponseEntity.ok("회원 삭제 완료. user id :  " + result);
     }
