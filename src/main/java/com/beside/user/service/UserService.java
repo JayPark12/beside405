@@ -43,8 +43,6 @@ public class UserService {
     private final ScheduleMemberRepository scheduleMemberRepository;
     private final UserExitReasonRepository userExitReasonRepository;
 
-    private static int lastSuffix = 0;
-
     LocalDateTime localDate = LocalDateTime.now();
 
     @Transactional
@@ -293,7 +291,7 @@ public class UserService {
         userRepository.save(user);
 
         //탈퇴사유 저장
-        UserExitReasons exitReasons = UserExitReasons.builder().userId(userId).exitReason(reason).build();
+        UserExitReasons exitReasons = UserExitReasons.builder().userId(userId).exitReason(reason).exitDate(localDate).build();
         userExitReasonRepository.save(exitReasons);
 
         log.info("user id : {} 회원 탈퇴 처리 완료", userId);

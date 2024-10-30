@@ -179,6 +179,8 @@ public class MountainService {
         Course freeCourse = new Course();
         freeCourse.setCourseNo("free");
         freeCourse.setCourseName("자유코스");
+        //TODO : 자유코스인 경우 제일 첫번째 코스의 위치값 넣기
+        freeCourse.setPaths(null);
         courses.add(freeCourse);
 
         //코스id 오름차순 정렬
