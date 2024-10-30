@@ -18,6 +18,7 @@ import jakarta.persistence.EntityNotFoundException;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.web.servlet.error.DefaultErrorViewResolver;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -46,6 +47,7 @@ public class MountainService {
     private final ObjectMapper objectMapper;
 
     private final Map<String, String> courseMap = new HashMap<>();
+    private final DefaultErrorViewResolver conventionErrorViewResolver;
 
     @Getter
     private List<WeatherResponse> weatherList;
@@ -179,8 +181,17 @@ public class MountainService {
         Course freeCourse = new Course();
         freeCourse.setCourseNo("free");
         freeCourse.setCourseName("자유코스");
+
         //TODO : 자유코스인 경우 제일 첫번째 코스의 위치값 넣기
-        freeCourse.setPaths(null);
+        List<List<Coordinate>> paths = new ArrayList<>();
+        List<Coordinate> path = new ArrayList<>();
+        JsonNode firstItem = itemsNode.get(0);
+        JsonNode coordNode = firstItem.path("geometry").path("paths").get(0);
+        double[] coordinates = new double[]{coordNode.get(0).asDouble(), coordNode.get(1).asDouble()};
+        path.add(new Coordinate(coordinates));
+        paths.add(path);
+
+        freeCourse.setPaths(paths);
         courses.add(freeCourse);
 
         //코스id 오름차순 정렬
@@ -204,7 +215,7 @@ public class MountainService {
 
 
 
-    public WeatherResponse get3DayWeather(String localDate, int number) throws IOException, URISyntaxException {
+    public WeatherResponse get3DayWeather(String localDate, int number) throws IOException {
         return weatherApi.get3DayWeather(localDate, number);
     }
 
