@@ -187,7 +187,9 @@ public class MountainService {
         List<Coordinate> path = new ArrayList<>();
         JsonNode firstItem = itemsNode.get(0);
         JsonNode coordNode = firstItem.path("geometry").path("paths").get(0);
-        double[] coordinates = new double[]{coordNode.get(0).asDouble(), coordNode.get(1).asDouble()};
+        double[] coordinates = new double[]{
+                coordNode.get(0).get(0).asDouble(), coordNode.get(0).get(1).asDouble()
+        };
         path.add(new Coordinate(coordinates));
         paths.add(path);
 
