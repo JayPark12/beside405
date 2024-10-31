@@ -102,13 +102,18 @@ public class UserService {
                 .delYn("N")
                 .password(null).build();
         userRepository.save(user);
+        log.info("새로운 아이디 : {}", user.getId());
     }
 
 
     public String newUserId(String userId) {
+        log.info("새로운 아이디 생성 로직 start");
+        log.info("기존 아이디 : {}", userId);
         if(userId.length() == 10) {
+            log.info("아이디 10글자");
             return userId + 1;
         } else {
+            log.info("아이디 10글자 이상");
             char lastDigit = userId.charAt(userId.length() - 1);
             int lastNumber = Character.getNumericValue(lastDigit);
             return userId + (lastNumber + 1);
@@ -197,7 +202,7 @@ public class UserService {
             UserEntity user = userCheck2.get();
             if(Objects.equals(user.getDelYn(), "Y")) {
                 //재가입 로직
-                deleteUserJoin(userId, kakaoUser.getKakaoAccount().getEmail());
+                deleteUserJoin(user.getId(), kakaoUser.getKakaoAccount().getEmail());
                 log.info("카카오 계정 탈퇴 후 재가입 완료");
             }
         }
