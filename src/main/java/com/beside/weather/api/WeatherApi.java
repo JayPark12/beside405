@@ -228,8 +228,6 @@ public class WeatherApi {
             }
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
 
         return weatherResponse;
@@ -342,8 +340,6 @@ public class WeatherApi {
                 response.put("third", taMin5);
             }
 
-        } catch (JsonMappingException e) {
-            throw new RuntimeException(e);
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
@@ -386,8 +382,6 @@ public class WeatherApi {
 
             }
 
-        } catch (JsonMappingException e) {
-            throw new RuntimeException(e);
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }

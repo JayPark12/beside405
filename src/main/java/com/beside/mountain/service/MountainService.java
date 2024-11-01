@@ -47,7 +47,6 @@ public class MountainService {
     private final ObjectMapper objectMapper;
 
     private final Map<String, String> courseMap = new HashMap<>();
-    private final DefaultErrorViewResolver conventionErrorViewResolver;
 
     @Getter
     private List<WeatherResponse> weatherList;
@@ -209,8 +208,6 @@ public class MountainService {
         mntiDetailOutput.setPhotoSource(mntiEntity.getPhotoSource());
 
         //날씨 리스트 가져오기
-//        List<WeatherResponse> weatherList;
-//        weatherList = getWeatherList();
         mntiDetailOutput.setWeatherList(weatherList);
         return mntiDetailOutput;
     }
@@ -314,5 +311,4 @@ public class MountainService {
         return courseMap.get(courseNo);
     }
 
-    //test
 }
