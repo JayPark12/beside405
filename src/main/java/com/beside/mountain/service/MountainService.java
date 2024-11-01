@@ -55,12 +55,10 @@ public class MountainService {
     public void init() {
         try {
             initializeCourseMap();
-            updateWeatherList();
+            //updateWeatherList();
         } catch (IOException e) {
             // 로깅 및 예외 처리
             e.printStackTrace();
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
         }
     }
 
