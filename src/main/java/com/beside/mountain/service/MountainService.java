@@ -19,6 +19,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.web.servlet.error.DefaultErrorViewResolver;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -100,7 +101,8 @@ public class MountainService {
         return new PageImpl<>(mntiListOutput.subList(start, end), pageable, mntiListOutput.size());
     }
 
-    private List<MntiListOutput> fetchAndConvert(String keyword) throws IOException {
+    @Cacheable(value = "mntiListCache", key = "#keyword")
+    public List<MntiListOutput> fetchAndConvert(String keyword) throws IOException {
         List<MntiEntity> list;
 
         if (StringUtils.hasText(keyword)) {
