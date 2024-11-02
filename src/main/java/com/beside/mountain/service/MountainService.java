@@ -180,6 +180,7 @@ public class MountainService {
         freeCourse.setCourseName("자유코스");
 
         //TODO : 자유코스인 경우 제일 첫번째 코스의 위치값 넣기
+        // TODO : 자유코스랑 일반 코스랑 겹치는 문제 해결하기
         List<List<Coordinate>> paths = new ArrayList<>();
         List<Coordinate> path = new ArrayList<>();
         JsonNode firstItem = itemsNode.get(0);
