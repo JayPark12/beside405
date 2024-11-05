@@ -291,7 +291,7 @@ public class UserService {
 
     @Transactional
     public String deleteUser(String userId, String reason) {
-        UserEntity user = userRepository.findByIdAndDelYn(userId, "N").orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
+        UserEntity user = userRepository.findByIdContainingAndDelYn(userId, "N").orElseThrow(() -> new UserException(UserErrorInfo.NOT_FOUND_USER));
         user.deleteUser();
         userRepository.save(user);
 
