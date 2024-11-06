@@ -9,14 +9,21 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Set;
 
@@ -76,6 +83,27 @@ public class MountainController {
     @GetMapping("/imgTest2")
     public ResponseEntity<?> imgTest2() throws Exception {
         return ResponseEntity.ok(CommonUtil.getImageByMountain2("112300301"));
+    }
+
+    @GetMapping("/{filename}")
+    public ResponseEntity<Resource> getImage(@PathVariable String filename) throws IOException {
+        final Path imageDirectory = Paths.get("images");
+
+        Path imagePath = imageDirectory.resolve(filename).normalize();
+        Resource resource = new UrlResource(imagePath.toUri());
+
+        if (!resource.exists()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        // Content-Type을 이미지 형식으로 설정
+        String contentType = Files.probeContentType(imagePath);
+
+        return ResponseEntity.ok()
+                //.contentType(org.springframework.http.MediaType.parseMediaType(contentType))
+                .contentType(MediaType.IMAGE_JPEG) // MIME 타입을 직접 설정
+                .header(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"" + resource.getFilename() + "\"")
+                .body(resource);
     }
 
 }
