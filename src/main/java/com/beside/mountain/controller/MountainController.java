@@ -87,9 +87,10 @@ public class MountainController {
 
     @GetMapping("/{filename}")
     public ResponseEntity<Resource> getImage(@PathVariable String filename) throws IOException {
-        final Path imageDirectory = Paths.get("images");
+        final Path imageDirectory = Paths.get("/root/JavaProject/beside405/img/mountain/"); //이미지폴더 경로
 
-        Path imagePath = imageDirectory.resolve(filename).normalize();
+        //.normalize() : 메서드는 경로를 간소화하여 반환
+        Path imagePath = imageDirectory.resolve(filename).normalize(); // imageDirectory 경로에 filename을 추가하여 새로운 경로 생성
         Resource resource = new UrlResource(imagePath.toUri());
 
         if (!resource.exists()) {
