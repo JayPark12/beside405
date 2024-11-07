@@ -21,10 +21,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 
@@ -89,20 +91,28 @@ public class MountainController {
     public ResponseEntity<Resource> getImage(@PathVariable String filename) throws IOException {
         final Path imageDirectory = Paths.get("/root/JavaProject/beside405/img/mountain/"); //이미지폴더 경로
 
-        //.normalize() : 메서드는 경로를 간소화하여 반환
-        Path imagePath = imageDirectory.resolve(filename).normalize(); // imageDirectory 경로에 filename을 추가하여 새로운 경로 생성
-        Resource resource = new UrlResource(imagePath.toUri());
 
-        if (!resource.exists()) {
+        // 확장자를 지정하지 않고 파일 이름만으로 검색
+        Path imagePath = null;
+        try (DirectoryStream<Path> stream = Files.newDirectoryStream(imageDirectory, filename + ".*")) {
+            // 검색 결과 중 첫 번째 파일을 선택
+            for (Path entry : stream) {
+                imagePath = entry.normalize();
+                break;
+            }
+        }
+
+        if (imagePath == null) {
             return ResponseEntity.notFound().build();
         }
 
-        // Content-Type을 이미지 형식으로 설정
+        Resource resource = new UrlResource(Objects.requireNonNull(imagePath).toUri());
         String contentType = Files.probeContentType(imagePath);
 
+
         return ResponseEntity.ok()
-                //.contentType(org.springframework.http.MediaType.parseMediaType(contentType))
-                .contentType(MediaType.IMAGE_JPEG) // MIME 타입을 직접 설정
+                //.contentType(MediaType.IMAGE_JPEG) // MIME 타입을 직접 설정
+                .contentType(MediaType.parseMediaType(contentType))
                 .header(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"" + resource.getFilename() + "\"")
                 .body(resource);
     }
