@@ -87,6 +87,9 @@ public class MountainController {
         return ResponseEntity.ok(CommonUtil.getImageByMountain2("112300301"));
     }
 
+
+
+    //https://over-the-mountain.site/api/main/111100101 형식으로 호출 시 사진 리소스로 응답 받음
     @GetMapping("/{filename}")
     public ResponseEntity<Resource> getImage(@PathVariable String filename) throws IOException {
         final Path imageDirectory = Paths.get("/root/JavaProject/beside405/img/mountain/"); //이미지폴더 경로
