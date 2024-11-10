@@ -119,7 +119,8 @@ public class MountainService {
             dto.setMntiLevel(mntiEntity.getMntiLevel());
             dto.setMntiAdd(mntiEntity.getMntiAdd());
             dto.setHeight(mntiEntity.getMntihigh());
-            dto.setPotoFile(CommonUtil.getImageByMountain(mntiEntity.getMntiListNo()));
+            //dto.setPotoFile(CommonUtil.getImageByMountain(mntiEntity.getMntiListNo()));
+            dto.setPotoFile("https://over-the-mountain.site/api/main/" + mntiEntity.getMntiListNo());
             dto.setFamous100(mntiEntity.isFamous100());
             dto.setSeoulTrail(mntiEntity.isSeoulTrail());
             dto.setPhotoSource(mntiEntity.getPhotoSource());
