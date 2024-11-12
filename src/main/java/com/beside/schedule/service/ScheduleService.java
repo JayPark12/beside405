@@ -163,7 +163,7 @@ public class ScheduleService {
                 .courseName(mountainService.getCourseNameByNo(hikeSchedule.getCourseNo()))
                 .scheduleDate(hikeSchedule.getScheduleDate())
                 .memberCount(hikeSchedule.getMemberCount())
-                .mountainImg(CommonUtil.getImageByMountain(hikeSchedule.getMountainId()))
+                .mountainImg("https://over-the-mountain.site/api/main/" + hikeSchedule.getMountainId())
                 .mountainHigh(mountain.getMntihigh())
                 .mountainLevel(mountain.getMntiLevel())
                 .mountainAddress(mountain.getMntiAdd())
@@ -326,7 +326,7 @@ public class ScheduleService {
                 .scheduleId(scheduleInvitation.getScheduleId())
                 .imgNumber(scheduleInvitation.getImgNumber())
                 .imgUrl(imageUrl.get(scheduleInvitation.getImgNumber()))
-                .img(CommonUtil.getInvitationImg(scheduleInvitation.getImgNumber()))
+                //.img(CommonUtil.getInvitationImg(scheduleInvitation.getImgNumber()))
                 .createUser(scheduleInvitation.getCreateUser())
                 .nickname(userInfoResponse.getNickname())
                 .scheduleDate(hikeSchedule.getScheduleDate())
@@ -387,11 +387,13 @@ public class ScheduleService {
 
 
     public List<InvitationImgResponse> getInvitationImg() throws IOException {
+        //.imgUrl(imageUrl.get(scheduleInvitation.getImgNumber()))
         List<InvitationImgResponse> imgList = new ArrayList<>();
+
         for(int i = 1; i<= 6; i++) {
             InvitationImgResponse response = new InvitationImgResponse();
             response.setImgNumber(i);
-            response.setImg(CommonUtil.getInvitationImg(i));
+            response.setImg(imageUrl.get(i));
             imgList.add(response);
         }
         return imgList;
