@@ -1,13 +1,13 @@
 package com.beside.mountain.service;
 
 import com.beside.mountain.domain.MntiEntity;
-import com.beside.mountain.repository.MntiRepository;
-import com.beside.util.*;
 import com.beside.mountain.dto.Course;
 import com.beside.mountain.dto.MntiDetailInput;
 import com.beside.mountain.dto.MntiDetailOutput;
+import com.beside.mountain.repository.MntiRepository;
+import com.beside.util.CommonUtil;
+import com.beside.util.Coordinate;
 import com.beside.weather.api.WeatherApi;
-import com.beside.weather.dto.Weather;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -71,11 +71,6 @@ public class MntiDetailService {
             mntiDetailOutput.setMntiHigh(mntiInfo.getMntihigh());
         }
 
-        //watherInfo
-//        List<Weather> weatherList = new ArrayList<>();
-//        weatherList.add(weatherApi.watherListToday());// 오늘 날씨 데이터
-//        weatherApi.watherListOrtherDay(weatherList);
-//        mntiDetailOutput.setWeatherList(weatherList);
         return mntiDetailOutput;
     }
 

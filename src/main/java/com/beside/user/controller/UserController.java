@@ -4,9 +4,7 @@ import com.beside.jwt.JwtProvider;
 import com.beside.kakao.dto.KakaoTokenResponseDto;
 import com.beside.kakao.dto.KakaoUserInfoResponseDto;
 import com.beside.kakao.service.KakaoService;
-import com.beside.user.domain.UserEntity;
 import com.beside.user.dto.*;
-import com.beside.user.exception.UserException;
 import com.beside.user.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -18,13 +16,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.Map;
 
 
 @Slf4j
@@ -113,7 +109,7 @@ public class UserController {
 
     @Operation(summary = "비밀번호 변경")
     @PatchMapping("/updatePassword")
-    public ResponseEntity<?> updatePassword(@RequestBody UpdatePasswordRequest request) {
+    public ResponseEntity<?> updatePassword(@RequestBody UpdatePasswordRequest request) throws IOException{
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();
         userService.updatePassword(userId, request);
         return ResponseEntity.ok("변경 완료");

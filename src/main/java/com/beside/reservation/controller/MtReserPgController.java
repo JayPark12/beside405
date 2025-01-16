@@ -1,15 +1,13 @@
 package com.beside.reservation.controller;
 
 import com.beside.reservation.dto.MntiReserDetailInput;
+import com.beside.reservation.dto.MntiReserInput;
 import com.beside.reservation.dto.MntiReserListOutput;
+import com.beside.reservation.dto.MntiReserOutput;
 import com.beside.reservation.service.MntiReserDeleteService;
 import com.beside.reservation.service.MntiReserDetailService;
-import com.beside.reservation.service.MntiReserListService;
-import com.beside.reservation.dto.MntiReserInput;
-import com.beside.reservation.dto.MntiReserOutput;
 import com.beside.reservation.service.MntiReserInsertService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
+import com.beside.reservation.service.MntiReserListService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -17,7 +15,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 
 @Slf4j
@@ -57,8 +58,6 @@ public class MtReserPgController {
         return output;
     }
 
-//    @Operation(summary = "일정 상세보기", description = "일정의 상세내역을 볼 수 있습니다.")
-//    @PostMapping("/registrationDitail")
     public MntiReserOutput registrationDitail (@RequestBody MntiReserDetailInput mntiReserDetailInput) throws Exception {
 
         log.debug("[START]  /registrationDitail");

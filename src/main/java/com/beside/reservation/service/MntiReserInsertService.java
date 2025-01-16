@@ -14,7 +14,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.util.StringUtils;
 
@@ -101,8 +100,6 @@ public class MntiReserInsertService {
         mntiReserEntity.setMntiListNo(mntiReserOutput.getMntiListNo());
         mntiReserEntity.setMntiCourse(mntiReserInput.getMntiCourse());
         mntiReserEntity.setMntiCourseName(mntiReserOutput.getCourse().get(0).getCourseName());
-        //mntiReserEntity.setMntimt() 일단 어떤식으로 들어올지 몰라
-        //mntiReserEntity.setmntiCaution
         mntiReserEntity.setMntiSts("0"); //0 : 등산 계획,  1 :등산 중 , 2 : 등산완료 ,3 : 등산실패
         mntiReserEntity.setMntiStrDate(mntiReserInput.getMntiStrDate());
         mntiReserEntity.setMntiLevel(mntiReserOutput.getCourse().get(0).getMntiLevel());

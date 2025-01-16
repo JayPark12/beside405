@@ -1,9 +1,8 @@
 package com.beside.mountain.controller;
 
-import com.beside.mountain.dto.*;
-import com.beside.mountain.service.MntiDetailService;
+import com.beside.mountain.dto.CourseResponse;
+import com.beside.mountain.dto.MntiDetailOutput;
 import com.beside.mountain.service.MountainService;
-import com.beside.mountain.service.MntiSerchService;
 import com.beside.util.CommonUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -11,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -20,14 +18,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 
 @Slf4j
@@ -70,7 +66,7 @@ public class MountainController {
     @Operation(summary = "날씨 정보", description = "날씨 정보 가져오기 테스트 api")
     @PostMapping("/weather")
     public ResponseEntity<?> weather() throws Exception {
-        //return ResponseEntity.ok(mountainService.getWeatherList());
+
         return ResponseEntity.ok(mountainService.getWeatherList());
     }
 
