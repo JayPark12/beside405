@@ -2,7 +2,6 @@ package com.beside.config;
 
 import com.beside.common.handler.CustomLogoutHandler;
 import com.beside.jwt.JwtFilter;
-import com.beside.user.repository.UserRepository;
 import com.beside.jwt.JwtProvider;
 import jakarta.annotation.PostConstruct;
 import jakarta.servlet.http.HttpServletResponse;
@@ -39,8 +38,6 @@ public class SecurityConfig {
     @Value("${spring.security.cors.allow.methods:1,2,3,4,5,6}")
     private String[] allowedMethods;
 
-//    @Value("#{'${spring.security.origin}'.split(',')}")
-//    private List<String> allowedOriginPaths;
 
     private List<String> allowedOriginPaths;
 
